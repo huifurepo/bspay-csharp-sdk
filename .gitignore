@@ -1,0 +1,8 @@
+.vs/
+BasePayDemo/bin/
+BasePayDemo/obj/
+BasePayDemo/Properties/
+BasePaySdk/bin/
+BasePaySdk/obj/
+BasePaySdk/Properties/
+.idea

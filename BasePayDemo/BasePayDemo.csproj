@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net48</TargetFramework>
+    <StartupObject>BasePayDemo.Program</StartupObject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BasePaySdk\BasePaySdk.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="BasePaySdk">
+      <HintPath>..\BasePaySdk\bin\Release\net4.0\BasePaySdk.dll</HintPath>
+    </Reference>
+	<Reference Include="BouncyCastle.Crypto">
+      <HintPath>..\libs\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+	<Reference Include="Newtonsoft.Json">
+      <HintPath>..\libs\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>
