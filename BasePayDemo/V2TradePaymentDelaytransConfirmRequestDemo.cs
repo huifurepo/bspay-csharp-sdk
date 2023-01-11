@@ -70,6 +70,8 @@ namespace BasePayDemo
             // extendInfoMap.Add("pay_type", "");
             // 备注
             extendInfoMap.Add("remark", "remark123");
+            // 原交易商户订单号
+            // extendInfoMap.Add("org_mer_ord_id", "");
             return extendInfoMap;
         }
 

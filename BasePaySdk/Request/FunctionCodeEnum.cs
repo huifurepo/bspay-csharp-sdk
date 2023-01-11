@@ -9,6 +9,18 @@ namespace BasePaySdk.Request
     public class FunctionCodeEnum
     {
         /**
+         * 子账户开通配置
+         */
+        public const string V2_MERCHANT_SETTLE_CONFIG = "v2.merchant.settle.config";
+        /**
+         * 修改子账户配置
+         */
+        public const string V2_MERCHANT_SETTLE_MODIFY = "v2.merchant.settle.modify";
+        /**
+         * 批量交易状态查询
+         */
+        public const string V2_TRADE_TRANSSTAT_QUERY = "v2.trade.transstat.query";
+        /**
          * 网银支付接口
          */
         public const string V2_TRADE_ONLINEPAYMENT_BANKING_FRONTPAY = "v2.trade.onlinepayment.banking.frontpay";

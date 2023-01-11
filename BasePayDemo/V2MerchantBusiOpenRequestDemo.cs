@@ -142,6 +142,8 @@ namespace BasePayDemo
             // extendInfoMap.Add("online_pay_fee_conf_list", getOnlinePayFeeConfList());
             // 银行大额转账对象
             // extendInfoMap.Add("bank_big_amt_pay_config", getBankBigAmtPayConfig());
+            // 微信直连配置对象
+            // extendInfoMap.Add("wx_zl_conf", getWxZlConf());
             return extendInfoMap;
         }
 
@@ -153,8 +155,8 @@ namespace BasePayDemo
             obj.Add("fee_rate", "0.38");
             // 费率规则号
             obj.Add("fee_rule_id", "758");
-            // 商户经营类目
-            obj.Add("mcc", "111");
+            // ~~商户经营类目~~
+            // obj.Add("~~mcc~~", "");
             // 子渠道号
             obj.Add("pay_channel_id", "JP00001");
             // 申请服务
@@ -292,6 +294,15 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return JsonConvert.SerializeObject(objList);
         }
+        private static string getWxZlConf() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 微信子商户号
+            // obj.Add("sub_mch_id", "test");
+            // 配置集合
+            // obj.Add("wx_zl_pay_conf_list", getWxZlPayConfList());
+
+            return JsonConvert.SerializeObject(obj);
+        }
         private static string getOnlinePayFeeConfList() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 业务类型
@@ -340,6 +351,19 @@ namespace BasePayDemo
             // obj.Add("big_amt_limit_per_time", "");
             // 银行大额转账单日额度
             // obj.Add("big_amt_limit_per_day", "");
+
+            return JsonConvert.SerializeObject(obj);
+        }
+        private static string getWxZlPayConfList() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 申请服务
+            // obj.Add("service_code", "test");
+            // 功能服务appid
+            // obj.Add("sub_app_id", "test");
+            // 功能开关
+            // obj.Add("switch_state", "test");
+            // 功能费率(%)
+            // obj.Add("fee_rate", "test");
 
             return JsonConvert.SerializeObject(obj);
         }

@@ -8,32 +8,30 @@ using Newtonsoft.Json.Linq;
 namespace BasePayDemo
 {
     /**
-     * 网银付款银行账户查询 - 示例
+     * 批量交易状态查询 - 示例
      *
      * @author sdk-generator
      * @Description
      */
-    public class V2TradeOnlinepaymentBankpayPayerqueryRequestDemo
+    public class V2TradeTransstatQueryRequestDemo
     {
 
-        public static void V2TradeOnlinepaymentBankpayPayerqueryRequestDemoTest()
+        public static void V2TradeTransstatQueryRequestDemoTest()
         {
 
             // 1. 数据初始化
             InitMerConfig.init();
 
             // 2.组装请求参数
-            V2TradeOnlinepaymentBankpayPayerqueryRequest request = new V2TradeOnlinepaymentBankpayPayerqueryRequest();
-            // 请求日期
-            request.setReqDate(DateTime.Now.ToString("yyyyMMdd"));
-            // 请求流水号
-            request.setReqSeqId(DateTime.Now.ToString("yyy-MM-dd HH.mm.ss.fff"));
+            V2TradeTransstatQueryRequest request = new V2TradeTransstatQueryRequest();
             // 商户号
-            request.setHuifuId("6666000003100615");
-            // 原交易请求日期
-            request.setOrgReqDate("20221104");
-            // 原交易请求流水号
-            request.setOrgReqSeqId("6246684562803777");
+            // request.setHuifuId("test");
+            // 页码
+            request.setPageNo("1");
+            // 页大小
+            request.setPageSize("4");
+            // 请求日期
+            // request.setReqDate(DateTime.Now.ToString("yyyyMMdd"));
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -60,10 +58,8 @@ namespace BasePayDemo
         private static Dictionary<string, object> getExtendInfos() {
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
-            // 原交易汇付全局流水号
-            extendInfoMap.Add("org_hf_seq_id", "");
-            // 商户备注
-            extendInfoMap.Add("remark", "remark123");
+            // 请求订单
+            extendInfoMap.Add("reqseqid_list", "[\"20221108104332293079\",\"20221108104817E93140\",\"20221108104800E93135\",\"20221108112153E93750\",\"20221108133737E96102\"]");
             return extendInfoMap;
         }
 

@@ -120,6 +120,8 @@ namespace BasePayDemo
             extendInfoMap.Add("industry_photo", "");
             // 负责人授权函图片
             extendInfoMap.Add("legal_person_auth_photo", "");
+            // 食堂经营相关资质
+            // extendInfoMap.Add("food_qualification_proof", "");
             return extendInfoMap;
         }
 

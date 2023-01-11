@@ -94,6 +94,8 @@ namespace BasePayDemo
             extendInfoMap.Add("notify_url", "http://www.baidu.com");
             // 交易备注
             extendInfoMap.Add("remark", "");
+            // 账户号
+            // extendInfoMap.Add("acct_id", "");
             return extendInfoMap;
         }
 
@@ -156,6 +158,8 @@ namespace BasePayDemo
             // obj.Add("div_amt", "test");
             // 被分账方ID
             // obj.Add("huifu_id", "test");
+            // 账户号
+            // obj.Add("acct_id", "");
 
             JArray objList = new JArray();
             objList.Add(JToken.FromObject(obj));

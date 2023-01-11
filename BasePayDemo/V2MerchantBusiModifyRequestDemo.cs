@@ -134,32 +134,19 @@ namespace BasePayDemo
             // extendInfoMap.Add("online_pay_fee_conf_list", getOnlinePayFeeConfList());
             // 银行大额转账对象
             // extendInfoMap.Add("bank_big_amt_pay_config", getBankBigAmtPayConfig());
+            // 微信直连配置对象
+            // extendInfoMap.Add("wx_zl_conf", getWxZlConf());
             return extendInfoMap;
         }
 
-        private static string getOnlinePayFeeConfList() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 业务类型
-            // obj.Add("pay_type", "");
-            // 交易手续费外扣时的账户类型
-            // obj.Add("out_fee_acct_type", "");
-            // 交易手续费外扣汇付ID
-            // obj.Add("out_fee_huifuid", "");
-            // 是否交易手续费外扣
-            // obj.Add("out_fee_flag", "");
-
-            JArray objList = new JArray();
-            objList.Add(JToken.FromObject(obj));
-            return JsonConvert.SerializeObject(objList);
-        }
         private static string getWxConfList() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 手续费（%）
             obj.Add("fee_rate", "2.15");
             // 支付场景
             obj.Add("pay_scene", "10");
-            // 商户经营类目
-            obj.Add("mcc", "5943");
+            // ~~商户经营类目~~
+            // obj.Add("~~mcc~~", "");
             // 费率规则ID
             obj.Add("fee_rule_id", "765");
             // 子渠道号
@@ -170,46 +157,6 @@ namespace BasePayDemo
             JArray objList = new JArray();
             objList.Add(JToken.FromObject(obj));
             return JsonConvert.SerializeObject(objList);
-        }
-        private static string getBalancePayConfig() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 支付手续费(%)
-            obj.Add("fee_rate", "2");
-            // 支付固定手续费(元)
-            obj.Add("fee_fix_amt", "1");
-            // 费率开关
-            obj.Add("switch_state", "1");
-            // 交易手续费外扣时的账户类型
-            // obj.Add("out_fee_acct_type", "");
-            // 交易手续费外扣汇付ID
-            // obj.Add("out_fee_huifuid", "");
-            // 是否交易手续费外扣
-            // obj.Add("out_fee_flag", "");
-
-            return JsonConvert.SerializeObject(obj);
-        }
-        private static string getBankBigAmtPayConfig() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 开关状态
-            // obj.Add("switch_state", "");
-            // 大额调账标识申请类型
-            // obj.Add("biz_type", "");
-            // 费率（百分比/%）
-            // obj.Add("fee_rate", "");
-            // 交易手续费（固定/元）
-            // obj.Add("fee_fix_amt", "");
-            // 手续费外扣标记
-            // obj.Add("out_fee_flag", "");
-            // 手续费外扣时的汇付ID
-            // obj.Add("out_fee_huifuid", "");
-            // 外扣手续费费承担账户号
-            // obj.Add("out_fee_acct_id", "");
-            // 银行大额转账单笔额度
-            // obj.Add("big_amt_limit_per_time", "");
-            // 银行大额转账单日额度
-            // obj.Add("big_amt_limit_per_day", "");
-
-            return JsonConvert.SerializeObject(obj);
         }
         private static string getBankCardConf() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
@@ -278,23 +225,6 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string getAliConfList() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 手续费（%）
-            obj.Add("fee_rate", "3.15");
-            // 支付场景
-            obj.Add("pay_scene", "1");
-            // 商户经营类目
-            obj.Add("mcc", "2016062900190337");
-            // 子渠道号
-            obj.Add("pay_channel_id", "10000001");
-            // 拟申请的间联商户等级
-            obj.Add("indirect_level", "");
-
-            JArray objList = new JArray();
-            objList.Add(JToken.FromObject(obj));
-            return JsonConvert.SerializeObject(objList);
-        }
         private static string getOnlineFeeConfList() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 业务类型
@@ -334,6 +264,100 @@ namespace BasePayDemo
             obj.Add("debit_fee_limit_up", "641");
             // 银联二维码1000以下借记卡费率封顶值
             obj.Add("debit_fee_limit_down", "11.3");
+
+            JArray objList = new JArray();
+            objList.Add(JToken.FromObject(obj));
+            return JsonConvert.SerializeObject(objList);
+        }
+        private static string getWxZlConf() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 微信子商户号
+            // obj.Add("sub_mch_id", "test");
+            // 配置集合
+            // obj.Add("wx_zl_pay_conf_list", getWxZlPayConfList());
+
+            return JsonConvert.SerializeObject(obj);
+        }
+        private static string getOnlinePayFeeConfList() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 业务类型
+            // obj.Add("pay_type", "");
+            // 交易手续费外扣时的账户类型
+            // obj.Add("out_fee_acct_type", "");
+            // 交易手续费外扣汇付ID
+            // obj.Add("out_fee_huifuid", "");
+            // 是否交易手续费外扣
+            // obj.Add("out_fee_flag", "");
+
+            JArray objList = new JArray();
+            objList.Add(JToken.FromObject(obj));
+            return JsonConvert.SerializeObject(objList);
+        }
+        private static string getBalancePayConfig() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 支付手续费(%)
+            obj.Add("fee_rate", "2");
+            // 支付固定手续费(元)
+            obj.Add("fee_fix_amt", "1");
+            // 费率开关
+            obj.Add("switch_state", "1");
+            // 交易手续费外扣时的账户类型
+            // obj.Add("out_fee_acct_type", "");
+            // 交易手续费外扣汇付ID
+            // obj.Add("out_fee_huifuid", "");
+            // 是否交易手续费外扣
+            // obj.Add("out_fee_flag", "");
+
+            return JsonConvert.SerializeObject(obj);
+        }
+        private static string getBankBigAmtPayConfig() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 开关状态
+            // obj.Add("switch_state", "");
+            // 大额调账标识申请类型
+            // obj.Add("biz_type", "");
+            // 费率（百分比/%）
+            // obj.Add("fee_rate", "");
+            // 交易手续费（固定/元）
+            // obj.Add("fee_fix_amt", "");
+            // 手续费外扣标记
+            // obj.Add("out_fee_flag", "");
+            // 手续费外扣时的汇付ID
+            // obj.Add("out_fee_huifuid", "");
+            // 外扣手续费费承担账户号
+            // obj.Add("out_fee_acct_id", "");
+            // 银行大额转账单笔额度
+            // obj.Add("big_amt_limit_per_time", "");
+            // 银行大额转账单日额度
+            // obj.Add("big_amt_limit_per_day", "");
+
+            return JsonConvert.SerializeObject(obj);
+        }
+        private static string getWxZlPayConfList() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 申请服务
+            // obj.Add("service_code", "test");
+            // 功能服务appid
+            // obj.Add("sub_app_id", "test");
+            // 功能开关
+            // obj.Add("switch_state", "test");
+            // 功能费率(%)
+            // obj.Add("fee_rate", "test");
+
+            return JsonConvert.SerializeObject(obj);
+        }
+        private static string getAliConfList() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 手续费（%）
+            obj.Add("fee_rate", "3.15");
+            // 支付场景
+            obj.Add("pay_scene", "1");
+            // 商户经营类目
+            obj.Add("mcc", "2016062900190337");
+            // 子渠道号
+            obj.Add("pay_channel_id", "10000001");
+            // 拟申请的间联商户等级
+            obj.Add("indirect_level", "");
 
             JArray objList = new JArray();
             objList.Add(JToken.FromObject(obj));

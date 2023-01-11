@@ -98,6 +98,8 @@ namespace BasePayDemo
             extendInfoMap.Add("notify_url", "http://www.baidu.com");
             // 备注
             extendInfoMap.Add("remark", "string");
+            // 账户号
+            // extendInfoMap.Add("acct_id", "");
             return extendInfoMap;
         }
 
@@ -173,6 +175,8 @@ namespace BasePayDemo
             // obj.Add("div_amt", "test");
             // 被分账方ID
             // obj.Add("huifu_id", "test");
+            // 账户号
+            // obj.Add("acct_id", "");
 
             JArray objList = new JArray();
             objList.Add(JToken.FromObject(obj));
@@ -325,6 +329,8 @@ namespace BasePayDemo
             obj.Add("parking_id", "123wsx");
             // 系统商编号
             obj.Add("sys_service_provider_id", "1111111");
+            // 信用卡分期资产方式
+            // obj.Add("fq_channels", "");
 
             return obj;
         }

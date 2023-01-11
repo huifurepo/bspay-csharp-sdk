@@ -8,32 +8,30 @@ using Newtonsoft.Json.Linq;
 namespace BasePayDemo
 {
     /**
-     * 网银付款银行账户查询 - 示例
+     * 查询投诉单列表及详情 - 示例
      *
      * @author sdk-generator
      * @Description
      */
-    public class V2TradeOnlinepaymentBankpayPayerqueryRequestDemo
+    public class V2MerchantComplaintListInfoQueryRequestDemo
     {
 
-        public static void V2TradeOnlinepaymentBankpayPayerqueryRequestDemoTest()
+        public static void V2MerchantComplaintListInfoQueryRequestDemoTest()
         {
 
             // 1. 数据初始化
             InitMerConfig.init();
 
             // 2.组装请求参数
-            V2TradeOnlinepaymentBankpayPayerqueryRequest request = new V2TradeOnlinepaymentBankpayPayerqueryRequest();
-            // 请求日期
-            request.setReqDate(DateTime.Now.ToString("yyyyMMdd"));
+            V2MerchantComplaintListInfoQueryRequest request = new V2MerchantComplaintListInfoQueryRequest();
             // 请求流水号
             request.setReqSeqId(DateTime.Now.ToString("yyy-MM-dd HH.mm.ss.fff"));
-            // 商户号
-            request.setHuifuId("6666000003100615");
-            // 原交易请求日期
-            request.setOrgReqDate("20221104");
-            // 原交易请求流水号
-            request.setOrgReqSeqId("6246684562803777");
+            // 请求时间
+            request.setReqDate(DateTime.Now.ToString("yyyyMMdd"));
+            // 开始日期
+            request.setBeginDate("2022-10-20");
+            // 结束日期
+            request.setEndDate("2022-10-20");
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -60,10 +58,24 @@ namespace BasePayDemo
         private static Dictionary<string, object> getExtendInfos() {
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
-            // 原交易汇付全局流水号
-            extendInfoMap.Add("org_hf_seq_id", "");
-            // 商户备注
-            extendInfoMap.Add("remark", "remark123");
+            // 分页开始位置
+            extendInfoMap.Add("offset", "");
+            // 分页大小
+            extendInfoMap.Add("limit", "");
+            // 被诉的汇付商户ID
+            extendInfoMap.Add("huifu_id", "");
+            // 被诉的商户名称
+            extendInfoMap.Add("reg_name", "");
+            // 微信订单号
+            extendInfoMap.Add("transaction_id", "");
+            // 微信投诉单号
+            extendInfoMap.Add("complaint_id", "");
+            // 投诉状态
+            extendInfoMap.Add("complaint_state", "");
+            // 用户投诉次数
+            extendInfoMap.Add("user_complaint_times", "");
+            // 是否有待回复的用户留言
+            extendInfoMap.Add("incoming_user_response", "0");
             return extendInfoMap;
         }
 

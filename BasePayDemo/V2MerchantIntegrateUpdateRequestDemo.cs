@@ -113,8 +113,8 @@ namespace BasePayDemo
             // obj.Add("pay_scene", "test");
             // 手续费（%）
             // obj.Add("fee_rate", "test");
-            // 商户经营类目
-            // obj.Add("mcc", "");
+            // ~~商户经营类目~~
+            // obj.Add("~~mcc~~", "");
             // 子渠道号
             // obj.Add("pay_channel_id", "");
             // 费率规则id

@@ -80,6 +80,8 @@ namespace BasePayDemo
             // extendInfoMap.Add("combinedpay_data", getCombinedpayData());
             // 分账对象
             // extendInfoMap.Add("acct_split_bunch", getAcctSplitBunchRucan());
+            // 是否延迟交易
+            // extendInfoMap.Add("delay_acct_flag", "");
             return extendInfoMap;
         }
 

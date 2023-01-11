@@ -28,14 +28,6 @@ namespace BasePaySdk.Request
          */
         private string ruleOrigin;
         /**
-         * 分账是否支持撤销交易
-         */
-        private string repealFlag;
-        /**
-         * 分账是否支持退货交易
-         */
-        private string refundFlag;
-        /**
          * 分账开关
          */
         private string divFlag;
@@ -55,13 +47,11 @@ namespace BasePaySdk.Request
         public V2MerchantSplitConfigRequest() {
         }
 
-        public V2MerchantSplitConfigRequest(string reqSeqId, string reqDate, string huifuId, string ruleOrigin, string repealFlag, string refundFlag, string divFlag, string applyRatio, string startType) {
+        public V2MerchantSplitConfigRequest(string reqSeqId, string reqDate, string huifuId, string ruleOrigin, string divFlag, string applyRatio, string startType) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.huifuId = huifuId;
             this.ruleOrigin = ruleOrigin;
-            this.repealFlag = repealFlag;
-            this.refundFlag = refundFlag;
             this.divFlag = divFlag;
             this.applyRatio = applyRatio;
             this.startType = startType;
@@ -97,22 +87,6 @@ namespace BasePaySdk.Request
 
         public void setRuleOrigin(string ruleOrigin) {
             this.ruleOrigin = ruleOrigin;
-        }
-
-        public string getRepealFlag() {
-            return repealFlag;
-        }
-
-        public void setRepealFlag(string repealFlag) {
-            this.repealFlag = repealFlag;
-        }
-
-        public string getRefundFlag() {
-            return refundFlag;
-        }
-
-        public void setRefundFlag(string refundFlag) {
-            this.refundFlag = refundFlag;
         }
 
         public string getDivFlag() {
