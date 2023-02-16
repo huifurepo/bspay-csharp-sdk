@@ -71,13 +71,6 @@ namespace BasePayDemo
             return extendInfoMap;
         }
 
-        private static string getAcctSplitBunch() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 分账明细
-            obj.Add("acct_infos", getAcctInfos());
-
-            return JsonConvert.SerializeObject(obj);
-        }
         private static object getAcctInfos() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 被分账方ID
@@ -90,6 +83,13 @@ namespace BasePayDemo
             JArray objList = new JArray();
             objList.Add(JToken.FromObject(obj));
             return objList;
+        }
+        private static string getAcctSplitBunch() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 分账明细
+            obj.Add("acct_infos", getAcctInfos());
+
+            return JsonConvert.SerializeObject(obj);
         }
     }
 }

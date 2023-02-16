@@ -9,6 +9,14 @@ namespace BasePaySdk.Request
     public class FunctionCodeEnum
     {
         /**
+         * 一键绑卡
+         */
+        public const string V2_QUICKBUCKLE_ONEKEY_CARDBIND = "v2.quickbuckle.onekey.cardbind";
+        /**
+         * DM取现额度查询
+         */
+        public const string V2_TRADE_SETTLEMENT_ENCHASHMENT_DMAMT_QUERY = "v2.trade.settlement.enchashment.dmamt.query";
+        /**
          * 子账户开通配置
          */
         public const string V2_MERCHANT_SETTLE_CONFIG = "v2.merchant.settle.config";
@@ -65,7 +73,7 @@ namespace BasePaySdk.Request
          */
         public const string V2_MERCHANT_COMPLAINT_LIST_INFO_QUERY = "v2.merchant.complaint.list.info.query";
         /**
-         * 图片下载
+         * 投诉图片下载
          */
         public const string V2_MERCHANT_COMPLAINT_DOWNLOAD_PICTURE = "v2.merchant.complaint.download.picture";
         /**

@@ -85,6 +85,50 @@ namespace BasePayDemo
             return extendInfoMap;
         }
 
+        private static object getAcctInfos() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 支付金额
+            // obj.Add("div_amt", "");
+            // 被分账方ID
+            // obj.Add("huifu_id", "");
+            // 账户号
+            // obj.Add("acct_id", "");
+
+            JArray objList = new JArray();
+            objList.Add(JToken.FromObject(obj));
+            return objList;
+        }
+        private static string getAcctSplitBunchRucan() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 分账信息列表
+            obj.Add("acct_infos", getAcctInfos());
+
+            return JsonConvert.SerializeObject(obj);
+        }
+        private static string getExtendPayData() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 商品简称
+            obj.Add("goods_short_name", "一般商品");
+            // 网关支付受理渠道
+            obj.Add("gw_chnnl_tp", "01");
+            // 业务种类
+            obj.Add("biz_tp", "123456");
+
+            return JsonConvert.SerializeObject(obj);
+        }
+        private static string getRiskCheckData() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // ip地址
+            obj.Add("ip_addr", "111");
+            // 基站地址
+            // obj.Add("base_atation", "");
+            // 纬度
+            // obj.Add("latitude", "");
+            // 经度
+            // obj.Add("longitude", "");
+
+            return JsonConvert.SerializeObject(obj);
+        }
         private static string getTerminalDeviceData() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 交易设备ip
@@ -103,50 +147,6 @@ namespace BasePayDemo
             // obj.Add("device_mac", "");
             // 交易设备wifimac
             // obj.Add("device_wifi_mac", "");
-
-            return JsonConvert.SerializeObject(obj);
-        }
-        private static string getRiskCheckData() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // ip地址
-            obj.Add("ip_addr", "111");
-            // 基站地址
-            // obj.Add("base_atation", "");
-            // 纬度
-            // obj.Add("latitude", "");
-            // 经度
-            // obj.Add("longitude", "");
-
-            return JsonConvert.SerializeObject(obj);
-        }
-        private static object getAcctInfos() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 支付金额
-            // obj.Add("div_amt", "");
-            // 被分账方ID
-            // obj.Add("huifu_id", "");
-            // 账户号
-            // obj.Add("acct_id", "");
-
-            JArray objList = new JArray();
-            objList.Add(JToken.FromObject(obj));
-            return objList;
-        }
-        private static string getExtendPayData() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 商品简称
-            obj.Add("goods_short_name", "一般商品");
-            // 网关支付受理渠道
-            obj.Add("gw_chnnl_tp", "01");
-            // 业务种类
-            obj.Add("biz_tp", "123456");
-
-            return JsonConvert.SerializeObject(obj);
-        }
-        private static string getAcctSplitBunchRucan() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 分账信息列表
-            obj.Add("acct_infos", getAcctInfos());
 
             return JsonConvert.SerializeObject(obj);
         }

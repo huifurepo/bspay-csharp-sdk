@@ -107,6 +107,240 @@ namespace BasePayDemo
             return extendInfoMap;
         }
 
+        private static string getLegalInfo() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 法人姓名
+            // obj.Add("legal_name", "test");
+            // 法人证件类型
+            // obj.Add("legal_cert_type", "test");
+            // 法人证件号码
+            // obj.Add("legal_cert_no", "test");
+            // 法人证件有效期类型
+            // obj.Add("legal_cert_validity_type", "test");
+            // 法人证件有效期开始日期
+            // obj.Add("legal_cert_begin_date", "test");
+            // 法人证件有效期截止日期
+            // obj.Add("legal_cert_end_date", "");
+
+            return JsonConvert.SerializeObject(obj);
+        }
+        private static string getContactInfo() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 联系人姓名
+            // obj.Add("contact_name", "test");
+            // 联系人手机号
+            // obj.Add("contact_mobile_no", "test");
+            // 联系人电子邮箱
+            // obj.Add("contact_email", "test");
+            // 联系人身份证号
+            // obj.Add("contact_cert_no", "");
+
+            return JsonConvert.SerializeObject(obj);
+        }
+        private static string getSignUserInfo() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 签约人类型
+            // obj.Add("type", "test");
+            // 姓名
+            // obj.Add("sign_name", "");
+            // 手机号
+            // obj.Add("sign_mobile_no", "");
+            // 身份证
+            // obj.Add("sign_cert_no", "");
+
+            return JsonConvert.SerializeObject(obj);
+        }
+        private static string getBasicInfo() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 经营简称
+            obj.Add("short_name", "张三");
+            // 小票名称
+            obj.Add("receipt_name", "");
+            // 商户英文名称
+            obj.Add("mer_en_name", "");
+            // 所属行业
+            obj.Add("mcc", "");
+            // 营业执照类型
+            obj.Add("license_type", "");
+            // 营业执照有效期开始日期
+            obj.Add("license_begin_date", "");
+            // 营业执照有效期截止日期
+            obj.Add("license_end_date", "");
+            // 营业执照有效期类型
+            obj.Add("license_validity_type", "");
+            // 注册详细地址
+            obj.Add("reg_detail", "");
+            // 注册省
+            obj.Add("reg_prov_id", "");
+            // 注册市
+            obj.Add("reg_area_id", "");
+            // 注册区
+            obj.Add("reg_district_id", "");
+            // 经营详细地址
+            obj.Add("detail_addr", "");
+            // 经营省
+            obj.Add("prov_id", "");
+            // 经营市
+            obj.Add("area_id", "");
+            // 经营区
+            obj.Add("district_id", "");
+            // 客服电话
+            obj.Add("service_phone", "");
+            // 商户主页URL
+            obj.Add("mer_url", "");
+            // 商户ICP备案编号
+            obj.Add("mer_icp", "");
+            // 开户许可证核准号
+            obj.Add("open_licence_no", "");
+            // 法人信息
+            // obj.Add("legal_info", getLegalInfo());
+            // 联系人信息
+            // obj.Add("contact_info", getContactInfo());
+            // 签约人
+            // obj.Add("sign_user_info", getSignUserInfo());
+
+            return JsonConvert.SerializeObject(obj);
+        }
+        private static string getCardInfo() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 结算类型
+            // obj.Add("card_type", "test");
+            // 银行所在省
+            // obj.Add("prov_id", "test");
+            // 银行所在市
+            // obj.Add("area_id", "test");
+            // 结算账户名
+            // obj.Add("card_name", "test");
+            // 结算账号
+            // obj.Add("card_no", "test");
+            // 银行编码
+            // obj.Add("bank_code", "");
+            // 联行号
+            // obj.Add("branch_code", "");
+            // 支行名称
+            // obj.Add("branch_name", "");
+            // 持卡人证件有效期类型
+            // obj.Add("cert_validity_type", "");
+            // 持卡人证件有效期（起始）
+            // obj.Add("cert_begin_date", "");
+            // 持卡人证件有效期（截止）
+            // obj.Add("cert_end_date", "");
+            // 持卡人证件号码
+            // obj.Add("cert_no", "");
+            // 持卡人证件类型
+            // obj.Add("cert_type", "");
+            // 银行卡绑定手机号
+            // obj.Add("mp", "");
+
+            return JsonConvert.SerializeObject(obj);
+        }
+        private static string getAgreementInfo() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 协议类型
+            // obj.Add("agreement_type", "test");
+            // 协议号
+            // obj.Add("agreement_no", "");
+            // 协议模板号
+            // obj.Add("agreement_model", "");
+            // 协议模板名称
+            // obj.Add("agreement_name", "");
+            // 签约日期
+            // obj.Add("sign_date", "");
+            // 协议开始日期
+            // obj.Add("agree_begin_date", "");
+            // 协议结束日期
+            // obj.Add("agree_end_date", "");
+
+            return JsonConvert.SerializeObject(obj);
+        }
+        private static string getCombinePayConfig() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 支付手续费(%)
+            // obj.Add("fee_rate", "");
+            // 支付固定手续费(元)
+            // obj.Add("fee_fix_amt", "");
+            // 交易手续费外扣时的账户类型
+            // obj.Add("out_fee_acct_type", "");
+            // 交易手续费外扣汇付ID
+            // obj.Add("out_fee_huifuid", "");
+            // 是否交易手续费外扣
+            // obj.Add("out_fee_flag", "");
+
+            return JsonConvert.SerializeObject(obj);
+        }
+        private static string getCashConfig() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 是否开通取现
+            // obj.Add("switch_state", "test");
+            // 业务类型
+            // obj.Add("cash_type", "test");
+            // 取现手续费率（%）fix_amt与fee_rate至少填写一项，单位%，需保留小数点后两位，取值范围[0.00,100.00]，不收费请填写0.00；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：0.05&lt;/font&gt;&lt;br/&gt;注：如果fix_amt与fee_rate都填写了则手续费&#x3D;fix_amt+支付金额*fee_rate
+            // obj.Add("fee_rate", "test");
+            // 提现手续费（固定/元）
+            // obj.Add("fix_amt", "");
+            // 是否交易手续费外扣
+            // obj.Add("out_fee_flag", "");
+            // 手续费承担方
+            // obj.Add("out_fee_huifu_id", "");
+
+            JArray objList = new JArray();
+            objList.Add(JToken.FromObject(obj));
+            return JsonConvert.SerializeObject(objList);
+        }
+        private static string getSettleConfig() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 结算周期
+            // obj.Add("settle_cycle", "test");
+            // 节假日结算手续费率
+            // obj.Add("fixed_ratio", "");
+            // 起结金额
+            // obj.Add("min_amt", "");
+            // 结算手续费外扣时的账户类型
+            // obj.Add("out_settle_acct_type", "");
+            // 结算手续费外扣时的汇付ID
+            // obj.Add("out_settle_huifuid", "");
+            // 手续费外扣标记
+            // obj.Add("out_settle_flag", "");
+            // 留存金额
+            // obj.Add("remained_amt", "");
+            // 结算摘要
+            // obj.Add("settle_abstract", "");
+            // 结算批次号
+            // obj.Add("settle_batch_no", "");
+            // 结算方式
+            // obj.Add("settle_pattern", "");
+            // 是否优先到账
+            // obj.Add("is_priority_receipt", "");
+            // 自定义结算处理时间
+            // obj.Add("settle_time", "");
+
+            return JsonConvert.SerializeObject(obj);
+        }
+        private static string getBizConf() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 延迟入账开关
+            // obj.Add("delay_flag", "");
+            // 商户开通强制延迟标记
+            // obj.Add("forced_delay_flag", "");
+            // 是否开通网银
+            // obj.Add("online_flag", "");
+            // 是否开通快捷
+            // obj.Add("quick_flag", "");
+            // 是否开通代扣
+            // obj.Add("withhold_flag", "");
+            // 是否开通微信预授权
+            // obj.Add("wechatpay_pre_auth_flag", "");
+            // 是否开通支付宝预授权
+            // obj.Add("alipay_pre_auth_flag", "");
+            // 是否开通营销补贴
+            // obj.Add("combine_pay_flag", "");
+            // 是否开通余额支付
+            // obj.Add("balance_pay_flag", "");
+            // 是否开通结算
+            // obj.Add("settle_flag", "");
+
+            return JsonConvert.SerializeObject(obj);
+        }
         private static string getWxConfList() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 支付场景
@@ -131,6 +365,145 @@ namespace BasePayDemo
             // obj.Add("wx_applet_secret", "");
             // 申请服务 
             // obj.Add("service_codes", "");
+            // 交易手续费外扣时的账户类型
+            // obj.Add("out_fee_acct_type", "");
+            // 交易手续费外扣汇付ID
+            // obj.Add("out_fee_huifuid", "");
+            // 是否交易手续费外扣
+            // obj.Add("out_fee_flag", "");
+
+            JArray objList = new JArray();
+            objList.Add(JToken.FromObject(obj));
+            return JsonConvert.SerializeObject(objList);
+        }
+        private static string getUboInfo() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 证件类型
+            // obj.Add("ubo_id_doc_type", "test");
+            // 证件正面照片
+            // obj.Add("ubo_id_doc_copy", "test");
+            // 证件姓名
+            // obj.Add("ubo_id_doc_name", "test");
+            // 证件号码
+            // obj.Add("ubo_id_doc_number", "test");
+            // 证件居住地址
+            // obj.Add("ubo_id_doc_address", "test");
+            // 证件有效期开始时间
+            // obj.Add("ubo_period_begin", "test");
+            // 证件有效期结束时间
+            // obj.Add("ubo_period_end", "test");
+            // 证件反面照片
+            // obj.Add("ubo_id_doc_copy_back", "");
+
+            JArray objList = new JArray();
+            objList.Add(JToken.FromObject(obj));
+            return JsonConvert.SerializeObject(objList);
+        }
+        private static string getWxRealnameInfo() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 支付场景
+            // obj.Add("pay_scene", "test");
+            // 联系人姓名
+            // obj.Add("name", "test");
+            // 联系人手机号
+            // obj.Add("mobile", "test");
+            // 联系人证件号码
+            // obj.Add("contact_id_card_number", "test");
+            // 实名认证类型
+            // obj.Add("realname_info_type", "");
+            // 子渠道号
+            // obj.Add("pay_channel_id", "");
+            // 联系人类型
+            // obj.Add("contact_type", "");
+            // 联系人证件类型
+            // obj.Add("contact_id_doc_type", "");
+            // 联系人证件有效期开始时间
+            // obj.Add("contact_period_begin_date", "");
+            // 联系人证件有效期结束时间
+            // obj.Add("contact_period_end_date", "");
+            // 证书类型
+            // obj.Add("cert_type", "");
+            // 证书编号
+            // obj.Add("cert_number", "");
+            // 经营者/法人是否为受益人
+            // obj.Add("owner", "");
+            // 法人证件居住地址
+            // obj.Add("legal_identification_address", "");
+            // 小微经营类型
+            // obj.Add("micro_biz_type", "");
+            // 门店名称
+            // obj.Add("store_name", "");
+            // 门店省市编码
+            // obj.Add("store_address_code", "");
+            // 门店地址
+            // obj.Add("store_address", "");
+            // 特殊行业Id
+            // obj.Add("category_id", "");
+            // 是否金融机构
+            // obj.Add("finance_institution_flag", "");
+            // 金融机构类型
+            // obj.Add("finance_type", "");
+            // 受益人信息
+            // obj.Add("ubo_info_list", getUboInfo());
+
+            return JsonConvert.SerializeObject(obj);
+        }
+        private static string getAliConfList() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 支付场景
+            // obj.Add("pay_scene", "test");
+            // 手续费（%）
+            // obj.Add("fee_rate", "test");
+            // 商户经营类目
+            // obj.Add("mcc", "");
+            // 子渠道号
+            // obj.Add("pay_channel_id", "");
+            // 拟申请的间联商户等级
+            // obj.Add("indirect_level", "");
+            // 交易手续费外扣时的账户类型
+            // obj.Add("out_fee_acct_type", "");
+            // 交易手续费外扣汇付ID
+            // obj.Add("out_fee_huifuid", "");
+            // 是否交易手续费外扣
+            // obj.Add("out_fee_flag", "");
+
+            JArray objList = new JArray();
+            objList.Add(JToken.FromObject(obj));
+            return JsonConvert.SerializeObject(objList);
+        }
+        private static string getUnionMicroInfo() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 银联商户类别
+            // obj.Add("mchnt_type", "test");
+            // 商户经度
+            // obj.Add("mer_lng", "test");
+            // 商户纬度
+            // obj.Add("mer_lat", "test");
+            // 店铺名称
+            // obj.Add("shop_name", "test");
+            // 商户经营类目
+            // obj.Add("mcc", "test");
+
+            return JsonConvert.SerializeObject(obj);
+        }
+        private static string getUnionConfList() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 借记卡手续费1000以上（%）
+            // obj.Add("debit_fee_rate_up", "test");
+            // 银联二维码业务贷记卡手续费1000以上（%）
+            // obj.Add("credit_fee_rate_up", "test");
+            // 借记卡手续费1000以下（%）
+            // obj.Add("debit_fee_rate_down", "test");
+            // 银联二维码业务贷记卡手续费1000以下（%）
+            // obj.Add("credit_fee_rate_down", "test");
+            // 银联业务手续费类型
+            // obj.Add("charge_cate_code", "");
+            // 借记卡封顶1000以上（元）
+            // obj.Add("debit_fee_limit_up", "");
+            // 借记卡封顶1000以下（元）
+            // obj.Add("debit_fee_limit_down", "");
+            // 商户经营类目
+            // obj.Add("mcc", "");
             // 交易手续费外扣时的账户类型
             // obj.Add("out_fee_acct_type", "");
             // 交易手续费外扣汇付ID
@@ -181,39 +554,7 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string getLegalInfo() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 法人姓名
-            // obj.Add("legal_name", "test");
-            // 法人证件类型
-            // obj.Add("legal_cert_type", "test");
-            // 法人证件号码
-            // obj.Add("legal_cert_no", "test");
-            // 法人证件有效期类型
-            // obj.Add("legal_cert_validity_type", "test");
-            // 法人证件有效期开始日期
-            // obj.Add("legal_cert_begin_date", "test");
-            // 法人证件有效期截止日期
-            // obj.Add("legal_cert_end_date", "");
-
-            return JsonConvert.SerializeObject(obj);
-        }
-        private static string getUnionMicroInfo() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 银联商户类别
-            // obj.Add("mchnt_type", "test");
-            // 商户经度
-            // obj.Add("mer_lng", "test");
-            // 商户纬度
-            // obj.Add("mer_lat", "test");
-            // 店铺名称
-            // obj.Add("shop_name", "test");
-            // 商户经营类目
-            // obj.Add("mcc", "test");
-
-            return JsonConvert.SerializeObject(obj);
-        }
-        private static string getCombinePayConfig() {
+        private static string getBalancePayConfig() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 支付手续费(%)
             // obj.Add("fee_rate", "");
@@ -228,80 +569,30 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string getAgreementInfo() {
+        private static string getHbFqFeeConfig() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 协议类型
-            // obj.Add("agreement_type", "test");
-            // 协议号
-            // obj.Add("agreement_no", "");
-            // 协议模板号
-            // obj.Add("agreement_model", "");
-            // 协议模板名称
-            // obj.Add("agreement_name", "");
-            // 签约日期
-            // obj.Add("sign_date", "");
-            // 协议开始日期
-            // obj.Add("agree_begin_date", "");
-            // 协议结束日期
-            // obj.Add("agree_end_date", "");
-
-            return JsonConvert.SerializeObject(obj);
-        }
-        private static string getBizConf() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 延迟入账开关
-            // obj.Add("delay_flag", "");
-            // 商户开通强制延迟标记
-            // obj.Add("forced_delay_flag", "");
-            // 是否开通网银
-            // obj.Add("online_flag", "");
-            // 是否开通快捷
-            // obj.Add("quick_flag", "");
-            // 是否开通代扣
-            // obj.Add("withhold_flag", "");
-            // 是否开通微信预授权
-            // obj.Add("wechatpay_pre_auth_flag", "");
-            // 是否开通支付宝预授权
-            // obj.Add("alipay_pre_auth_flag", "");
-            // 是否开通营销补贴
-            // obj.Add("combine_pay_flag", "");
-            // 是否开通余额支付
-            // obj.Add("balance_pay_flag", "");
-            // 是否开通结算
-            // obj.Add("settle_flag", "");
-
-            return JsonConvert.SerializeObject(obj);
-        }
-        private static string getCardInfo() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 结算类型
-            // obj.Add("card_type", "test");
-            // 银行所在省
-            // obj.Add("prov_id", "test");
-            // 银行所在市
-            // obj.Add("area_id", "test");
-            // 结算账户名
-            // obj.Add("card_name", "test");
-            // 结算账号
-            // obj.Add("card_no", "test");
-            // 银行编码
-            // obj.Add("bank_code", "");
-            // 联行号
-            // obj.Add("branch_code", "");
-            // 支行名称
-            // obj.Add("branch_name", "");
-            // 持卡人证件有效期类型
-            // obj.Add("cert_validity_type", "");
-            // 持卡人证件有效期（起始）
-            // obj.Add("cert_begin_date", "");
-            // 持卡人证件有效期（截止）
-            // obj.Add("cert_end_date", "");
-            // 持卡人证件号码
-            // obj.Add("cert_no", "");
-            // 持卡人证件类型
-            // obj.Add("cert_type", "");
-            // 银行卡绑定手机号
-            // obj.Add("mp", "");
+            // 花呗收单分期3期（%）分期费率不为空时，收单费率必填，大于0，保留2位小数，不小于渠道商成本；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：1.0&lt;/font&gt;代表费率为1.00%
+            // obj.Add("acq_three_period", "test");
+            // 花呗收单分期6期（%）分期费率不为空时，收单费率必填，大于0，保留2位小数，不小于渠道商成本；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：1.0&lt;/font&gt;代表费率为1.00%
+            // obj.Add("acq_six_period", "test");
+            // 花呗收单分期12期（%）分期费率不为空时，收单费率必填，大于0，保留2位小数，不小于渠道商成本；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：1.0&lt;/font&gt;代表费率为1.00%
+            // obj.Add("acq_twelve_period", "test");
+            // 花呗分期3期（%）
+            // obj.Add("three_period", "");
+            // 花呗分期6期（%）
+            // obj.Add("six_period", "");
+            // 花呗分期12期（%）
+            // obj.Add("twelve_period", "");
+            // 商户经营类目
+            // obj.Add("ali_mcc", "");
+            // 支付场景
+            // obj.Add("pay_scene", "");
+            // 交易手续费外扣时的账户类型
+            // obj.Add("out_fee_acct_type", "");
+            // 交易手续费外扣汇付ID
+            // obj.Add("out_fee_huifuid", "");
+            // 是否交易手续费外扣
+            // obj.Add("out_fee_flag", "");
 
             return JsonConvert.SerializeObject(obj);
         }
@@ -328,54 +619,6 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return JsonConvert.SerializeObject(objList);
         }
-        private static string getUnionConfList() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 借记卡手续费1000以上（%）
-            // obj.Add("debit_fee_rate_up", "test");
-            // 银联二维码业务贷记卡手续费1000以上（%）
-            // obj.Add("credit_fee_rate_up", "test");
-            // 借记卡手续费1000以下（%）
-            // obj.Add("debit_fee_rate_down", "test");
-            // 银联二维码业务贷记卡手续费1000以下（%）
-            // obj.Add("credit_fee_rate_down", "test");
-            // 银联业务手续费类型
-            // obj.Add("charge_cate_code", "");
-            // 借记卡封顶1000以上（元）
-            // obj.Add("debit_fee_limit_up", "");
-            // 借记卡封顶1000以下（元）
-            // obj.Add("debit_fee_limit_down", "");
-            // 商户经营类目
-            // obj.Add("mcc", "");
-            // 交易手续费外扣时的账户类型
-            // obj.Add("out_fee_acct_type", "");
-            // 交易手续费外扣汇付ID
-            // obj.Add("out_fee_huifuid", "");
-            // 是否交易手续费外扣
-            // obj.Add("out_fee_flag", "");
-
-            JArray objList = new JArray();
-            objList.Add(JToken.FromObject(obj));
-            return JsonConvert.SerializeObject(objList);
-        }
-        private static string getCashConfig() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 是否开通取现
-            // obj.Add("switch_state", "test");
-            // 业务类型
-            // obj.Add("cash_type", "test");
-            // 取现手续费率（%）fix_amt与fee_rate至少填写一项，单位%，需保留小数点后两位，取值范围[0.00,100.00]，不收费请填写0.00；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：0.05&lt;/font&gt;&lt;br/&gt;注：如果fix_amt与fee_rate都填写了则手续费&#x3D;fix_amt+支付金额*fee_rate
-            // obj.Add("fee_rate", "test");
-            // 提现手续费（固定/元）
-            // obj.Add("fix_amt", "");
-            // 是否交易手续费外扣
-            // obj.Add("out_fee_flag", "");
-            // 手续费承担方
-            // obj.Add("out_fee_huifu_id", "");
-
-            JArray objList = new JArray();
-            objList.Add(JToken.FromObject(obj));
-            return JsonConvert.SerializeObject(objList);
-        }
         private static string getOnlinePayFeeConfList() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 业务类型
@@ -390,21 +633,6 @@ namespace BasePayDemo
             JArray objList = new JArray();
             objList.Add(JToken.FromObject(obj));
             return JsonConvert.SerializeObject(objList);
-        }
-        private static string getBalancePayConfig() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 支付手续费(%)
-            // obj.Add("fee_rate", "");
-            // 支付固定手续费(元)
-            // obj.Add("fee_fix_amt", "");
-            // 交易手续费外扣时的账户类型
-            // obj.Add("out_fee_acct_type", "");
-            // 交易手续费外扣汇付ID
-            // obj.Add("out_fee_huifuid", "");
-            // 是否交易手续费外扣
-            // obj.Add("out_fee_flag", "");
-
-            return JsonConvert.SerializeObject(obj);
         }
         private static string getFileInfo() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
@@ -516,234 +744,6 @@ namespace BasePayDemo
             // obj.Add("contact_ali_busi_auth_pic", "");
 
             return JsonConvert.SerializeObject(obj);
-        }
-        private static string getWxRealnameInfo() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 支付场景
-            // obj.Add("pay_scene", "test");
-            // 联系人姓名
-            // obj.Add("name", "test");
-            // 联系人手机号
-            // obj.Add("mobile", "test");
-            // 联系人证件号码
-            // obj.Add("contact_id_card_number", "test");
-            // 实名认证类型
-            // obj.Add("realname_info_type", "");
-            // 子渠道号
-            // obj.Add("pay_channel_id", "");
-            // 联系人类型
-            // obj.Add("contact_type", "");
-            // 联系人证件类型
-            // obj.Add("contact_id_doc_type", "");
-            // 联系人证件有效期开始时间
-            // obj.Add("contact_period_begin_date", "");
-            // 联系人证件有效期结束时间
-            // obj.Add("contact_period_end_date", "");
-            // 证书类型
-            // obj.Add("cert_type", "");
-            // 证书编号
-            // obj.Add("cert_number", "");
-            // 经营者/法人是否为受益人
-            // obj.Add("owner", "");
-            // 法人证件居住地址
-            // obj.Add("legal_identification_address", "");
-            // 小微经营类型
-            // obj.Add("micro_biz_type", "");
-            // 门店名称
-            // obj.Add("store_name", "");
-            // 门店省市编码
-            // obj.Add("store_address_code", "");
-            // 门店地址
-            // obj.Add("store_address", "");
-            // 特殊行业Id
-            // obj.Add("category_id", "");
-            // 是否金融机构
-            // obj.Add("finance_institution_flag", "");
-            // 金融机构类型
-            // obj.Add("finance_type", "");
-            // 受益人信息
-            // obj.Add("ubo_info_list", getUboInfo());
-
-            return JsonConvert.SerializeObject(obj);
-        }
-        private static string getHbFqFeeConfig() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 花呗收单分期3期（%）分期费率不为空时，收单费率必填，大于0，保留2位小数，不小于渠道商成本；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：1.0&lt;/font&gt;代表费率为1.00%
-            // obj.Add("acq_three_period", "test");
-            // 花呗收单分期6期（%）分期费率不为空时，收单费率必填，大于0，保留2位小数，不小于渠道商成本；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：1.0&lt;/font&gt;代表费率为1.00%
-            // obj.Add("acq_six_period", "test");
-            // 花呗收单分期12期（%）分期费率不为空时，收单费率必填，大于0，保留2位小数，不小于渠道商成本；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：1.0&lt;/font&gt;代表费率为1.00%
-            // obj.Add("acq_twelve_period", "test");
-            // 花呗分期3期（%）
-            // obj.Add("three_period", "");
-            // 花呗分期6期（%）
-            // obj.Add("six_period", "");
-            // 花呗分期12期（%）
-            // obj.Add("twelve_period", "");
-            // 商户经营类目
-            // obj.Add("ali_mcc", "");
-            // 支付场景
-            // obj.Add("pay_scene", "");
-            // 交易手续费外扣时的账户类型
-            // obj.Add("out_fee_acct_type", "");
-            // 交易手续费外扣汇付ID
-            // obj.Add("out_fee_huifuid", "");
-            // 是否交易手续费外扣
-            // obj.Add("out_fee_flag", "");
-
-            return JsonConvert.SerializeObject(obj);
-        }
-        private static string getAliConfList() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 支付场景
-            // obj.Add("pay_scene", "test");
-            // 手续费（%）
-            // obj.Add("fee_rate", "test");
-            // 商户经营类目
-            // obj.Add("mcc", "");
-            // 子渠道号
-            // obj.Add("pay_channel_id", "");
-            // 拟申请的间联商户等级
-            // obj.Add("indirect_level", "");
-            // 交易手续费外扣时的账户类型
-            // obj.Add("out_fee_acct_type", "");
-            // 交易手续费外扣汇付ID
-            // obj.Add("out_fee_huifuid", "");
-            // 是否交易手续费外扣
-            // obj.Add("out_fee_flag", "");
-
-            JArray objList = new JArray();
-            objList.Add(JToken.FromObject(obj));
-            return JsonConvert.SerializeObject(objList);
-        }
-        private static string getSettleConfig() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 结算周期
-            // obj.Add("settle_cycle", "test");
-            // 节假日结算手续费率
-            // obj.Add("fixed_ratio", "");
-            // 起结金额
-            // obj.Add("min_amt", "");
-            // 结算手续费外扣时的账户类型
-            // obj.Add("out_settle_acct_type", "");
-            // 结算手续费外扣时的汇付ID
-            // obj.Add("out_settle_huifuid", "");
-            // 手续费外扣标记
-            // obj.Add("out_settle_flag", "");
-            // 留存金额
-            // obj.Add("remained_amt", "");
-            // 结算摘要
-            // obj.Add("settle_abstract", "");
-            // 结算批次号
-            // obj.Add("settle_batch_no", "");
-            // 结算方式
-            // obj.Add("settle_pattern", "");
-            // 是否优先到账
-            // obj.Add("is_priority_receipt", "");
-            // 自定义结算处理时间
-            // obj.Add("settle_time", "");
-
-            return JsonConvert.SerializeObject(obj);
-        }
-        private static string getContactInfo() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 联系人姓名
-            // obj.Add("contact_name", "test");
-            // 联系人手机号
-            // obj.Add("contact_mobile_no", "test");
-            // 联系人电子邮箱
-            // obj.Add("contact_email", "test");
-            // 联系人身份证号
-            // obj.Add("contact_cert_no", "");
-
-            return JsonConvert.SerializeObject(obj);
-        }
-        private static string getBasicInfo() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 经营简称
-            obj.Add("short_name", "张三");
-            // 小票名称
-            obj.Add("receipt_name", "");
-            // 商户英文名称
-            obj.Add("mer_en_name", "");
-            // 所属行业
-            obj.Add("mcc", "");
-            // 营业执照类型
-            obj.Add("license_type", "");
-            // 营业执照有效期开始日期
-            obj.Add("license_begin_date", "");
-            // 营业执照有效期截止日期
-            obj.Add("license_end_date", "");
-            // 营业执照有效期类型
-            obj.Add("license_validity_type", "");
-            // 注册详细地址
-            obj.Add("reg_detail", "");
-            // 注册省
-            obj.Add("reg_prov_id", "");
-            // 注册市
-            obj.Add("reg_area_id", "");
-            // 注册区
-            obj.Add("reg_district_id", "");
-            // 经营详细地址
-            obj.Add("detail_addr", "");
-            // 经营省
-            obj.Add("prov_id", "");
-            // 经营市
-            obj.Add("area_id", "");
-            // 经营区
-            obj.Add("district_id", "");
-            // 客服电话
-            obj.Add("service_phone", "");
-            // 商户主页URL
-            obj.Add("mer_url", "");
-            // 商户ICP备案编号
-            obj.Add("mer_icp", "");
-            // 开户许可证核准号
-            obj.Add("open_licence_no", "");
-            // 法人信息
-            // obj.Add("legal_info", getLegalInfo());
-            // 联系人信息
-            // obj.Add("contact_info", getContactInfo());
-            // 签约人
-            // obj.Add("sign_user_info", getSignUserInfo());
-
-            return JsonConvert.SerializeObject(obj);
-        }
-        private static string getSignUserInfo() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 签约人类型
-            // obj.Add("type", "test");
-            // 姓名
-            // obj.Add("sign_name", "");
-            // 手机号
-            // obj.Add("sign_mobile_no", "");
-            // 身份证
-            // obj.Add("sign_cert_no", "");
-
-            return JsonConvert.SerializeObject(obj);
-        }
-        private static string getUboInfo() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 证件类型
-            // obj.Add("ubo_id_doc_type", "test");
-            // 证件正面照片
-            // obj.Add("ubo_id_doc_copy", "test");
-            // 证件姓名
-            // obj.Add("ubo_id_doc_name", "test");
-            // 证件号码
-            // obj.Add("ubo_id_doc_number", "test");
-            // 证件居住地址
-            // obj.Add("ubo_id_doc_address", "test");
-            // 证件有效期开始时间
-            // obj.Add("ubo_period_begin", "test");
-            // 证件有效期结束时间
-            // obj.Add("ubo_period_end", "test");
-            // 证件反面照片
-            // obj.Add("ubo_id_doc_copy_back", "");
-
-            JArray objList = new JArray();
-            objList.Add(JToken.FromObject(obj));
-            return JsonConvert.SerializeObject(objList);
         }
     }
 }

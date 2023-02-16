@@ -93,6 +93,17 @@ namespace BasePayDemo
             return extendInfoMap;
         }
 
+        private static string getExtendPayData() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 商品简称
+            obj.Add("goods_short_name", "011111");
+            // 网关支付受理渠道
+            obj.Add("gw_chnnl_tp", "01");
+            // 业务种类
+            obj.Add("biz_tp", "123451");
+
+            return JsonConvert.SerializeObject(obj);
+        }
         private static string getTerminalDeviceData() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 交易设备类型
@@ -114,19 +125,6 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string getRiskCheckData() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // ip地址
-            obj.Add("ip_addr", "1");
-            // 基站地址
-            // obj.Add("base_atation", "");
-            // 纬度
-            obj.Add("latitude", "3");
-            // 经度
-            obj.Add("longitude", "4");
-
-            return JsonConvert.SerializeObject(obj);
-        }
         private static object getAcctInfos() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 分账金额
@@ -140,21 +138,23 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return objList;
         }
-        private static string getExtendPayData() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 商品简称
-            obj.Add("goods_short_name", "011111");
-            // 网关支付受理渠道
-            obj.Add("gw_chnnl_tp", "01");
-            // 业务种类
-            obj.Add("biz_tp", "123451");
-
-            return JsonConvert.SerializeObject(obj);
-        }
         private static string getAcctSplitBunchRucan() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 分账明细
             // obj.Add("acct_infos", getAcctInfos());
+
+            return JsonConvert.SerializeObject(obj);
+        }
+        private static string getRiskCheckData() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // ip地址
+            obj.Add("ip_addr", "1");
+            // 基站地址
+            // obj.Add("base_atation", "");
+            // 纬度
+            obj.Add("latitude", "3");
+            // 经度
+            obj.Add("longitude", "4");
 
             return JsonConvert.SerializeObject(obj);
         }

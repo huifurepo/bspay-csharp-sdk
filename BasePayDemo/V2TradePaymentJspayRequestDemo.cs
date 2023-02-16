@@ -103,57 +103,6 @@ namespace BasePayDemo
             return extendInfoMap;
         }
 
-        private static object getPayeeInfo() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 商户类别
-            // obj.Add("mer_cat_code", "");
-            // 二级商户代码
-            // obj.Add("sub_id", "");
-            // 二级商户名称
-            // obj.Add("sub_name", "");
-            // 终端号
-            // obj.Add("term_id", "");
-
-            return obj;
-        }
-        private static object getGoodsDetail() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 商品的编号
-            obj.Add("goods_id", "12312321");
-            // 商品名称(元)
-            obj.Add("goods_name", "阿里");
-            // 商品单价
-            obj.Add("price", "0.01");
-            // 商品数量
-            obj.Add("quantity", "20");
-            // 商品描述信息
-            obj.Add("body", "");
-            // 商品类目树
-            obj.Add("categories_tree", "string");
-            // 商品类目
-            obj.Add("goods_category", "");
-            // 商品的展示地址
-            obj.Add("show_url", "");
-
-            JArray objList = new JArray();
-            objList.Add(JToken.FromObject(obj));
-            return objList;
-        }
-        private static object getStoreInfo() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 门店id
-            // obj.Add("id", "");
-            // 门店名称
-            // obj.Add("name", "");
-            // 门店行政区划码
-            // obj.Add("area_code", "");
-            // 门店详细地址
-            // obj.Add("address", "");
-
-            JArray objList = new JArray();
-            objList.Add(JToken.FromObject(obj));
-            return objList;
-        }
         private static string getCombinedpayData() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 补贴方汇付编号
@@ -169,18 +118,18 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return JsonConvert.SerializeObject(objList);
         }
-        private static object getAcctInfosRucan() {
+        private static string getRiskCheckData() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 分账金额
-            // obj.Add("div_amt", "test");
-            // 被分账方ID
-            // obj.Add("huifu_id", "test");
-            // 账户号
-            // obj.Add("acct_id", "");
+            // ip地址
+            obj.Add("ip_addr", "180.167.105.130");
+            // 基站地址
+            obj.Add("base_station", "192.168.1.1");
+            // 纬度
+            obj.Add("latitude", "33.3");
+            // 经度
+            obj.Add("longitude", "33.3");
 
-            JArray objList = new JArray();
-            objList.Add(JToken.FromObject(obj));
-            return objList;
+            return JsonConvert.SerializeObject(obj);
         }
         private static string getTerminalDeviceData() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
@@ -223,6 +172,19 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
+        private static object getAcctInfosRucan() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 分账金额
+            // obj.Add("div_amt", "test");
+            // 被分账方ID
+            // obj.Add("huifu_id", "test");
+            // 账户号
+            // obj.Add("acct_id", "");
+
+            JArray objList = new JArray();
+            objList.Add(JToken.FromObject(obj));
+            return objList;
+        }
         private static string getAcctSplitBunch() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 分账明细
@@ -230,52 +192,48 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string getRiskCheckData() {
+        private static object getGoodsDetailWxRucan() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
-            // ip地址
-            obj.Add("ip_addr", "180.167.105.130");
-            // 基站地址
-            obj.Add("base_station", "192.168.1.1");
-            // 纬度
-            obj.Add("latitude", "33.3");
-            // 经度
-            obj.Add("longitude", "33.3");
+            // 商品编码
+            // obj.Add("goods_id", "");
+            // 商品名称
+            // obj.Add("goods_name", "");
+            // 商品单价(元)
+            // obj.Add("price", "");
+            // 商品数量
+            // obj.Add("quantity", "");
+            // 微信侧商品编码
+            // obj.Add("wxpay_goods_id", "");
 
-            return JsonConvert.SerializeObject(obj);
+            JArray objList = new JArray();
+            objList.Add(JToken.FromObject(obj));
+            return objList;
         }
-        private static string getUnionpayData() {
+        private static object getDetail() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 收款方附加数据
-            // obj.Add("acq_addn_data", "");
-            // 地区信息
-            // obj.Add("area_info", "");
-            // 持卡人ip
-            // obj.Add("customer_ip", "");
-            // 前台通知地址
-            // obj.Add("front_url", "");
-            // 订单描述
-            // obj.Add("order_desc", "");
-            // 收款方附言
-            // obj.Add("payee_comments", "");
-            // 收款方信息
-            // obj.Add("payee_info", getPayeeInfo());
-            // 银联分配的服务商机构标识码
-            // obj.Add("pnr_ins_id_cd", "");
-            // 请求方自定义域
-            // obj.Add("req_reserved", "");
-            // 终端信息
-            // obj.Add("term_info", "");
-            // 云闪付用户标识
-            // obj.Add("user_id", "");
+            // 单品列表
+            // obj.Add("goods_detail", getGoodsDetailWxRucan());
+            // 订单原价(元)
+            // obj.Add("cost_price", "");
+            // 商品小票ID
+            // obj.Add("receipt_id", "");
 
-            return JsonConvert.SerializeObject(obj);
+            return obj;
         }
-        private static string getDcData() {
+        private static object getStoreInfo() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 数字货币银行编号
-            // obj.Add("digital_bank_no", "");
+            // 门店id
+            // obj.Add("id", "");
+            // 门店名称
+            // obj.Add("name", "");
+            // 门店行政区划码
+            // obj.Add("area_code", "");
+            // 门店详细地址
+            // obj.Add("address", "");
 
-            return JsonConvert.SerializeObject(obj);
+            JArray objList = new JArray();
+            objList.Add(JToken.FromObject(obj));
+            return objList;
         }
         private static object getSceneInfo() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
@@ -334,6 +292,29 @@ namespace BasePayDemo
 
             return obj;
         }
+        private static object getGoodsDetail() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 商品的编号
+            obj.Add("goods_id", "12312321");
+            // 商品名称(元)
+            obj.Add("goods_name", "阿里");
+            // 商品单价
+            obj.Add("price", "0.01");
+            // 商品数量
+            obj.Add("quantity", "20");
+            // 商品描述信息
+            obj.Add("body", "");
+            // 商品类目树
+            obj.Add("categories_tree", "string");
+            // 商品类目
+            obj.Add("goods_category", "");
+            // 商品的展示地址
+            obj.Add("show_url", "");
+
+            JArray objList = new JArray();
+            objList.Add(JToken.FromObject(obj));
+            return objList;
+        }
         private static string getAlipayData() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 买家的支付宝唯一用户号
@@ -359,33 +340,52 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static object getDetail() {
+        private static object getPayeeInfo() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 单品列表
-            // obj.Add("goods_detail", getGoodsDetailWxRucan());
-            // 订单原价(元)
-            // obj.Add("cost_price", "");
-            // 商品小票ID
-            // obj.Add("receipt_id", "");
+            // 商户类别
+            // obj.Add("mer_cat_code", "");
+            // 二级商户代码
+            // obj.Add("sub_id", "");
+            // 二级商户名称
+            // obj.Add("sub_name", "");
+            // 终端号
+            // obj.Add("term_id", "");
 
             return obj;
         }
-        private static object getGoodsDetailWxRucan() {
+        private static string getUnionpayData() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 商品编码
-            // obj.Add("goods_id", "");
-            // 商品名称
-            // obj.Add("goods_name", "");
-            // 商品单价(元)
-            // obj.Add("price", "");
-            // 商品数量
-            // obj.Add("quantity", "");
-            // 微信侧商品编码
-            // obj.Add("wxpay_goods_id", "");
+            // 收款方附加数据
+            // obj.Add("acq_addn_data", "");
+            // 地区信息
+            // obj.Add("area_info", "");
+            // 持卡人ip
+            // obj.Add("customer_ip", "");
+            // 前台通知地址
+            // obj.Add("front_url", "");
+            // 订单描述
+            // obj.Add("order_desc", "");
+            // 收款方附言
+            // obj.Add("payee_comments", "");
+            // 收款方信息
+            // obj.Add("payee_info", getPayeeInfo());
+            // 银联分配的服务商机构标识码
+            // obj.Add("pnr_ins_id_cd", "");
+            // 请求方自定义域
+            // obj.Add("req_reserved", "");
+            // 终端信息
+            // obj.Add("term_info", "");
+            // 云闪付用户标识
+            // obj.Add("user_id", "");
 
-            JArray objList = new JArray();
-            objList.Add(JToken.FromObject(obj));
-            return objList;
+            return JsonConvert.SerializeObject(obj);
+        }
+        private static string getDcData() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 数字货币银行编号
+            // obj.Add("digital_bank_no", "");
+
+            return JsonConvert.SerializeObject(obj);
         }
     }
 }

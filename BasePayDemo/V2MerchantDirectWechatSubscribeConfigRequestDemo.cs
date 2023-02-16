@@ -71,6 +71,15 @@ namespace BasePayDemo
             return extendInfoMap;
         }
 
+        private static string getBindAppIdConfList() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 关联APPID
+            obj.Add("sub_appid", "oQOa46X2FxRqEy6F4YmwIRCrA7Mk");
+
+            JArray objList = new JArray();
+            objList.Add(JToken.FromObject(obj));
+            return JsonConvert.SerializeObject(objList);
+        }
         private static string getSubscribeConfList() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 关联APPID
@@ -79,15 +88,6 @@ namespace BasePayDemo
             obj.Add("subscribe_appid", "oQOa46X2FxRqEy6F4YmwIRCrA7Mk");
             // 支付凭证推荐小程序appid需为通过微信认证的小程序appid，且认证主体与服务商主体一致；与subscribe_appid二选一；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：wx852a790f100000fe&lt;/font&gt;
             obj.Add("receipt_appid", "wx852a790f100000fe");
-
-            JArray objList = new JArray();
-            objList.Add(JToken.FromObject(obj));
-            return JsonConvert.SerializeObject(objList);
-        }
-        private static string getBindAppIdConfList() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 关联APPID
-            obj.Add("sub_appid", "oQOa46X2FxRqEy6F4YmwIRCrA7Mk");
 
             JArray objList = new JArray();
             objList.Add(JToken.FromObject(obj));

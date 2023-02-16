@@ -73,19 +73,6 @@ namespace BasePayDemo
             return extendInfoMap;
         }
 
-        private static string getFileList() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 文件类型
-            obj.Add("file_type", "F02");
-            // 文件jfileID
-            obj.Add("file_id", "99e00421-dad7-3334-9538-4f2ad10612d5");
-            // 文件名称
-            obj.Add("file_name", "企业营业执照1.jpg");
-
-            JArray objList = new JArray();
-            objList.Add(JToken.FromObject(obj));
-            return JsonConvert.SerializeObject(objList);
-        }
         private static string getSettleConfig() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 开通状态
@@ -166,6 +153,19 @@ namespace BasePayDemo
             obj.Add("out_fee_huifu_id", "6666000104633228");
             // 交易手续费外扣的账户类型
             obj.Add("out_fee_acct_type", "05");
+
+            JArray objList = new JArray();
+            objList.Add(JToken.FromObject(obj));
+            return JsonConvert.SerializeObject(objList);
+        }
+        private static string getFileList() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 文件类型
+            obj.Add("file_type", "F02");
+            // 文件jfileID
+            obj.Add("file_id", "99e00421-dad7-3334-9538-4f2ad10612d5");
+            // 文件名称
+            obj.Add("file_name", "企业营业执照1.jpg");
 
             JArray objList = new JArray();
             objList.Add(JToken.FromObject(obj));

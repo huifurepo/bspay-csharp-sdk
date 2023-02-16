@@ -169,37 +169,6 @@ namespace BasePayDemo
             return extendInfoMap;
         }
 
-        private static string getSettleConfig() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 结算周期
-            obj.Add("settle_cycle", "D1");
-            // 结算手续费外扣商户号填写承担手续费的汇付商户号；当out_settle_flag&#x3D;1时必填，否则非必填；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：6666000123123123&lt;/font&gt;
-            obj.Add("out_settle_huifuid", "");
-            // 起结金额
-            obj.Add("min_amt", "1.00");
-            // 留存金额
-            obj.Add("remained_amt", "2.00");
-            // 结算摘要
-            obj.Add("settle_abstract", "abstract");
-            // 手续费外扣标记
-            obj.Add("out_settle_flag", "2");
-            // 结算手续费外扣账户类型
-            obj.Add("out_settle_acct_type", "");
-            // 节假日结算手续费率（%）
-            obj.Add("fixed_ratio", "5.00");
-            // 结算方式
-            obj.Add("settle_pattern", "");
-            // 结算批次号
-            obj.Add("settle_batch_no", "");
-            // 是否优先到账
-            obj.Add("is_priority_receipt", "");
-            // 自定义结算处理时间
-            obj.Add("settle_time", "");
-            // 节假日结算手续费固定金额（元）
-            // obj.Add("constant_amt", "");
-
-            return JsonConvert.SerializeObject(obj);
-        }
         private static string getCardInfo() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 结算账户类型
@@ -233,25 +202,6 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string getSignUserInfo() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 签约人类型
-            // obj.Add("type", "test");
-            // 姓名
-            // obj.Add("name", "");
-            // 手机号
-            // obj.Add("mobile_no", "");
-            // 身份证
-            // obj.Add("cert_no", "");
-            // 身份证照片-人像面
-            // obj.Add("identity_front_file_id", "");
-            // 身份证照片-国徽面
-            // obj.Add("identity_back_file_id", "");
-            // 法人授权书
-            // obj.Add("auth_file_id", "");
-
-            return JsonConvert.SerializeObject(obj);
-        }
         private static string getCashConfig() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 取现固定手续费（元）fix_amt与fee_rate至少填写一项，单位元，需保留小数点后两位，不收费请填写0.00； &lt;font color&#x3D;&quot;green&quot;&gt;示例值：1.00&lt;/font&gt;
@@ -270,6 +220,56 @@ namespace BasePayDemo
             JArray objList = new JArray();
             objList.Add(JToken.FromObject(obj));
             return JsonConvert.SerializeObject(objList);
+        }
+        private static string getSettleConfig() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 结算周期
+            obj.Add("settle_cycle", "D1");
+            // 结算手续费外扣商户号填写承担手续费的汇付商户号；当out_settle_flag&#x3D;1时必填，否则非必填；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：6666000123123123&lt;/font&gt;
+            obj.Add("out_settle_huifuid", "");
+            // 起结金额
+            obj.Add("min_amt", "1.00");
+            // 留存金额
+            obj.Add("remained_amt", "2.00");
+            // 结算摘要
+            obj.Add("settle_abstract", "abstract");
+            // 手续费外扣标记
+            obj.Add("out_settle_flag", "2");
+            // 结算手续费外扣账户类型
+            obj.Add("out_settle_acct_type", "");
+            // 节假日结算手续费率（%）
+            obj.Add("fixed_ratio", "5.00");
+            // 结算方式
+            obj.Add("settle_pattern", "");
+            // 结算批次号
+            obj.Add("settle_batch_no", "");
+            // 是否优先到账
+            obj.Add("is_priority_receipt", "");
+            // 自定义结算处理时间
+            obj.Add("settle_time", "");
+            // 节假日结算手续费固定金额（元）
+            // obj.Add("constant_amt", "");
+
+            return JsonConvert.SerializeObject(obj);
+        }
+        private static string getSignUserInfo() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 签约人类型
+            // obj.Add("type", "test");
+            // 姓名
+            // obj.Add("name", "");
+            // 手机号
+            // obj.Add("mobile_no", "");
+            // 身份证
+            // obj.Add("cert_no", "");
+            // 身份证照片-人像面
+            // obj.Add("identity_front_file_id", "");
+            // 身份证照片-国徽面
+            // obj.Add("identity_back_file_id", "");
+            // 法人授权书
+            // obj.Add("auth_file_id", "");
+
+            return JsonConvert.SerializeObject(obj);
         }
     }
 }

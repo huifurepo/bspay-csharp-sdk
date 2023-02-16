@@ -85,20 +85,18 @@ namespace BasePayDemo
             return extendInfoMap;
         }
 
-        private static string getCombinedpayData() {
+        private static string getRiskCheckData() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 补贴方汇付编号
-            // obj.Add("huifu_id", "test");
-            // 补贴方类型
-            // obj.Add("user_type", "test");
-            // 补贴方账户号
-            // obj.Add("acct_id", "test");
-            // 补贴金额
-            // obj.Add("amount", "test");
+            // ip地址
+            obj.Add("ip_addr", "106.33.180.238");
+            // 基站地址
+            // obj.Add("base_atation", "");
+            // 纬度
+            // obj.Add("latitude", "");
+            // 经度
+            // obj.Add("longitude", "");
 
-            JArray objList = new JArray();
-            objList.Add(JToken.FromObject(obj));
-            return JsonConvert.SerializeObject(objList);
+            return JsonConvert.SerializeObject(obj);
         }
         private static string getTerminalDeviceData() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
@@ -121,18 +119,20 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string getRiskCheckData() {
+        private static string getCombinedpayData() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
-            // ip地址
-            obj.Add("ip_addr", "106.33.180.238");
-            // 基站地址
-            // obj.Add("base_atation", "");
-            // 纬度
-            // obj.Add("latitude", "");
-            // 经度
-            // obj.Add("longitude", "");
+            // 补贴方汇付编号
+            // obj.Add("huifu_id", "test");
+            // 补贴方类型
+            // obj.Add("user_type", "test");
+            // 补贴方账户号
+            // obj.Add("acct_id", "test");
+            // 补贴金额
+            // obj.Add("amount", "test");
 
-            return JsonConvert.SerializeObject(obj);
+            JArray objList = new JArray();
+            objList.Add(JToken.FromObject(obj));
+            return JsonConvert.SerializeObject(objList);
         }
         private static object getAcctInfos() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
@@ -147,6 +147,13 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return objList;
         }
+        private static string getAcctSplitBunchRucan() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 分账信息列表
+            // obj.Add("acct_infos", getAcctInfos());
+
+            return JsonConvert.SerializeObject(obj);
+        }
         private static string getExtendPayData() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 业务种类
@@ -155,13 +162,6 @@ namespace BasePayDemo
             // obj.Add("goods_short_name", "test");
             // 网关支付受理渠道
             obj.Add("gw_chnnl_tp", "99");
-
-            return JsonConvert.SerializeObject(obj);
-        }
-        private static string getAcctSplitBunchRucan() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 分账信息列表
-            // obj.Add("acct_infos", getAcctInfos());
 
             return JsonConvert.SerializeObject(obj);
         }

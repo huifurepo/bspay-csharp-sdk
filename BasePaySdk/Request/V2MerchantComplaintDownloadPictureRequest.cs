@@ -3,7 +3,7 @@ using System;
 namespace BasePaySdk.Request
 {
     /**
-     * 图片下载
+     * 投诉图片下载
      *
      * @author sdk-generator
      * @Description

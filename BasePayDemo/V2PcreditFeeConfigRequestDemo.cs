@@ -63,39 +63,6 @@ namespace BasePayDemo
             return extendInfoMap;
         }
 
-        private static string getHbFqFeeList() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 商户汇付Id
-            obj.Add("huifu_id", "6666000003156435");
-            // 花呗分期状态
-            // obj.Add("hb_fq_status", "");
-            // 花呗分期3期开关
-            obj.Add("hb_three_period_switch", "Y");
-            // 花呗收单分期3期费率（%）
-            obj.Add("hb_three_acq_period", "5");
-            // 花呗分期3期利率（%）
-            obj.Add("hb_three_period", "10");
-            // 花呗分期6期开关
-            obj.Add("hb_six_period_switch", "Y");
-            // 花呗收单分期6期费率（%）
-            obj.Add("hb_six_acq_period", "5");
-            // 花呗分期6期利率（%）
-            obj.Add("hb_six_period", "10");
-            // 花呗分期12期开关
-            obj.Add("hb_twelve_period_switch", "Y");
-            // 花呗收单分期12期费率（%）
-            obj.Add("hb_twelve_acq_period", "15");
-            // 花呗分期12期利率（%）
-            obj.Add("hb_twelve_period", "11");
-            // 交易手续费外扣标记
-            obj.Add("out_fee_flag", "");
-            // 手续费外扣的汇付商户号
-            obj.Add("out_fee_huifu_id", "");
-
-            JArray objList = new JArray();
-            objList.Add(JToken.FromObject(obj));
-            return JsonConvert.SerializeObject(objList);
-        }
         private static object getBankFqFeeList() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 银行编号
@@ -139,6 +106,39 @@ namespace BasePayDemo
             obj.Add("bank_fq_fee_list", getBankFqFeeList());
             // 贴息模式
             obj.Add("fee_model", "1");
+
+            JArray objList = new JArray();
+            objList.Add(JToken.FromObject(obj));
+            return JsonConvert.SerializeObject(objList);
+        }
+        private static string getHbFqFeeList() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 商户汇付Id
+            obj.Add("huifu_id", "6666000003156435");
+            // 花呗分期状态
+            // obj.Add("hb_fq_status", "");
+            // 花呗分期3期开关
+            obj.Add("hb_three_period_switch", "Y");
+            // 花呗收单分期3期费率（%）
+            obj.Add("hb_three_acq_period", "5");
+            // 花呗分期3期利率（%）
+            obj.Add("hb_three_period", "10");
+            // 花呗分期6期开关
+            obj.Add("hb_six_period_switch", "Y");
+            // 花呗收单分期6期费率（%）
+            obj.Add("hb_six_acq_period", "5");
+            // 花呗分期6期利率（%）
+            obj.Add("hb_six_period", "10");
+            // 花呗分期12期开关
+            obj.Add("hb_twelve_period_switch", "Y");
+            // 花呗收单分期12期费率（%）
+            obj.Add("hb_twelve_acq_period", "15");
+            // 花呗分期12期利率（%）
+            obj.Add("hb_twelve_period", "11");
+            // 交易手续费外扣标记
+            obj.Add("out_fee_flag", "");
+            // 手续费外扣的汇付商户号
+            obj.Add("out_fee_huifu_id", "");
 
             JArray objList = new JArray();
             objList.Add(JToken.FromObject(obj));

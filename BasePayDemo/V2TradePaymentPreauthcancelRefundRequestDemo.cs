@@ -93,6 +93,19 @@ namespace BasePayDemo
             return extendInfoMap;
         }
 
+        private static string getRiskCheckInfo() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 基站地址
+            obj.Add("base_station", "192.168.1.1");
+            // ip地址
+            obj.Add("ip_addr", "192.168.1.1");
+            // 纬度
+            obj.Add("latitude", "33.3");
+            // 经度
+            obj.Add("longitude", "33.3");
+
+            return JsonConvert.SerializeObject(obj);
+        }
         private static object getTerminalDeviceInfo() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 交易设备GPS
@@ -119,19 +132,6 @@ namespace BasePayDemo
             obj.Add("pnr_dev_id", "");
 
             return obj;
-        }
-        private static string getRiskCheckInfo() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 基站地址
-            obj.Add("base_station", "192.168.1.1");
-            // ip地址
-            obj.Add("ip_addr", "192.168.1.1");
-            // 纬度
-            obj.Add("latitude", "33.3");
-            // 经度
-            obj.Add("longitude", "33.3");
-
-            return JsonConvert.SerializeObject(obj);
         }
     }
 }

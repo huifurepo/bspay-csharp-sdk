@@ -71,39 +71,6 @@ namespace BasePayDemo
             return extendInfoMap;
         }
 
-        private static string getSettleConfig() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 结算周期
-            obj.Add("settle_cycle", "D1");
-            // 结算手续费外扣商户号填写承担手续费的汇付商户号；当out_settle_flag&#x3D;1时必填，否则非必填；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：6666000123123123&lt;/font&gt;
-            obj.Add("out_settle_huifuid", "6666000106070589");
-            // 起结金额
-            obj.Add("min_amt", "1");
-            // 留存金额
-            obj.Add("remained_amt", "2");
-            // 结算摘要
-            obj.Add("settle_abstract", "abstract");
-            // 手续费外扣标记
-            obj.Add("out_settle_flag", "1");
-            // 结算手续费外扣账户类型
-            obj.Add("out_settle_acct_type", "01");
-            // 节假日结算手续费率（%）
-            obj.Add("fixed_ratio", "66.88");
-            // 结算方式
-            obj.Add("settle_pattern", "P0");
-            // 结算批次号
-            obj.Add("settle_batch_no", "0");
-            // 是否优先到账
-            obj.Add("is_priority_receipt", "N");
-            // 自定义结算处理时间
-            obj.Add("settle_time", "211221");
-            // 节假日结算手续费固定金额（元）
-            obj.Add("constant_amt", "211221");
-            // 卡序列号
-            obj.Add("token_no", "");
-
-            return JsonConvert.SerializeObject(obj);
-        }
         private static string getCardInfo() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 结算账户类型
@@ -134,6 +101,39 @@ namespace BasePayDemo
             obj.Add("cert_begin_date", "20220101");
             // 银行卡绑定手机号
             obj.Add("mp", "1751111111");
+
+            return JsonConvert.SerializeObject(obj);
+        }
+        private static string getSettleConfig() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 结算周期
+            obj.Add("settle_cycle", "D1");
+            // 结算手续费外扣商户号填写承担手续费的汇付商户号；当out_settle_flag&#x3D;1时必填，否则非必填；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：6666000123123123&lt;/font&gt;
+            obj.Add("out_settle_huifuid", "6666000106070589");
+            // 起结金额
+            obj.Add("min_amt", "1");
+            // 留存金额
+            obj.Add("remained_amt", "2");
+            // 结算摘要
+            obj.Add("settle_abstract", "abstract");
+            // 手续费外扣标记
+            obj.Add("out_settle_flag", "1");
+            // 结算手续费外扣账户类型
+            obj.Add("out_settle_acct_type", "01");
+            // 节假日结算手续费率（%）
+            obj.Add("fixed_ratio", "66.88");
+            // 结算方式
+            obj.Add("settle_pattern", "P0");
+            // 结算批次号
+            obj.Add("settle_batch_no", "0");
+            // 是否优先到账
+            obj.Add("is_priority_receipt", "N");
+            // 自定义结算处理时间
+            obj.Add("settle_time", "211221");
+            // 节假日结算手续费固定金额（元）
+            obj.Add("constant_amt", "211221");
+            // 卡序列号
+            obj.Add("token_no", "");
 
             return JsonConvert.SerializeObject(obj);
         }

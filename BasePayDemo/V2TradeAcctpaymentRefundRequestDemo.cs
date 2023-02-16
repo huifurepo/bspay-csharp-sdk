@@ -73,6 +73,17 @@ namespace BasePayDemo
             return extendInfoMap;
         }
 
+        private static object getAcctInfos() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 退款金额
+            // obj.Add("div_amt", "test");
+            // 退款方ID
+            // obj.Add("huifu_id", "test");
+
+            JArray objList = new JArray();
+            objList.Add(JToken.FromObject(obj));
+            return objList;
+        }
         private static string getAcctSplitBunch() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 退账明细
@@ -88,17 +99,6 @@ namespace BasePayDemo
             obj.Add("sub_product", "卡券推广类");
 
             return JsonConvert.SerializeObject(obj);
-        }
-        private static object getAcctInfos() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 退款金额
-            // obj.Add("div_amt", "test");
-            // 退款方ID
-            // obj.Add("huifu_id", "test");
-
-            JArray objList = new JArray();
-            objList.Add(JToken.FromObject(obj));
-            return objList;
         }
     }
 }

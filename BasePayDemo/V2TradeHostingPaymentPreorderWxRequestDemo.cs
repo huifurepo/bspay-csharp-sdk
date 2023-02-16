@@ -88,19 +88,19 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return objList;
         }
+        private static string getAcctSplitBunchRucan() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 分账明细
+            obj.Add("acct_infos", getAcctInfosRucan());
+
+            return JsonConvert.SerializeObject(obj);
+        }
         private static string getMiniappDataRucan() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 应用ID
             obj.Add("seq_id", "系统应用ID");
             // 私有信息
             // obj.Add("private_info", "");
-
-            return JsonConvert.SerializeObject(obj);
-        }
-        private static string getAcctSplitBunchRucan() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 分账明细
-            obj.Add("acct_infos", getAcctInfosRucan());
 
             return JsonConvert.SerializeObject(obj);
         }

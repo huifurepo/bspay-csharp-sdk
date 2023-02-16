@@ -91,6 +91,19 @@ namespace BasePayDemo
             return extendInfoMap;
         }
 
+        private static string getRiskCheckData() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 基站地址
+            obj.Add("base_station", "192.168.1.1");
+            // ip地址
+            obj.Add("ip_addr", "180.167.105.130");
+            // 纬度
+            obj.Add("latitude", "33.3");
+            // 经度
+            obj.Add("longitude", "33.3");
+
+            return JsonConvert.SerializeObject(obj);
+        }
         private static string getTerminalDeviceData() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 商户终端序列号
@@ -129,19 +142,6 @@ namespace BasePayDemo
             obj.Add("network_license", "P3111");
             // 商户终端序列号
             obj.Add("serial_num", "");
-
-            return JsonConvert.SerializeObject(obj);
-        }
-        private static string getRiskCheckData() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 基站地址
-            obj.Add("base_station", "192.168.1.1");
-            // ip地址
-            obj.Add("ip_addr", "180.167.105.130");
-            // 纬度
-            obj.Add("latitude", "33.3");
-            // 经度
-            obj.Add("longitude", "33.3");
 
             return JsonConvert.SerializeObject(obj);
         }

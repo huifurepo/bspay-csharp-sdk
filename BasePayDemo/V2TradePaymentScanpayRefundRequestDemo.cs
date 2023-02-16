@@ -89,33 +89,18 @@ namespace BasePayDemo
             return extendInfoMap;
         }
 
-        private static object getAcctInfosRucan() {
+        private static string getRiskCheckData() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 分账金额
-            // obj.Add("div_amt", "test");
-            // 被分账方ID
-            // obj.Add("huifu_id", "test");
-            // 垫资金额
-            // obj.Add("part_loan_amt", "");
+            // ip地址
+            // obj.Add("ip_addr", "");
+            // 基站地址
+            // obj.Add("base_atation", "");
+            // 纬度
+            // obj.Add("latitude", "");
+            // 经度
+            // obj.Add("longitude", "");
 
-            JArray objList = new JArray();
-            objList.Add(JToken.FromObject(obj));
-            return objList;
-        }
-        private static string getCombinedpayData() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 补贴方汇付编号
-            // obj.Add("huifu_id", "test");
-            // 补贴方类型
-            // obj.Add("user_type", "test");
-            // 补贴方账户号
-            // obj.Add("acct_id", "test");
-            // 补贴金额
-            // obj.Add("amount", "test");
-
-            JArray objList = new JArray();
-            objList.Add(JToken.FromObject(obj));
-            return JsonConvert.SerializeObject(objList);
+            return JsonConvert.SerializeObject(obj);
         }
         private static string getTerminalDeviceData() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
@@ -138,16 +123,23 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string getRiskCheckData() {
+        private static object getAcctInfosRucan() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
-            // ip地址
-            // obj.Add("ip_addr", "");
-            // 基站地址
-            // obj.Add("base_atation", "");
-            // 纬度
-            // obj.Add("latitude", "");
-            // 经度
-            // obj.Add("longitude", "");
+            // 分账金额
+            // obj.Add("div_amt", "test");
+            // 被分账方ID
+            // obj.Add("huifu_id", "test");
+            // 垫资金额
+            // obj.Add("part_loan_amt", "");
+
+            JArray objList = new JArray();
+            objList.Add(JToken.FromObject(obj));
+            return objList;
+        }
+        private static string getAcctSplitBunchRucan() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 分账信息列表
+            // obj.Add("acct_infos", getAcctInfosRucan());
 
             return JsonConvert.SerializeObject(obj);
         }
@@ -158,12 +150,20 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string getAcctSplitBunchRucan() {
+        private static string getCombinedpayData() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 分账信息列表
-            // obj.Add("acct_infos", getAcctInfosRucan());
+            // 补贴方汇付编号
+            // obj.Add("huifu_id", "test");
+            // 补贴方类型
+            // obj.Add("user_type", "test");
+            // 补贴方账户号
+            // obj.Add("acct_id", "test");
+            // 补贴金额
+            // obj.Add("amount", "test");
 
-            return JsonConvert.SerializeObject(obj);
+            JArray objList = new JArray();
+            objList.Add(JToken.FromObject(obj));
+            return JsonConvert.SerializeObject(objList);
         }
     }
 }

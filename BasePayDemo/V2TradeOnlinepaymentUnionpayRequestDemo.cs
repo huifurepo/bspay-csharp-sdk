@@ -83,19 +83,6 @@ namespace BasePayDemo
             return extendInfoMap;
         }
 
-        private static string getRiskCheckData() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 基站地址
-            obj.Add("base_station", "7");
-            // ip地址
-            // obj.Add("ip_addr", "");
-            // 纬度
-            obj.Add("latitude", "4");
-            // 经度
-            obj.Add("longitude", "3");
-
-            return JsonConvert.SerializeObject(obj);
-        }
         private static object getAcctInfos() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 分账金额
@@ -113,6 +100,19 @@ namespace BasePayDemo
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 分账明细
             // obj.Add("acct_infos", getAcctInfos());
+
+            return JsonConvert.SerializeObject(obj);
+        }
+        private static string getRiskCheckData() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 基站地址
+            obj.Add("base_station", "7");
+            // ip地址
+            // obj.Add("ip_addr", "");
+            // 纬度
+            obj.Add("latitude", "4");
+            // 经度
+            obj.Add("longitude", "3");
 
             return JsonConvert.SerializeObject(obj);
         }

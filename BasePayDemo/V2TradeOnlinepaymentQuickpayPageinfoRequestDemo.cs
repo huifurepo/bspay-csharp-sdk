@@ -80,9 +80,31 @@ namespace BasePayDemo
             // extendInfoMap.Add("acct_split_bunch", getAcctSplitBunchRucan());
             // 页面跳转地址
             extendInfoMap.Add("front_url", "http://www.chinapnr.com");
+            // 延时标记
+            // extendInfoMap.Add("delay_acct_flag", "");
             return extendInfoMap;
         }
 
+        private static object getAcctInfos() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 被分账对象ID
+            // obj.Add("huifu_id", "test");
+            // 分账金额
+            // obj.Add("div_amt", "test");
+            // 账户号
+            // obj.Add("acct_id", "");
+
+            JArray objList = new JArray();
+            objList.Add(JToken.FromObject(obj));
+            return objList;
+        }
+        private static string getAcctSplitBunchRucan() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 分账明细
+            // obj.Add("acct_infos", getAcctInfos());
+
+            return JsonConvert.SerializeObject(obj);
+        }
         private static string getTerminalDeviceData() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 设备类型
@@ -104,32 +126,6 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string getRiskCheckData() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // ip地址
-            obj.Add("ip_addr", "127.0.0.1");
-            // 基站地址
-            // obj.Add("base_atation", "");
-            // 纬度
-            // obj.Add("latitude", "");
-            // 经度
-            // obj.Add("longitude", "");
-
-            return JsonConvert.SerializeObject(obj);
-        }
-        private static object getAcctInfos() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 被分账对象ID
-            // obj.Add("huifu_id", "test");
-            // 分账金额
-            // obj.Add("div_amt", "test");
-            // 账户号
-            // obj.Add("acct_id", "");
-
-            JArray objList = new JArray();
-            objList.Add(JToken.FromObject(obj));
-            return objList;
-        }
         private static string getExtendPayData() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 网关支付受理渠道
@@ -141,10 +137,16 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string getAcctSplitBunchRucan() {
+        private static string getRiskCheckData() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 分账明细
-            // obj.Add("acct_infos", getAcctInfos());
+            // ip地址
+            obj.Add("ip_addr", "127.0.0.1");
+            // 基站地址
+            // obj.Add("base_atation", "");
+            // 纬度
+            // obj.Add("latitude", "");
+            // 经度
+            // obj.Add("longitude", "");
 
             return JsonConvert.SerializeObject(obj);
         }

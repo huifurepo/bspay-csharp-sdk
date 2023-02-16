@@ -8,30 +8,24 @@ using Newtonsoft.Json.Linq;
 namespace BasePayDemo
 {
     /**
-     * 投诉图片下载 - 示例
+     * DM取现额度查询 - 示例
      *
      * @author sdk-generator
      * @Description
      */
-    public class V2MerchantComplaintDownloadPictureRequestDemo
+    public class V2TradeSettlementEnchashmentDmamtQueryRequestDemo
     {
 
-        public static void V2MerchantComplaintDownloadPictureRequestDemoTest()
+        public static void V2TradeSettlementEnchashmentDmamtQueryRequestDemoTest()
         {
 
             // 1. 数据初始化
             InitMerConfig.init();
 
             // 2.组装请求参数
-            V2MerchantComplaintDownloadPictureRequest request = new V2MerchantComplaintDownloadPictureRequest();
-            // 请求流水号
-            request.setReqSeqId(DateTime.Now.ToString("yyy-MM-dd HH.mm.ss.fff"));
-            // 请求时间
-            request.setReqDate(DateTime.Now.ToString("yyyyMMdd"));
-            // 下载图片的url
-            request.setMediaUrl("https://api.mch.weixin.qq.com/v3/merchant-service/images/ChsyMDAwMDAwMjAyMjEwMTkyMjAwMzI0MjEzODUYACCN78OaBigBMAE4AQ%3D%3D");
-            // 微信商户号
-            request.setMchId("1502074861");
+            V2TradeSettlementEnchashmentDmamtQueryRequest request = new V2TradeSettlementEnchashmentDmamtQueryRequest();
+            // 商户号
+            request.setHuifuId("6666000021291985");
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -58,6 +52,8 @@ namespace BasePayDemo
         private static Dictionary<string, object> getExtendInfos() {
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
+            // 账户号
+            extendInfoMap.Add("acct_id", "F00598600");
             return extendInfoMap;
         }
 

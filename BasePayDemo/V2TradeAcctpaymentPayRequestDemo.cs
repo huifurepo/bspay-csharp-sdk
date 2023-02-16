@@ -98,6 +98,19 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
+        private static object getAcctInfos() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 分账金额
+            obj.Add("div_amt", "0.01");
+            // 被分账方ID
+            obj.Add("huifu_id", "6666000018344461");
+            // 被分账方账户号
+            // obj.Add("acct_id", "");
+
+            JArray objList = new JArray();
+            objList.Add(JToken.FromObject(obj));
+            return objList;
+        }
         private static string getAcctSplitBunch() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 分账明细
@@ -121,19 +134,6 @@ namespace BasePayDemo
             // obj.Add("ip_addr", "");
 
             return JsonConvert.SerializeObject(obj);
-        }
-        private static object getAcctInfos() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 分账金额
-            obj.Add("div_amt", "0.01");
-            // 被分账方ID
-            obj.Add("huifu_id", "6666000018344461");
-            // 被分账方账户号
-            // obj.Add("acct_id", "");
-
-            JArray objList = new JArray();
-            objList.Add(JToken.FromObject(obj));
-            return objList;
         }
     }
 }

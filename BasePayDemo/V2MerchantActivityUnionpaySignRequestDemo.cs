@@ -69,21 +69,6 @@ namespace BasePayDemo
             return extendInfoMap;
         }
 
-        private static string getEnlistImgMakings() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 活动材料编号
-            obj.Add("makings_id", "18");
-            // 活动材料类型
-            obj.Add("makings_type", "IMG");
-            // 活动材料名称
-            obj.Add("makings_name", "门头照片");
-            // 材料值
-            obj.Add("makings_value", "42204258-967e-373c-88d2-1afa4c7bb8ef");
-
-            JArray objList = new JArray();
-            objList.Add(JToken.FromObject(obj));
-            return JsonConvert.SerializeObject(objList);
-        }
         private static string getEnlistTxtMakings() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 活动材料编号
@@ -94,6 +79,21 @@ namespace BasePayDemo
             obj.Add("makings_name", "银联云闪付商户号");
             // 材料值
             obj.Add("makings_value", "82339SP5411019L");
+
+            JArray objList = new JArray();
+            objList.Add(JToken.FromObject(obj));
+            return JsonConvert.SerializeObject(objList);
+        }
+        private static string getEnlistImgMakings() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 活动材料编号
+            obj.Add("makings_id", "18");
+            // 活动材料类型
+            obj.Add("makings_type", "IMG");
+            // 活动材料名称
+            obj.Add("makings_name", "门头照片");
+            // 材料值
+            obj.Add("makings_value", "42204258-967e-373c-88d2-1afa4c7bb8ef");
 
             JArray objList = new JArray();
             objList.Add(JToken.FromObject(obj));

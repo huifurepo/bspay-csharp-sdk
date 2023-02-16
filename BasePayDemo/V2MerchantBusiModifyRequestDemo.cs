@@ -139,20 +139,41 @@ namespace BasePayDemo
             return extendInfoMap;
         }
 
-        private static string getWxConfList() {
+        private static string getAgreementInfo() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 手续费（%）
-            obj.Add("fee_rate", "2.15");
-            // 支付场景
-            obj.Add("pay_scene", "10");
-            // ~~商户经营类目~~
-            // obj.Add("~~mcc~~", "");
-            // 费率规则ID
-            obj.Add("fee_rule_id", "765");
-            // 子渠道号
-            obj.Add("pay_channel_id", "JP00001");
-            // 申请服务
-            obj.Add("service_codes", "");
+            // 协议类型
+            obj.Add("agreement_type", "0");
+            // 协议开始日期
+            obj.Add("agree_begin_date", "20200325");
+            // 协议结束日期
+            obj.Add("agree_end_date", "20400325");
+            // 协议模板号
+            obj.Add("agreement_model", "202106070100000380");
+            // 协议模板名称
+            obj.Add("agreement_name", "电子协议签约模板");
+            // 协议号
+            obj.Add("agreement_no", "202106070100000380");
+            // 签约日期
+            obj.Add("sign_date", "20200325");
+
+            return JsonConvert.SerializeObject(obj);
+        }
+        private static string getUnionConfList() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 银联二维码1000以上借记卡费率
+            obj.Add("debit_fee_rate_up", "6");
+            // 银联二维码1000以下借记卡费率
+            obj.Add("debit_fee_rate_down", "2.55");
+            // 银联二维码1000以下贷记卡费率
+            obj.Add("credit_fee_rate_down", "1");
+            // 银联二维码1000以上贷记卡费率
+            obj.Add("credit_fee_rate_up", "6.566");
+            // 银行业务手续费类型
+            obj.Add("charge_cate_code", "");
+            // 银联二维码1000以上借记卡费率封顶值
+            obj.Add("debit_fee_limit_up", "641");
+            // 银联二维码1000以下借记卡费率封顶值
+            obj.Add("debit_fee_limit_down", "11.3");
 
             JArray objList = new JArray();
             objList.Add(JToken.FromObject(obj));
@@ -189,6 +210,42 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
+        private static string getAliConfList() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 手续费（%）
+            obj.Add("fee_rate", "3.15");
+            // 支付场景
+            obj.Add("pay_scene", "1");
+            // 商户经营类目
+            obj.Add("mcc", "2016062900190337");
+            // 子渠道号
+            obj.Add("pay_channel_id", "10000001");
+            // 拟申请的间联商户等级
+            obj.Add("indirect_level", "");
+
+            JArray objList = new JArray();
+            objList.Add(JToken.FromObject(obj));
+            return JsonConvert.SerializeObject(objList);
+        }
+        private static string getWxConfList() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 手续费（%）
+            obj.Add("fee_rate", "2.15");
+            // 支付场景
+            obj.Add("pay_scene", "10");
+            // ~~商户经营类目~~
+            // obj.Add("~~mcc~~", "");
+            // 费率规则ID
+            obj.Add("fee_rule_id", "765");
+            // 子渠道号
+            obj.Add("pay_channel_id", "JP00001");
+            // 申请服务
+            obj.Add("service_codes", "");
+
+            JArray objList = new JArray();
+            objList.Add(JToken.FromObject(obj));
+            return JsonConvert.SerializeObject(objList);
+        }
         private static string getCombinePayConfig() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 开通状态
@@ -206,22 +263,20 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string getAgreementInfo() {
+        private static string getBalancePayConfig() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 协议类型
-            obj.Add("agreement_type", "0");
-            // 协议开始日期
-            obj.Add("agree_begin_date", "20200325");
-            // 协议结束日期
-            obj.Add("agree_end_date", "20400325");
-            // 协议模板号
-            obj.Add("agreement_model", "202106070100000380");
-            // 协议模板名称
-            obj.Add("agreement_name", "电子协议签约模板");
-            // 协议号
-            obj.Add("agreement_no", "202106070100000380");
-            // 签约日期
-            obj.Add("sign_date", "20200325");
+            // 支付手续费(%)
+            obj.Add("fee_rate", "2");
+            // 支付固定手续费(元)
+            obj.Add("fee_fix_amt", "1");
+            // 费率开关
+            obj.Add("switch_state", "1");
+            // 交易手续费外扣时的账户类型
+            // obj.Add("out_fee_acct_type", "");
+            // 交易手续费外扣汇付ID
+            // obj.Add("out_fee_huifuid", "");
+            // 是否交易手续费外扣
+            // obj.Add("out_fee_flag", "");
 
             return JsonConvert.SerializeObject(obj);
         }
@@ -248,36 +303,6 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return JsonConvert.SerializeObject(objList);
         }
-        private static string getUnionConfList() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 银联二维码1000以上借记卡费率
-            obj.Add("debit_fee_rate_up", "6");
-            // 银联二维码1000以下借记卡费率
-            obj.Add("debit_fee_rate_down", "2.55");
-            // 银联二维码1000以下贷记卡费率
-            obj.Add("credit_fee_rate_down", "1");
-            // 银联二维码1000以上贷记卡费率
-            obj.Add("credit_fee_rate_up", "6.566");
-            // 银行业务手续费类型
-            obj.Add("charge_cate_code", "");
-            // 银联二维码1000以上借记卡费率封顶值
-            obj.Add("debit_fee_limit_up", "641");
-            // 银联二维码1000以下借记卡费率封顶值
-            obj.Add("debit_fee_limit_down", "11.3");
-
-            JArray objList = new JArray();
-            objList.Add(JToken.FromObject(obj));
-            return JsonConvert.SerializeObject(objList);
-        }
-        private static string getWxZlConf() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 微信子商户号
-            // obj.Add("sub_mch_id", "test");
-            // 配置集合
-            // obj.Add("wx_zl_pay_conf_list", getWxZlPayConfList());
-
-            return JsonConvert.SerializeObject(obj);
-        }
         private static string getOnlinePayFeeConfList() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 业务类型
@@ -292,23 +317,6 @@ namespace BasePayDemo
             JArray objList = new JArray();
             objList.Add(JToken.FromObject(obj));
             return JsonConvert.SerializeObject(objList);
-        }
-        private static string getBalancePayConfig() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 支付手续费(%)
-            obj.Add("fee_rate", "2");
-            // 支付固定手续费(元)
-            obj.Add("fee_fix_amt", "1");
-            // 费率开关
-            obj.Add("switch_state", "1");
-            // 交易手续费外扣时的账户类型
-            // obj.Add("out_fee_acct_type", "");
-            // 交易手续费外扣汇付ID
-            // obj.Add("out_fee_huifuid", "");
-            // 是否交易手续费外扣
-            // obj.Add("out_fee_flag", "");
-
-            return JsonConvert.SerializeObject(obj);
         }
         private static string getBankBigAmtPayConfig() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
@@ -333,7 +341,7 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string getWxZlPayConfList() {
+        private static object getWxZlPayConfList() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 申请服务
             // obj.Add("service_code", "test");
@@ -344,24 +352,18 @@ namespace BasePayDemo
             // 功能费率(%)
             // obj.Add("fee_rate", "test");
 
-            return JsonConvert.SerializeObject(obj);
-        }
-        private static string getAliConfList() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 手续费（%）
-            obj.Add("fee_rate", "3.15");
-            // 支付场景
-            obj.Add("pay_scene", "1");
-            // 商户经营类目
-            obj.Add("mcc", "2016062900190337");
-            // 子渠道号
-            obj.Add("pay_channel_id", "10000001");
-            // 拟申请的间联商户等级
-            obj.Add("indirect_level", "");
-
             JArray objList = new JArray();
             objList.Add(JToken.FromObject(obj));
-            return JsonConvert.SerializeObject(objList);
+            return objList;
+        }
+        private static string getWxZlConf() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 微信子商户号
+            // obj.Add("sub_mch_id", "test");
+            // 配置集合
+            // obj.Add("wx_zl_pay_conf_list", getWxZlPayConfList());
+
+            return JsonConvert.SerializeObject(obj);
         }
     }
 }
