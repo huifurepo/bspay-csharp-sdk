@@ -90,6 +90,8 @@ namespace BasePayDemo
             extendInfoMap.Add("remark", "网银支付接口");
             // 页面跳转地址
             extendInfoMap.Add("front_url", "http://www.chinapnr.com");
+            // 手续费扣款标志
+            // extendInfoMap.Add("fee_flag", "");
             return extendInfoMap;
         }
 

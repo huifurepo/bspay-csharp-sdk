@@ -82,6 +82,8 @@ namespace BasePayDemo
             // extendInfoMap.Add("acct_split_bunch", getAcctSplitBunchRucan());
             // 是否延迟交易
             // extendInfoMap.Add("delay_acct_flag", "");
+            // 手续费扣款标志
+            // extendInfoMap.Add("fee_flag", "");
             return extendInfoMap;
         }
 

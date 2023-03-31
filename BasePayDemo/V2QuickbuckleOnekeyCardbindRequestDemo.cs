@@ -84,6 +84,8 @@ namespace BasePayDemo
             extendInfoMap.Add("protocol_no", "");
             // 风控信息
             // extendInfoMap.Add("risk_info", getRiskInfo());
+            // 回调页面地址
+            // extendInfoMap.Add("verify_front_url", "");
             return extendInfoMap;
         }
 

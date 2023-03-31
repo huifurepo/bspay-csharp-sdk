@@ -318,7 +318,7 @@ namespace BasePayDemo
         private static string getAlipayData() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 买家的支付宝唯一用户号
-            obj.Add("buyer_id", "2088502835860454");
+            obj.Add("buyer_id", "20880414938706770000");
             // 支付宝的店铺编号
             obj.Add("alipay_store_id", "");
             // 买家支付宝账号

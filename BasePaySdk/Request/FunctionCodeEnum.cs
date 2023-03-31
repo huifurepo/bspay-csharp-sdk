@@ -9,6 +9,14 @@ namespace BasePaySdk.Request
     public class FunctionCodeEnum
     {
         /**
+         * 汇付入账确认
+         */
+        public const string V2_TRADE_ONLINEPAYMENT_TRANSFER_REMITTANCE = "v2.trade.onlinepayment.transfer.remittance";
+        /**
+         * 汇付入账查询
+         */
+        public const string V2_TRADE_ONLINEPAYMENT_TRANSFER_REMITTANCEORDER = "v2.trade.onlinepayment.transfer.remittanceorder";
+        /**
          * 一键绑卡
          */
         public const string V2_QUICKBUCKLE_ONEKEY_CARDBIND = "v2.quickbuckle.onekey.cardbind";

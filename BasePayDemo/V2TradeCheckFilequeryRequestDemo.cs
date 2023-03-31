@@ -59,7 +59,7 @@ namespace BasePayDemo
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
             // 文件类型
-            // extendInfoMap.Add("file_type_query", "");
+            extendInfoMap.Add("file_type_query", "2");
             return extendInfoMap;
         }
 

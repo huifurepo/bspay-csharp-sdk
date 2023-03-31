@@ -110,40 +110,44 @@ namespace BasePayDemo
             extendInfoMap.Add("forced_delay_flag", "Y");
             // 是否开通预授权
             extendInfoMap.Add("alipay_pre_auth_flag", "N");
-            // 银联配置对象
-            extendInfoMap.Add("union_conf_list", getUnionConfList());
-            // 银联小微入驻信息实体
-            // extendInfoMap.Add("union_micro_info", getUnionMicroInfo());
-            // 支付宝配置对象
-            extendInfoMap.Add("ali_conf_list", getAliConfList());
-            // 余额支付配置实体
-            extendInfoMap.Add("balance_pay_config", getBalancePayConfig());
-            // 银行卡业务配置实体
-            extendInfoMap.Add("bank_card_conf", getBankCardConf());
-            // 微信配置对象
-            extendInfoMap.Add("wx_conf_list", getWxConfList());
             // 开通微信预授权
             extendInfoMap.Add("wechatpay_pre_auth_flag", "N");
+            // 商户业务类型
+            // extendInfoMap.Add("mer_bus_type", "");
+            // 线上费率配置
+            // extendInfoMap.Add("online_fee_conf_list", getOnlineFeeConfList());
+            // 支付宝配置对象
+            extendInfoMap.Add("ali_conf_list", getAliConfList());
+            // 微信配置对象
+            extendInfoMap.Add("wx_conf_list", getWxConfList());
+            // 银联二维码配置
+            extendInfoMap.Add("union_conf_list", getUnionConfList());
+            // 银行卡业务配置
+            extendInfoMap.Add("bank_card_conf", getBankCardConf());
+            // 银联小微入驻信息实体
+            // extendInfoMap.Add("union_micro_info", getUnionMicroInfo());
+            // 余额支付配置实体
+            extendInfoMap.Add("balance_pay_config", getBalancePayConfig());
             // 营销补贴
             extendInfoMap.Add("combine_pay_config", getCombinePayConfig());
             // 花呗分期费率配置实体
             extendInfoMap.Add("hb_fq_fee_config", getHbFqFeeConfig());
-            // 异步消息接收地址
-            extendInfoMap.Add("async_return_url", "[http://192.168.85.157:30031/sspm/testVirgo](http://192.168.85.157:30031/sspm/testVirgo)");
-            // 业务开通结果异步消息接收地址
-            extendInfoMap.Add("busi_async_return_url", "");
-            // 交易异步应答地址
-            extendInfoMap.Add("recon_resp_addr", "[http://192.168.85.157:30031/sspm/testVirgo](http://192.168.85.157:30031/sspm/testVirgo)");
-            // 线上费率配置
-            // extendInfoMap.Add("online_fee_conf_list", getOnlineFeeConfList());
-            // 商户业务类型
-            // extendInfoMap.Add("mer_bus_type", "");
             // 线上手续费承担方配置
             // extendInfoMap.Add("online_pay_fee_conf_list", getOnlinePayFeeConfList());
             // 银行大额转账对象
             // extendInfoMap.Add("bank_big_amt_pay_config", getBankBigAmtPayConfig());
             // 微信直连配置对象
             // extendInfoMap.Add("wx_zl_conf", getWxZlConf());
+            // 是否使用总部交易信息
+            // extendInfoMap.Add("use_chains_flag", "");
+            // 异步消息接收地址
+            extendInfoMap.Add("async_return_url", "[http://192.168.85.157:30031/sspm/testVirgo](http://192.168.85.157:30031/sspm/testVirgo)");
+            // 业务开通结果异步消息接收地址
+            extendInfoMap.Add("busi_async_return_url", "");
+            // 交易异步应答地址
+            extendInfoMap.Add("recon_resp_addr", "[http://192.168.85.157:30031/sspm/testVirgo](http://192.168.85.157:30031/sspm/testVirgo)");
+            // 平台收款资金归集配置
+            // extendInfoMap.Add("out_order_funds_config", getOutOrderFundsConfig());
             return extendInfoMap;
         }
 
@@ -165,6 +169,65 @@ namespace BasePayDemo
             obj.Add("agree_end_date", "20400325");
 
             return JsonConvert.SerializeObject(obj);
+        }
+        private static string getOnlineFeeConfList() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 业务类型
+            // obj.Add("fee_type", "test");
+            // 银行编码
+            // obj.Add("bank_id", "test");
+            // 借贷标志
+            // obj.Add("dc_flag", "test");
+            // 费率状态
+            // obj.Add("stat_flag", "test");
+            // 手续费（固定/元）
+            // obj.Add("fix_amt", "");
+            // 费率（百分比/%）
+            // obj.Add("fee_rate", "");
+            // 银行名称
+            // obj.Add("bank_name", "");
+            // 银行中文简称
+            // obj.Add("bank_short_chn", "");
+
+            JArray objList = new JArray();
+            objList.Add(JToken.FromObject(obj));
+            return JsonConvert.SerializeObject(objList);
+        }
+        private static string getAliConfList() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 支付场景
+            obj.Add("pay_scene", "1");
+            // 手续费（%）
+            obj.Add("fee_rate", "0.38");
+            // 商户经营类目
+            obj.Add("mcc", "2015091000052157");
+            // 子渠道号
+            obj.Add("pay_channel_id", "JQF00001");
+            // 拟申请的间联商户等级
+            obj.Add("indirect_level", "");
+
+            JArray objList = new JArray();
+            objList.Add(JToken.FromObject(obj));
+            return JsonConvert.SerializeObject(objList);
+        }
+        private static string getWxConfList() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 支付场景
+            obj.Add("pay_scene", "1");
+            // 手续费（%）
+            obj.Add("fee_rate", "0.38");
+            // 费率规则号
+            obj.Add("fee_rule_id", "758");
+            // ~~商户经营类目~~
+            // obj.Add("~~mcc~~", "");
+            // 子渠道号
+            obj.Add("pay_channel_id", "JP00001");
+            // 申请服务
+            obj.Add("service_codes", "");
+
+            JArray objList = new JArray();
+            objList.Add(JToken.FromObject(obj));
+            return JsonConvert.SerializeObject(objList);
         }
         private static string getUnionConfList() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
@@ -188,53 +251,6 @@ namespace BasePayDemo
             JArray objList = new JArray();
             objList.Add(JToken.FromObject(obj));
             return JsonConvert.SerializeObject(objList);
-        }
-        private static string getUnionMicroInfo() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 银联商户类别
-            // obj.Add("mchnt_type", "test");
-            // 商户经度
-            // obj.Add("mer_lng", "test");
-            // 商户纬度
-            // obj.Add("mer_lat", "test");
-            // 店铺名称
-            // obj.Add("shop_name", "test");
-            // 商户经营类目
-            // obj.Add("mcc", "test");
-
-            return JsonConvert.SerializeObject(obj);
-        }
-        private static string getAliConfList() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 支付场景
-            obj.Add("pay_scene", "1");
-            // 手续费（%）
-            obj.Add("fee_rate", "0.38");
-            // 商户经营类目
-            obj.Add("mcc", "2015091000052157");
-            // 子渠道号
-            obj.Add("pay_channel_id", "JQF00001");
-            // 拟申请的间联商户等级
-            obj.Add("indirect_level", "");
-
-            JArray objList = new JArray();
-            objList.Add(JToken.FromObject(obj));
-            return JsonConvert.SerializeObject(objList);
-        }
-        private static string getBalancePayConfig() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 支付手续费(%)
-            obj.Add("fee_rate", "2");
-            // 支付固定手续费(元)
-            obj.Add("fee_fix_amt", "1");
-            // 交易手续费外扣时的账户类型
-            // obj.Add("out_fee_acct_type", "");
-            // 交易手续费外扣汇付ID
-            // obj.Add("out_fee_huifuid", "");
-            // 是否交易手续费外扣
-            // obj.Add("out_fee_flag", "");
-
-            return JsonConvert.SerializeObject(obj);
         }
         private static string getBankCardConf() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
@@ -269,24 +285,35 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string getWxConfList() {
+        private static string getUnionMicroInfo() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 支付场景
-            obj.Add("pay_scene", "1");
-            // 手续费（%）
-            obj.Add("fee_rate", "0.38");
-            // 费率规则号
-            obj.Add("fee_rule_id", "758");
-            // ~~商户经营类目~~
-            // obj.Add("~~mcc~~", "");
-            // 子渠道号
-            obj.Add("pay_channel_id", "JP00001");
-            // 申请服务
-            obj.Add("service_codes", "");
+            // 银联商户类别
+            // obj.Add("mchnt_type", "test");
+            // 商户经度
+            // obj.Add("mer_lng", "test");
+            // 商户纬度
+            // obj.Add("mer_lat", "test");
+            // 店铺名称
+            // obj.Add("shop_name", "test");
+            // 商户经营类目
+            // obj.Add("mcc", "test");
 
-            JArray objList = new JArray();
-            objList.Add(JToken.FromObject(obj));
-            return JsonConvert.SerializeObject(objList);
+            return JsonConvert.SerializeObject(obj);
+        }
+        private static string getBalancePayConfig() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 支付手续费(%)
+            obj.Add("fee_rate", "2");
+            // 支付固定手续费(元)
+            obj.Add("fee_fix_amt", "1");
+            // 交易手续费外扣时的账户类型
+            // obj.Add("out_fee_acct_type", "");
+            // 交易手续费外扣汇付ID
+            // obj.Add("out_fee_huifuid", "");
+            // 是否交易手续费外扣
+            // obj.Add("out_fee_flag", "");
+
+            return JsonConvert.SerializeObject(obj);
         }
         private static string getCombinePayConfig() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
@@ -323,29 +350,6 @@ namespace BasePayDemo
             obj.Add("pay_scene", "1");
 
             return JsonConvert.SerializeObject(obj);
-        }
-        private static string getOnlineFeeConfList() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 业务类型
-            // obj.Add("fee_type", "test");
-            // 银行编码
-            // obj.Add("bank_id", "test");
-            // 借贷标志
-            // obj.Add("dc_flag", "test");
-            // 费率状态
-            // obj.Add("stat_flag", "test");
-            // 手续费（固定/元）
-            // obj.Add("fix_amt", "");
-            // 费率（百分比/%）
-            // obj.Add("fee_rate", "");
-            // 银行名称
-            // obj.Add("bank_name", "");
-            // 银行中文简称
-            // obj.Add("bank_short_chn", "");
-
-            JArray objList = new JArray();
-            objList.Add(JToken.FromObject(obj));
-            return JsonConvert.SerializeObject(objList);
         }
         private static string getOnlinePayFeeConfList() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
@@ -404,6 +408,23 @@ namespace BasePayDemo
             // obj.Add("sub_mch_id", "test");
             // 配置集合
             // obj.Add("wx_zl_pay_conf_list", getWxZlPayConfList());
+
+            return JsonConvert.SerializeObject(obj);
+        }
+        private static string getOutOrderFundsConfig() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 自动入账开关
+            // obj.Add("out_order_auto_acct_flag", "test");
+            // 支付手续费(%)
+            // obj.Add("fee_rate", "");
+            // 支付固定手续费(元)
+            // obj.Add("fee_fix_amt", "");
+            // 交易手续费外扣时的账户类型
+            // obj.Add("out_fee_acct_type", "");
+            // 交易手续费外扣标记
+            // obj.Add("out_fee_flag", "");
+            // 交易手续费外扣汇付ID
+            // obj.Add("out_fee_huifuid", "");
 
             return JsonConvert.SerializeObject(obj);
         }

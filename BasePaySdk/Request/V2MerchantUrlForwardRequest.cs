@@ -24,13 +24,9 @@ namespace BasePaySdk.Request
          */
         private string upperHuifuId;
         /**
-         * 手机号
-         */
-        private string phone;
-        /**
          * 门店号
          */
-        private string storeid;
+        private string storeId;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_MERCHANT_URL_FORWARD;
@@ -39,12 +35,11 @@ namespace BasePaySdk.Request
         public V2MerchantUrlForwardRequest() {
         }
 
-        public V2MerchantUrlForwardRequest(string reqSeqId, string reqDate, string upperHuifuId, string phone, string storeid) {
+        public V2MerchantUrlForwardRequest(string reqSeqId, string reqDate, string upperHuifuId, string storeId) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.upperHuifuId = upperHuifuId;
-            this.phone = phone;
-            this.storeid = storeid;
+            this.storeId = storeId;
         }
 
         public string getReqSeqId() {
@@ -71,20 +66,12 @@ namespace BasePaySdk.Request
             this.upperHuifuId = upperHuifuId;
         }
 
-        public string getPhone() {
-            return phone;
+        public string getStoreId() {
+            return storeId;
         }
 
-        public void setPhone(string phone) {
-            this.phone = phone;
-        }
-
-        public string getStoreid() {
-            return storeid;
-        }
-
-        public void setStoreid(string storeid) {
-            this.storeid = storeid;
+        public void setStoreId(string storeId) {
+            this.storeId = storeId;
         }
 
 

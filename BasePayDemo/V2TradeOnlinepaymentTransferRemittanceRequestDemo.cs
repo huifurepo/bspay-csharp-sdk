@@ -8,30 +8,36 @@ using Newtonsoft.Json.Linq;
 namespace BasePayDemo
 {
     /**
-     * 商户统一进件（页面版） - 示例
+     * 汇付入账确认 - 示例
      *
      * @author sdk-generator
      * @Description
      */
-    public class V2MerchantUrlForwardRequestDemo
+    public class V2TradeOnlinepaymentTransferRemittanceRequestDemo
     {
 
-        public static void V2MerchantUrlForwardRequestDemoTest()
+        public static void V2TradeOnlinepaymentTransferRemittanceRequestDemoTest()
         {
 
             // 1. 数据初始化
             InitMerConfig.init();
 
             // 2.组装请求参数
-            V2MerchantUrlForwardRequest request = new V2MerchantUrlForwardRequest();
+            V2TradeOnlinepaymentTransferRemittanceRequest request = new V2TradeOnlinepaymentTransferRemittanceRequest();
             // 请求流水号
             request.setReqSeqId(DateTime.Now.ToString("yyy-MM-dd HH.mm.ss.fff"));
             // 请求日期
             request.setReqDate(DateTime.Now.ToString("yyyyMMdd"));
-            // 渠道商号
-            request.setUpperHuifuId("6666000123123123");
-            // 门店号
-            // request.setStoreId("test");
+            // 商户号
+            request.setHuifuId("6666000106521787");
+            // 交易金额
+            request.setTransAmt("1019.00");
+            // 异步通知地址
+            request.setNotifyUrl("http://C_TOPAT_NOTIFY");
+            // 原汇款订单号
+            request.setOrgRemittanceOrderId("20230214170030defaultit656505030");
+            // 商品描述
+            request.setGoodsDesc("商品描述001");
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -58,14 +64,8 @@ namespace BasePayDemo
         private static Dictionary<string, object> getExtendInfos() {
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
-            // 手机号
-            extendInfoMap.Add("phone", "13917352618");
-            // 跳转地址失效时间
-            extendInfoMap.Add("expires", "50000");
-            // 返回页面URL
-            // extendInfoMap.Add("back_page_url", "");
-            // 异步接收URL
-            // extendInfoMap.Add("async_receive_url", "");
+            // 备注
+            extendInfoMap.Add("remark", "标记123");
             return extendInfoMap;
         }
 

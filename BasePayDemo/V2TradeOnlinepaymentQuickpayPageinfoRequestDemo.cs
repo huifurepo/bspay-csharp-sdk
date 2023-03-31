@@ -82,6 +82,8 @@ namespace BasePayDemo
             extendInfoMap.Add("front_url", "http://www.chinapnr.com");
             // 延时标记
             // extendInfoMap.Add("delay_acct_flag", "");
+            // 手续费扣款标志
+            // extendInfoMap.Add("fee_flag", "");
             return extendInfoMap;
         }
 
