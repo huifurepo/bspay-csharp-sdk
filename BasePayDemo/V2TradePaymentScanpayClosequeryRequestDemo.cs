@@ -58,10 +58,10 @@ namespace BasePayDemo
         private static Dictionary<string, object> getExtendInfos() {
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
-            // 原交易返回的全局流水号
-            // extendInfoMap.Add("org_hf_seq_id", "");
             // 原交易请求流水号
             extendInfoMap.Add("org_req_seq_id", "202109187312431237001");
+            // 原交易返回的全局流水号
+            // extendInfoMap.Add("org_hf_seq_id", "");
             return extendInfoMap;
         }
 

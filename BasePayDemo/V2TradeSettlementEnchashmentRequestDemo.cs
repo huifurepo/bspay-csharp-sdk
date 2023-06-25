@@ -30,7 +30,7 @@ namespace BasePayDemo
             request.setReqSeqId(DateTime.Now.ToString("yyy-MM-dd HH.mm.ss.fff"));
             // 取现金额
             request.setCashAmt("0.01");
-            // 商户号
+            // 取现方ID号
             request.setHuifuId("6666000021291985");
             // 到账日期类型
             request.setIntoAcctDateType("T0");

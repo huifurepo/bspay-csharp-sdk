@@ -102,6 +102,8 @@ namespace BasePayDemo
             extendInfoMap.Add("expand_id", "");
             // 文件列表
             // extendInfoMap.Add("file_list", getFileList());
+            // 公司类型
+            // extendInfoMap.Add("ent_type", "");
             return extendInfoMap;
         }
 

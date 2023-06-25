@@ -28,9 +28,9 @@ namespace BasePayDemo
             request.setReqSeqId(DateTime.Now.ToString("yyy-MM-dd HH.mm.ss.fff"));
             // 请求日期
             request.setReqDate(DateTime.Now.ToString("yyyyMMdd"));
-            // 商户汇付Id
+            // 商户/用户汇付Id
             request.setHuifuId("6666000106071234");
-            // 渠道商汇付Id
+            // 上级汇付Id
             request.setUpperHuifuId("6666000106065087");
             // 子账户号
             request.setAcctId("C01571234");
@@ -66,6 +66,8 @@ namespace BasePayDemo
             extendInfoMap.Add("settle_config", getSettleConfig());
             // 异步请求地址
             extendInfoMap.Add("async_return_url", "");
+            // 汇总结算配置实体
+            // extendInfoMap.Add("collection_settle_config", getCollectionSettleConfig());
             return extendInfoMap;
         }
 
@@ -97,7 +99,7 @@ namespace BasePayDemo
             obj.Add("cert_validity_type", "0");
             // 持卡人证件有效期开始
             obj.Add("cert_begin_date", "20220101");
-            // 银行卡绑定手机号
+            // 结算人手机号
             obj.Add("mp", "17521216927");
 
             return JsonConvert.SerializeObject(obj);
@@ -134,6 +136,23 @@ namespace BasePayDemo
             obj.Add("constant_amt", "66.99");
             // 卡序列号
             obj.Add("token_no", "");
+
+            return JsonConvert.SerializeObject(obj);
+        }
+        private static string getCollectionSettleConfig() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 归集留存金(元)
+            // obj.Add("out_resv_amt", "test");
+            // 转入账户
+            // obj.Add("in_acct_id", "test");
+            // 转入商户号
+            // obj.Add("in_huifu_id", "test");
+            // 生效日期
+            // obj.Add("valid_date", "test");
+            // 功能开关
+            // obj.Add("switch_state", "");
+            // 转出账户
+            // obj.Add("out_acct_id", "");
 
             return JsonConvert.SerializeObject(obj);
         }

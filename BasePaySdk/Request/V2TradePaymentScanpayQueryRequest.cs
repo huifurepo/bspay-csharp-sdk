@@ -12,33 +12,25 @@ namespace BasePaySdk.Request
     {
 
         /**
-         * 原机构请求日期
-         */
-        private string orgReqDate;
-        /**
-         * 商户号
+         * 汇付商户号
          */
         private string huifuId;
         /**
-         * 商户订单号线下POS、扫码机具发起的交易需要提供；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：22577563652260773965&lt;/font&gt;
+         * 汇付服务订单号out_order_no,org_hf_seq_id,org_req_seq_id 必填其一；汇付生成的服务订单号；&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：1234323JKHDFE1243252&lt;/font&gt;
          */
-        private string merOrdId;
+        private string outOrderNo;
         /**
-         * 交易返回的全局流水号org_hf_seq_id，org_req_seq_id，out_trans_id，party_order_id四选一；&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：00290TOP1GR210919004230P853ac13262200000&lt;/font&gt;
+         * 创建服务订单返回的汇付全局流水号out_order_no,org_hf_seq_id,org_req_seq_id 必填其一；&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：00290TOP1GR210919004230P853ac13262200000&lt;/font&gt;
          */
         private string orgHfSeqId;
         /**
-         * 原机构请求流水号org_hf_seq_id，org_req_seq_id，out_trans_id，party_order_id四选一；&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：202110210012100005&lt;/font&gt;
+         * 服务订单创建请求流水号out_order_no,org_hf_seq_id,org_req_seq_id 必填其一；&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：202110210012100005&lt;/font&gt;
          */
         private string orgReqSeqId;
         /**
-         * 用户账单上的交易订单号org_hf_seq_id，org_req_seq_id，out_trans_id，party_order_id四选一；&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：092021091922001451301445517582&lt;/font&gt;；参见[用户账单说明](https://paas.huifu.com/partners/api/#/czsm/api_czsm_yhzd)
+         * 原机构请求日期
          */
-        private string outTransId;
-        /**
-         * 用户账单上的商户订单号org_hf_seq_id，org_req_seq_id，out_trans_id，party_order_id四选一；&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：03232109190255105603561&lt;/font&gt;；参见[用户账单说明](https://paas.huifu.com/partners/api/#/czsm/api_czsm_yhzd)
-         */
-        private string partyOrderId;
+        private string orgReqDate;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_TRADE_PAYMENT_SCANPAY_QUERY;
@@ -47,21 +39,11 @@ namespace BasePaySdk.Request
         public V2TradePaymentScanpayQueryRequest() {
         }
 
-        public V2TradePaymentScanpayQueryRequest(string orgReqDate, string huifuId, string merOrdId, string orgHfSeqId, string orgReqSeqId, string outTransId, string partyOrderId) {
-            this.orgReqDate = orgReqDate;
+        public V2TradePaymentScanpayQueryRequest(string huifuId, string outOrderNo, string orgHfSeqId, string orgReqSeqId, string orgReqDate) {
             this.huifuId = huifuId;
-            this.merOrdId = merOrdId;
+            this.outOrderNo = outOrderNo;
             this.orgHfSeqId = orgHfSeqId;
             this.orgReqSeqId = orgReqSeqId;
-            this.outTransId = outTransId;
-            this.partyOrderId = partyOrderId;
-        }
-
-        public string getOrgReqDate() {
-            return orgReqDate;
-        }
-
-        public void setOrgReqDate(string orgReqDate) {
             this.orgReqDate = orgReqDate;
         }
 
@@ -73,12 +55,12 @@ namespace BasePaySdk.Request
             this.huifuId = huifuId;
         }
 
-        public string getMerOrdId() {
-            return merOrdId;
+        public string getOutOrderNo() {
+            return outOrderNo;
         }
 
-        public void setMerOrdId(string merOrdId) {
-            this.merOrdId = merOrdId;
+        public void setOutOrderNo(string outOrderNo) {
+            this.outOrderNo = outOrderNo;
         }
 
         public string getOrgHfSeqId() {
@@ -97,20 +79,12 @@ namespace BasePaySdk.Request
             this.orgReqSeqId = orgReqSeqId;
         }
 
-        public string getOutTransId() {
-            return outTransId;
+        public string getOrgReqDate() {
+            return orgReqDate;
         }
 
-        public void setOutTransId(string outTransId) {
-            this.outTransId = outTransId;
-        }
-
-        public string getPartyOrderId() {
-            return partyOrderId;
-        }
-
-        public void setPartyOrderId(string partyOrderId) {
-            this.partyOrderId = partyOrderId;
+        public void setOrgReqDate(string orgReqDate) {
+            this.orgReqDate = orgReqDate;
         }
 
 

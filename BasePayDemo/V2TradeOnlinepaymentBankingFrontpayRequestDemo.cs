@@ -68,8 +68,6 @@ namespace BasePayDemo
         private static Dictionary<string, object> getExtendInfos() {
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
-            // 收款用户客户号
-            extendInfoMap.Add("user_huifu_id", "");
             // 收款汇付账户号
             extendInfoMap.Add("acct_id", "");
             // 订单类型
@@ -152,7 +150,7 @@ namespace BasePayDemo
             // ip地址
             obj.Add("ip_addr", "1");
             // 基站地址
-            // obj.Add("base_atation", "");
+            obj.Add("base_station", "2");
             // 纬度
             obj.Add("latitude", "3");
             // 经度

@@ -8,7 +8,7 @@ namespace BasePaySdk.Request
      * @author sdk-generator
      * @Description
      */
-    public class V2TradeOnlinepaymentQuickpayPageinfoRequest : BaseRequest
+    public class V2TradeOnlinepaymentQuickpayFrontpayRequest : BaseRequest
     {
 
         /**
@@ -28,38 +28,38 @@ namespace BasePaySdk.Request
          */
         private string transAmt;
         /**
-         * 设备信息
+         * 异步通知地址
          */
-        private string terminalDeviceData;
+        private string notifyUrl;
         /**
          * 银行扩展信息
          */
         private string extendPayData;
         /**
+         * 设备信息
+         */
+        private string terminalDeviceData;
+        /**
          * 安全信息
          */
         private string riskCheckData;
-        /**
-         * 异步通知地址
-         */
-        private string notifyUrl;
 
         public override string getFunctionCode() {
-            return FunctionCodeEnum.V2_TRADE_ONLINEPAYMENT_QUICKPAY_PAGEINFO;
+            return FunctionCodeEnum.V2_TRADE_ONLINEPAYMENT_QUICKPAY_FRONTPAY;
         }
 
-        public V2TradeOnlinepaymentQuickpayPageinfoRequest() {
+        public V2TradeOnlinepaymentQuickpayFrontpayRequest() {
         }
 
-        public V2TradeOnlinepaymentQuickpayPageinfoRequest(string reqSeqId, string reqDate, string huifuId, string transAmt, string terminalDeviceData, string extendPayData, string riskCheckData, string notifyUrl) {
+        public V2TradeOnlinepaymentQuickpayFrontpayRequest(string reqSeqId, string reqDate, string huifuId, string transAmt, string notifyUrl, string extendPayData, string terminalDeviceData, string riskCheckData) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.huifuId = huifuId;
             this.transAmt = transAmt;
-            this.terminalDeviceData = terminalDeviceData;
-            this.extendPayData = extendPayData;
-            this.riskCheckData = riskCheckData;
             this.notifyUrl = notifyUrl;
+            this.extendPayData = extendPayData;
+            this.terminalDeviceData = terminalDeviceData;
+            this.riskCheckData = riskCheckData;
         }
 
         public string getReqSeqId() {
@@ -94,12 +94,12 @@ namespace BasePaySdk.Request
             this.transAmt = transAmt;
         }
 
-        public string getTerminalDeviceData() {
-            return terminalDeviceData;
+        public string getNotifyUrl() {
+            return notifyUrl;
         }
 
-        public void setTerminalDeviceData(string terminalDeviceData) {
-            this.terminalDeviceData = terminalDeviceData;
+        public void setNotifyUrl(string notifyUrl) {
+            this.notifyUrl = notifyUrl;
         }
 
         public string getExtendPayData() {
@@ -110,20 +110,20 @@ namespace BasePaySdk.Request
             this.extendPayData = extendPayData;
         }
 
+        public string getTerminalDeviceData() {
+            return terminalDeviceData;
+        }
+
+        public void setTerminalDeviceData(string terminalDeviceData) {
+            this.terminalDeviceData = terminalDeviceData;
+        }
+
         public string getRiskCheckData() {
             return riskCheckData;
         }
 
         public void setRiskCheckData(string riskCheckData) {
             this.riskCheckData = riskCheckData;
-        }
-
-        public string getNotifyUrl() {
-            return notifyUrl;
-        }
-
-        public void setNotifyUrl(string notifyUrl) {
-            this.notifyUrl = notifyUrl;
         }
 
 

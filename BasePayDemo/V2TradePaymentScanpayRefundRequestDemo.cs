@@ -84,7 +84,7 @@ namespace BasePayDemo
             // extendInfoMap.Add("loan_undertaker", "");
             // 垫资账户类型
             // extendInfoMap.Add("loan_acct_type", "");
-            // 营销补贴信息
+            // 补贴支付信息
             // extendInfoMap.Add("combinedpay_data", getCombinedpayData());
             return extendInfoMap;
         }
@@ -94,7 +94,7 @@ namespace BasePayDemo
             // ip地址
             // obj.Add("ip_addr", "");
             // 基站地址
-            // obj.Add("base_atation", "");
+            // obj.Add("base_station", "");
             // 纬度
             // obj.Add("latitude", "");
             // 经度

@@ -8,32 +8,32 @@ using Newtonsoft.Json.Linq;
 namespace BasePayDemo
 {
     /**
-     * 银联活动报名进度查询 - 示例
+     * 商户短信发送 - 示例
      *
      * @author sdk-generator
      * @Description
      */
-    public class V2MerchantActivityUnionpaySignStatusRequestDemo
+    public class V2MerchantBasicdataSmsSendRequestDemo
     {
 
-        public static void V2MerchantActivityUnionpaySignStatusRequestDemoTest()
+        public static void V2MerchantBasicdataSmsSendRequestDemoTest()
         {
 
             // 1. 数据初始化
             InitMerConfig.init();
 
             // 2.组装请求参数
-            V2MerchantActivityUnionpaySignStatusRequest request = new V2MerchantActivityUnionpaySignStatusRequest();
+            V2MerchantBasicdataSmsSendRequest request = new V2MerchantBasicdataSmsSendRequest();
             // 请求流水号
             request.setReqSeqId(DateTime.Now.ToString("yyy-MM-dd HH.mm.ss.fff"));
-            // 请求日期
+            // 请求时间
             request.setReqDate(DateTime.Now.ToString("yyyyMMdd"));
-            // 汇付客户Id
-            request.setHuifuId("6666000103299185");
-            // 报名编号与serialNumber二选一；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：521724026796785664&lt;/font&gt;
-            request.setEnlistId("521724026796785664");
-            // 报名请求流水号报名时传递的reqSysId；与enlistId二选一；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：ZDTESTrQ202011054108473959671&lt;/font&gt;
-            request.setSerialNumber("ZDTESTrQ202011054108473959671");
+            // 商户汇付Id
+            request.setHuifuId("6666000105013599");
+            // 手机号
+            request.setPhone("13917111111");
+            // 验证类型
+            request.setVerifyType("settleBankChange");
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();

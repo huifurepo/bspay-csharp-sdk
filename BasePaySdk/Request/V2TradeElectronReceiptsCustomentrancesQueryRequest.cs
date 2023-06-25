@@ -3,12 +3,12 @@ using System;
 namespace BasePaySdk.Request
 {
     /**
-     * 修改子账户配置
+     * 查询小票自定义入口
      *
      * @author sdk-generator
      * @Description
      */
-    public class V2MerchantSettleModifyRequest : BaseRequest
+    public class V2TradeElectronReceiptsCustomentrancesQueryRequest : BaseRequest
     {
 
         /**
@@ -20,31 +20,21 @@ namespace BasePaySdk.Request
          */
         private string reqDate;
         /**
-         * 商户/用户汇付Id
+         * 商户号
          */
         private string huifuId;
-        /**
-         * 上级汇付Id
-         */
-        private string upperHuifuId;
-        /**
-         * 子账户号
-         */
-        private string acctId;
 
         public override string getFunctionCode() {
-            return FunctionCodeEnum.V2_MERCHANT_SETTLE_MODIFY;
+            return FunctionCodeEnum.V2_TRADE_ELECTRON_RECEIPTS_CUSTOMENTRANCES_QUERY;
         }
 
-        public V2MerchantSettleModifyRequest() {
+        public V2TradeElectronReceiptsCustomentrancesQueryRequest() {
         }
 
-        public V2MerchantSettleModifyRequest(string reqSeqId, string reqDate, string huifuId, string upperHuifuId, string acctId) {
+        public V2TradeElectronReceiptsCustomentrancesQueryRequest(string reqSeqId, string reqDate, string huifuId) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.huifuId = huifuId;
-            this.upperHuifuId = upperHuifuId;
-            this.acctId = acctId;
         }
 
         public string getReqSeqId() {
@@ -69,22 +59,6 @@ namespace BasePaySdk.Request
 
         public void setHuifuId(string huifuId) {
             this.huifuId = huifuId;
-        }
-
-        public string getUpperHuifuId() {
-            return upperHuifuId;
-        }
-
-        public void setUpperHuifuId(string upperHuifuId) {
-            this.upperHuifuId = upperHuifuId;
-        }
-
-        public string getAcctId() {
-            return acctId;
-        }
-
-        public void setAcctId(string acctId) {
-            this.acctId = acctId;
         }
 
 

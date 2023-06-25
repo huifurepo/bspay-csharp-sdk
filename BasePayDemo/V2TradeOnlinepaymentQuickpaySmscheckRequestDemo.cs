@@ -8,30 +8,34 @@ using Newtonsoft.Json.Linq;
 namespace BasePayDemo
 {
     /**
-     * 微信代发查询 - 示例
+     * 快捷支付短信预校验 - 示例
      *
      * @author sdk-generator
      * @Description
      */
-    public class V2TradeTransWxsurrogateQueryRequestDemo
+    public class V2TradeOnlinepaymentQuickpaySmscheckRequestDemo
     {
 
-        public static void V2TradeTransWxsurrogateQueryRequestDemoTest()
+        public static void V2TradeOnlinepaymentQuickpaySmscheckRequestDemoTest()
         {
 
             // 1. 数据初始化
             InitMerConfig.init();
 
             // 2.组装请求参数
-            V2TradeTransWxsurrogateQueryRequest request = new V2TradeTransWxsurrogateQueryRequest();
+            V2TradeOnlinepaymentQuickpaySmscheckRequest request = new V2TradeOnlinepaymentQuickpaySmscheckRequest();
+            // 请求流水号
+            request.setReqSeqId(DateTime.Now.ToString("yyy-MM-dd HH.mm.ss.fff"));
+            // 请求日期
+            request.setReqDate(DateTime.Now.ToString("yyyyMMdd"));
             // 商户号
-            request.setHuifuId("6666000000041651");
-            // 原请求流水号原交易请求流水号、原交易返回的全局流水号至少要送其中一项；&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：2021091708126665001&lt;/font&gt;
-            request.setOrgReqSeqId("20210915121117822015");
-            // 原交易返回的全局流水号原交易请求流水号、原交易返回的全局流水号至少要送其中一项；&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：00290TOP1GR210919004230P853ac13262200000 &lt;/font&gt;
-            request.setOrgHfSeqId("");
+            request.setHuifuId("6666000109812884");
+            // 原请求流水号
+            request.setOrgReqSeqId("20230418223666178210001");
             // 原请求日期
-            request.setOrgReqDate("20210915");
+            request.setOrgReqDate("20230418");
+            // 短信验证码
+            request.setSmsCode("657631");
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();

@@ -74,7 +74,7 @@ namespace BasePayDemo
             extendInfoMap.Add("delay_acct_flag", "Y");
             // 渠道号
             extendInfoMap.Add("channel_no", "");
-            // 营销补贴信息
+            // 补贴支付信息
             // extendInfoMap.Add("combinedpay_data", getCombinedpayData());
             // 场景类型
             extendInfoMap.Add("pay_scene", "");
@@ -282,7 +282,7 @@ namespace BasePayDemo
             // ip地址
             // obj.Add("ip_addr", "");
             // 基站地址
-            // obj.Add("base_atation", "");
+            obj.Add("base_station", "3");
             // 纬度
             obj.Add("latitude", "2");
             // 经度

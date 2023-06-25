@@ -3,12 +3,12 @@ using System;
 namespace BasePaySdk.Request
 {
     /**
-     * 银联活动报名
+     * 创建修改小票自定义入口
      *
      * @author sdk-generator
      * @Description
      */
-    public class V2MerchantActivityUnionpaySignRequest : BaseRequest
+    public class V2TradeElectronReceiptsCustomentrancesCreateRequest : BaseRequest
     {
 
         /**
@@ -20,31 +20,26 @@ namespace BasePaySdk.Request
          */
         private string reqDate;
         /**
-         * 汇付客户Id
+         * 商户号
          */
         private string huifuId;
         /**
-         * 活动编号
+         * 操作类型
          */
-        private string activityId;
-        /**
-         * 银联活动商户号
-         */
-        private string merNo;
+        private string operateType;
 
         public override string getFunctionCode() {
-            return FunctionCodeEnum.V2_MERCHANT_ACTIVITY_UNIONPAY_SIGN;
+            return FunctionCodeEnum.V2_TRADE_ELECTRON_RECEIPTS_CUSTOMENTRANCES_CREATE;
         }
 
-        public V2MerchantActivityUnionpaySignRequest() {
+        public V2TradeElectronReceiptsCustomentrancesCreateRequest() {
         }
 
-        public V2MerchantActivityUnionpaySignRequest(string reqSeqId, string reqDate, string huifuId, string activityId, string merNo) {
+        public V2TradeElectronReceiptsCustomentrancesCreateRequest(string reqSeqId, string reqDate, string huifuId, string operateType) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.huifuId = huifuId;
-            this.activityId = activityId;
-            this.merNo = merNo;
+            this.operateType = operateType;
         }
 
         public string getReqSeqId() {
@@ -71,20 +66,12 @@ namespace BasePaySdk.Request
             this.huifuId = huifuId;
         }
 
-        public string getActivityId() {
-            return activityId;
+        public string getOperateType() {
+            return operateType;
         }
 
-        public void setActivityId(string activityId) {
-            this.activityId = activityId;
-        }
-
-        public string getMerNo() {
-            return merNo;
-        }
-
-        public void setMerNo(string merNo) {
-            this.merNo = merNo;
+        public void setOperateType(string operateType) {
+            this.operateType = operateType;
         }
 
 

@@ -8,28 +8,28 @@ using Newtonsoft.Json.Linq;
 namespace BasePayDemo
 {
     /**
-     * 汇付入账查询 - 示例
+     * 批量出金交易查询 - 示例
      *
      * @author sdk-generator
      * @Description
      */
-    public class V2TradeOnlinepaymentTransferRemittanceorderRequestDemo
+    public class V2TradeBatchtranslogQueryRequestDemo
     {
 
-        public static void V2TradeOnlinepaymentTransferRemittanceorderRequestDemoTest()
+        public static void V2TradeBatchtranslogQueryRequestDemoTest()
         {
 
             // 1. 数据初始化
             InitMerConfig.init();
 
             // 2.组装请求参数
-            V2TradeOnlinepaymentTransferRemittanceorderRequest request = new V2TradeOnlinepaymentTransferRemittanceorderRequest();
+            V2TradeBatchtranslogQueryRequest request = new V2TradeBatchtranslogQueryRequest();
             // 商户号
-            request.setHuifuId("6666000003100615");
-            // 原请求开始日期
-            request.setOrgReqStartDate("20230110");
-            // 原请求结束日期
-            request.setOrgReqEndDate("20230110");
+            request.setHuifuId("6666000000041651");
+            // 开始日期
+            request.setBeginDate("20230315");
+            // 结束日期
+            request.setEndDate("20230316");
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -56,18 +56,12 @@ namespace BasePayDemo
         private static Dictionary<string, object> getExtendInfos() {
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
-            // 原请求流水号
-            extendInfoMap.Add("org_req_seq_id", "20230110155433defaultit655128593");
-            // 原请求日期
-            extendInfoMap.Add("org_req_date", "20230110");
-            // 原汇款订单号
-            extendInfoMap.Add("org_remittance_order_id", "20230110155433defaultit655128591");
-            // 每页条数
-            extendInfoMap.Add("page_size", "1");
+            // 交易类型
+            extendInfoMap.Add("batch_trans_type", "");
             // 分页页码
-            extendInfoMap.Add("page_no", "1");
-            // 入账批次号
-            // extendInfoMap.Add("org_batch_no", "");
+            extendInfoMap.Add("page_num", "1");
+            // 分页条数
+            extendInfoMap.Add("page_size", "10");
             return extendInfoMap;
         }
 

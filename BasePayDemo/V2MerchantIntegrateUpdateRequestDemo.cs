@@ -66,7 +66,7 @@ namespace BasePayDemo
             // extendInfoMap.Add("card_info", getCardInfo());
             // 协议信息实体
             // extendInfoMap.Add("agreement_info", getAgreementInfo());
-            // 营销补贴
+            // 补贴支付
             // extendInfoMap.Add("combine_pay_config", getCombinePayConfig());
             // 取现配置列表
             // extendInfoMap.Add("cash_config", getCashConfig());
@@ -229,7 +229,7 @@ namespace BasePayDemo
             // obj.Add("cert_no", "");
             // 持卡人证件类型
             // obj.Add("cert_type", "");
-            // 银行卡绑定手机号
+            // 结算人手机号
             // obj.Add("mp", "");
 
             return JsonConvert.SerializeObject(obj);
@@ -238,18 +238,18 @@ namespace BasePayDemo
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 协议类型
             // obj.Add("agreement_type", "test");
+            // 纸质协议开始日期&lt;font color&#x3D;&quot;green&quot;&gt;示例值：20220822&lt;/font&gt;
+            // obj.Add("agree_begin_date", "test");
+            // 纸质协议结束日期&lt;font color&#x3D;&quot;green&quot;&gt;示例值：20230822&lt;/font&gt;
+            // obj.Add("agree_end_date", "test");
             // 协议号
             // obj.Add("agreement_no", "");
-            // 协议模板号
+            // 纸质协议模板号
             // obj.Add("agreement_model", "");
-            // 协议模板名称
+            // 纸质协议模板名称
             // obj.Add("agreement_name", "");
-            // 签约日期
+            // 纸质签约日期
             // obj.Add("sign_date", "");
-            // 协议开始日期
-            // obj.Add("agree_begin_date", "");
-            // 协议结束日期
-            // obj.Add("agree_end_date", "");
 
             return JsonConvert.SerializeObject(obj);
         }
@@ -332,7 +332,7 @@ namespace BasePayDemo
             // obj.Add("wechatpay_pre_auth_flag", "");
             // 是否开通支付宝预授权
             // obj.Add("alipay_pre_auth_flag", "");
-            // 是否开通营销补贴
+            // 是否开通补贴支付
             // obj.Add("combine_pay_flag", "");
             // 是否开通余额支付
             // obj.Add("balance_pay_flag", "");
@@ -648,9 +648,9 @@ namespace BasePayDemo
             // obj.Add("store_indoor_pic", "");
             // 公司照片三
             // obj.Add("store_cashier_desk_pic", "");
-            // 法人身份证反面
+            // 法人身份证人像面
             // obj.Add("legal_cert_back_pic", "");
-            // 法人身份证正面
+            // 法人身份证国徽面
             // obj.Add("legal_cert_front_pic", "");
             // 营业执照图片
             // obj.Add("license_pic", "");
@@ -662,9 +662,9 @@ namespace BasePayDemo
             // obj.Add("settle_card_back_pic", "");
             // 结算卡正面
             // obj.Add("settle_card_front_pic", "");
-            // 结算人身份证反面
+            // 结算人身份证人像面
             // obj.Add("settle_cert_back_pic", "");
-            // 结算人身份证正面
+            // 结算人身份证国徽面
             // obj.Add("settle_cert_front_pic", "");
             // 税务登记证
             // obj.Add("tax_reg_pic", "");
@@ -686,9 +686,9 @@ namespace BasePayDemo
             // obj.Add("finance_license_pic4", "");
             // 金融机构许可证图片5
             // obj.Add("finance_license_pic5", "");
-            // 联系人身份证正面照
+            // 联系人身份证国徽面
             // obj.Add("contact_id_front_pic", "");
-            // 联系人身份证反面照
+            // 联系人身份证人像面照
             // obj.Add("contact_id_back_pic", "");
             // 联系人护照人像面
             // obj.Add("contact_passport_img_pic", "");

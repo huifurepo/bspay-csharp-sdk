@@ -129,7 +129,7 @@ namespace BasePayDemo
             // 经度
             // obj.Add("longitude", "");
             // 基站地址
-            // obj.Add("base_atation", "");
+            // obj.Add("base_station", "");
             // IP地址
             // obj.Add("ip_addr", "");
 

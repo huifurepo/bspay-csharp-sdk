@@ -66,6 +66,8 @@ namespace BasePayDemo
             // extendInfoMap.Add("ftp_user", "");
             // SFTP密码
             // extendInfoMap.Add("ftp_pwd", "");
+            // 包含数据范围
+            // extendInfoMap.Add("include_data_range", "");
             return extendInfoMap;
         }
 

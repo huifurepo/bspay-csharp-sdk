@@ -20,11 +20,11 @@ namespace BasePaySdk.Request
          */
         private string reqDate;
         /**
-         * 商户汇付Id
+         * 商户/用户汇付Id
          */
         private string huifuId;
         /**
-         * 渠道商汇付Id
+         * 上级汇付Id
          */
         private string upperHuifuId;
         /**

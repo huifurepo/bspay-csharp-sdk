@@ -72,7 +72,7 @@ namespace BasePayDemo
             extendInfoMap.Add("channel_no", "");
             // 手续费扣款标志
             // extendInfoMap.Add("fee_flag", "");
-            // 营销补贴信息
+            // 补贴支付信息
             // extendInfoMap.Add("combinedpay_data", getCombinedpayData());
             // 场景类型
             extendInfoMap.Add("pay_scene", "02");

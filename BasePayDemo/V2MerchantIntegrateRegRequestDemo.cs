@@ -118,7 +118,7 @@ namespace BasePayDemo
             // extendInfoMap.Add("sign_user_info", getSignUserInfo());
             // 管理员账号
             extendInfoMap.Add("login_name", "LG02022072707540497330158089012");
-            // 是否发送短信通知商户标识
+            // 是否通知商户标识
             extendInfoMap.Add("sms_send_flag", "1");
             // 协议信息实体
             extendInfoMap.Add("agreement_info", getAgreementInfo());
@@ -140,7 +140,7 @@ namespace BasePayDemo
             extendInfoMap.Add("bank_card_conf", getBankCardConf());
             // 花呗分期费率配置实体
             extendInfoMap.Add("hb_fq_fee_config", getHbFqFeeConfig());
-            // 营销补贴
+            // 补贴支付
             extendInfoMap.Add("combine_pay_config", getCombinePayConfig());
             // 商户业务类型
             // extendInfoMap.Add("mer_bus_type", "");
@@ -230,7 +230,7 @@ namespace BasePayDemo
             obj.Add("cert_no", "110101199305182000");
             // 持卡人证件类型
             obj.Add("cert_type", "00");
-            // 银行卡绑定手机号
+            // 结算人手机号
             obj.Add("mp", "1865590000");
 
             return JsonConvert.SerializeObject(obj);

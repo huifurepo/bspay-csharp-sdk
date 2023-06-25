@@ -120,7 +120,7 @@ namespace BasePayDemo
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
             // 营业执照类型
             extendInfoMap.Add("license_type", "");
-            // 商户短信通知标识
+            // 商户通知标识
             extendInfoMap.Add("sms_send_flag", "Y");
             // 管理员账号
             extendInfoMap.Add("login_name", "LG20220422267883697");
@@ -150,9 +150,9 @@ namespace BasePayDemo
             // extendInfoMap.Add("settle_card_front_pic", "");
             // 结算卡反面
             // extendInfoMap.Add("settle_card_back_pic", "");
-            // 结算人身份证反面
+            // 结算人身份证人像面
             // extendInfoMap.Add("settle_cert_back_pic", "");
-            // 结算人身份证正面
+            // 结算人身份证国徽面
             // extendInfoMap.Add("settle_cert_front_pic", "");
             // 税务登记证
             // extendInfoMap.Add("tax_reg_pic", "");
@@ -197,7 +197,7 @@ namespace BasePayDemo
             obj.Add("cert_validity_type", "1");
             // 持卡人证件有效期开始日期
             obj.Add("cert_begin_date", "20121201");
-            // 银行卡绑定手机号
+            // 结算人手机号
             obj.Add("mp", "13700000214");
 
             return JsonConvert.SerializeObject(obj);

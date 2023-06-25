@@ -8,30 +8,34 @@ using Newtonsoft.Json.Linq;
 namespace BasePayDemo
 {
     /**
-     * 银联活动商户入驻状态查询 - 示例
+     * 代扣绑卡查询 - 示例
      *
      * @author sdk-generator
      * @Description
      */
-    public class V2MerchantActivityUnionpayRegisteStatusQueryRequestDemo
+    public class V2QuickbuckleWithholdQueryRequestDemo
     {
 
-        public static void V2MerchantActivityUnionpayRegisteStatusQueryRequestDemoTest()
+        public static void V2QuickbuckleWithholdQueryRequestDemoTest()
         {
 
             // 1. 数据初始化
             InitMerConfig.init();
 
             // 2.组装请求参数
-            V2MerchantActivityUnionpayRegisteStatusQueryRequest request = new V2MerchantActivityUnionpayRegisteStatusQueryRequest();
+            V2QuickbuckleWithholdQueryRequest request = new V2QuickbuckleWithholdQueryRequest();
             // 请求流水号
             request.setReqSeqId(DateTime.Now.ToString("yyy-MM-dd HH.mm.ss.fff"));
-            // 请求日期
+            // 请求时间
             request.setReqDate(DateTime.Now.ToString("yyyyMMdd"));
-            // 汇付客户Id
-            request.setHuifuId("6666000103391467");
-            // 工单号
-            request.setSerialNo("WK541961804599095296");
+            // 汇付Id
+            request.setHuifuId("6666000003078984");
+            // 客户系统用户id 
+            request.setOutCustId("16666000106789536");
+            // 绑卡订单号
+            request.setOrderId("20230525054209765309748");
+            // 绑卡订单日期
+            request.setOrderDate("20230525");
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();

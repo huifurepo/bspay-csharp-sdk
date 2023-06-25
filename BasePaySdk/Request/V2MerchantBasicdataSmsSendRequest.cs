@@ -3,12 +3,12 @@ using System;
 namespace BasePaySdk.Request
 {
     /**
-     * 银联活动商户入驻状态查询
+     * 商户短信发送
      *
      * @author sdk-generator
      * @Description
      */
-    public class V2MerchantActivityUnionpayRegisteStatusQueryRequest : BaseRequest
+    public class V2MerchantBasicdataSmsSendRequest : BaseRequest
     {
 
         /**
@@ -16,30 +16,35 @@ namespace BasePaySdk.Request
          */
         private string reqSeqId;
         /**
-         * 请求日期
+         * 请求时间
          */
         private string reqDate;
         /**
-         * 汇付客户Id
+         * 商户汇付Id
          */
         private string huifuId;
         /**
-         * 工单号
+         * 手机号
          */
-        private string serialNo;
+        private string phone;
+        /**
+         * 验证类型
+         */
+        private string verifyType;
 
         public override string getFunctionCode() {
-            return FunctionCodeEnum.V2_MERCHANT_ACTIVITY_UNIONPAY_REGISTE_STATUS_QUERY;
+            return FunctionCodeEnum.V2_MERCHANT_BASICDATA_SMS_SEND;
         }
 
-        public V2MerchantActivityUnionpayRegisteStatusQueryRequest() {
+        public V2MerchantBasicdataSmsSendRequest() {
         }
 
-        public V2MerchantActivityUnionpayRegisteStatusQueryRequest(string reqSeqId, string reqDate, string huifuId, string serialNo) {
+        public V2MerchantBasicdataSmsSendRequest(string reqSeqId, string reqDate, string huifuId, string phone, string verifyType) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.huifuId = huifuId;
-            this.serialNo = serialNo;
+            this.phone = phone;
+            this.verifyType = verifyType;
         }
 
         public string getReqSeqId() {
@@ -66,12 +71,20 @@ namespace BasePaySdk.Request
             this.huifuId = huifuId;
         }
 
-        public string getSerialNo() {
-            return serialNo;
+        public string getPhone() {
+            return phone;
         }
 
-        public void setSerialNo(string serialNo) {
-            this.serialNo = serialNo;
+        public void setPhone(string phone) {
+            this.phone = phone;
+        }
+
+        public string getVerifyType() {
+            return verifyType;
+        }
+
+        public void setVerifyType(string verifyType) {
+            this.verifyType = verifyType;
         }
 
 

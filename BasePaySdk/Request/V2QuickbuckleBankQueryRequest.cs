@@ -3,12 +3,12 @@ using System;
 namespace BasePaySdk.Request
 {
     /**
-     * 银联活动商户信息查询
+     * 银行列表查询
      *
      * @author sdk-generator
      * @Description
      */
-    public class V2MerchantActivityUnionpayMerbaseinfoQueryRequest : BaseRequest
+    public class V2QuickbuckleBankQueryRequest : BaseRequest
     {
 
         /**
@@ -16,30 +16,35 @@ namespace BasePaySdk.Request
          */
         private string reqSeqId;
         /**
-         * 请求日期
+         * 请求时间
          */
         private string reqDate;
         /**
-         * 汇付客户Id
+         * 商户汇付Id
          */
         private string huifuId;
         /**
-         * 银联活动商户号
+         * 业务类型
          */
-        private string merNo;
+        private string bizType;
+        /**
+         * 借贷类型
+         */
+        private string dcType;
 
         public override string getFunctionCode() {
-            return FunctionCodeEnum.V2_MERCHANT_ACTIVITY_UNIONPAY_MERBASEINFO_QUERY;
+            return FunctionCodeEnum.V2_QUICKBUCKLE_BANK_QUERY;
         }
 
-        public V2MerchantActivityUnionpayMerbaseinfoQueryRequest() {
+        public V2QuickbuckleBankQueryRequest() {
         }
 
-        public V2MerchantActivityUnionpayMerbaseinfoQueryRequest(string reqSeqId, string reqDate, string huifuId, string merNo) {
+        public V2QuickbuckleBankQueryRequest(string reqSeqId, string reqDate, string huifuId, string bizType, string dcType) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.huifuId = huifuId;
-            this.merNo = merNo;
+            this.bizType = bizType;
+            this.dcType = dcType;
         }
 
         public string getReqSeqId() {
@@ -66,12 +71,20 @@ namespace BasePaySdk.Request
             this.huifuId = huifuId;
         }
 
-        public string getMerNo() {
-            return merNo;
+        public string getBizType() {
+            return bizType;
         }
 
-        public void setMerNo(string merNo) {
-            this.merNo = merNo;
+        public void setBizType(string bizType) {
+            this.bizType = bizType;
+        }
+
+        public string getDcType() {
+            return dcType;
+        }
+
+        public void setDcType(string dcType) {
+            this.dcType = dcType;
         }
 
 

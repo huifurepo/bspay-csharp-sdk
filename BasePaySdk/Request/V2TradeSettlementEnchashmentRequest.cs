@@ -24,7 +24,7 @@ namespace BasePaySdk.Request
          */
         private string cashAmt;
         /**
-         * 商户号
+         * 取现方ID号
          */
         private string huifuId;
         /**
