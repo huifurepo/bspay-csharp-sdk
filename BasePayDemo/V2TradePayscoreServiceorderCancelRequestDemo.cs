@@ -8,28 +8,26 @@ using Newtonsoft.Json.Linq;
 namespace BasePayDemo
 {
     /**
-     * 商户分账配置查询(2022) - 示例
+     * 取消支付分订单 - 示例
      *
      * @author sdk-generator
      * @Description
      */
-    public class V2MerchantSplitQueryRequestDemo
+    public class V2TradePayscoreServiceorderCancelRequestDemo
     {
 
-        public static void V2MerchantSplitQueryRequestDemoTest()
+        public static void V2TradePayscoreServiceorderCancelRequestDemoTest()
         {
 
             // 1. 数据初始化
             InitMerConfig.init();
 
             // 2.组装请求参数
-            V2MerchantSplitQueryRequest request = new V2MerchantSplitQueryRequest();
-            // 请求流水号
-            request.setReqSeqId(DateTime.Now.ToString("yyy-MM-dd HH.mm.ss.fff"));
-            // 请求日期
-            request.setReqDate(DateTime.Now.ToString("yyyyMMdd"));
-            // 汇付客户Id
-            request.setHuifuId("6666000003113429");
+            V2TradePayscoreServiceorderCancelRequest request = new V2TradePayscoreServiceorderCancelRequest();
+            // 汇付商户号
+            request.setHuifuId("6666000108854952");
+            // 取消服务订单原因
+            // request.setReason("test");
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -56,6 +54,12 @@ namespace BasePayDemo
         private static Dictionary<string, object> getExtendInfos() {
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
+            // 汇付服务订单号
+            // extendInfoMap.Add("out_order_no", "");
+            // 创建服务订单返回的汇付全局流水号
+            // extendInfoMap.Add("org_hf_seq_id", "");
+            // 服务订单创建请求流水号
+            // extendInfoMap.Add("org_req_seq_id", "");
             return extendInfoMap;
         }
 

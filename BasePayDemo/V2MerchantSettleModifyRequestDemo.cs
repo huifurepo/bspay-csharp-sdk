@@ -8,7 +8,7 @@ using Newtonsoft.Json.Linq;
 namespace BasePayDemo
 {
     /**
-     * 修改子账户配置 - 示例
+     * 修改子账户配置(2022) - 示例
      *
      * @author sdk-generator
      * @Description

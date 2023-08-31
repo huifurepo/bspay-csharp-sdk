@@ -70,34 +70,11 @@ namespace BasePayDemo
             // extendInfoMap.Add("remark", "");
             // 是否延迟交易
             // extendInfoMap.Add("delay_acct_flag", "");
-            // 设备信息
-            extendInfoMap.Add("terminal_device_data", getTerminalDeviceData());
             // 出款方账户号
             // extendInfoMap.Add("out_acct_id", "");
             return extendInfoMap;
         }
 
-        private static string getTerminalDeviceData() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 设备类型
-            obj.Add("device_type", "1");
-            // 交易设备IP
-            obj.Add("device_ip", "10.10.0.1");
-            // 交易设备MAC
-            // obj.Add("device_mac", "");
-            // 交易设备GPS
-            // obj.Add("device_gps", "");
-            // 交易设备IMEI
-            // obj.Add("device_imei", "");
-            // 交易设备IMSI
-            // obj.Add("device_imsi", "");
-            // 交易设备ICCID
-            // obj.Add("device_icc_id", "");
-            // 交易设备WIFIMAC
-            // obj.Add("device_wifi_mac", "");
-
-            return JsonConvert.SerializeObject(obj);
-        }
         private static object getAcctInfos() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 分账金额

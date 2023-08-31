@@ -30,8 +30,6 @@ namespace BasePayDemo
             request.setReqDate(DateTime.Now.ToString("yyyyMMdd"));
             // 图片类型
             request.setFileType("F01");
-            // 图片名称
-            request.setPicture("图片名称");
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();

@@ -35,6 +35,10 @@ namespace BasePaySdk.Request
          * 打款结束日期
          */
         private string transEndDate;
+        /**
+         * 交易开始日期
+         */
+        private string transStartDate;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_TRADE_ONLINEPAYMENT_TRANSFER_ACCOUNT_QUERY;
@@ -43,13 +47,14 @@ namespace BasePaySdk.Request
         public V2TradeOnlinepaymentTransferAccountQueryRequest() {
         }
 
-        public V2TradeOnlinepaymentTransferAccountQueryRequest(string reqSeqId, string reqDate, string huifuId, string orgReqSeqId, string orgReqDate, string transEndDate) {
+        public V2TradeOnlinepaymentTransferAccountQueryRequest(string reqSeqId, string reqDate, string huifuId, string orgReqSeqId, string orgReqDate, string transEndDate, string transStartDate) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.huifuId = huifuId;
             this.orgReqSeqId = orgReqSeqId;
             this.orgReqDate = orgReqDate;
             this.transEndDate = transEndDate;
+            this.transStartDate = transStartDate;
         }
 
         public string getReqSeqId() {
@@ -98,6 +103,14 @@ namespace BasePaySdk.Request
 
         public void setTransEndDate(string transEndDate) {
             this.transEndDate = transEndDate;
+        }
+
+        public string getTransStartDate() {
+            return transStartDate;
+        }
+
+        public void setTransStartDate(string transStartDate) {
+            this.transStartDate = transStartDate;
         }
 
 

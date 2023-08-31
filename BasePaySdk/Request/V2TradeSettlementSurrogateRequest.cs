@@ -32,17 +32,21 @@ namespace BasePaySdk.Request
          */
         private string purposeDesc;
         /**
-         * 省份
+         * 省份选填，参见[代发省市地区码](https://cloudpnrcdn.oss-cn-shanghai.aliyuncs.com/opps/api/prod/download_file/area/%E6%96%97%E6%8B%B1%E4%BB%A3%E5%8F%91%E7%9C%81%E4%BB%BD%E5%9C%B0%E5%8C%BA%E7%BC%96%E7%A0%81.xlsx)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：0013&lt;/font&gt;&lt;br/&gt;对公代发(省份+地区)与联行号信息二选一填入；对私代发非必填；
          */
         private string province;
         /**
-         * 地区
+         * 地区选填，参见[代发省市地区码](https://cloudpnrcdn.oss-cn-shanghai.aliyuncs.com/opps/api/prod/download_file/area/%E6%96%97%E6%8B%B1%E4%BB%A3%E5%8F%91%E7%9C%81%E4%BB%BD%E5%9C%B0%E5%8C%BA%E7%BC%96%E7%A0%81.xlsx)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：1301&lt;/font&gt;&lt;br/&gt;对公代发(省份+地区)与联行号信息二选一填入；对私代发非必填；
          */
         private string area;
         /**
          * 银行编号
          */
         private string bankCode;
+        /**
+         * 联行号选填，参见：[银行支行编码](https://paas.huifu.com/partners/api/#/csfl/api_csfl_yhzhbm) &lt;font color&#x3D;&quot;green&quot;&gt;示例值：102290026507&lt;/font&gt;&lt;br/&gt;对公代发(省份+地区)与联行号信息二选一填入；对私代发非必填；
+         */
+        private string correspondentCode;
         /**
          * 银行卡用户名
          */
@@ -79,7 +83,7 @@ namespace BasePaySdk.Request
         public V2TradeSettlementSurrogateRequest() {
         }
 
-        public V2TradeSettlementSurrogateRequest(string reqSeqId, string reqDate, string huifuId, string cashAmt, string purposeDesc, string province, string area, string bankCode, string bankAccountName, string cardAcctType, string bankCardNoCrypt, string certificateNoCrypt, string certificateType, string mobileNoCrypt, string intoAcctDateType) {
+        public V2TradeSettlementSurrogateRequest(string reqSeqId, string reqDate, string huifuId, string cashAmt, string purposeDesc, string province, string area, string bankCode, string correspondentCode, string bankAccountName, string cardAcctType, string bankCardNoCrypt, string certificateNoCrypt, string certificateType, string mobileNoCrypt, string intoAcctDateType) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.huifuId = huifuId;
@@ -88,6 +92,7 @@ namespace BasePaySdk.Request
             this.province = province;
             this.area = area;
             this.bankCode = bankCode;
+            this.correspondentCode = correspondentCode;
             this.bankAccountName = bankAccountName;
             this.cardAcctType = cardAcctType;
             this.bankCardNoCrypt = bankCardNoCrypt;
@@ -159,6 +164,14 @@ namespace BasePaySdk.Request
 
         public void setBankCode(string bankCode) {
             this.bankCode = bankCode;
+        }
+
+        public string getCorrespondentCode() {
+            return correspondentCode;
+        }
+
+        public void setCorrespondentCode(string correspondentCode) {
+            this.correspondentCode = correspondentCode;
         }
 
         public string getBankAccountName() {

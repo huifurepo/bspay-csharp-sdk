@@ -8,7 +8,7 @@ using Newtonsoft.Json.Linq;
 namespace BasePayDemo
 {
     /**
-     * 企业商户基本信息入驻 - 示例
+     * 企业商户基本信息入驻(2022) - 示例
      *
      * @author sdk-generator
      * @Description
@@ -53,7 +53,7 @@ namespace BasePayDemo
             // 注册详细地址
             request.setRegDetail("吉林省长春市思明区解放2路59096852");
             // 法人姓名
-            request.setLegalName("陈立健");
+            request.setLegalName("陈立二");
             // 法人证件类型
             request.setLegalCertType("00");
             // 法人证件号码
@@ -150,15 +150,15 @@ namespace BasePayDemo
             // extendInfoMap.Add("settle_card_front_pic", "");
             // 结算卡反面
             // extendInfoMap.Add("settle_card_back_pic", "");
-            // 结算人身份证人像面
-            // extendInfoMap.Add("settle_cert_back_pic", "");
             // 结算人身份证国徽面
+            // extendInfoMap.Add("settle_cert_back_pic", "");
+            // 结算人身份证人像面
             // extendInfoMap.Add("settle_cert_front_pic", "");
             // 税务登记证
             // extendInfoMap.Add("tax_reg_pic", "");
-            // 法人身份证反面
+            // 法人身份证国徽面
             // extendInfoMap.Add("legal_cert_back_pic", "");
-            // 法人身份证正面
+            // 法人身份证人像面
             // extendInfoMap.Add("legal_cert_front_pic", "");
             // 营业执照图片
             // extendInfoMap.Add("license_pic", "");
@@ -174,7 +174,7 @@ namespace BasePayDemo
             // 结算账户类型
             obj.Add("card_type", "1");
             // 结算账户名
-            obj.Add("card_name", "陈立健");
+            obj.Add("card_name", "陈立二");
             // 结算账号
             obj.Add("card_no", "6225682141000000000");
             // 银行所在省参考[地区编码](https://paas.huifu.com/partners/api/#/csfl/api_csfl_dqbm)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：310000&lt;/font&gt;；如修改省市要级联修改&lt;br/&gt;当card_type&#x3D;0时非必填， 当card_type&#x3D;1或2时必填
@@ -192,13 +192,13 @@ namespace BasePayDemo
             // 支行名称
             obj.Add("branch_name", "中国农业银行股份有限公司上海马当路支行");
             // 持卡人证件号码
-            obj.Add("cert_no", "321084198912066512");
+            obj.Add("cert_no", "321084198912066000");
             // 持卡人证件有效期类型
             obj.Add("cert_validity_type", "1");
             // 持卡人证件有效期开始日期
             obj.Add("cert_begin_date", "20121201");
             // 结算人手机号
-            obj.Add("mp", "13700000214");
+            obj.Add("mp", "13700000000");
 
             return JsonConvert.SerializeObject(obj);
         }

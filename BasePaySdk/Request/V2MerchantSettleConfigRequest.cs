@@ -3,7 +3,7 @@ using System;
 namespace BasePaySdk.Request
 {
     /**
-     * 子账户开通配置
+     * 子账户开通配置(2022)
      *
      * @author sdk-generator
      * @Description

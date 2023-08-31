@@ -64,12 +64,25 @@ namespace BasePayDemo
             extendInfoMap.Add("launch_refund_day", "");
             // 拒绝退款原因
             extendInfoMap.Add("reject_reason", "");
-            // 文件列表
-            extendInfoMap.Add("file_info", "{\"reject_media_pic1\":\"a8a096a3-0dd4-3b0e-886c-9afb20d23b1a\",\"reject_media_pic2\":\"a8a096a3-0dd4-3b0e-886c-9afb20d23b2a\",\"reject_media_pic3\":\"a8a096a3-0dd4-3b0e-886c-9afb20d23b3a\",\"reject_media_pic4\":\"a8a096a3-0dd4-3b0e-886c-9afb20d23b4a\"}");
             // 备注
             extendInfoMap.Add("remark", "我是备注1111101");
+            // 文件列表
+            extendInfoMap.Add("file_info", getFileInfo());
             return extendInfoMap;
         }
 
+        private static string getFileInfo() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 拒绝退款的举证图片1
+            obj.Add("reject_media_pic1", "a8a096a3-0dd4-3b0e-886c-9afb20d23b1a");
+            // 拒绝退款的举证图片2
+            obj.Add("reject_media_pic2", "a8a096a3-0dd4-3b0e-886c-9afb20d23b2a");
+            // 拒绝退款的举证图片3
+            obj.Add("reject_media_pic3", "a8a096a3-0dd4-3b0e-886c-9afb20d23b3a");
+            // 拒绝退款的举证图片4
+            obj.Add("reject_media_pic4", "a8a096a3-0dd4-3b0e-886c-9afb20d23b4a");
+
+            return JsonConvert.SerializeObject(obj);
+        }
     }
 }

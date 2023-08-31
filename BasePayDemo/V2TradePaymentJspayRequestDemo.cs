@@ -268,6 +268,10 @@ namespace BasePayDemo
             // obj.Add("scene_info", getSceneInfo());
             // 终端ip
             // obj.Add("spbill_create_ip", "");
+            // 单品优惠标识
+            // obj.Add("promotion_flag", "");
+            // 新增商品ID
+            // obj.Add("product_id", "");
 
             return JsonConvert.SerializeObject(obj);
         }

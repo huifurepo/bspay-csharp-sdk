@@ -113,8 +113,6 @@ namespace BasePayDemo
             obj.Add("hb_fq_seller_percent", "");
             // 行业数据回流信息
             obj.Add("industry_reflux_info", "");
-            // 停车场ID
-            obj.Add("parking_id", "123wsx");
             // 系统商编号
             obj.Add("sys_service_provider_id", "");
 

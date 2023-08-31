@@ -3,7 +3,7 @@ using System;
 namespace BasePaySdk.Request
 {
     /**
-     * 商户基本信息修改
+     * 商户基本信息修改(2022)
      *
      * @author sdk-generator
      * @Description

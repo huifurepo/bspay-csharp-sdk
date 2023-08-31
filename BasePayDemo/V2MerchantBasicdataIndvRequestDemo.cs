@@ -8,7 +8,7 @@ using Newtonsoft.Json.Linq;
 namespace BasePayDemo
 {
     /**
-     * 个人商户基本信息入驻 - 示例
+     * 个人商户基本信息入驻(2022) - 示例
      *
      * @author sdk-generator
      * @Description
@@ -96,10 +96,6 @@ namespace BasePayDemo
             // extendInfoMap.Add("settle_card_back_pic", "");
             // 结算卡正面
             // extendInfoMap.Add("settle_card_front_pic", "");
-            // 法人身份证反面
-            // extendInfoMap.Add("legal_cert_back_pic", "");
-            // 法人身份证正面
-            // extendInfoMap.Add("legal_cert_front_pic", "");
             // 授权委托书
             // extendInfoMap.Add("auth_enturst_pic", "");
             return extendInfoMap;

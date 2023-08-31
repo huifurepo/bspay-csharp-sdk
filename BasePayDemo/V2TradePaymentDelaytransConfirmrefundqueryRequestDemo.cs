@@ -8,28 +8,30 @@ using Newtonsoft.Json.Linq;
 namespace BasePayDemo
 {
     /**
-     * 商户分账配置查询(2022) - 示例
+     * 交易确认退款查询 - 示例
      *
      * @author sdk-generator
      * @Description
      */
-    public class V2MerchantSplitQueryRequestDemo
+    public class V2TradePaymentDelaytransConfirmrefundqueryRequestDemo
     {
 
-        public static void V2MerchantSplitQueryRequestDemoTest()
+        public static void V2TradePaymentDelaytransConfirmrefundqueryRequestDemoTest()
         {
 
             // 1. 数据初始化
             InitMerConfig.init();
 
             // 2.组装请求参数
-            V2MerchantSplitQueryRequest request = new V2MerchantSplitQueryRequest();
-            // 请求流水号
-            request.setReqSeqId(DateTime.Now.ToString("yyy-MM-dd HH.mm.ss.fff"));
-            // 请求日期
-            request.setReqDate(DateTime.Now.ToString("yyyyMMdd"));
-            // 汇付客户Id
-            request.setHuifuId("6666000003113429");
+            V2TradePaymentDelaytransConfirmrefundqueryRequest request = new V2TradePaymentDelaytransConfirmrefundqueryRequest();
+            // 商户号
+            request.setHuifuId("6666000003100615");
+            // 原交易请求日期
+            request.setOrgReqDate("20230810");
+            // 原交易请求流水号指交易确认请求流水号，org_req_seq_id和org_hf_seq_id二选一；&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：2021091708126665002&lt;/font&gt;
+            request.setOrgReqSeqId("");
+            // 原退款全局流水号 原交易确认退款全局流水号。org_req_seq_id和org_hf_seq_id二选一；&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：003500TOP2B211021163242P447ac132fd200000&lt;/font&gt;
+            request.setOrgHfSeqId("0031000topB230810132213P318c0a8316600000");
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();

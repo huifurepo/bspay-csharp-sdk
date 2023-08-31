@@ -109,14 +109,14 @@ namespace BasePayDemo
             // 结算类型
             obj.Add("card_type", "0");
             // 卡户名
-            obj.Add("card_name", "陈立健");
+            obj.Add("card_name", "陈立一");
             // 卡号
-            obj.Add("card_no", "6217001210064762121");
+            obj.Add("card_no", "6217001210064762000");
             // 银行所在省
             obj.Add("prov_id", "310000");
             // 银行所在市
             obj.Add("area_id", "310100");
-            // 银行号对公时必填，[参见银行编码](https://paas.huifu.com/partners/api/#/csfl/api_csfl_yhbm)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：01020000&lt;/font&gt;
+            // 银行号对公时必填，对私可以为空；[参见银行编码](https://paas.huifu.com/partners/api/#/csfl/api_csfl_yhbm)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：01020000&lt;/font&gt;
             obj.Add("bank_code", "01050000");
             // 支行联行号对公时联行号、支行名称二选一必填，[点击查看](https://paas.huifu.com/partners/api/#/csfl/api_csfl_yhzhbm)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：102290026507&lt;/font&gt;
             obj.Add("branch_code", "105305264815");
@@ -125,7 +125,7 @@ namespace BasePayDemo
             // 持卡人证件类型
             obj.Add("cert_type", "00");
             // 持卡人证件号码
-            obj.Add("cert_no", "110101197003077513");
+            obj.Add("cert_no", "110101197003077000");
             // 持卡人证件有效期类型
             obj.Add("cert_validity_type", "0");
             // 持卡人证件有效期起始日期
@@ -133,7 +133,7 @@ namespace BasePayDemo
             // 持卡人证件有效期截止日期
             obj.Add("cert_end_date", "20410806");
             // 银行卡绑定手机号
-            obj.Add("mp", "15556622368");
+            obj.Add("mp", "15556622000");
 
             return JsonConvert.SerializeObject(obj);
         }
@@ -141,7 +141,7 @@ namespace BasePayDemo
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 开通状态
             obj.Add("switch_state", "1");
-            // 取现手续费率（%）fix_amt与fee_rate至少填写一项，单位%，需保留小数点后两位，取值范围[0.00,100.00]，不收费请填写0.00；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：0.05&lt;/font&gt;&lt;br/&gt;注：如果fix_amt与fee_rate都填写了则手续费&#x3D;fix_amt+支付金额*fee_rate
+            // 取现手续费率（%）fix_amt与fee_rate至少填写一项，单位%，需保留小数点后两位，取值范围[0.00,100.00]，不收费请填写0.00；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：0.05&lt;/font&gt;&lt;br/&gt;注：如果fix_amt与fee_rate都填写了则手续费&#x3D;fix_amt+支付金额\*fee_rate
             obj.Add("fee_rate", "0.05");
             // 业务类型
             obj.Add("cash_type", "D0");

@@ -8,7 +8,7 @@ using Newtonsoft.Json.Linq;
 namespace BasePayDemo
 {
     /**
-     * 商户业务开通 - 示例
+     * 商户业务开通(2022) - 示例
      *
      * @author sdk-generator
      * @Description
@@ -76,8 +76,6 @@ namespace BasePayDemo
             extendInfoMap.Add("license_pic", "de2f6e1d-d9e9-3898-9b66-af2a96054193");
             // 组织机构代码证
             extendInfoMap.Add("org_code_pic", "");
-            // 商务协议
-            extendInfoMap.Add("ba_pic", "de2f6e1d-d9e9-3898-9b66-af2a96054193 ");
             // 开户许可证
             extendInfoMap.Add("reg_acct_pic", "de2f6e1d-d9e9-3898-9b66-af2a96054193");
             // 结算卡反面
@@ -140,8 +138,6 @@ namespace BasePayDemo
             // extendInfoMap.Add("out_order_funds_config", getOutOrderFundsConfig());
             // 汇总结算配置实体
             // extendInfoMap.Add("collection_settle_config_list", getCollectionSettleConfigList());
-            // 微信直连配置对象
-            // extendInfoMap.Add("wx_zl_conf", getWxZlConf());
             // 是否使用总部交易信息
             // extendInfoMap.Add("use_chains_flag", "");
             // 异步消息接收地址
@@ -150,6 +146,10 @@ namespace BasePayDemo
             extendInfoMap.Add("busi_async_return_url", "");
             // 交易异步应答地址
             extendInfoMap.Add("recon_resp_addr", "[http://192.168.85.157:30031/sspm/testVirgo](http://192.168.85.157:30031/sspm/testVirgo)");
+            // 微信直连配置对象
+            // extendInfoMap.Add("wx_zl_conf", getWxZlConf());
+            // 支付宝直连配置对象
+            // extendInfoMap.Add("ali_zl_conf", getAliZlConf());
             return extendInfoMap;
         }
 
@@ -426,7 +426,7 @@ namespace BasePayDemo
         }
         private static string getOutOrderAcctOpenFees() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 支付固定手续费(元)
+            // 开户手续费(元)
             // obj.Add("fee_fix_amt", "test");
             // 开户手续费外扣时的账户类型
             // obj.Add("out_fee_acct_type", "test");
@@ -441,12 +441,14 @@ namespace BasePayDemo
             // obj.Add("out_order_auto_acct_flag", "test");
             // 批次入账时间10:00-10点批次入账&lt;br/&gt;16:00-16点批次入账&lt;/br&gt;开通批次入账时必填 ，多个批次使用逗号分隔；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：10:00,16:00&lt;/font&gt;
             // obj.Add("batch_no", "test");
+            // 全域资金平台商户ID全域资金平台商户ID，渠道商在银行开通的平台商账号，若为众邦银行则必填，否则不填；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：XXXXXXXXX&lt;/font&gt;；
+            // obj.Add("platform_mer_id", "test");
+            //  商户与其他支付机构签署的收单协议或证明材料acquiringMode：收单模式时填写；涉及文件类型：F504-(全域资金)商户与其他支付机构签署的收单协议或证明材料；&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：57cc7f00-600a-33ab-b614-6221bbf2e529&lt;/font&gt;
+            // obj.Add("other_payment_institutions_pic", "test");
             // 批量入账开关
             // obj.Add("batch_auto_acct_flag", "");
             // 支付手续费(%)
             // obj.Add("fee_rate", "");
-            // 支付固定手续费(元)
-            // obj.Add("fee_fix_amt", "");
             // 手续费最小值(元)
             // obj.Add("fee_min_amt", "");
             // 交易手续费外扣时的账户类型
@@ -459,6 +461,8 @@ namespace BasePayDemo
             // obj.Add("out_order_acct_card", getOutOrderAcctCard());
             // 全域资金开户手续费
             // obj.Add("out_order_acct_open_fees", getOutOrderAcctOpenFees());
+            // 全域支付业务模式
+            // obj.Add("business_model", "");
 
             return JsonConvert.SerializeObject(obj);
         }
@@ -500,6 +504,46 @@ namespace BasePayDemo
             // obj.Add("sub_mch_id", "test");
             // 配置集合
             // obj.Add("wx_zl_pay_conf_list", getWxZlPayConfList());
+
+            return JsonConvert.SerializeObject(obj);
+        }
+        private static string getFileList() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 文件类型
+            // obj.Add("file_type", "test");
+            // 文件jfileId
+            // obj.Add("file_id", "test");
+
+            JArray objList = new JArray();
+            objList.Add(JToken.FromObject(obj));
+            return JsonConvert.SerializeObject(objList);
+        }
+        private static string getAliZlConf() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 申请类型
+            // obj.Add("apply_type", "test");
+            // 商户支付宝账号
+            // obj.Add("account", "test");
+            // 服务费率仅支持渠道商。平台商户调用不支持该字段服务费率（%），0.38~3之间，精确到0.01。&lt;font color&#x3D;&quot;green&quot;&gt;示例值：0.06&lt;/font&gt;
+            // obj.Add("fee_rate", "test");
+            // 文件列表
+            // obj.Add("file_list", getFileList());
+            // 联系人姓名
+            // obj.Add("contact_name", "");
+            // 联系人手机号
+            // obj.Add("contact_mobile_no", "");
+            // 联系人电子邮箱
+            // obj.Add("contact_email", "");
+            // 订单授权凭证
+            // obj.Add("order_ticket", "");
+            // 营业执照编号
+            // obj.Add("license_code", "");
+            // 营业执照有效期类型
+            // obj.Add("license_validity_type", "");
+            // 营业执照有效期开始日期
+            // obj.Add("license_begin_date", "");
+            // 营业执照有效期截止日期
+            // obj.Add("license_end_date", "");
 
             return JsonConvert.SerializeObject(obj);
         }

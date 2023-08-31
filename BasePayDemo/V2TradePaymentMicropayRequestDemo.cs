@@ -68,7 +68,7 @@ namespace BasePayDemo
             extendInfoMap.Add("time_expire", "20220918150330");
             // 手续费扣款标志
             // extendInfoMap.Add("fee_flag", "");
-            // 禁用信用卡标记
+            // 禁用支付方式
             extendInfoMap.Add("limit_pay_type", "");
             // 是否延迟交易
             extendInfoMap.Add("delay_acct_flag", "Y");
@@ -137,13 +137,13 @@ namespace BasePayDemo
         private static object getGoodsDetailWxRucan() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 商品编码
-            // obj.Add("goods_id", "");
+            // obj.Add("goods_id", "test");
+            // 商品数量
+            // obj.Add("quantity", "test");
             // 商品名称
             // obj.Add("goods_name", "");
             // 商品单价
             // obj.Add("price", "");
-            // 商品数量
-            // obj.Add("quantity", "");
             // 微信侧商品编码
             // obj.Add("wxpay_goods_id", "");
 
@@ -186,6 +186,8 @@ namespace BasePayDemo
         }
         private static string getWxData() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 收款设备IP直联模式必填字段；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：192.168.2.2&lt;/font&gt;
+            // obj.Add("spbill_create_ip", "test");
             // 子商户公众账号id
             // obj.Add("sub_appid", "");
             // 用户标识
@@ -200,6 +202,10 @@ namespace BasePayDemo
             // obj.Add("detail", getDetail());
             // 场景信息
             // obj.Add("scene_info", getSceneInfo());
+            // 单品优惠标识
+            // obj.Add("promotion_flag", "");
+            // 电子发票入口开放标识
+            // obj.Add("receipt", "");
 
             return JsonConvert.SerializeObject(obj);
         }

@@ -3,12 +3,12 @@ using System;
 namespace BasePaySdk.Request
 {
     /**
-     * 商户业务开通修改(2022)
+     * 代扣绑卡页面版
      *
      * @author sdk-generator
      * @Description
      */
-    public class V2MerchantBusiModifyRequest : BaseRequest
+    public class V2QuickbuckleWithholdPageGetRequest : BaseRequest
     {
 
         /**
@@ -16,25 +16,35 @@ namespace BasePaySdk.Request
          */
         private string reqSeqId;
         /**
-         * 请求日期
+         * 请求时间
          */
         private string reqDate;
         /**
-         * 汇付客户Id
+         * 汇付Id
          */
         private string huifuId;
+        /**
+         * 订单号
+         */
+        private string orderId;
+        /**
+         * 订单日期
+         */
+        private string orderDate;
 
         public override string getFunctionCode() {
-            return FunctionCodeEnum.V2_MERCHANT_BUSI_MODIFY;
+            return FunctionCodeEnum.V2_QUICKBUCKLE_WITHHOLD_PAGE_GET;
         }
 
-        public V2MerchantBusiModifyRequest() {
+        public V2QuickbuckleWithholdPageGetRequest() {
         }
 
-        public V2MerchantBusiModifyRequest(string reqSeqId, string reqDate, string huifuId) {
+        public V2QuickbuckleWithholdPageGetRequest(string reqSeqId, string reqDate, string huifuId, string orderId, string orderDate) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.huifuId = huifuId;
+            this.orderId = orderId;
+            this.orderDate = orderDate;
         }
 
         public string getReqSeqId() {
@@ -59,6 +69,22 @@ namespace BasePaySdk.Request
 
         public void setHuifuId(string huifuId) {
             this.huifuId = huifuId;
+        }
+
+        public string getOrderId() {
+            return orderId;
+        }
+
+        public void setOrderId(string orderId) {
+            this.orderId = orderId;
+        }
+
+        public string getOrderDate() {
+            return orderDate;
+        }
+
+        public void setOrderDate(string orderDate) {
+            this.orderDate = orderDate;
         }
 
 

@@ -86,6 +86,8 @@ namespace BasePayDemo
             // extendInfoMap.Add("loan_acct_type", "");
             // 补贴支付信息
             // extendInfoMap.Add("combinedpay_data", getCombinedpayData());
+            // 聚合正扫微信拓展参数集合
+            // extendInfoMap.Add("wx_data", getWxData());
             return extendInfoMap;
         }
 
@@ -164,6 +166,35 @@ namespace BasePayDemo
             JArray objList = new JArray();
             objList.Add(JToken.FromObject(obj));
             return JsonConvert.SerializeObject(objList);
+        }
+        private static object getGoodsDetail() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 商品编码
+            // obj.Add("goods_id", "test");
+            // 优惠退款金额
+            // obj.Add("refund_amount", "test");
+            // 商品退货数量
+            // obj.Add("refund_quantity", "test");
+            // 商品单价
+            // obj.Add("price", "test");
+
+            JArray objList = new JArray();
+            objList.Add(JToken.FromObject(obj));
+            return objList;
+        }
+        private static object getDetail() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 商品详情列表
+            // obj.Add("goods_detail", getGoodsDetail());
+
+            return obj;
+        }
+        private static object getWxData() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 退款商品详情
+            // obj.Add("detail", getDetail());
+
+            return obj;
         }
     }
 }

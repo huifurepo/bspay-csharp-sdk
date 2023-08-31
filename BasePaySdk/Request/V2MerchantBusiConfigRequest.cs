@@ -28,11 +28,15 @@ namespace BasePaySdk.Request
          */
         private string feeType;
         /**
-         * 公众号支付Appid条件必填，&lt;font color&#x3D;&quot;green&quot;&gt;示例值：wx3767c5bd01df5061&lt;/font&gt; ；wx_woa_app_id 和 wx_applet_app_id两者不能同时为空
+         * 公众号支付Appid条件必填，&lt;font color&#x3D;&quot;green&quot;&gt;示例值：wx3767c5bd01df5061&lt;/font&gt; ；wx_woa_app_id 、wx_woa_path和 wx_applet_app_id三者不能同时为空
          */
         private string wxWoaAppId;
         /**
-         * 微信小程序APPID条件必填，&lt;font color&#x3D;&quot;green&quot;&gt;示例值：wx8523175fea790f10&lt;/font&gt; ；wx_woa_app_id，wx_applet_app_id两者不能同时为空
+         * 微信公众号授权目录条件必填，&lt;font color&#x3D;&quot;green&quot;&gt;示例值：https://paas.huifu.com/shouyintai/demo/h5/&lt;/font&gt;；wx_woa_app_id 、wx_woa_path和 wx_applet_app_id三者不能同时为空
+         */
+        private string wxWoaPath;
+        /**
+         * 微信小程序APPID条件必填，&lt;font color&#x3D;&quot;green&quot;&gt;示例值：wx8523175fea790f10&lt;/font&gt; ；wx_woa_app_id 、wx_woa_path和 wx_applet_app_id三者不能同时为空
          */
         private string wxAppletAppId;
 
@@ -43,12 +47,13 @@ namespace BasePaySdk.Request
         public V2MerchantBusiConfigRequest() {
         }
 
-        public V2MerchantBusiConfigRequest(string reqSeqId, string reqDate, string huifuId, string feeType, string wxWoaAppId, string wxAppletAppId) {
+        public V2MerchantBusiConfigRequest(string reqSeqId, string reqDate, string huifuId, string feeType, string wxWoaAppId, string wxWoaPath, string wxAppletAppId) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.huifuId = huifuId;
             this.feeType = feeType;
             this.wxWoaAppId = wxWoaAppId;
+            this.wxWoaPath = wxWoaPath;
             this.wxAppletAppId = wxAppletAppId;
         }
 
@@ -90,6 +95,14 @@ namespace BasePaySdk.Request
 
         public void setWxWoaAppId(string wxWoaAppId) {
             this.wxWoaAppId = wxWoaAppId;
+        }
+
+        public string getWxWoaPath() {
+            return wxWoaPath;
+        }
+
+        public void setWxWoaPath(string wxWoaPath) {
+            this.wxWoaPath = wxWoaPath;
         }
 
         public string getWxAppletAppId() {

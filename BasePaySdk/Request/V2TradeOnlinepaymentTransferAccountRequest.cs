@@ -36,10 +36,6 @@ namespace BasePaySdk.Request
          */
         private string transAmt;
         /**
-         * 异步通知地址
-         */
-        private string notifyUrl;
-        /**
          * 商品描述
          */
         private string goodsDesc;
@@ -51,14 +47,13 @@ namespace BasePaySdk.Request
         public V2TradeOnlinepaymentTransferAccountRequest() {
         }
 
-        public V2TradeOnlinepaymentTransferAccountRequest(string reqSeqId, string reqDate, string huifuId, string certificateName, string bankCardNo, string transAmt, string notifyUrl, string goodsDesc) {
+        public V2TradeOnlinepaymentTransferAccountRequest(string reqSeqId, string reqDate, string huifuId, string certificateName, string bankCardNo, string transAmt, string goodsDesc) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.huifuId = huifuId;
             this.certificateName = certificateName;
             this.bankCardNo = bankCardNo;
             this.transAmt = transAmt;
-            this.notifyUrl = notifyUrl;
             this.goodsDesc = goodsDesc;
         }
 
@@ -108,14 +103,6 @@ namespace BasePaySdk.Request
 
         public void setTransAmt(string transAmt) {
             this.transAmt = transAmt;
-        }
-
-        public string getNotifyUrl() {
-            return notifyUrl;
-        }
-
-        public void setNotifyUrl(string notifyUrl) {
-            this.notifyUrl = notifyUrl;
         }
 
         public string getGoodsDesc() {
