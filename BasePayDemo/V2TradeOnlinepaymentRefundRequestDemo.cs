@@ -62,20 +62,22 @@ namespace BasePayDemo
         private static Dictionary<string, object> getExtendInfos() {
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
+            // 原交易请求日期
+            extendInfoMap.Add("org_req_date", "20221110");
             // 原交易全局流水号
             extendInfoMap.Add("org_hf_seq_id", "");
             // 原交易请求流水号
             extendInfoMap.Add("org_req_seq_id", "RQ1212333113");
-            // 原交易请求日期
-            extendInfoMap.Add("org_req_date", "20221110");
-            // 异步通知地址
-            extendInfoMap.Add("notify_url", "http://www.baidu.com");
-            // 备注
-            extendInfoMap.Add("remark", "remark123");
             // 分账对象
             extendInfoMap.Add("acct_split_bunch", getAcctSplitBunchRucan());
             // 补贴支付信息
             extendInfoMap.Add("combinedpay_data", getCombinedpayData());
+            // 大额转账支付账户信息数据
+            // extendInfoMap.Add("bank_info_data", getBankInfoData());
+            // 备注
+            extendInfoMap.Add("remark", "remark123");
+            // 异步通知地址
+            extendInfoMap.Add("notify_url", "http://www.baidu.com");
             return extendInfoMap;
         }
 
@@ -94,6 +96,36 @@ namespace BasePayDemo
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 分账信息列表
             // obj.Add("acct_infos", getAcctInfosRucan());
+
+            return JsonConvert.SerializeObject(obj);
+        }
+        private static string getCombinedpayData() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 补贴方汇付编号
+            // obj.Add("huifu_id", "test");
+            // 补贴方类型
+            // obj.Add("user_type", "test");
+            // 补贴方账户号
+            // obj.Add("acct_id", "test");
+            // 补贴金额
+            // obj.Add("amount", "test");
+
+            JArray objList = new JArray();
+            objList.Add(JToken.FromObject(obj));
+            return JsonConvert.SerializeObject(objList);
+        }
+        private static string getBankInfoData() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 付款方账户类型
+            // obj.Add("card_acct_type", "test");
+            // 省份
+            // obj.Add("province", "");
+            // 地区
+            // obj.Add("area", "");
+            // 银行编号
+            // obj.Add("bank_code", "");
+            // 联行号
+            // obj.Add("correspondent_code", "");
 
             return JsonConvert.SerializeObject(obj);
         }
@@ -130,21 +162,6 @@ namespace BasePayDemo
             // obj.Add("longitude", "");
 
             return JsonConvert.SerializeObject(obj);
-        }
-        private static string getCombinedpayData() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 补贴方汇付编号
-            // obj.Add("huifu_id", "test");
-            // 补贴方类型
-            // obj.Add("user_type", "test");
-            // 补贴方账户号
-            // obj.Add("acct_id", "test");
-            // 补贴金额
-            // obj.Add("amount", "test");
-
-            JArray objList = new JArray();
-            objList.Add(JToken.FromObject(obj));
-            return JsonConvert.SerializeObject(objList);
         }
     }
 }

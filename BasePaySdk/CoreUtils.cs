@@ -86,7 +86,7 @@ namespace BasePaySdk
                 if (p.FieldType == typeof(string))
                 {
                     //Console.WriteLine("键：" + p.Name + ",值：" + p.GetValue(zone, null));
-                    map.Add(ToUnderLine(p.Name), p.GetValue(obj).ToString());
+                    map.Add(ToUnderLine(p.Name), Convert.ToString(p.GetValue(obj)));
                 }
                 
             }

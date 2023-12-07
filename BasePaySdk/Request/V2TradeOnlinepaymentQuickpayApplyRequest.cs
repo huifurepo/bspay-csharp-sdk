@@ -24,21 +24,21 @@ namespace BasePaySdk.Request
          */
         private string huifuId;
         /**
-         * 订单金额
+         * 用户客户号
          */
-        private string transAmt;
+        private string userHuifuId;
         /**
          * 绑卡id
          */
         private string cardBindId;
         /**
-         * 异步通知地址
+         * 订单金额
          */
-        private string notifyUrl;
+        private string transAmt;
         /**
-         * 用户客户号
+         * 银行扩展字段
          */
-        private string userHuifuId;
+        private string extendPayData;
         /**
          * 安全信息
          */
@@ -48,9 +48,9 @@ namespace BasePaySdk.Request
          */
         private string terminalDeviceData;
         /**
-         * 银行扩展字段
+         * 异步通知地址
          */
-        private string extendPayData;
+        private string notifyUrl;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_TRADE_ONLINEPAYMENT_QUICKPAY_APPLY;
@@ -59,17 +59,17 @@ namespace BasePaySdk.Request
         public V2TradeOnlinepaymentQuickpayApplyRequest() {
         }
 
-        public V2TradeOnlinepaymentQuickpayApplyRequest(string reqDate, string reqSeqId, string huifuId, string transAmt, string cardBindId, string notifyUrl, string userHuifuId, string riskCheckData, string terminalDeviceData, string extendPayData) {
+        public V2TradeOnlinepaymentQuickpayApplyRequest(string reqDate, string reqSeqId, string huifuId, string userHuifuId, string cardBindId, string transAmt, string extendPayData, string riskCheckData, string terminalDeviceData, string notifyUrl) {
             this.reqDate = reqDate;
             this.reqSeqId = reqSeqId;
             this.huifuId = huifuId;
-            this.transAmt = transAmt;
-            this.cardBindId = cardBindId;
-            this.notifyUrl = notifyUrl;
             this.userHuifuId = userHuifuId;
+            this.cardBindId = cardBindId;
+            this.transAmt = transAmt;
+            this.extendPayData = extendPayData;
             this.riskCheckData = riskCheckData;
             this.terminalDeviceData = terminalDeviceData;
-            this.extendPayData = extendPayData;
+            this.notifyUrl = notifyUrl;
         }
 
         public string getReqDate() {
@@ -96,12 +96,12 @@ namespace BasePaySdk.Request
             this.huifuId = huifuId;
         }
 
-        public string getTransAmt() {
-            return transAmt;
+        public string getUserHuifuId() {
+            return userHuifuId;
         }
 
-        public void setTransAmt(string transAmt) {
-            this.transAmt = transAmt;
+        public void setUserHuifuId(string userHuifuId) {
+            this.userHuifuId = userHuifuId;
         }
 
         public string getCardBindId() {
@@ -112,20 +112,20 @@ namespace BasePaySdk.Request
             this.cardBindId = cardBindId;
         }
 
-        public string getNotifyUrl() {
-            return notifyUrl;
+        public string getTransAmt() {
+            return transAmt;
         }
 
-        public void setNotifyUrl(string notifyUrl) {
-            this.notifyUrl = notifyUrl;
+        public void setTransAmt(string transAmt) {
+            this.transAmt = transAmt;
         }
 
-        public string getUserHuifuId() {
-            return userHuifuId;
+        public string getExtendPayData() {
+            return extendPayData;
         }
 
-        public void setUserHuifuId(string userHuifuId) {
-            this.userHuifuId = userHuifuId;
+        public void setExtendPayData(string extendPayData) {
+            this.extendPayData = extendPayData;
         }
 
         public string getRiskCheckData() {
@@ -144,12 +144,12 @@ namespace BasePaySdk.Request
             this.terminalDeviceData = terminalDeviceData;
         }
 
-        public string getExtendPayData() {
-            return extendPayData;
+        public string getNotifyUrl() {
+            return notifyUrl;
         }
 
-        public void setExtendPayData(string extendPayData) {
-            this.extendPayData = extendPayData;
+        public void setNotifyUrl(string notifyUrl) {
+            this.notifyUrl = notifyUrl;
         }
 
 

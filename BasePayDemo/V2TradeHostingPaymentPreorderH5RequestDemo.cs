@@ -70,10 +70,12 @@ namespace BasePayDemo
             extendInfoMap.Add("delay_acct_flag", "N");
             // 分账对象
             extendInfoMap.Add("acct_split_bunch", getAcctSplitBunch());
-            // 异步通知地址
-            extendInfoMap.Add("notify_url", "https://callback.service.com/xx");
             // 交易失效时间
             // extendInfoMap.Add("time_expire", "");
+            // 业务信息
+            extendInfoMap.Add("biz_info", getBizInfo());
+            // 交易异步通知地址
+            extendInfoMap.Add("notify_url", "https://callback.service.com/xx");
             return extendInfoMap;
         }
 
@@ -105,6 +107,50 @@ namespace BasePayDemo
             obj.Add("private_info", "商户私有信息test");
             // 回调地址
             obj.Add("callback_url", "https://paas.huifu.com");
+
+            return JsonConvert.SerializeObject(obj);
+        }
+        private static object getPayerCheckAli() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 是否提供校验身份信息
+            obj.Add("need_check_info", "T");
+            // 允许的最小买家年龄
+            obj.Add("min_age", "12");
+            // 是否强制校验付款人身份信息
+            obj.Add("fix_buyer", "F");
+
+            return obj;
+        }
+        private static object getPayerCheckWx() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 指定支付者
+            obj.Add("limit_payer", "ADULT");
+            // 微信实名验证
+            obj.Add("real_name_flag", "Y");
+
+            return obj;
+        }
+        private static object getPersonPayer() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 姓名
+            obj.Add("name", "张三");
+            // 证件类型
+            obj.Add("cert_type", "IDENTITY_CARD");
+            // 证件号
+            obj.Add("cert_no", "Mc5pjf+b/Keyi/t/wnHJtJYPHd1xXntq6tau0j8SjLzJx+q2xL2mOmKRDAYHu4uY1JSoPbWBhq9b7gT7Kxb1CYnkj7vmSlTYl8tVKfOPFyauOE66ew9cmkhmUzjzVTM1quoR63pP8+ESvZZrRPFE4YY9PXO9It9JINo8bjX22fQEFZKmXaEcqnSDcl2LUuJguvQ0LejI6zbxCJhfSHbz7HhHTIZTUchkWpKoy8YlfG27FumjXHU3rIjbrgmc+8pXbyndTNlui1+lTu6deibGKq/CpShA8z5FkHsn6/1O9ZEjLcnPnSLUwCnu75UlVVk66g+hR1OGdRrFMfYQnK7Lzw==");
+            // 手机号
+            obj.Add("mobile", "15012345678");
+
+            return obj;
+        }
+        private static string getBizInfo() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 付款人验证（支付宝）
+            obj.Add("payer_check_ali", getPayerCheckAli());
+            // 付款人验证（微信）
+            obj.Add("payer_check_wx", getPayerCheckWx());
+            // 个人付款人信息
+            obj.Add("person_payer", getPersonPayer());
 
             return JsonConvert.SerializeObject(obj);
         }

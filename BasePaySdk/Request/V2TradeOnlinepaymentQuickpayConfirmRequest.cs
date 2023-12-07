@@ -28,13 +28,13 @@ namespace BasePaySdk.Request
          */
         private string smsCode;
         /**
-         * 外部地址
-         */
-        private string notifyUrl;
-        /**
          * 商品描述
          */
         private string goodsDesc;
+        /**
+         * 外部地址
+         */
+        private string notifyUrl;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_TRADE_ONLINEPAYMENT_QUICKPAY_CONFIRM;
@@ -43,13 +43,13 @@ namespace BasePaySdk.Request
         public V2TradeOnlinepaymentQuickpayConfirmRequest() {
         }
 
-        public V2TradeOnlinepaymentQuickpayConfirmRequest(string reqDate, string reqSeqId, string huifuId, string smsCode, string notifyUrl, string goodsDesc) {
+        public V2TradeOnlinepaymentQuickpayConfirmRequest(string reqDate, string reqSeqId, string huifuId, string smsCode, string goodsDesc, string notifyUrl) {
             this.reqDate = reqDate;
             this.reqSeqId = reqSeqId;
             this.huifuId = huifuId;
             this.smsCode = smsCode;
-            this.notifyUrl = notifyUrl;
             this.goodsDesc = goodsDesc;
+            this.notifyUrl = notifyUrl;
         }
 
         public string getReqDate() {
@@ -84,20 +84,20 @@ namespace BasePaySdk.Request
             this.smsCode = smsCode;
         }
 
-        public string getNotifyUrl() {
-            return notifyUrl;
-        }
-
-        public void setNotifyUrl(string notifyUrl) {
-            this.notifyUrl = notifyUrl;
-        }
-
         public string getGoodsDesc() {
             return goodsDesc;
         }
 
         public void setGoodsDesc(string goodsDesc) {
             this.goodsDesc = goodsDesc;
+        }
+
+        public string getNotifyUrl() {
+            return notifyUrl;
+        }
+
+        public void setNotifyUrl(string notifyUrl) {
+            this.notifyUrl = notifyUrl;
         }
 
 

@@ -24,14 +24,6 @@ namespace BasePaySdk.Request
          */
         private string huifuId;
         /**
-         * 付款方名称
-         */
-        private string certificateName;
-        /**
-         * 付款方银行卡号
-         */
-        private string bankCardNo;
-        /**
          * 交易金额
          */
         private string transAmt;
@@ -47,12 +39,10 @@ namespace BasePaySdk.Request
         public V2TradeOnlinepaymentTransferAccountRequest() {
         }
 
-        public V2TradeOnlinepaymentTransferAccountRequest(string reqSeqId, string reqDate, string huifuId, string certificateName, string bankCardNo, string transAmt, string goodsDesc) {
+        public V2TradeOnlinepaymentTransferAccountRequest(string reqSeqId, string reqDate, string huifuId, string transAmt, string goodsDesc) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.huifuId = huifuId;
-            this.certificateName = certificateName;
-            this.bankCardNo = bankCardNo;
             this.transAmt = transAmt;
             this.goodsDesc = goodsDesc;
         }
@@ -79,22 +69,6 @@ namespace BasePaySdk.Request
 
         public void setHuifuId(string huifuId) {
             this.huifuId = huifuId;
-        }
-
-        public string getCertificateName() {
-            return certificateName;
-        }
-
-        public void setCertificateName(string certificateName) {
-            this.certificateName = certificateName;
-        }
-
-        public string getBankCardNo() {
-            return bankCardNo;
-        }
-
-        public void setBankCardNo(string bankCardNo) {
-            this.bankCardNo = bankCardNo;
         }
 
         public string getTransAmt() {

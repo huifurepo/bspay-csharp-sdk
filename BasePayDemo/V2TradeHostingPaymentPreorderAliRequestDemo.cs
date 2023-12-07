@@ -70,10 +70,12 @@ namespace BasePayDemo
             extendInfoMap.Add("delay_acct_flag", "N");
             // 分账对象
             extendInfoMap.Add("acct_split_bunch", getAcctSplitBunchRucan());
-            // 异步通知地址
-            extendInfoMap.Add("notify_url", "https://callback.service.com/xx");
             // 交易失效时间
             // extendInfoMap.Add("time_expire", "");
+            // 业务信息
+            // extendInfoMap.Add("biz_info", getBizInfo());
+            // 异步通知地址
+            extendInfoMap.Add("notify_url", "https://callback.service.com/xx");
             return extendInfoMap;
         }
 
@@ -101,6 +103,39 @@ namespace BasePayDemo
             obj.Add("app_schema", "app跳转链接");
             // 私有信息
             // obj.Add("private_info", "");
+
+            return JsonConvert.SerializeObject(obj);
+        }
+        private static object getPayerCheckAli() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 是否提供校验身份信息
+            // obj.Add("need_check_info", "");
+            // 允许的最小买家年龄
+            // obj.Add("min_age", "");
+            // 是否强制校验付款人身份信息
+            // obj.Add("fix_buyer", "");
+
+            return obj;
+        }
+        private static object getPersonPayer() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 姓名
+            // obj.Add("name", "");
+            // 证件类型
+            // obj.Add("cert_type", "");
+            // 证件号
+            // obj.Add("cert_no", "");
+            // 手机号
+            // obj.Add("mobile", "");
+
+            return obj;
+        }
+        private static string getBizInfo() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 付款人验证（支付宝）
+            // obj.Add("payer_check_ali", getPayerCheckAli());
+            // 个人付款人信息
+            // obj.Add("person_payer", getPersonPayer());
 
             return JsonConvert.SerializeObject(obj);
         }

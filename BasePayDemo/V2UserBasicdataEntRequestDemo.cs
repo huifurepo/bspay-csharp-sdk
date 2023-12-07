@@ -30,8 +30,6 @@ namespace BasePayDemo
             request.setReqDate(DateTime.Now.ToString("yyyyMMdd"));
             // 企业用户名称
             request.setRegName("企业商户名称8225");
-            // 经营简称
-            request.setShortName("企业商户");
             // 营业执照编号
             request.setLicenseCode("20220222013747149");
             // 证照有效期类型
@@ -90,6 +88,8 @@ namespace BasePayDemo
         private static Dictionary<string, object> getExtendInfos() {
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
+            // 经营简称
+            extendInfoMap.Add("short_name", "企业商户");
             // 联系人电子邮箱
             extendInfoMap.Add("contact_email", "jeff.peng@huifu.com");
             // 管理员账号

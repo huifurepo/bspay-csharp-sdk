@@ -62,12 +62,12 @@ namespace BasePayDemo
         private static Dictionary<string, object> getExtendInfos() {
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
-            // 异步通知地址
-            extendInfoMap.Add("notify_url", "http://www.gangcai.com");
-            // 备注
-            // extendInfoMap.Add("remark", "");
             // 账户号
             // extendInfoMap.Add("acct_id", "");
+            // 备注
+            // extendInfoMap.Add("remark", "");
+            // 异步通知地址
+            extendInfoMap.Add("notify_url", "http://www.gangcai.com");
             return extendInfoMap;
         }
 

@@ -24,25 +24,29 @@ namespace BasePaySdk.Request
          */
         private string huifuId;
         /**
-         * 异步通知地址
+         * 用户客户号
          */
-        private string notifyUrl;
-        /**
-         * 订单金额
-         */
-        private string transAmt;
+        private string userHuifuId;
         /**
          * 绑卡id
          */
         private string cardBindId;
         /**
-         * 用户客户号
+         * 订单金额
          */
-        private string userHuifuId;
+        private string transAmt;
         /**
          * 商品描述
          */
         private string goodsDesc;
+        /**
+         * 代扣类型
+         */
+        private string withholdType;
+        /**
+         * 银行扩展数据
+         */
+        private string extendPayData;
         /**
          * 风控信息
          */
@@ -52,13 +56,9 @@ namespace BasePaySdk.Request
          */
         private string terminalDeviceData;
         /**
-         * 银行扩展数据
+         * 异步通知地址
          */
-        private string extendPayData;
-        /**
-         * 代扣类型
-         */
-        private string withholdType;
+        private string notifyUrl;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_TRADE_ONLINEPAYMENT_WITHHOLDPAY;
@@ -67,19 +67,19 @@ namespace BasePaySdk.Request
         public V2TradeOnlinepaymentWithholdpayRequest() {
         }
 
-        public V2TradeOnlinepaymentWithholdpayRequest(string reqDate, string reqSeqId, string huifuId, string notifyUrl, string transAmt, string cardBindId, string userHuifuId, string goodsDesc, string riskCheckData, string terminalDeviceData, string extendPayData, string withholdType) {
+        public V2TradeOnlinepaymentWithholdpayRequest(string reqDate, string reqSeqId, string huifuId, string userHuifuId, string cardBindId, string transAmt, string goodsDesc, string withholdType, string extendPayData, string riskCheckData, string terminalDeviceData, string notifyUrl) {
             this.reqDate = reqDate;
             this.reqSeqId = reqSeqId;
             this.huifuId = huifuId;
-            this.notifyUrl = notifyUrl;
-            this.transAmt = transAmt;
-            this.cardBindId = cardBindId;
             this.userHuifuId = userHuifuId;
+            this.cardBindId = cardBindId;
+            this.transAmt = transAmt;
             this.goodsDesc = goodsDesc;
+            this.withholdType = withholdType;
+            this.extendPayData = extendPayData;
             this.riskCheckData = riskCheckData;
             this.terminalDeviceData = terminalDeviceData;
-            this.extendPayData = extendPayData;
-            this.withholdType = withholdType;
+            this.notifyUrl = notifyUrl;
         }
 
         public string getReqDate() {
@@ -106,20 +106,12 @@ namespace BasePaySdk.Request
             this.huifuId = huifuId;
         }
 
-        public string getNotifyUrl() {
-            return notifyUrl;
+        public string getUserHuifuId() {
+            return userHuifuId;
         }
 
-        public void setNotifyUrl(string notifyUrl) {
-            this.notifyUrl = notifyUrl;
-        }
-
-        public string getTransAmt() {
-            return transAmt;
-        }
-
-        public void setTransAmt(string transAmt) {
-            this.transAmt = transAmt;
+        public void setUserHuifuId(string userHuifuId) {
+            this.userHuifuId = userHuifuId;
         }
 
         public string getCardBindId() {
@@ -130,12 +122,12 @@ namespace BasePaySdk.Request
             this.cardBindId = cardBindId;
         }
 
-        public string getUserHuifuId() {
-            return userHuifuId;
+        public string getTransAmt() {
+            return transAmt;
         }
 
-        public void setUserHuifuId(string userHuifuId) {
-            this.userHuifuId = userHuifuId;
+        public void setTransAmt(string transAmt) {
+            this.transAmt = transAmt;
         }
 
         public string getGoodsDesc() {
@@ -144,6 +136,22 @@ namespace BasePaySdk.Request
 
         public void setGoodsDesc(string goodsDesc) {
             this.goodsDesc = goodsDesc;
+        }
+
+        public string getWithholdType() {
+            return withholdType;
+        }
+
+        public void setWithholdType(string withholdType) {
+            this.withholdType = withholdType;
+        }
+
+        public string getExtendPayData() {
+            return extendPayData;
+        }
+
+        public void setExtendPayData(string extendPayData) {
+            this.extendPayData = extendPayData;
         }
 
         public string getRiskCheckData() {
@@ -162,20 +170,12 @@ namespace BasePaySdk.Request
             this.terminalDeviceData = terminalDeviceData;
         }
 
-        public string getExtendPayData() {
-            return extendPayData;
+        public string getNotifyUrl() {
+            return notifyUrl;
         }
 
-        public void setExtendPayData(string extendPayData) {
-            this.extendPayData = extendPayData;
-        }
-
-        public string getWithholdType() {
-            return withholdType;
-        }
-
-        public void setWithholdType(string withholdType) {
-            this.withholdType = withholdType;
+        public void setNotifyUrl(string notifyUrl) {
+            this.notifyUrl = notifyUrl;
         }
 
 

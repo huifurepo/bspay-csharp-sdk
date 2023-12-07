@@ -16,21 +16,21 @@ namespace BasePaySdk.Request
          */
         private string huifuId;
         /**
-         * 汇付服务订单号out_order_no,org_hf_seq_id,org_req_seq_id 必填其一；汇付生成的服务订单号；&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：1234323JKHDFE1243252&lt;/font&gt;
-         */
-        private string outOrderNo;
-        /**
-         * 创建服务订单返回的汇付全局流水号out_order_no,org_hf_seq_id,org_req_seq_id 必填其一；&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：00290TOP1GR210919004230P853ac13262200000&lt;/font&gt;
-         */
-        private string orgHfSeqId;
-        /**
-         * 服务订单创建请求流水号out_order_no,org_hf_seq_id,org_req_seq_id 必填其一；&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：202110210012100005&lt;/font&gt;
-         */
-        private string orgReqSeqId;
-        /**
          * 原机构请求日期
          */
         private string orgReqDate;
+        /**
+         * 汇付服务订单号out_ord_id,org_hf_seq_id,org_req_seq_id 必填其一；汇付生成的服务订单号；&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：1234323JKHDFE1243252&lt;/font&gt;
+         */
+        private string outOrdId;
+        /**
+         * 创建服务订单返回的汇付全局流水号out_ord_id,org_hf_seq_id,org_req_seq_id 必填其一；&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：00290TOP1GR210919004230P853ac13262200000&lt;/font&gt;
+         */
+        private string orgHfSeqId;
+        /**
+         * 服务订单创建请求流水号out_ord_id,org_hf_seq_id,org_req_seq_id 必填其一；&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：202110210012100005&lt;/font&gt;
+         */
+        private string orgReqSeqId;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_TRADE_PAYMENT_SCANPAY_QUERY;
@@ -39,12 +39,12 @@ namespace BasePaySdk.Request
         public V2TradePaymentScanpayQueryRequest() {
         }
 
-        public V2TradePaymentScanpayQueryRequest(string huifuId, string outOrderNo, string orgHfSeqId, string orgReqSeqId, string orgReqDate) {
+        public V2TradePaymentScanpayQueryRequest(string huifuId, string orgReqDate, string outOrdId, string orgHfSeqId, string orgReqSeqId) {
             this.huifuId = huifuId;
-            this.outOrderNo = outOrderNo;
+            this.orgReqDate = orgReqDate;
+            this.outOrdId = outOrdId;
             this.orgHfSeqId = orgHfSeqId;
             this.orgReqSeqId = orgReqSeqId;
-            this.orgReqDate = orgReqDate;
         }
 
         public string getHuifuId() {
@@ -55,12 +55,20 @@ namespace BasePaySdk.Request
             this.huifuId = huifuId;
         }
 
-        public string getOutOrderNo() {
-            return outOrderNo;
+        public string getOrgReqDate() {
+            return orgReqDate;
         }
 
-        public void setOutOrderNo(string outOrderNo) {
-            this.outOrderNo = outOrderNo;
+        public void setOrgReqDate(string orgReqDate) {
+            this.orgReqDate = orgReqDate;
+        }
+
+        public string getOutOrdId() {
+            return outOrdId;
+        }
+
+        public void setOutOrdId(string outOrdId) {
+            this.outOrdId = outOrdId;
         }
 
         public string getOrgHfSeqId() {
@@ -77,14 +85,6 @@ namespace BasePaySdk.Request
 
         public void setOrgReqSeqId(string orgReqSeqId) {
             this.orgReqSeqId = orgReqSeqId;
-        }
-
-        public string getOrgReqDate() {
-            return orgReqDate;
-        }
-
-        public void setOrgReqDate(string orgReqDate) {
-            this.orgReqDate = orgReqDate;
         }
 
 

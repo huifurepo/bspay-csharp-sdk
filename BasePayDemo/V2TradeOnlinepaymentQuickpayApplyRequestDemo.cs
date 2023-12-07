@@ -30,20 +30,20 @@ namespace BasePayDemo
             request.setReqSeqId(DateTime.Now.ToString("yyy-MM-dd HH.mm.ss.fff"));
             // 商户号
             request.setHuifuId("6666000119640000");
-            // 订单金额
-            request.setTransAmt("1980.00");
-            // 绑卡id
-            request.setCardBindId("10032850000");
-            // 异步通知地址
-            request.setNotifyUrl("http://tianyi.demo.test.cn/core/extend/BsPaySdk/notify_quick.php");
             // 用户客户号
             request.setUserHuifuId("6666000121370000");
+            // 绑卡id
+            request.setCardBindId("10032850000");
+            // 订单金额
+            request.setTransAmt("1980.00");
+            // 银行扩展字段
+            request.setExtendPayData(getExtendPayData());
             // 安全信息
             request.setRiskCheckData(getRiskCheckData());
             // 设备数据
             request.setTerminalDeviceData(getTerminalDeviceData());
-            // 银行扩展字段
-            request.setExtendPayData(getExtendPayData());
+            // 异步通知地址
+            request.setNotifyUrl("http://tianyi.demo.test.cn/core/extend/BsPaySdk/notify_quick.php");
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -76,65 +76,27 @@ namespace BasePayDemo
             // extendInfoMap.Add("remark", "");
             // 订单失效时间
             // extendInfoMap.Add("time_expire", "");
-            // 补贴支付信息
-            // extendInfoMap.Add("combinedpay_data", getCombinedpayData());
             // 分账对象
             // extendInfoMap.Add("acct_split_bunch", getAcctSplitBunchRucan());
             // 是否延迟交易
             // extendInfoMap.Add("delay_acct_flag", "");
             // 手续费扣款标志
             // extendInfoMap.Add("fee_flag", "");
+            // 补贴支付信息
+            // extendInfoMap.Add("combinedpay_data", getCombinedpayData());
             return extendInfoMap;
         }
 
-        private static string getRiskCheckData() {
+        private static string getExtendPayData() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
-            // ip地址
-            obj.Add("ip_addr", "106.33.180.238");
-            // 基站地址
-            // obj.Add("base_station", "");
-            // 纬度
-            // obj.Add("latitude", "");
-            // 经度
-            // obj.Add("longitude", "");
+            // 业务种类
+            // obj.Add("biz_tp", "test");
+            // 商品简称
+            // obj.Add("goods_short_name", "test");
+            // 网关支付受理渠道
+            obj.Add("gw_chnnl_tp", "99");
 
             return JsonConvert.SerializeObject(obj);
-        }
-        private static string getTerminalDeviceData() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 交易设备ip
-            obj.Add("device_ip", "106.33.180.238");
-            // 设备类型
-            obj.Add("device_type", "1");
-            // 交易设备gps
-            // obj.Add("device_gps", "");
-            // 交易设备iccid
-            // obj.Add("device_icc_id", "");
-            // 交易设备imei
-            // obj.Add("device_imei", "");
-            // 交易设备imsi
-            // obj.Add("device_imsi", "");
-            // 交易设备mac
-            // obj.Add("device_mac", "");
-            // 交易设备wifimac
-            // obj.Add("device_wifi_mac", "");
-
-            return JsonConvert.SerializeObject(obj);
-        }
-        private static string getCombinedpayData() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 补贴方汇付编号
-            // obj.Add("huifu_id", "test");
-            // 补贴方类型
-            // obj.Add("user_type", "test");
-            // 补贴方账户号
-            // obj.Add("acct_id", "test");
-            // 补贴金额
-            // obj.Add("amount", "test");
-
-            JArray objList = new JArray();
-            objList.Add(JToken.FromObject(obj));
-            return JsonConvert.SerializeObject(objList);
         }
         private static object getAcctInfos() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
@@ -156,14 +118,52 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string getExtendPayData() {
+        private static string getCombinedpayData() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 业务种类
-            // obj.Add("biz_tp", "test");
-            // 商品简称
-            // obj.Add("goods_short_name", "test");
-            // 网关支付受理渠道
-            obj.Add("gw_chnnl_tp", "99");
+            // 补贴方汇付编号
+            // obj.Add("huifu_id", "test");
+            // 补贴方类型
+            // obj.Add("user_type", "test");
+            // 补贴方账户号
+            // obj.Add("acct_id", "test");
+            // 补贴金额
+            // obj.Add("amount", "test");
+
+            JArray objList = new JArray();
+            objList.Add(JToken.FromObject(obj));
+            return JsonConvert.SerializeObject(objList);
+        }
+        private static string getRiskCheckData() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // ip地址
+            obj.Add("ip_addr", "106.33.180.238");
+            // 基站地址
+            // obj.Add("base_station", "");
+            // 纬度
+            // obj.Add("latitude", "");
+            // 经度
+            // obj.Add("longitude", "");
+
+            return JsonConvert.SerializeObject(obj);
+        }
+        private static string getTerminalDeviceData() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 设备类型
+            obj.Add("device_type", "1");
+            // 交易设备ip
+            obj.Add("device_ip", "106.33.180.238");
+            // 交易设备gps
+            // obj.Add("device_gps", "");
+            // 交易设备iccid
+            // obj.Add("device_icc_id", "");
+            // 交易设备imei
+            // obj.Add("device_imei", "");
+            // 交易设备imsi
+            // obj.Add("device_imsi", "");
+            // 交易设备mac
+            // obj.Add("device_mac", "");
+            // 交易设备wifimac
+            // obj.Add("device_wifi_mac", "");
 
             return JsonConvert.SerializeObject(obj);
         }

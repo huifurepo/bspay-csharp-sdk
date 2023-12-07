@@ -251,6 +251,25 @@ namespace BasePayDemo
 
             return obj;
         }
+        private static object getExtUserInfo() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 姓名
+            // obj.Add("name", "");
+            // 手机号
+            // obj.Add("mobile", "");
+            // 证件类型
+            // obj.Add("cert_type", "");
+            // 证件号
+            // obj.Add("cert_no", "");
+            // 允许的最小买家年龄
+            // obj.Add("min_age", "");
+            // 是否强制校验付款人身份信息
+            // obj.Add("fix_buyer", "");
+            // 是否强制校验身份信息
+            // obj.Add("need_check_info", "");
+
+            return obj;
+        }
         private static string getAlipayData() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 支付宝的店铺编号
@@ -263,6 +282,8 @@ namespace BasePayDemo
             // obj.Add("operator_id", "");
             // 商户门店编号
             obj.Add("store_id", "");
+            // 外部指定买家
+            // obj.Add("ext_user_info", getExtUserInfo());
 
             return JsonConvert.SerializeObject(obj);
         }

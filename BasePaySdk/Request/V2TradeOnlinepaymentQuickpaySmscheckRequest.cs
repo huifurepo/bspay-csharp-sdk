@@ -24,13 +24,13 @@ namespace BasePaySdk.Request
          */
         private string huifuId;
         /**
-         * 原请求流水号
-         */
-        private string orgReqSeqId;
-        /**
          * 原请求日期
          */
         private string orgReqDate;
+        /**
+         * 原请求流水号
+         */
+        private string orgReqSeqId;
         /**
          * 短信验证码
          */
@@ -43,12 +43,12 @@ namespace BasePaySdk.Request
         public V2TradeOnlinepaymentQuickpaySmscheckRequest() {
         }
 
-        public V2TradeOnlinepaymentQuickpaySmscheckRequest(string reqSeqId, string reqDate, string huifuId, string orgReqSeqId, string orgReqDate, string smsCode) {
+        public V2TradeOnlinepaymentQuickpaySmscheckRequest(string reqSeqId, string reqDate, string huifuId, string orgReqDate, string orgReqSeqId, string smsCode) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.huifuId = huifuId;
-            this.orgReqSeqId = orgReqSeqId;
             this.orgReqDate = orgReqDate;
+            this.orgReqSeqId = orgReqSeqId;
             this.smsCode = smsCode;
         }
 
@@ -76,20 +76,20 @@ namespace BasePaySdk.Request
             this.huifuId = huifuId;
         }
 
-        public string getOrgReqSeqId() {
-            return orgReqSeqId;
-        }
-
-        public void setOrgReqSeqId(string orgReqSeqId) {
-            this.orgReqSeqId = orgReqSeqId;
-        }
-
         public string getOrgReqDate() {
             return orgReqDate;
         }
 
         public void setOrgReqDate(string orgReqDate) {
             this.orgReqDate = orgReqDate;
+        }
+
+        public string getOrgReqSeqId() {
+            return orgReqSeqId;
+        }
+
+        public void setOrgReqSeqId(string orgReqSeqId) {
+            this.orgReqSeqId = orgReqSeqId;
         }
 
         public string getSmsCode() {

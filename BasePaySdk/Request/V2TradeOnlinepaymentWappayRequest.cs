@@ -28,6 +28,14 @@ namespace BasePaySdk.Request
          */
         private string transAmt;
         /**
+         * 分期期数分期支付时必填；支持：03、06、12、24；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：03&lt;/font&gt;；&lt;br/&gt;空值时是wap支付；
+         */
+        private string instalmentsNum;
+        /**
+         * 银行卡号instalments_num不为空时必填；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：6228480031509440000&lt;/font&gt;
+         */
+        private string bankCardNo;
+        /**
          * 网联扩展数据
          */
         private string extendPayData;
@@ -55,11 +63,13 @@ namespace BasePaySdk.Request
         public V2TradeOnlinepaymentWappayRequest() {
         }
 
-        public V2TradeOnlinepaymentWappayRequest(string reqDate, string reqSeqId, string huifuId, string transAmt, string extendPayData, string riskCheckData, string terminalDeviceData, string frontUrl, string notifyUrl) {
+        public V2TradeOnlinepaymentWappayRequest(string reqDate, string reqSeqId, string huifuId, string transAmt, string instalmentsNum, string bankCardNo, string extendPayData, string riskCheckData, string terminalDeviceData, string frontUrl, string notifyUrl) {
             this.reqDate = reqDate;
             this.reqSeqId = reqSeqId;
             this.huifuId = huifuId;
             this.transAmt = transAmt;
+            this.instalmentsNum = instalmentsNum;
+            this.bankCardNo = bankCardNo;
             this.extendPayData = extendPayData;
             this.riskCheckData = riskCheckData;
             this.terminalDeviceData = terminalDeviceData;
@@ -97,6 +107,22 @@ namespace BasePaySdk.Request
 
         public void setTransAmt(string transAmt) {
             this.transAmt = transAmt;
+        }
+
+        public string getInstalmentsNum() {
+            return instalmentsNum;
+        }
+
+        public void setInstalmentsNum(string instalmentsNum) {
+            this.instalmentsNum = instalmentsNum;
+        }
+
+        public string getBankCardNo() {
+            return bankCardNo;
+        }
+
+        public void setBankCardNo(string bankCardNo) {
+            this.bankCardNo = bankCardNo;
         }
 
         public string getExtendPayData() {

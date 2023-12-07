@@ -30,24 +30,24 @@ namespace BasePayDemo
             request.setReqSeqId(DateTime.Now.ToString("yyy-MM-dd HH.mm.ss.fff"));
             // 商户号
             request.setHuifuId("6666000109812884");
-            // 异步通知地址
-            request.setNotifyUrl("http://www.chinapnr.com/");
-            // 订单金额
-            request.setTransAmt("0.01");
-            // 绑卡id
-            request.setCardBindId("10024597199");
             // 用户客户号
             request.setUserHuifuId("6666000109818115");
+            // 绑卡id
+            request.setCardBindId("10024597199");
+            // 订单金额
+            request.setTransAmt("0.01");
             // 商品描述
             request.setGoodsDesc("代扣test");
+            // 代扣类型
+            request.setWithholdType("2");
+            // 银行扩展数据
+            request.setExtendPayData(getExtendPayData());
             // 风控信息
             request.setRiskCheckData(getRiskCheckData());
             // 设备信息数据
             request.setTerminalDeviceData(getTerminalDeviceData());
-            // 银行扩展数据
-            request.setExtendPayData(getExtendPayData());
-            // 代扣类型
-            request.setWithholdType("2");
+            // 异步通知地址
+            request.setNotifyUrl("http://www.chinapnr.com/");
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -76,15 +76,44 @@ namespace BasePayDemo
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
             // 备注
             extendInfoMap.Add("remark", "reamrk123");
+            // 账户号
+            // extendInfoMap.Add("acct_id", "");
             // 订单失效时间
             extendInfoMap.Add("time_expire", "20221212121212");
             // 分账对象
             // extendInfoMap.Add("acct_split_bunch", getAcctSplitBunch());
-            // 账户号
-            // extendInfoMap.Add("acct_id", "");
             return extendInfoMap;
         }
 
+        private static object getAcctInfos() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 支付金额
+            // obj.Add("div_amt", "");
+            // 商户号
+            // obj.Add("huifu_id", "");
+
+            JArray objList = new JArray();
+            objList.Add(JToken.FromObject(obj));
+            return objList;
+        }
+        private static object getAcctSplitBunch() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 分账信息列表
+            // obj.Add("acct_infos", getAcctInfos());
+
+            return obj;
+        }
+        private static string getExtendPayData() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 业务种类
+            obj.Add("biz_tp", "012345");
+            // 商品简称
+            obj.Add("goods_short_name", "看看");
+            // 网关支付受理渠道
+            // obj.Add("gw_chnnl_tp", "test");
+
+            return JsonConvert.SerializeObject(obj);
+        }
         private static string getRiskCheckData() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 基站地址经纬度、基站地址、IP地址三组信息至少填写一组；&lt;br/&gt;【mcc】+【mnc】+【location_cd】+【lbs_num】&lt;br/&gt;- mcc:移动国家代码，460代表中国；3位长&lt;br/&gt;- mnc：移动网络号码；2位长；&lt;br/&gt;- location_cd：位置区域码，16进制，5位长&lt;br/&gt;- lbs_num：基站编号，16进制，5位长&lt;br/&gt;- 注意若位数不足用空格补足；&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：460001039217563&lt;/font&gt;，460（mcc)， 00(mnc)，10392(location_cd)， 17563(lbs_num)
@@ -116,35 +145,6 @@ namespace BasePayDemo
             // obj.Add("device_mac", "");
             // 交易设备wifimac
             // obj.Add("device_wifi_mac", "");
-
-            return JsonConvert.SerializeObject(obj);
-        }
-        private static object getAcctInfos() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 支付金额
-            // obj.Add("div_amt", "");
-            // 商户号
-            // obj.Add("huifu_id", "");
-
-            JArray objList = new JArray();
-            objList.Add(JToken.FromObject(obj));
-            return objList;
-        }
-        private static object getAcctSplitBunch() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 分账信息列表
-            // obj.Add("acct_infos", getAcctInfos());
-
-            return obj;
-        }
-        private static string getExtendPayData() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 业务种类
-            obj.Add("biz_tp", "012345");
-            // 商品简称
-            obj.Add("goods_short_name", "看看");
-            // 网关支付受理渠道
-            // obj.Add("gw_chnnl_tp", "test");
 
             return JsonConvert.SerializeObject(obj);
         }

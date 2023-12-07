@@ -32,14 +32,14 @@ namespace BasePayDemo
             request.setHuifuId("6666000109812884");
             // 订单金额
             request.setTransAmt("0.01");
-            // 异步通知地址
-            request.setNotifyUrl("http://www.baidu.com");
             // 银行扩展信息
             request.setExtendPayData(getExtendPayData());
             // 设备信息
             request.setTerminalDeviceData(getTerminalDeviceData());
             // 安全信息
             request.setRiskCheckData(getRiskCheckData());
+            // 异步通知地址
+            request.setNotifyUrl("http://www.baidu.com");
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -78,17 +78,37 @@ namespace BasePayDemo
             extendInfoMap.Add("request_type", "P");
             // 延时标记
             // extendInfoMap.Add("delay_acct_flag", "");
+            // 分账串
+            extendInfoMap.Add("acct_split_bunch", getAcctSplitBunchRucan());
             // 手续费扣款标志
             extendInfoMap.Add("fee_flag", "2");
             // 备注
             extendInfoMap.Add("remark", "remark快捷支付接口");
             // 页面跳转地址
             extendInfoMap.Add("front_url", "http://www.baidu.com");
-            // 分账串
-            extendInfoMap.Add("acct_split_bunch", getAcctSplitBunchRucan());
             return extendInfoMap;
         }
 
+        private static object getAcctInfos() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 被分账对象ID
+            obj.Add("huifu_id", "6666000109812884");
+            // 分账金额
+            obj.Add("div_amt", "0.01");
+            // 账户号
+            // obj.Add("acct_id", "");
+
+            JArray objList = new JArray();
+            objList.Add(JToken.FromObject(obj));
+            return objList;
+        }
+        private static string getAcctSplitBunchRucan() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 分账明细
+            obj.Add("acct_infos", getAcctInfos());
+
+            return JsonConvert.SerializeObject(obj);
+        }
         private static string getExtendPayData() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 商品简称
@@ -118,26 +138,6 @@ namespace BasePayDemo
             // obj.Add("device_wifi_mac", "");
             // 交易设备GPS
             // obj.Add("device_gps", "");
-
-            return JsonConvert.SerializeObject(obj);
-        }
-        private static object getAcctInfos() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 被分账对象ID
-            obj.Add("huifu_id", "6666000109812884");
-            // 分账金额
-            obj.Add("div_amt", "0.01");
-            // 账户号
-            // obj.Add("acct_id", "");
-
-            JArray objList = new JArray();
-            objList.Add(JToken.FromObject(obj));
-            return objList;
-        }
-        private static string getAcctSplitBunchRucan() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 分账明细
-            obj.Add("acct_infos", getAcctInfos());
 
             return JsonConvert.SerializeObject(obj);
         }

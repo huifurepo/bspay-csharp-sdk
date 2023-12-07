@@ -31,9 +31,9 @@ namespace BasePayDemo
             // 请求流水号
             request.setReqSeqId(DateTime.Now.ToString("yyy-MM-dd HH.mm.ss.fff"));
             // 商户号
-            request.setHuifuId("6666000111546360");
+            request.setHuifuId("6666000003100616");
             // 交易金额
-            request.setTransAmt("0.10");
+            request.setTransAmt("0.13");
             // 商品描述
             request.setGoodsDesc("app跳微信消费");
             // 微信小程序扩展参数集合
@@ -67,22 +67,24 @@ namespace BasePayDemo
             // 收银台ID
             extendInfoMap.Add("checkout_id", "");
             // 是否延迟交易
-            extendInfoMap.Add("delay_acct_flag", "N");
+            extendInfoMap.Add("delay_acct_flag", "Y");
             // 分账对象
             extendInfoMap.Add("acct_split_bunch", getAcctSplitBunchRucan());
-            // 异步通知地址
-            extendInfoMap.Add("notify_url", "https://callback.service.com/xx");
             // 交易失效时间
-            // extendInfoMap.Add("time_expire", "");
+            extendInfoMap.Add("time_expire", "20231127233423");
+            // 业务信息
+            // extendInfoMap.Add("biz_info", getBizInfo());
+            // 交易异步通知地址
+            extendInfoMap.Add("notify_url", "https://callback.service.com/xx");
             return extendInfoMap;
         }
 
         private static object getAcctInfosRucan() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 分账金额
-            obj.Add("div_amt", "0.08");
+            obj.Add("div_amt", "0.01");
             // 被分账方ID
-            obj.Add("huifu_id", "6666000111546360");
+            obj.Add("huifu_id", "6666000003100616");
 
             JArray objList = new JArray();
             objList.Add(JToken.FromObject(obj));
@@ -97,10 +99,41 @@ namespace BasePayDemo
         }
         private static string getMiniappDataRucan() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 是否生成scheme_code
+            obj.Add("need_scheme", "Y");
             // 应用ID
-            obj.Add("seq_id", "系统应用ID");
+            obj.Add("seq_id", "APP_2022033147154783");
             // 私有信息
-            // obj.Add("private_info", "");
+            obj.Add("private_info", "oppsHosting://");
+
+            return JsonConvert.SerializeObject(obj);
+        }
+        private static object getPayCheckWx() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 指定支付者
+            // obj.Add("limit_payer", "");
+            // 微信实名验证
+            // obj.Add("real_name_flag", "");
+
+            return obj;
+        }
+        private static object getPersonPayer() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 姓名
+            // obj.Add("name", "");
+            // 证件类型
+            // obj.Add("cert_type", "");
+            // 证件号
+            // obj.Add("cert_no", "");
+
+            return obj;
+        }
+        private static string getBizInfo() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 付款人验证（微信）
+            // obj.Add("payer_check_wx", getPayCheckWx());
+            // 个人付款人信息
+            // obj.Add("person_payer", getPersonPayer());
 
             return JsonConvert.SerializeObject(obj);
         }

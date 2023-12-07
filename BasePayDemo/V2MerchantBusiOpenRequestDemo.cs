@@ -141,11 +141,11 @@ namespace BasePayDemo
             // 是否使用总部交易信息
             // extendInfoMap.Add("use_chains_flag", "");
             // 异步消息接收地址
-            extendInfoMap.Add("async_return_url", "[http://192.168.85.157:30031/sspm/testVirgo](http://192.168.85.157:30031/sspm/testVirgo)");
+            extendInfoMap.Add("async_return_url", "http://192.168.85.157:30031/sspm/testVirgo");
             // 业务开通结果异步消息接收地址
             extendInfoMap.Add("busi_async_return_url", "");
             // 交易异步应答地址
-            extendInfoMap.Add("recon_resp_addr", "[http://192.168.85.157:30031/sspm/testVirgo](http://192.168.85.157:30031/sspm/testVirgo)");
+            extendInfoMap.Add("recon_resp_addr", "http://192.168.85.157:30031/sspm/testVirgo");
             // 微信直连配置对象
             // extendInfoMap.Add("wx_zl_conf", getWxZlConf());
             // 支付宝直连配置对象

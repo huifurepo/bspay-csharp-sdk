@@ -85,7 +85,7 @@ namespace BasePayDemo
             // 结算人身份证正面
             extendInfoMap.Add("settle_cert_front_pic", "");
             // 授权委托书
-            extendInfoMap.Add("auth_enturst_pic", "[http://192.168.85.157:30031/sspm/testVirgo](http://192.168.85.157:30031/sspm/testVirgo)");
+            extendInfoMap.Add("auth_enturst_pic", "http://192.168.85.157:30031/sspm/testVirgo");
             // 协议信息实体
             extendInfoMap.Add("agreement_info", getAgreementInfo());
             // 是否交易手续费外扣
@@ -133,11 +133,11 @@ namespace BasePayDemo
             // 微信直连配置对象
             // extendInfoMap.Add("wx_zl_conf", getWxZlConf());
             // 异步消息接收地址
-            extendInfoMap.Add("async_return_url", "[http://www.baidu55.com](http://www.baidu55.com/)");
+            extendInfoMap.Add("async_return_url", "http://www.baidu55.com/");
             // 业务开通结果异步消息接收地址
             extendInfoMap.Add("busi_async_return_url", "");
             // 交易异步应答地址
-            extendInfoMap.Add("recon_resp_addr", "[http://192.168.85.157:30031/sspm/testVirgo](http://192.168.85.157:30031/sspm/testVirgo)");
+            extendInfoMap.Add("recon_resp_addr", "http://192.168.85.157:30031/sspm/testVirgo");
             // 支付宝直连配置对象
             // extendInfoMap.Add("ali_zl_conf", getAliZlConf());
             return extendInfoMap;

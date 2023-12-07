@@ -72,27 +72,47 @@ namespace BasePayDemo
             extendInfoMap.Add("acct_id", "");
             // 订单类型
             extendInfoMap.Add("order_type", "P");
+            // 付款方银行编号
+            extendInfoMap.Add("bank_id", "");
             // 卡类型
             extendInfoMap.Add("card_type", "D");
+            // 备注
+            extendInfoMap.Add("remark", "网银支付接口");
             // 订单失效时间
             extendInfoMap.Add("time_expire", "");
             // 网关支付类型
             extendInfoMap.Add("gate_type", "01");
-            // 付款方银行编号
-            extendInfoMap.Add("bank_id", "");
             // 延时标记
             extendInfoMap.Add("delay_acct_flag", "N");
             // 分账对象
             // extendInfoMap.Add("acct_split_bunch", getAcctSplitBunchRucan());
-            // 备注
-            extendInfoMap.Add("remark", "网银支付接口");
-            // 页面跳转地址
-            extendInfoMap.Add("front_url", "http://www.chinapnr.com");
             // 手续费扣款标志
             // extendInfoMap.Add("fee_flag", "");
+            // 页面跳转地址
+            extendInfoMap.Add("front_url", "http://www.chinapnr.com");
             return extendInfoMap;
         }
 
+        private static object getAcctInfos() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 分账金额
+            // obj.Add("div_amt", "");
+            // 被分账方ID
+            // obj.Add("huifu_id", "");
+            // 被分账户号
+            // obj.Add("acct_id", "");
+
+            JArray objList = new JArray();
+            objList.Add(JToken.FromObject(obj));
+            return objList;
+        }
+        private static string getAcctSplitBunchRucan() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 分账明细
+            // obj.Add("acct_infos", getAcctInfos());
+
+            return JsonConvert.SerializeObject(obj);
+        }
         private static string getExtendPayData() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 商品简称
@@ -122,26 +142,6 @@ namespace BasePayDemo
             // obj.Add("device_wifi_mac", "");
             // 交易设备GPS
             // obj.Add("device_gps", "");
-
-            return JsonConvert.SerializeObject(obj);
-        }
-        private static object getAcctInfos() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 分账金额
-            // obj.Add("div_amt", "");
-            // 被分账方ID
-            // obj.Add("huifu_id", "");
-            // 被分账户号
-            // obj.Add("acct_id", "");
-
-            JArray objList = new JArray();
-            objList.Add(JToken.FromObject(obj));
-            return objList;
-        }
-        private static string getAcctSplitBunchRucan() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 分账明细
-            // obj.Add("acct_infos", getAcctInfos());
 
             return JsonConvert.SerializeObject(obj);
         }

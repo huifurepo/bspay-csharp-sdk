@@ -24,12 +24,12 @@ namespace BasePayDemo
 
             // 2.组装请求参数
             V2TradePayscoreServiceorderCreateRequest request = new V2TradePayscoreServiceorderCreateRequest();
-            // 汇付商户号
-            request.setHuifuId("6666000108854952");
             // 请求日期
             request.setReqDate(DateTime.Now.ToString("yyyyMMdd"));
             // 商户申请单号
             request.setReqSeqId(DateTime.Now.ToString("yyy-MM-dd HH.mm.ss.fff"));
+            // 汇付商户号
+            request.setHuifuId("6666000108854952");
             // 服务信息
             // request.setServiceIntroduction("test");
             // 服务风险金
@@ -68,22 +68,22 @@ namespace BasePayDemo
             // extendInfoMap.Add("service_id", "");
             // 子商户公众号ID
             // extendInfoMap.Add("sub_appid", "");
+            // 场景类型
+            // extendInfoMap.Add("trade_scene", "");
+            // 费率类型
+            // extendInfoMap.Add("pay_scene", "");
+            // 从业机构公众号下的用户标识
+            // extendInfoMap.Add("openid", "");
+            // 子商户公众号下的用户标识
+            // extendInfoMap.Add("sub_openid", "");
             // 后付费项目
             // extendInfoMap.Add("post_payments", getPostPayments());
             // 商户优惠
             // extendInfoMap.Add("post_discounts", getPostDiscounts());
             // 服务位置
             // extendInfoMap.Add("location", getLocation());
-            // 从业机构公众号下的用户标识
-            // extendInfoMap.Add("openid", "");
-            // 子商户公众号下的用户标识
-            // extendInfoMap.Add("sub_openid", "");
             // 附加数据
             // extendInfoMap.Add("attach", "");
-            // 场景类型
-            // extendInfoMap.Add("trade_scene", "");
-            // 费率类型
-            // extendInfoMap.Add("pay_scene", "");
             return extendInfoMap;
         }
 

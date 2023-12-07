@@ -28,10 +28,6 @@ namespace BasePaySdk.Request
          */
         private string transAmt;
         /**
-         * 异步通知地址
-         */
-        private string notifyUrl;
-        /**
          * 银行扩展信息
          */
         private string extendPayData;
@@ -43,6 +39,10 @@ namespace BasePaySdk.Request
          * 安全信息
          */
         private string riskCheckData;
+        /**
+         * 异步通知地址
+         */
+        private string notifyUrl;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_TRADE_ONLINEPAYMENT_QUICKPAY_FRONTPAY;
@@ -51,15 +51,15 @@ namespace BasePaySdk.Request
         public V2TradeOnlinepaymentQuickpayFrontpayRequest() {
         }
 
-        public V2TradeOnlinepaymentQuickpayFrontpayRequest(string reqSeqId, string reqDate, string huifuId, string transAmt, string notifyUrl, string extendPayData, string terminalDeviceData, string riskCheckData) {
+        public V2TradeOnlinepaymentQuickpayFrontpayRequest(string reqSeqId, string reqDate, string huifuId, string transAmt, string extendPayData, string terminalDeviceData, string riskCheckData, string notifyUrl) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.huifuId = huifuId;
             this.transAmt = transAmt;
-            this.notifyUrl = notifyUrl;
             this.extendPayData = extendPayData;
             this.terminalDeviceData = terminalDeviceData;
             this.riskCheckData = riskCheckData;
+            this.notifyUrl = notifyUrl;
         }
 
         public string getReqSeqId() {
@@ -94,14 +94,6 @@ namespace BasePaySdk.Request
             this.transAmt = transAmt;
         }
 
-        public string getNotifyUrl() {
-            return notifyUrl;
-        }
-
-        public void setNotifyUrl(string notifyUrl) {
-            this.notifyUrl = notifyUrl;
-        }
-
         public string getExtendPayData() {
             return extendPayData;
         }
@@ -124,6 +116,14 @@ namespace BasePaySdk.Request
 
         public void setRiskCheckData(string riskCheckData) {
             this.riskCheckData = riskCheckData;
+        }
+
+        public string getNotifyUrl() {
+            return notifyUrl;
+        }
+
+        public void setNotifyUrl(string notifyUrl) {
+            this.notifyUrl = notifyUrl;
         }
 
 

@@ -12,10 +12,6 @@ namespace BasePaySdk.Request
     {
 
         /**
-         * 汇付商户号
-         */
-        private string huifuId;
-        /**
          * 请求日期
          */
         private string reqDate;
@@ -23,6 +19,10 @@ namespace BasePaySdk.Request
          * 商户申请单号
          */
         private string reqSeqId;
+        /**
+         * 汇付商户号
+         */
+        private string huifuId;
         /**
          * 服务信息
          */
@@ -47,22 +47,14 @@ namespace BasePaySdk.Request
         public V2TradePayscoreServiceorderCreateRequest() {
         }
 
-        public V2TradePayscoreServiceorderCreateRequest(string huifuId, string reqDate, string reqSeqId, string serviceIntroduction, string riskFund, string timeRange, string notifyUrl) {
-            this.huifuId = huifuId;
+        public V2TradePayscoreServiceorderCreateRequest(string reqDate, string reqSeqId, string huifuId, string serviceIntroduction, string riskFund, string timeRange, string notifyUrl) {
             this.reqDate = reqDate;
             this.reqSeqId = reqSeqId;
+            this.huifuId = huifuId;
             this.serviceIntroduction = serviceIntroduction;
             this.riskFund = riskFund;
             this.timeRange = timeRange;
             this.notifyUrl = notifyUrl;
-        }
-
-        public string getHuifuId() {
-            return huifuId;
-        }
-
-        public void setHuifuId(string huifuId) {
-            this.huifuId = huifuId;
         }
 
         public string getReqDate() {
@@ -79,6 +71,14 @@ namespace BasePaySdk.Request
 
         public void setReqSeqId(string reqSeqId) {
             this.reqSeqId = reqSeqId;
+        }
+
+        public string getHuifuId() {
+            return huifuId;
+        }
+
+        public void setHuifuId(string huifuId) {
+            this.huifuId = huifuId;
         }
 
         public string getServiceIntroduction() {

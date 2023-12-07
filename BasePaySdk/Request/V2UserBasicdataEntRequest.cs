@@ -24,10 +24,6 @@ namespace BasePaySdk.Request
          */
         private string regName;
         /**
-         * 经营简称
-         */
-        private string shortName;
-        /**
          * 营业执照编号
          */
         private string licenseCode;
@@ -99,11 +95,10 @@ namespace BasePaySdk.Request
         public V2UserBasicdataEntRequest() {
         }
 
-        public V2UserBasicdataEntRequest(string reqSeqId, string reqDate, string regName, string shortName, string licenseCode, string licenseValidityType, string licenseBeginDate, string licenseEndDate, string regProvId, string regAreaId, string regDistrictId, string regDetail, string legalName, string legalCertType, string legalCertNo, string legalCertValidityType, string legalCertBeginDate, string legalCertEndDate, string contactName, string contactMobile) {
+        public V2UserBasicdataEntRequest(string reqSeqId, string reqDate, string regName, string licenseCode, string licenseValidityType, string licenseBeginDate, string licenseEndDate, string regProvId, string regAreaId, string regDistrictId, string regDetail, string legalName, string legalCertType, string legalCertNo, string legalCertValidityType, string legalCertBeginDate, string legalCertEndDate, string contactName, string contactMobile) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.regName = regName;
-            this.shortName = shortName;
             this.licenseCode = licenseCode;
             this.licenseValidityType = licenseValidityType;
             this.licenseBeginDate = licenseBeginDate;
@@ -144,14 +139,6 @@ namespace BasePaySdk.Request
 
         public void setRegName(string regName) {
             this.regName = regName;
-        }
-
-        public string getShortName() {
-            return shortName;
-        }
-
-        public void setShortName(string shortName) {
-            this.shortName = shortName;
         }
 
         public string getLicenseCode() {

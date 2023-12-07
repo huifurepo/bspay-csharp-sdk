@@ -24,6 +24,10 @@ namespace BasePaySdk.Request
          */
         private string huifuId;
         /**
+         * 商品描述
+         */
+        private string goodsDesc;
+        /**
          * 交易类型
          */
         private string tradeType;
@@ -31,10 +35,6 @@ namespace BasePaySdk.Request
          * 交易金额
          */
         private string transAmt;
-        /**
-         * 商品描述
-         */
-        private string goodsDesc;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_TRADE_PAYMENT_JSPAY;
@@ -43,13 +43,13 @@ namespace BasePaySdk.Request
         public V2TradePaymentJspayRequest() {
         }
 
-        public V2TradePaymentJspayRequest(string reqDate, string reqSeqId, string huifuId, string tradeType, string transAmt, string goodsDesc) {
+        public V2TradePaymentJspayRequest(string reqDate, string reqSeqId, string huifuId, string goodsDesc, string tradeType, string transAmt) {
             this.reqDate = reqDate;
             this.reqSeqId = reqSeqId;
             this.huifuId = huifuId;
+            this.goodsDesc = goodsDesc;
             this.tradeType = tradeType;
             this.transAmt = transAmt;
-            this.goodsDesc = goodsDesc;
         }
 
         public string getReqDate() {
@@ -76,6 +76,14 @@ namespace BasePaySdk.Request
             this.huifuId = huifuId;
         }
 
+        public string getGoodsDesc() {
+            return goodsDesc;
+        }
+
+        public void setGoodsDesc(string goodsDesc) {
+            this.goodsDesc = goodsDesc;
+        }
+
         public string getTradeType() {
             return tradeType;
         }
@@ -90,14 +98,6 @@ namespace BasePaySdk.Request
 
         public void setTransAmt(string transAmt) {
             this.transAmt = transAmt;
-        }
-
-        public string getGoodsDesc() {
-            return goodsDesc;
-        }
-
-        public void setGoodsDesc(string goodsDesc) {
-            this.goodsDesc = goodsDesc;
         }
 
 

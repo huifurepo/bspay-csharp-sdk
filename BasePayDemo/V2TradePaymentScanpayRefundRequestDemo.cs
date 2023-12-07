@@ -66,31 +66,102 @@ namespace BasePayDemo
             // extendInfoMap.Add("org_party_order_id", "");
             // 原交易请求流水号
             // extendInfoMap.Add("org_req_seq_id", "");
-            // 安全信息
-            // extendInfoMap.Add("risk_check_data", getRiskCheckData());
-            // 设备信息
-            // extendInfoMap.Add("terminal_device_data", getTerminalDeviceData());
             // 分账对象
             // extendInfoMap.Add("acct_split_bunch", getAcctSplitBunchRucan());
+            // 聚合正扫微信拓展参数集合
+            // extendInfoMap.Add("wx_data", getWxData());
             // 数字货币扩展参数集合
             // extendInfoMap.Add("digital_currency_data", getDigitalCurrencyData());
+            // 补贴支付信息
+            // extendInfoMap.Add("combinedpay_data", getCombinedpayData());
             // 备注
             // extendInfoMap.Add("remark", "");
-            // 异步通知地址
-            // extendInfoMap.Add("notify_url", "");
             // 是否垫资退款
             // extendInfoMap.Add("loan_flag", "");
             // 垫资承担者
             // extendInfoMap.Add("loan_undertaker", "");
             // 垫资账户类型
             // extendInfoMap.Add("loan_acct_type", "");
-            // 补贴支付信息
-            // extendInfoMap.Add("combinedpay_data", getCombinedpayData());
-            // 聚合正扫微信拓展参数集合
-            // extendInfoMap.Add("wx_data", getWxData());
+            // 安全信息
+            // extendInfoMap.Add("risk_check_data", getRiskCheckData());
+            // 设备信息
+            // extendInfoMap.Add("terminal_device_data", getTerminalDeviceData());
+            // 异步通知地址
+            // extendInfoMap.Add("notify_url", "");
             return extendInfoMap;
         }
 
+        private static object getAcctInfosRucan() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 分账金额
+            // obj.Add("div_amt", "test");
+            // 被分账方ID
+            // obj.Add("huifu_id", "test");
+            // 垫资金额
+            // obj.Add("part_loan_amt", "");
+
+            JArray objList = new JArray();
+            objList.Add(JToken.FromObject(obj));
+            return objList;
+        }
+        private static string getAcctSplitBunchRucan() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 分账信息列表
+            // obj.Add("acct_infos", getAcctInfosRucan());
+
+            return JsonConvert.SerializeObject(obj);
+        }
+        private static object getGoodsDetail() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 商品编码
+            // obj.Add("goods_id", "test");
+            // 优惠退款金额
+            // obj.Add("refund_amount", "test");
+            // 商品退货数量
+            // obj.Add("refund_quantity", "test");
+            // 商品单价
+            // obj.Add("price", "test");
+
+            JArray objList = new JArray();
+            objList.Add(JToken.FromObject(obj));
+            return objList;
+        }
+        private static object getDetail() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 商品详情列表
+            // obj.Add("goods_detail", getGoodsDetail());
+
+            return obj;
+        }
+        private static object getWxData() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 退款商品详情
+            // obj.Add("detail", getDetail());
+
+            return obj;
+        }
+        private static string getDigitalCurrencyData() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 退款原因
+            // obj.Add("refund_desc", "");
+
+            return JsonConvert.SerializeObject(obj);
+        }
+        private static string getCombinedpayData() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 补贴方汇付编号
+            // obj.Add("huifu_id", "test");
+            // 补贴方类型
+            // obj.Add("user_type", "test");
+            // 补贴方账户号
+            // obj.Add("acct_id", "test");
+            // 补贴金额
+            // obj.Add("amount", "test");
+
+            JArray objList = new JArray();
+            objList.Add(JToken.FromObject(obj));
+            return JsonConvert.SerializeObject(objList);
+        }
         private static string getRiskCheckData() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // ip地址
@@ -124,77 +195,6 @@ namespace BasePayDemo
             // obj.Add("device_gps", "");
 
             return JsonConvert.SerializeObject(obj);
-        }
-        private static object getAcctInfosRucan() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 分账金额
-            // obj.Add("div_amt", "test");
-            // 被分账方ID
-            // obj.Add("huifu_id", "test");
-            // 垫资金额
-            // obj.Add("part_loan_amt", "");
-
-            JArray objList = new JArray();
-            objList.Add(JToken.FromObject(obj));
-            return objList;
-        }
-        private static string getAcctSplitBunchRucan() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 分账信息列表
-            // obj.Add("acct_infos", getAcctInfosRucan());
-
-            return JsonConvert.SerializeObject(obj);
-        }
-        private static string getDigitalCurrencyData() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 退款原因
-            // obj.Add("refund_desc", "");
-
-            return JsonConvert.SerializeObject(obj);
-        }
-        private static string getCombinedpayData() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 补贴方汇付编号
-            // obj.Add("huifu_id", "test");
-            // 补贴方类型
-            // obj.Add("user_type", "test");
-            // 补贴方账户号
-            // obj.Add("acct_id", "test");
-            // 补贴金额
-            // obj.Add("amount", "test");
-
-            JArray objList = new JArray();
-            objList.Add(JToken.FromObject(obj));
-            return JsonConvert.SerializeObject(objList);
-        }
-        private static object getGoodsDetail() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 商品编码
-            // obj.Add("goods_id", "test");
-            // 优惠退款金额
-            // obj.Add("refund_amount", "test");
-            // 商品退货数量
-            // obj.Add("refund_quantity", "test");
-            // 商品单价
-            // obj.Add("price", "test");
-
-            JArray objList = new JArray();
-            objList.Add(JToken.FromObject(obj));
-            return objList;
-        }
-        private static object getDetail() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 商品详情列表
-            // obj.Add("goods_detail", getGoodsDetail());
-
-            return obj;
-        }
-        private static object getWxData() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 退款商品详情
-            // obj.Add("detail", getDetail());
-
-            return obj;
         }
     }
 }

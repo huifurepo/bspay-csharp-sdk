@@ -53,10 +53,10 @@ namespace BasePayDemo
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
             // 汇付服务订单号
-            // extendInfoMap.Add("out_order_no", "");
-            // 创建服务订单返回的汇付全局流水号
+            extendInfoMap.Add("out_order_no", "1234323JKHDFE1243252");
+            // 汇付全局流水号
             // extendInfoMap.Add("org_hf_seq_id", "");
-            // 服务订单创建请求流水号
+            // 请求流水号
             // extendInfoMap.Add("org_req_seq_id", "");
             return extendInfoMap;
         }
