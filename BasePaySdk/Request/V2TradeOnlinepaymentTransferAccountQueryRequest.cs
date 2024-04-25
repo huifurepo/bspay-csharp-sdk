@@ -3,7 +3,7 @@ using System;
 namespace BasePaySdk.Request
 {
     /**
-     * 银行转账资金流水查询
+     * 银行大额资金流水查询
      *
      * @author sdk-generator
      * @Description

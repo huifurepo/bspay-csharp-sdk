@@ -30,6 +30,8 @@ namespace BasePayDemo
             request.setReqSeqId(DateTime.Now.ToString("yyy-MM-dd HH.mm.ss.fff"));
             // 商户号
             request.setHuifuId("6666000103423237");
+            // 交易类型**原交易为快捷支付必填：QUICK_PAY**，&lt;br/&gt;**原交易为余额支付必填：ACCT_PAYMENT**；&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：ACCT_PAYMENT&lt;/font&gt;
+            // request.setPayType("test");
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -60,18 +62,26 @@ namespace BasePayDemo
             extendInfoMap.Add("org_req_date", "20221108");
             // 原交易请求流水号
             extendInfoMap.Add("org_req_seq_id", "2022072724398620211667900766");
+            // 原交易商户订单号
+            // extendInfoMap.Add("org_mer_ord_id", "");
             // 原交易全局流水号
             extendInfoMap.Add("org_hf_seq_id", "");
             // 分账对象
             extendInfoMap.Add("acct_split_bunch", getAcctSplitBunch());
             // 安全信息
             extendInfoMap.Add("risk_check_data", getRiskCheckData());
-            // 交易类型
-            // extendInfoMap.Add("pay_type", "");
             // 备注
             extendInfoMap.Add("remark", "remark123");
-            // 原交易商户订单号
-            // extendInfoMap.Add("org_mer_ord_id", "");
+            // 灵活用工标志
+            // extendInfoMap.Add("hyc_flag", "");
+            // 代发模式
+            // extendInfoMap.Add("salary_modle_type", "");
+            // 落地公司商户号
+            // extendInfoMap.Add("bmember_id", "");
+            // 灵活用工代发批次号
+            // extendInfoMap.Add("hyc_attach_id", "");
+            // 异步通知地址
+            // extendInfoMap.Add("notify_url", "");
             return extendInfoMap;
         }
 
@@ -79,9 +89,9 @@ namespace BasePayDemo
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 分账金额
             obj.Add("div_amt", "0.01");
-            // 被分账方ID
+            // 分账接收方ID
             obj.Add("huifu_id", "6666000103423237");
-            // 被分账方账户号
+            // 分账接收方账户号
             obj.Add("acct_id", "C01400109");
 
             JArray objList = new JArray();

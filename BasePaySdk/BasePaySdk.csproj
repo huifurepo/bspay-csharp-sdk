@@ -5,7 +5,7 @@
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<TargetFramework>net48</TargetFramework>
 		<PackageId>dg-csharp-sdk</PackageId>
-        <Version>1.0.9</Version>
+        <Version>1.0.10</Version>
 	</PropertyGroup>
 
 	<ItemGroup>

@@ -68,6 +68,8 @@ namespace BasePayDemo
             extendInfoMap.Add("mobile_no", "15556622000");
             // 文件列表
             // extendInfoMap.Add("file_list", getFileList());
+            // 地址
+            // extendInfoMap.Add("**address**", "");
             return extendInfoMap;
         }
 

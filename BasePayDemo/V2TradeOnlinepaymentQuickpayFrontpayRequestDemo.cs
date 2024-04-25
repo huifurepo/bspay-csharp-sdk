@@ -8,7 +8,7 @@ using Newtonsoft.Json.Linq;
 namespace BasePayDemo
 {
     /**
-     * 快捷支付页面版接口 - 示例
+     * 快捷支付页面版 - 示例
      *
      * @author sdk-generator
      * @Description
@@ -91,7 +91,7 @@ namespace BasePayDemo
 
         private static object getAcctInfos() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 被分账对象ID
+            // 分账接收方ID
             obj.Add("huifu_id", "6666000109812884");
             // 分账金额
             obj.Add("div_amt", "0.01");

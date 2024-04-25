@@ -64,6 +64,8 @@ namespace BasePayDemo
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
             // 账户号
             // extendInfoMap.Add("acct_id", "");
+            // 取现渠道
+            extendInfoMap.Add("enchashment_channel", "00");
             // 备注
             // extendInfoMap.Add("remark", "");
             // 异步通知地址

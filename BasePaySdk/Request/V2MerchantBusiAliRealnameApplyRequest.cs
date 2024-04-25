@@ -24,13 +24,13 @@ namespace BasePaySdk.Request
          */
         private string huifuId;
         /**
-         * 联系人信息
-         */
-        private string contactPersonInfo;
-        /**
          * 主体信息
          */
         private string authIdentityInfo;
+        /**
+         * 联系人信息
+         */
+        private string contactPersonInfo;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_MERCHANT_BUSI_ALI_REALNAME_APPLY;
@@ -39,12 +39,12 @@ namespace BasePaySdk.Request
         public V2MerchantBusiAliRealnameApplyRequest() {
         }
 
-        public V2MerchantBusiAliRealnameApplyRequest(string reqSeqId, string reqDate, string huifuId, string contactPersonInfo, string authIdentityInfo) {
+        public V2MerchantBusiAliRealnameApplyRequest(string reqSeqId, string reqDate, string huifuId, string authIdentityInfo, string contactPersonInfo) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.huifuId = huifuId;
-            this.contactPersonInfo = contactPersonInfo;
             this.authIdentityInfo = authIdentityInfo;
+            this.contactPersonInfo = contactPersonInfo;
         }
 
         public string getReqSeqId() {
@@ -71,20 +71,20 @@ namespace BasePaySdk.Request
             this.huifuId = huifuId;
         }
 
-        public string getContactPersonInfo() {
-            return contactPersonInfo;
-        }
-
-        public void setContactPersonInfo(string contactPersonInfo) {
-            this.contactPersonInfo = contactPersonInfo;
-        }
-
         public string getAuthIdentityInfo() {
             return authIdentityInfo;
         }
 
         public void setAuthIdentityInfo(string authIdentityInfo) {
             this.authIdentityInfo = authIdentityInfo;
+        }
+
+        public string getContactPersonInfo() {
+            return contactPersonInfo;
+        }
+
+        public void setContactPersonInfo(string contactPersonInfo) {
+            this.contactPersonInfo = contactPersonInfo;
         }
 
 

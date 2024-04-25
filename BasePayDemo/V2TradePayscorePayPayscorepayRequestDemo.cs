@@ -98,7 +98,7 @@ namespace BasePayDemo
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 分账金额
             // obj.Add("div_amt", "test");
-            // 分账商户号
+            // 分账接收方ID
             // obj.Add("huifu_id", "test");
 
             JArray objList = new JArray();

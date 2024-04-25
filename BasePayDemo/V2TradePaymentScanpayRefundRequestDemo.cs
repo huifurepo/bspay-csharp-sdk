@@ -88,6 +88,8 @@ namespace BasePayDemo
             // extendInfoMap.Add("terminal_device_data", getTerminalDeviceData());
             // 异步通知地址
             // extendInfoMap.Add("notify_url", "");
+            // 银联参数集合
+            // extendInfoMap.Add("unionpay_data", getUnionpayData());
             return extendInfoMap;
         }
 
@@ -95,7 +97,7 @@ namespace BasePayDemo
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 分账金额
             // obj.Add("div_amt", "test");
-            // 被分账方ID
+            // 分账接收方ID
             // obj.Add("huifu_id", "test");
             // 垫资金额
             // obj.Add("part_loan_amt", "");
@@ -193,6 +195,13 @@ namespace BasePayDemo
             // obj.Add("device_wifi_mac", "");
             // 交易设备GPS
             // obj.Add("device_gps", "");
+
+            return JsonConvert.SerializeObject(obj);
+        }
+        private static string getUnionpayData() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 收款方附加数据
+            // obj.Add("addn_data", "");
 
             return JsonConvert.SerializeObject(obj);
         }

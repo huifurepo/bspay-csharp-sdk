@@ -75,7 +75,7 @@ namespace BasePayDemo
             // 渠道号
             extendInfoMap.Add("channel_no", "");
             // 补贴支付信息
-            // extendInfoMap.Add("combinedpay_data", getCombinedpayData());
+            // extendInfoMap.Add("combinedpay_data", "");
             // 场景类型
             extendInfoMap.Add("pay_scene", "");
             // 分账对象
@@ -99,26 +99,11 @@ namespace BasePayDemo
             return extendInfoMap;
         }
 
-        private static string getCombinedpayData() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 补贴方汇付编号
-            // obj.Add("huifu_id", "test");
-            // 补贴方类型
-            // obj.Add("user_type", "test");
-            // 补贴方账户号
-            // obj.Add("acct_id", "test");
-            // 补贴金额
-            // obj.Add("amount", "test");
-
-            JArray objList = new JArray();
-            objList.Add(JToken.FromObject(obj));
-            return JsonConvert.SerializeObject(objList);
-        }
         private static object getAcctInfosRucan() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 分账金额
             // obj.Add("div_amt", "test");
-            // 被分账方ID
+            // 分账接收方ID
             // obj.Add("huifu_id", "test");
             // 账户号
             // obj.Add("acct_id", "");
@@ -190,10 +175,6 @@ namespace BasePayDemo
             // obj.Add("spbill_create_ip", "test");
             // 子商户公众账号id
             // obj.Add("sub_appid", "");
-            // 用户标识
-            // obj.Add("openid", "");
-            // 子商户用户标识
-            // obj.Add("sub_openid", "");
             // 设备号
             // obj.Add("device_info", "");
             // 附加数据
@@ -284,6 +265,8 @@ namespace BasePayDemo
             obj.Add("store_id", "");
             // 外部指定买家
             // obj.Add("ext_user_info", getExtUserInfo());
+            // 商户业务信息
+            // obj.Add("ali_business_params", "");
 
             return JsonConvert.SerializeObject(obj);
         }
@@ -301,6 +284,8 @@ namespace BasePayDemo
             // obj.Add("specfeeinfo", "");
             // 终端号
             // obj.Add("term_id", "");
+            // 收款方附加数据
+            // obj.Add("addn_data", "");
 
             return JsonConvert.SerializeObject(obj);
         }

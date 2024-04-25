@@ -35,6 +35,14 @@ namespace BasePaySdk.Request
          * 安全信息
          */
         private string riskCheckData;
+        /**
+         * 资金类型资金类型。支付渠道为中信E管家时，资金类型必填（[详见说明](https://paas.huifu.com/partners/api/#/yuer/api_zxegjzllx)）
+         */
+        private string fundType;
+        /**
+         * 手续费承担方标识余额支付手续费承担方标识；商户余额支付扣收规则为接口指定承担方时必填！枚举值：&lt;br/&gt;OUT：出款方；&lt;br/&gt;IN：分账接受方。&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：IN&lt;/font&gt;
+         */
+        private string transFeeTakeFlag;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_TRADE_ACCTPAYMENT_PAY;
@@ -43,13 +51,15 @@ namespace BasePaySdk.Request
         public V2TradeAcctpaymentPayRequest() {
         }
 
-        public V2TradeAcctpaymentPayRequest(string reqSeqId, string reqDate, string outHuifuId, string ordAmt, string acctSplitBunch, string riskCheckData) {
+        public V2TradeAcctpaymentPayRequest(string reqSeqId, string reqDate, string outHuifuId, string ordAmt, string acctSplitBunch, string riskCheckData, string fundType, string transFeeTakeFlag) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.outHuifuId = outHuifuId;
             this.ordAmt = ordAmt;
             this.acctSplitBunch = acctSplitBunch;
             this.riskCheckData = riskCheckData;
+            this.fundType = fundType;
+            this.transFeeTakeFlag = transFeeTakeFlag;
         }
 
         public string getReqSeqId() {
@@ -98,6 +108,22 @@ namespace BasePaySdk.Request
 
         public void setRiskCheckData(string riskCheckData) {
             this.riskCheckData = riskCheckData;
+        }
+
+        public string getFundType() {
+            return fundType;
+        }
+
+        public void setFundType(string fundType) {
+            this.fundType = fundType;
+        }
+
+        public string getTransFeeTakeFlag() {
+            return transFeeTakeFlag;
+        }
+
+        public void setTransFeeTakeFlag(string transFeeTakeFlag) {
+            this.transFeeTakeFlag = transFeeTakeFlag;
         }
 
 

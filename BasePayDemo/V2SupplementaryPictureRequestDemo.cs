@@ -58,6 +58,8 @@ namespace BasePayDemo
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
             // 商户号
             extendInfoMap.Add("huifu_id", "6666000103413615");
+            // 文件url链接
+            extendInfoMap.Add("file_url", "https://example.com/image.jpg");
             return extendInfoMap;
         }
 

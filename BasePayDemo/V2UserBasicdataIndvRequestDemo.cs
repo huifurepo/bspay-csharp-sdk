@@ -78,6 +78,8 @@ namespace BasePayDemo
             extendInfoMap.Add("expand_id", "");
             // 文件列表
             extendInfoMap.Add("file_list", getFileList());
+            // 地址
+            // extendInfoMap.Add("**address**", "");
             return extendInfoMap;
         }
 

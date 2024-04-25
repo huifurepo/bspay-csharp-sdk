@@ -3,7 +3,7 @@ using System;
 namespace BasePaySdk.Request
 {
     /**
-     * 银联统一在线收银台接口
+     * 银联统一在线收银台
      *
      * @author sdk-generator
      * @Description
@@ -35,6 +35,10 @@ namespace BasePaySdk.Request
          * 安全信息
          */
         private string riskCheckData;
+        /**
+         * 三方支付数据jsonObject；pay_scene为云闪付公众号与云闪付小程序时必填
+         */
+        private string thirdPayData;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_TRADE_ONLINEPAYMENT_UNIONPAY;
@@ -43,13 +47,14 @@ namespace BasePaySdk.Request
         public V2TradeOnlinepaymentUnionpayRequest() {
         }
 
-        public V2TradeOnlinepaymentUnionpayRequest(string huifuId, string reqDate, string reqSeqId, string transAmt, string orderDesc, string riskCheckData) {
+        public V2TradeOnlinepaymentUnionpayRequest(string huifuId, string reqDate, string reqSeqId, string transAmt, string orderDesc, string riskCheckData, string thirdPayData) {
             this.huifuId = huifuId;
             this.reqDate = reqDate;
             this.reqSeqId = reqSeqId;
             this.transAmt = transAmt;
             this.orderDesc = orderDesc;
             this.riskCheckData = riskCheckData;
+            this.thirdPayData = thirdPayData;
         }
 
         public string getHuifuId() {
@@ -98,6 +103,14 @@ namespace BasePaySdk.Request
 
         public void setRiskCheckData(string riskCheckData) {
             this.riskCheckData = riskCheckData;
+        }
+
+        public string getThirdPayData() {
+            return thirdPayData;
+        }
+
+        public void setThirdPayData(string thirdPayData) {
+            this.thirdPayData = thirdPayData;
         }
 
 

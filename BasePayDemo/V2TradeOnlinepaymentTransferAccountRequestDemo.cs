@@ -8,7 +8,7 @@ using Newtonsoft.Json.Linq;
 namespace BasePayDemo
 {
     /**
-     * 银行大额转账 - 示例
+     * 银行大额支付 - 示例
      *
      * @author sdk-generator
      * @Description
@@ -74,6 +74,10 @@ namespace BasePayDemo
             extendInfoMap.Add("remark", "标记123");
             // 异步通知地址
             extendInfoMap.Add("notify_url", "http://www.huifu.com/getResp");
+            // 入账模式
+            // extendInfoMap.Add("acct_mode", "");
+            // 银行模式
+            // extendInfoMap.Add("bank_mode", "");
             return extendInfoMap;
         }
 

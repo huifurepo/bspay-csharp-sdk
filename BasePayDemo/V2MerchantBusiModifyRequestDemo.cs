@@ -140,6 +140,10 @@ namespace BasePayDemo
             extendInfoMap.Add("recon_resp_addr", "http://192.168.85.157:30031/sspm/testVirgo");
             // 支付宝直连配置对象
             // extendInfoMap.Add("ali_zl_conf", getAliZlConf());
+            // 开户费用值(元)
+            // extendInfoMap.Add("enter_fee", "");
+            // 开户费用类型
+            // extendInfoMap.Add("enter_fee_flag", "");
             return extendInfoMap;
         }
 
@@ -252,17 +256,17 @@ namespace BasePayDemo
             obj.Add("charge_cate_code", "02");
             // 借记卡封顶值
             obj.Add("debit_fee_limit", "5");
-            // 云闪付借记卡手续费1000以上（%）
+            // 银联手机闪付借记卡手续费1000以上（%）
             obj.Add("cloud_debit_fee_rate_up", "7");
-            // 云闪付借记卡封顶1000以上(元)
+            // 银联手机闪付借记卡封顶1000以上(元)
             obj.Add("cloud_debit_fee_limit_up", "8.922");
-            // 云闪付贷记卡手续费1000以上（%）
+            // 银联手机闪付贷记卡手续费1000以上（%）
             obj.Add("cloud_credit_fee_rate_up", "4.86");
-            // 云闪付借记卡手续费1000以下（%）
+            // 银联手机闪付借记卡手续费1000以下（%）
             obj.Add("cloud_debit_fee_rate_down", "0");
-            // 云闪付借记卡封顶1000以下(元)
+            // 银联手机闪付借记卡封顶1000以下(元)
             obj.Add("cloud_debit_fee_limit_down", "10");
-            // 云闪付贷记卡手续费1000以下（%）
+            // 银联手机闪付贷记卡手续费1000以下（%）
             obj.Add("cloud_credit_fee_rate_down", "2");
             // 是否开通小额双免
             obj.Add("is_open_small_flag", "0");

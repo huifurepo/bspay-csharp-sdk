@@ -28,7 +28,7 @@ namespace BasePayDemo
             request.setReqSeqId(DateTime.Now.ToString("yyy-MM-dd HH.mm.ss.fff"));
             // 请求日期
             request.setReqDate(DateTime.Now.ToString("yyyyMMdd"));
-            // 上级主体ID
+            // 直属渠道号
             request.setUpperHuifuId("6666000003080000");
             // 商户名称
             request.setRegName("集成企业商户8664");

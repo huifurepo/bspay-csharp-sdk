@@ -20,7 +20,7 @@ namespace BasePaySdk.Request
          */
         private string reqDate;
         /**
-         * 上级主体ID
+         * 直属渠道号
          */
         private string upperHuifuId;
         /**

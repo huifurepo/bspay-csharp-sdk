@@ -3,7 +3,7 @@ using System;
 namespace BasePaySdk.Request
 {
     /**
-     * 快捷支付页面版接口
+     * 快捷支付页面版
      *
      * @author sdk-generator
      * @Description

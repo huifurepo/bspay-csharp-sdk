@@ -36,6 +36,10 @@ namespace BasePayDemo
             request.setAcctSplitBunch(getAcctSplitBunch());
             // 安全信息
             request.setRiskCheckData(getRiskCheckData());
+            // 资金类型资金类型。支付渠道为中信E管家时，资金类型必填（[详见说明](https://paas.huifu.com/partners/api/#/yuer/api_zxegjzllx)）
+            // request.setFundType("test");
+            // 手续费承担方标识余额支付手续费承担方标识；商户余额支付扣收规则为接口指定承担方时必填！枚举值：&lt;br/&gt;OUT：出款方；&lt;br/&gt;IN：分账接受方。&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：IN&lt;/font&gt;
+            // request.setTransFeeTakeFlag("test");
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -72,6 +76,16 @@ namespace BasePayDemo
             // extendInfoMap.Add("delay_acct_flag", "");
             // 出款方账户号
             // extendInfoMap.Add("out_acct_id", "");
+            // 支付渠道
+            // extendInfoMap.Add("acct_channel", "");
+            // 灵活用工标志
+            // extendInfoMap.Add("hyc_flag", "");
+            // 代发模式
+            // extendInfoMap.Add("salary_modle_type", "");
+            // 落地公司商户号
+            // extendInfoMap.Add("bmember_id", "");
+            // 异步通知地址
+            // extendInfoMap.Add("notify_url", "");
             return extendInfoMap;
         }
 
@@ -79,9 +93,9 @@ namespace BasePayDemo
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 分账金额
             obj.Add("div_amt", "0.01");
-            // 被分账方ID
+            // 分账接收方ID
             obj.Add("huifu_id", "6666000018344461");
-            // 被分账方账户号
+            // 账户号
             // obj.Add("acct_id", "");
 
             JArray objList = new JArray();

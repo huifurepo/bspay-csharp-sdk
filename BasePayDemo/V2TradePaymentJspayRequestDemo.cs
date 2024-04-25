@@ -62,42 +62,40 @@ namespace BasePayDemo
         private static Dictionary<string, object> getExtendInfos() {
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
+            // 账户号
+            // extendInfoMap.Add("acct_id", "");
             // 交易有效期
             extendInfoMap.Add("time_expire", "20230418235959");
-            // 聚合正扫微信拓展参数集合
+            // 微信参数集合
             // extendInfoMap.Add("wx_data", getWxData());
-            // 支付宝扩展参数集合
+            // 支付宝参数集合
             extendInfoMap.Add("alipay_data", getAlipayData());
             // 银联参数集合
             // extendInfoMap.Add("unionpay_data", getUnionpayData());
-            // 数字人民币参数集合
-            // extendInfoMap.Add("dc_data", getDcData());
+            // 是否延迟交易
+            extendInfoMap.Add("delay_acct_flag", "N");
+            // 手续费扣款标志
+            // extendInfoMap.Add("fee_flag", "");
             // 分账对象
             extendInfoMap.Add("acct_split_bunch", getAcctSplitBunch());
-            // 传入分帐遇到优惠的处理规则
+            // 传入分账遇到优惠的处理规则
             extendInfoMap.Add("term_div_coupon_type", "0");
             // 补贴支付信息
             // extendInfoMap.Add("combinedpay_data", getCombinedpayData());
-            // 账户号
-            // extendInfoMap.Add("acct_id", "");
-            // 手续费扣款标志
-            // extendInfoMap.Add("fee_flag", "");
             // 禁用信用卡标记
             extendInfoMap.Add("limit_pay_type", "NO_CREDIT");
-            // 是否延迟交易
-            extendInfoMap.Add("delay_acct_flag", "N");
             // 商户贴息标记
             extendInfoMap.Add("fq_mer_discount_flag", "N");
             // 渠道号
             extendInfoMap.Add("channel_no", "");
             // 场景类型
             extendInfoMap.Add("pay_scene", "02");
+            // 备注
+            extendInfoMap.Add("remark", "String");
             // 安全信息
             extendInfoMap.Add("risk_check_data", getRiskCheckData());
             // 设备信息
             extendInfoMap.Add("terminal_device_data", getTerminalDeviceData());
-            // 备注
-            extendInfoMap.Add("remark", "String");
             // 异步通知地址
             extendInfoMap.Add("notify_url", "http://www.baidu.com");
             return extendInfoMap;
@@ -196,16 +194,16 @@ namespace BasePayDemo
             obj.Add("food_order_type", "qr_order");
             // 花呗分期数
             obj.Add("hb_fq_num", "");
-            // 花呗卖家承担的手续费百分比
+            // 花呗卖家手续费百分比
             obj.Add("hb_fq_seller_percent", "");
             // 行业数据回流信息
             obj.Add("industry_reflux_info", "String");
+            // 信用卡分期资产方式
+            // obj.Add("fq_channels", "");
             // 停车场id
             obj.Add("parking_id", "123wsx");
             // 系统商编号
             obj.Add("sys_service_provider_id", "1111111");
-            // 信用卡分期资产方式
-            // obj.Add("fq_channels", "");
 
             return obj;
         }
@@ -213,9 +211,9 @@ namespace BasePayDemo
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 商品的编号
             obj.Add("goods_id", "12312321");
-            // 商品名称(元)
+            // 商品名称
             obj.Add("goods_name", "阿里");
-            // 商品单价
+            // 商品单价(元)
             obj.Add("price", "0.01");
             // 商品数量
             obj.Add("quantity", "20");
@@ -279,6 +277,10 @@ namespace BasePayDemo
             // obj.Add("subject", "");
             // 商家门店名称
             // obj.Add("store_name", "");
+            // 小程序应用的appid
+            // obj.Add("op_app_id", "");
+            // 商户业务信息
+            // obj.Add("ali_business_params", "");
 
             return JsonConvert.SerializeObject(obj);
         }
@@ -298,7 +300,7 @@ namespace BasePayDemo
         private static string getUnionpayData() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 收款方附加数据
-            // obj.Add("acq_addn_data", "");
+            // obj.Add("addn_data", "");
             // 地区信息
             // obj.Add("area_info", "");
             // 持卡人ip
@@ -317,15 +319,8 @@ namespace BasePayDemo
             // obj.Add("req_reserved", "");
             // 终端信息
             // obj.Add("term_info", "");
-            // 云闪付用户标识
+            // 银联用户标识
             // obj.Add("user_id", "");
-
-            return JsonConvert.SerializeObject(obj);
-        }
-        private static string getDcData() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 数字货币银行编号
-            // obj.Add("digital_bank_no", "");
 
             return JsonConvert.SerializeObject(obj);
         }
@@ -333,7 +328,7 @@ namespace BasePayDemo
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 分账金额
             // obj.Add("div_amt", "test");
-            // 被分账方ID
+            // 分账接收方ID
             // obj.Add("huifu_id", "test");
             // 账户号
             // obj.Add("acct_id", "");
@@ -351,7 +346,7 @@ namespace BasePayDemo
         }
         private static string getCombinedpayData() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 补贴方汇付编号
+            // 补贴方汇付商户号
             // obj.Add("huifu_id", "test");
             // 补贴方类型
             // obj.Add("user_type", "test");

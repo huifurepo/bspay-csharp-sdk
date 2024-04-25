@@ -8,7 +8,7 @@ using Newtonsoft.Json.Linq;
 namespace BasePayDemo
 {
     /**
-     * 银行转账资金流水查询 - 示例
+     * 银行大额资金流水查询 - 示例
      *
      * @author sdk-generator
      * @Description

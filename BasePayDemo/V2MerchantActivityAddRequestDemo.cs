@@ -122,6 +122,12 @@ namespace BasePayDemo
             extendInfoMap.Add("legal_person_auth_photo", "");
             // 食堂经营相关资质
             // extendInfoMap.Add("food_qualification_proof", "");
+            // 活动费率%
+            // extendInfoMap.Add("preferential_rate", "");
+            // 活动到期后费率%
+            // extendInfoMap.Add("expiration_rate", "");
+            // 学校号
+            // extendInfoMap.Add("school_id", "");
             return extendInfoMap;
         }
 

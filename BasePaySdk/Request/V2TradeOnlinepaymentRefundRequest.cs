@@ -28,11 +28,11 @@ namespace BasePaySdk.Request
          */
         private string ordAmt;
         /**
-         * 设备信息
+         * 设备信息条件必填，当为银行大额支付时可不填，jsonObject格式
          */
         private string terminalDeviceData;
         /**
-         * 安全信息
+         * 安全信息条件必填，当为银行大额支付时可不填，jsonObject格式
          */
         private string riskCheckData;
 

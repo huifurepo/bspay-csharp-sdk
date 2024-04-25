@@ -87,6 +87,10 @@ namespace BasePaySdk.Request
          * 联系人手机号
          */
         private string contactMobile;
+        /**
+         * 管理员账号如需短信通知则必填；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：Lg20220222013747&lt;/font&gt;
+         */
+        private string loginName;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_USER_BASICDATA_ENT;
@@ -95,7 +99,7 @@ namespace BasePaySdk.Request
         public V2UserBasicdataEntRequest() {
         }
 
-        public V2UserBasicdataEntRequest(string reqSeqId, string reqDate, string regName, string licenseCode, string licenseValidityType, string licenseBeginDate, string licenseEndDate, string regProvId, string regAreaId, string regDistrictId, string regDetail, string legalName, string legalCertType, string legalCertNo, string legalCertValidityType, string legalCertBeginDate, string legalCertEndDate, string contactName, string contactMobile) {
+        public V2UserBasicdataEntRequest(string reqSeqId, string reqDate, string regName, string licenseCode, string licenseValidityType, string licenseBeginDate, string licenseEndDate, string regProvId, string regAreaId, string regDistrictId, string regDetail, string legalName, string legalCertType, string legalCertNo, string legalCertValidityType, string legalCertBeginDate, string legalCertEndDate, string contactName, string contactMobile, string loginName) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.regName = regName;
@@ -115,6 +119,7 @@ namespace BasePaySdk.Request
             this.legalCertEndDate = legalCertEndDate;
             this.contactName = contactName;
             this.contactMobile = contactMobile;
+            this.loginName = loginName;
         }
 
         public string getReqSeqId() {
@@ -267,6 +272,14 @@ namespace BasePaySdk.Request
 
         public void setContactMobile(string contactMobile) {
             this.contactMobile = contactMobile;
+        }
+
+        public string getLoginName() {
+            return loginName;
+        }
+
+        public void setLoginName(string loginName) {
+            this.loginName = loginName;
         }
 
 

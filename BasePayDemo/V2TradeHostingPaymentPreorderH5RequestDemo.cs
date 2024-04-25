@@ -64,8 +64,8 @@ namespace BasePayDemo
         private static Dictionary<string, object> getExtendInfos() {
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
-            // 收银台ID
-            extendInfoMap.Add("checkout_id", "");
+            // 收银台样式
+            // extendInfoMap.Add("style_id", "");
             // 是否延迟交易
             extendInfoMap.Add("delay_acct_flag", "N");
             // 分账对象
@@ -76,6 +76,10 @@ namespace BasePayDemo
             extendInfoMap.Add("biz_info", getBizInfo());
             // 交易异步通知地址
             extendInfoMap.Add("notify_url", "https://callback.service.com/xx");
+            // 使用类型
+            // extendInfoMap.Add("usage_type", "");
+            // 交易类型
+            // extendInfoMap.Add("trans_type", "");
             return extendInfoMap;
         }
 
@@ -83,7 +87,7 @@ namespace BasePayDemo
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 分账金额
             obj.Add("div_amt", "0.08");
-            // 被分账方ID
+            // 分账接收方ID
             obj.Add("huifu_id", "6666000111546360");
 
             JArray objList = new JArray();
@@ -103,6 +107,8 @@ namespace BasePayDemo
             obj.Add("project_title", "收银台标题");
             // 半支付托管项目号
             obj.Add("project_id", "PROJECTID2022032912492559");
+            // 请求类型P:PC页面版，默认：P；M:H5页面版；指定交易类型时必填；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：M&lt;/font&gt;
+            // obj.Add("request_type", "test");
             // 商户私有信息
             obj.Add("private_info", "商户私有信息test");
             // 回调地址

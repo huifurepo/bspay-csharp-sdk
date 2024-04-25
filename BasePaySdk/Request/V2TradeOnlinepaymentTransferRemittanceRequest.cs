@@ -32,7 +32,7 @@ namespace BasePaySdk.Request
          */
         private string notifyUrl;
         /**
-         * 原汇款订单号
+         * 原汇付通道流水号
          */
         private string orgRemittanceOrderId;
         /**

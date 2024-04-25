@@ -24,7 +24,7 @@ namespace BasePaySdk.Request
          */
         private string huifuId;
         /**
-         * 上级主体ID
+         * 直属渠道号
          */
         private string upperHuifuId;
 
