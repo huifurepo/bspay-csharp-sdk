@@ -3,7 +3,7 @@ using System;
 namespace BasePaySdk.Request
 {
     /**
-     * 交易分账明细查询接口
+     * 交易分账明细查询
      *
      * @author sdk-generator
      * @Description

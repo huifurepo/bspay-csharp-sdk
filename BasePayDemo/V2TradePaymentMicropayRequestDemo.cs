@@ -29,13 +29,13 @@ namespace BasePayDemo
             // 请求流水号
             request.setReqSeqId(DateTime.Now.ToString("yyy-MM-dd HH.mm.ss.fff"));
             // 商户号
-            request.setHuifuId("6666000018328947");
+            request.setHuifuId("6666000109133323");
             // 交易金额
-            request.setTransAmt("0.01");
+            request.setTransAmt("1.01");
             // 商品描述
             request.setGoodsDesc("聚合反扫消费");
             // 支付授权码
-            request.setAuthCode("2884138408701518074");
+            request.setAuthCode("131135212661863252");
             // 安全信息
             request.setRiskCheckData(getRiskCheckData());
 
@@ -65,35 +65,35 @@ namespace BasePayDemo
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
             // 交易有效期
-            extendInfoMap.Add("time_expire", "20220918150330");
+            // extendInfoMap.Add("time_expire", "");
             // 手续费扣款标志
             // extendInfoMap.Add("fee_flag", "");
             // 禁用支付方式
-            extendInfoMap.Add("limit_pay_type", "");
+            // extendInfoMap.Add("limit_pay_type", "");
             // 是否延迟交易
-            extendInfoMap.Add("delay_acct_flag", "Y");
+            // extendInfoMap.Add("delay_acct_flag", "");
             // 渠道号
-            extendInfoMap.Add("channel_no", "");
+            // extendInfoMap.Add("channel_no", "");
             // 补贴支付信息
             // extendInfoMap.Add("combinedpay_data", "");
             // 场景类型
-            extendInfoMap.Add("pay_scene", "");
+            // extendInfoMap.Add("pay_scene", "");
             // 分账对象
             // extendInfoMap.Add("acct_split_bunch", getAcctSplitBunch());
             // 传入分帐遇到优惠的处理规则
-            extendInfoMap.Add("term_div_coupon_type", "3");
+            // extendInfoMap.Add("term_div_coupon_type", "");
             // 聚合反扫微信参数集合
             // extendInfoMap.Add("wx_data", getWxData());
             // 支付宝扩展参数集合
-            extendInfoMap.Add("alipay_data", getAlipayData());
+            // extendInfoMap.Add("alipay_data", getAlipayData());
             // 银联参数集合
             // extendInfoMap.Add("unionpay_data", getUnionpayData());
             // 设备信息
-            extendInfoMap.Add("terminal_device_info", getTerminalDeviceInfo());
+            // extendInfoMap.Add("terminal_device_info", getTerminalDeviceInfo());
             // 异步通知地址
             extendInfoMap.Add("notify_url", "http://www.baidu.com");
             // 交易备注
-            extendInfoMap.Add("remark", "");
+            // extendInfoMap.Add("remark", "");
             // 账户号
             // extendInfoMap.Add("acct_id", "");
             return extendInfoMap;
@@ -158,9 +158,7 @@ namespace BasePayDemo
             // 门店详细地址
             // obj.Add("address", "");
 
-            JArray objList = new JArray();
-            objList.Add(JToken.FromObject(obj));
-            return objList;
+            return obj;
         }
         private static object getSceneInfo() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
@@ -254,7 +252,7 @@ namespace BasePayDemo
         private static string getAlipayData() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 支付宝的店铺编号
-            obj.Add("alipay_store_id", "");
+            // obj.Add("alipay_store_id", "");
             // 订单包含的商品列表信息
             // obj.Add("goods_detail", getGoodsDetail());
             // 业务扩展参数
@@ -262,7 +260,7 @@ namespace BasePayDemo
             // 商户操作员编号
             // obj.Add("operator_id", "");
             // 商户门店编号
-            obj.Add("store_id", "");
+            // obj.Add("store_id", "");
             // 外部指定买家
             // obj.Add("ext_user_info", getExtUserInfo());
             // 商户业务信息
@@ -309,21 +307,21 @@ namespace BasePayDemo
             // 汇付机具号
             // obj.Add("devs_id", "test");
             // 设备类型
-            obj.Add("device_type", "4");
+            // obj.Add("device_type", "");
             // 交易设备IP
-            obj.Add("device_ip", "10.10.0.1");
+            // obj.Add("device_ip", "");
             // 交易设备MAC
-            obj.Add("device_mac", "030147441006000182623");
+            // obj.Add("device_mac", "");
             // 交易设备IMEI
-            obj.Add("device_imei", "030147441006000182623");
+            // obj.Add("device_imei", "");
             // 交易设备IMSI
-            obj.Add("device_imsi", "030147441006000182623");
+            // obj.Add("device_imsi", "");
             // 交易设备ICCID
-            obj.Add("device_icc_id", "030147441006000182623");
+            // obj.Add("device_icc_id", "");
             // 交易设备WIFIMAC
-            obj.Add("device_wifi_mac", "030147441006000182623");
+            // obj.Add("device_wifi_mac", "");
             // 交易设备GPS
-            obj.Add("device_gps", "111");
+            // obj.Add("device_gps", "");
             // 商户终端应用程序版
             // obj.Add("app_version", "");
             // 加密随机因子

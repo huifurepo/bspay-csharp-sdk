@@ -9,6 +9,56 @@ namespace BasePaySdk.Request
     public class FunctionCodeEnum
     {
         /**
+         * 上传短信验证码
+         */
+        public const string V2_INVOICE_MER_VERIFYCODE_UPLOAD = "v2.invoice.mer.verifycode.upload";
+        /**
+         * 获取人脸认证二维码
+         */
+        public const string V2_INVOICE_MER_AUTHQRCODE_GRANT = "v2.invoice.mer.authqrcode.grant";
+        /**
+         * 查询人脸认证结果
+         */
+        public const string V2_INVOICE_MER_AUTHQRCODE_QUERY = "v2.invoice.mer.authqrcode.query";
+        /**
+         * 用户列表查询
+         */
+        public const string V2_USER_LIST_QUERY = "v2.user.list.query";
+        /**
+         * 电子发票业务开通查询
+         */
+        public const string V2_INVOICE_PERMISSION_QUERY = "v2.invoice.permission.query";
+        /**
+         * 电子发票业务开通
+         */
+        public const string V2_INVOICE_PERMISSION_GRANT = "v2.invoice.permission.grant";
+        /**
+         * 商户注册状态查询
+         */
+        public const string V2_INVOICE_MER_STATUS_QUERY = "v2.invoice.mer.status.query";
+        /**
+         * 商户注册信息修改
+         */
+        public const string V2_INVOICE_MER_MODIFY = "v2.invoice.mer.modify";
+        /**
+         * 商户注册信息查询
+         */
+        public const string V2_INVOICE_MER_QUERY = "v2.invoice.mer.query";
+        /**
+         * 商户注册
+         */
+        public const string V2_INVOICE_MER_REG = "v2.invoice.mer.reg";
+       
+        /**
+         * 开票员登录
+         */
+        public const string V2_INVOICE_CLERK_LOGON = "v2.invoice.clerk.logon";
+        /**
+         * 开票员登记
+         */
+        public const string V2_INVOICE_CLERK_REG = "v2.invoice.clerk.reg";
+     
+        /**
          * 完税凭证下载
          */
         public const string V2_HYC_TAX_DOWNLOAD = "v2.hyc.tax.download";
@@ -73,11 +123,11 @@ namespace BasePaySdk.Request
          */
         public const string V2_INVOICE_OPEN = "v2.invoice.open";
         /**
-         * 全域资金管理配置查询
+         * 全渠道资金管理配置查询
          */
         public const string V2_MERCHANT_BUSI_EFPDETAIL = "v2.merchant.busi.efpdetail";
         /**
-         * 全域资金管理配置
+         * 全渠道资金管理配置
          */
         public const string V2_MERCHANT_BUSI_EFPCONFIG = "v2.merchant.busi.efpconfig";
         /**
@@ -317,7 +367,7 @@ namespace BasePaySdk.Request
          */
         public const string V2_TRADE_TRANSSTAT_QUERY = "v2.trade.transstat.query";
         /**
-         * 网银支付接口
+         * 网银支付
          */
         public const string V2_TRADE_ONLINEPAYMENT_BANKING_FRONTPAY = "v2.trade.onlinepayment.banking.frontpay";
         /**
@@ -673,7 +723,7 @@ namespace BasePaySdk.Request
          */
         public const string V2_MERCHANT_BUSI_MODIFY = "v2.merchant.busi.modify";
         /**
-         * 取现接口
+         * 取现
          */
         public const string V2_TRADE_SETTLEMENT_ENCHASHMENT = "v2.trade.settlement.enchashment";
         /**
@@ -809,7 +859,7 @@ namespace BasePaySdk.Request
          */
         public const string V2_MERCHANT_SPLIT_CONFIG = "v2.merchant.split.config";
         /**
-         * 交易分账明细查询接口
+         * 交易分账明细查询
          */
         public const string V2_TRADE_TRANS_SPLIT_QUERY = "v2.trade.trans.split.query";
         /**

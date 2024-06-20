@@ -8,7 +8,7 @@ using Newtonsoft.Json.Linq;
 namespace BasePayDemo
 {
     /**
-     * 交易分账明细查询接口 - 示例
+     * 交易分账明细查询 - 示例
      *
      * @author sdk-generator
      * @Description
@@ -25,9 +25,9 @@ namespace BasePayDemo
             // 2.组装请求参数
             V2TradeTransSplitQueryRequest request = new V2TradeTransSplitQueryRequest();
             // 分账交易汇付全局流水号
-            request.setHfSeqId("202109237745559");
+            request.setHfSeqId("003500TOP2B230718174911P075ac139ccf00000");
             // 商户号
-            request.setHuifuId("6666000109812123");
+            request.setHuifuId("6666000109133323");
             // 交易类型
             request.setOrdType("consume");
 

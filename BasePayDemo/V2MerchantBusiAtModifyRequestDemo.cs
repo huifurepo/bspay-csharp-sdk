@@ -58,6 +58,8 @@ namespace BasePayDemo
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
             // 业务开通结果异步消息接收地址
             extendInfoMap.Add("busi_async_return_url", "http://service.example.com/to/path");
+            // 支付成功页商户LOGO图片
+            // extendInfoMap.Add("ali_mer_logo", "");
             return extendInfoMap;
         }
 

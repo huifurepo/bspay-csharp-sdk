@@ -25,9 +25,9 @@ namespace BasePayDemo
             // 2.组装请求参数
             V2TradeOnlinepaymentRefundQueryRequest request = new V2TradeOnlinepaymentRefundQueryRequest();
             // 商户号
-            request.setHuifuId("6666000108854952");
+            request.setHuifuId("6666000109133323");
             // 原退款请求日期
-            request.setOrgReqDate("20220818");
+            request.setOrgReqDate("20240419");
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -55,9 +55,9 @@ namespace BasePayDemo
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
             // 原退款全局流水号
-            extendInfoMap.Add("org_hf_seq_id", "0047default220818142809P500c0a8212f00000");
+            extendInfoMap.Add("org_hf_seq_id", "00470topo1A240419133804P954ac139c0400000");
             // 原退款请求流水号
-            extendInfoMap.Add("org_req_seq_id", "1660804089");
+            extendInfoMap.Add("org_req_seq_id", "SSPC1713505084888");
             return extendInfoMap;
         }
 

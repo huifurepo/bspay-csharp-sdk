@@ -29,7 +29,7 @@ namespace BasePayDemo
             // 请求流水号
             request.setReqSeqId(DateTime.Now.ToString("yyy-MM-dd HH.mm.ss.fff"));
             // 商户号
-            request.setHuifuId("6666000103423237");
+            request.setHuifuId("6666000109133323");
             // 交易类型**原交易为快捷支付必填：QUICK_PAY**，&lt;br/&gt;**原交易为余额支付必填：ACCT_PAYMENT**；&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：ACCT_PAYMENT&lt;/font&gt;
             // request.setPayType("test");
 
@@ -59,9 +59,9 @@ namespace BasePayDemo
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
             // 原交易请求日期
-            extendInfoMap.Add("org_req_date", "20221108");
+            extendInfoMap.Add("org_req_date", "20220512");
             // 原交易请求流水号
-            extendInfoMap.Add("org_req_seq_id", "2022072724398620211667900766");
+            extendInfoMap.Add("org_req_seq_id", "20220512195832E06521");
             // 原交易商户订单号
             // extendInfoMap.Add("org_mer_ord_id", "");
             // 原交易全局流水号
@@ -90,9 +90,9 @@ namespace BasePayDemo
             // 分账金额
             obj.Add("div_amt", "0.01");
             // 分账接收方ID
-            obj.Add("huifu_id", "6666000103423237");
+            obj.Add("huifu_id", "6666000109133323");
             // 分账接收方账户号
-            obj.Add("acct_id", "C01400109");
+            // obj.Add("acct_id", "");
 
             JArray objList = new JArray();
             objList.Add(JToken.FromObject(obj));

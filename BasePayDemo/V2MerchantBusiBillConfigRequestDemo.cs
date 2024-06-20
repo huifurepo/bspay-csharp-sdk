@@ -29,7 +29,7 @@ namespace BasePayDemo
             // 请求流水号
             request.setReqSeqId(DateTime.Now.ToString("yyy-MM-dd HH.mm.ss.fff"));
             // 汇付机构编号
-            request.setHuifuId("6666000121363028");
+            request.setHuifuId("6666000109133323");
             // 对账文件生成开关
             request.setReconSendFlag("Y");
             // 对账单类型

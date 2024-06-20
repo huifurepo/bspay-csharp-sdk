@@ -29,7 +29,7 @@ namespace BasePayDemo
             // 请求流水号
             request.setReqSeqId(DateTime.Now.ToString("yyy-MM-dd HH.mm.ss.fff"));
             // 商户号
-            request.setHuifuId("6666000108854952");
+            request.setHuifuId("6666000109133323");
             // 退款金额
             request.setOrdAmt("0.01");
             // 设备信息条件必填，当为银行大额支付时可不填，jsonObject格式
@@ -63,19 +63,19 @@ namespace BasePayDemo
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
             // 原交易请求日期
-            extendInfoMap.Add("org_req_date", "20221110");
+            extendInfoMap.Add("org_req_date", "20240401");
             // 原交易全局流水号
             extendInfoMap.Add("org_hf_seq_id", "");
             // 原交易请求流水号
-            extendInfoMap.Add("org_req_seq_id", "RQ1212333113");
+            extendInfoMap.Add("org_req_seq_id", "295700155481522176");
             // 分账对象
-            extendInfoMap.Add("acct_split_bunch", getAcctSplitBunchRucan());
+            // extendInfoMap.Add("acct_split_bunch", getAcctSplitBunchRucan());
             // 补贴支付信息
-            extendInfoMap.Add("combinedpay_data", getCombinedpayData());
+            // extendInfoMap.Add("combinedpay_data", getCombinedpayData());
             // 大额转账支付账户信息数据
             // extendInfoMap.Add("bank_info_data", getBankInfoData());
             // 备注
-            extendInfoMap.Add("remark", "remark123");
+            // extendInfoMap.Add("remark", "");
             // 异步通知地址
             extendInfoMap.Add("notify_url", "http://www.baidu.com");
             return extendInfoMap;
@@ -153,7 +153,7 @@ namespace BasePayDemo
         private static string getRiskCheckData() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // ip地址
-            // obj.Add("ip_addr", "");
+            obj.Add("ip_addr", "172.1.1.1");
             // 基站地址
             // obj.Add("base_station", "");
             // 纬度

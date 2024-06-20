@@ -25,7 +25,7 @@ namespace BasePayDemo
             // 2.组装请求参数
             V2TradeOnlinepaymentBankpayBanklistRequest request = new V2TradeOnlinepaymentBankpayBanklistRequest();
             // 商户号
-            request.setHuifuId("6666000108854952");
+            request.setHuifuId("6666000109133323");
             // 网关支付类型
             request.setGateType("01");
             // 订单类型

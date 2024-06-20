@@ -29,7 +29,7 @@ namespace BasePayDemo
             // 交易日期
             request.setReqDate(DateTime.Now.ToString("yyyyMMdd"));
             // 汇付机构编号
-            request.setHuifuId("6666000003099901");
+            request.setHuifuId("6666000109133323");
             // 文件类型
             request.setFileType("2");
 

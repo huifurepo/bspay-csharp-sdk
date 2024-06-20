@@ -29,9 +29,9 @@ namespace BasePayDemo
             // 请求流水号
             request.setReqSeqId(DateTime.Now.ToString("yyy-MM-dd HH.mm.ss.fff"));
             // 汇付客户Id
-            request.setHuifuId("6666000108854952");
+            request.setHuifuId("6666000109133323");
             // 文件生成日期
-            request.setFileDate("20220822");
+            request.setFileDate("20240428");
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();

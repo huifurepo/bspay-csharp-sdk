@@ -60,10 +60,12 @@ namespace BasePayDemo
         private static Dictionary<string, object> getExtendInfos() {
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
-            // 收款方用户客户号
+            // 用户客户号
             extendInfoMap.Add("user_huifu_id", "6666000103905031");
             // 收款方账户号
             extendInfoMap.Add("acct_id", "A01199826");
+            // 页面标识
+            // extendInfoMap.Add("page_flag", "");
             // 付款方名称
             extendInfoMap.Add("certificate_name", "沈显龙");
             // 付款方银行卡号
@@ -78,8 +80,30 @@ namespace BasePayDemo
             // extendInfoMap.Add("acct_mode", "");
             // 银行模式
             // extendInfoMap.Add("bank_mode", "");
+            // 延时标记
+            // extendInfoMap.Add("delay_acct_flag", "");
+            // 分账对象
+            // extendInfoMap.Add("acct_split_bunch", getAcctSplitBunch());
             return extendInfoMap;
         }
 
+        private static object getAcctInfos() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 支付金额
+            // obj.Add("div_amt", "");
+            // 商户号
+            // obj.Add("huifu_id", "");
+
+            JArray objList = new JArray();
+            objList.Add(JToken.FromObject(obj));
+            return objList;
+        }
+        private static object getAcctSplitBunch() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 分账信息列表
+            // obj.Add("acct_infos", getAcctInfos());
+
+            return obj;
+        }
     }
 }

@@ -23,6 +23,10 @@ namespace BasePaySdk.Request
          * 汇付Id
          */
         private string huifuId;
+        /**
+         * 电子卡信息
+         */
+        private string elecCardInfo;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_MERCHANT_ELEC_CARD_BIND;
@@ -31,10 +35,11 @@ namespace BasePaySdk.Request
         public V2MerchantElecCardBindRequest() {
         }
 
-        public V2MerchantElecCardBindRequest(string reqSeqId, string reqDate, string huifuId) {
+        public V2MerchantElecCardBindRequest(string reqSeqId, string reqDate, string huifuId, string elecCardInfo) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.huifuId = huifuId;
+            this.elecCardInfo = elecCardInfo;
         }
 
         public string getReqSeqId() {
@@ -59,6 +64,14 @@ namespace BasePaySdk.Request
 
         public void setHuifuId(string huifuId) {
             this.huifuId = huifuId;
+        }
+
+        public string getElecCardInfo() {
+            return elecCardInfo;
+        }
+
+        public void setElecCardInfo(string elecCardInfo) {
+            this.elecCardInfo = elecCardInfo;
         }
 
 

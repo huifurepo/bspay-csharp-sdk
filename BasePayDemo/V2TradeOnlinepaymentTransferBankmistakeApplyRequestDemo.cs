@@ -84,6 +84,10 @@ namespace BasePayDemo
             extendInfoMap.Add("remark", "大额支付补入账验证");
             // 银行信息数据
             extendInfoMap.Add("bank_info_data", getBankInfoData());
+            // 延时标记
+            // extendInfoMap.Add("delay_acct_flag", "");
+            // 分账对象
+            // extendInfoMap.Add("acct_split_bunch", getAcctSplitBunch());
             return extendInfoMap;
         }
 
@@ -111,6 +115,24 @@ namespace BasePayDemo
             obj.Add("bank_acct_three_in_one", "92650109MA79R8E308");
 
             return JsonConvert.SerializeObject(obj);
+        }
+        private static object getAcctInfos() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 支付金额
+            // obj.Add("div_amt", "");
+            // 商户号
+            // obj.Add("huifu_id", "");
+
+            JArray objList = new JArray();
+            objList.Add(JToken.FromObject(obj));
+            return objList;
+        }
+        private static object getAcctSplitBunch() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 分账信息列表
+            // obj.Add("acct_infos", getAcctInfos());
+
+            return obj;
         }
     }
 }

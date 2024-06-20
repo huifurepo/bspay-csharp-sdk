@@ -221,7 +221,7 @@ namespace BasePayDemo
             // 电子账户提现手续费承担方
             // obj.Add("cash_fee_party", "test");
             // 场景
-            // obj.Add("scence", "test");
+            // obj.Add("scene", "test");
             // 角色类型(角色编号)
             // obj.Add("role_type", "test");
             // 银行卡信息

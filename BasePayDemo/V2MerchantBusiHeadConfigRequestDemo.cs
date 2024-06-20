@@ -61,7 +61,7 @@ namespace BasePayDemo
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
             // 支付宝配置对象
-            // extendInfoMap.Add("ali_conf_list", getSubmberAliConfList());
+            // extendInfoMap.Add("ali_conf_list", getSubmerAliConfList());
             // 微信配置对象
             // extendInfoMap.Add("wx_conf_list", getSubmerWxConfList());
             // 银联二维码配置对象
@@ -77,7 +77,7 @@ namespace BasePayDemo
             // 线上配置对象
             // extendInfoMap.Add("online_fee_conf_list", getSubmerOnlineFeeConfList());
             // 余额支付配置对象
-            // extendInfoMap.Add("online_fee_conf_list", getSubmerBalancePayConfig());
+            // extendInfoMap.Add("balance_pay_config", getSubmerBalancePayConfig());
             // 补贴支付配置对象
             // extendInfoMap.Add("combine_pay_config", getSubmerCombinePayConfig());
             // 银行大额转账配置对象
@@ -107,7 +107,7 @@ namespace BasePayDemo
             return extendInfoMap;
         }
 
-        private static string getSubmberAliConfList() {
+        private static string getSubmerAliConfList() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 支付场景
             // obj.Add("pay_scene", "test");

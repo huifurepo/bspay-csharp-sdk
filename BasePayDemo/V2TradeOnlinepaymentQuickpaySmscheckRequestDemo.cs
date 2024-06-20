@@ -29,7 +29,7 @@ namespace BasePayDemo
             // 请求日期
             request.setReqDate(DateTime.Now.ToString("yyyyMMdd"));
             // 商户号
-            request.setHuifuId("6666000109812884");
+            request.setHuifuId("6666000109133323");
             // 原请求日期
             request.setOrgReqDate("20230418");
             // 原请求流水号

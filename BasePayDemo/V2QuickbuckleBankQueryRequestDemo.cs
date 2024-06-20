@@ -29,7 +29,7 @@ namespace BasePayDemo
             // 请求时间
             request.setReqDate(DateTime.Now.ToString("yyyyMMdd"));
             // 商户汇付Id
-            request.setHuifuId("6666000106605078");
+            request.setHuifuId("6666000109133323");
             // 业务类型
             request.setBizType("B2C");
             // 借贷类型

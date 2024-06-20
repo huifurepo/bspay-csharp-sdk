@@ -29,7 +29,7 @@ namespace BasePayDemo
             // 请求日期
             request.setReqDate(DateTime.Now.ToString("yyyyMMdd"));
             // 出款方商户号
-            request.setOutHuifuId("6666000018344461");
+            request.setOutHuifuId("6666000109133323");
             // 支付金额
             request.setOrdAmt("0.01");
             // 分账对象
@@ -94,7 +94,7 @@ namespace BasePayDemo
             // 分账金额
             obj.Add("div_amt", "0.01");
             // 分账接收方ID
-            obj.Add("huifu_id", "6666000018344461");
+            obj.Add("huifu_id", "6666000109133323");
             // 账户号
             // obj.Add("acct_id", "");
 

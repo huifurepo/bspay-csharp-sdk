@@ -3,7 +3,7 @@ using System;
 namespace BasePaySdk.Request
 {
     /**
-     * 网银支付接口
+     * 网银支付
      *
      * @author sdk-generator
      * @Description

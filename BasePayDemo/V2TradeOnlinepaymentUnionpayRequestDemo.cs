@@ -25,19 +25,19 @@ namespace BasePayDemo
             // 2.组装请求参数
             V2TradeOnlinepaymentUnionpayRequest request = new V2TradeOnlinepaymentUnionpayRequest();
             // 商户号
-            request.setHuifuId("6666000105470650");
+            request.setHuifuId("6666000109133323");
             // 请求日期
             request.setReqDate(DateTime.Now.ToString("yyyyMMdd"));
             // 请求流水号
             request.setReqSeqId(DateTime.Now.ToString("yyy-MM-dd HH.mm.ss.fff"));
             // 订单金额
-            request.setTransAmt("1.00");
+            request.setTransAmt("0.11");
             // 商品描述
-            request.setOrderDesc("order123");
+            request.setOrderDesc("通用性商品1");
             // 安全信息
             request.setRiskCheckData(getRiskCheckData());
             // 三方支付数据jsonObject；pay_scene为云闪付公众号与云闪付小程序时必填
-            request.setThirdPayData(getThirdPayData());
+            // request.setThirdPayData(getThirdPayData());
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -71,19 +71,19 @@ namespace BasePayDemo
             // 交易银行卡卡号
             extendInfoMap.Add("pay_card_no", "");
             // 支付卡类型
-            extendInfoMap.Add("pay_card_type", "C");
+            // extendInfoMap.Add("pay_card_type", "");
             // 订单失效时间
             extendInfoMap.Add("time_expire", "");
             // 分账对象
-            extendInfoMap.Add("acct_split_bunch", getAcctSplitBunchRucan());
+            // extendInfoMap.Add("acct_split_bunch", getAcctSplitBunchRucan());
             // 前端跳转地址
-            extendInfoMap.Add("front_url", "");
+            extendInfoMap.Add("front_url", "https://www.service.com/getresp");
             // 异步通知地址
-            extendInfoMap.Add("notify_url", "http://www.baidu.com");
+            extendInfoMap.Add("notify_url", "https://www.service.com/getresp");
             // 备注
-            extendInfoMap.Add("remark", "");
+            extendInfoMap.Add("remark", "merPriv11");
             // 支付场景
-            extendInfoMap.Add("pay_scene", "U_MINIAPP");
+            // extendInfoMap.Add("pay_scene", "");
             return extendInfoMap;
         }
 
@@ -103,7 +103,7 @@ namespace BasePayDemo
         private static string getAcctSplitBunchRucan() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 分账明细
-            obj.Add("acct_infos", getAcctInfos());
+            // obj.Add("acct_infos", getAcctInfos());
 
             return JsonConvert.SerializeObject(obj);
         }
@@ -112,7 +112,7 @@ namespace BasePayDemo
             // 基站地址
             obj.Add("base_station", "7");
             // ip地址
-            // obj.Add("ip_addr", "");
+            obj.Add("ip_addr", "172.28.52.52");
             // 纬度
             obj.Add("latitude", "4");
             // 经度

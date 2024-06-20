@@ -25,13 +25,13 @@ namespace BasePayDemo
             // 2.组装请求参数
             V2TradeFeecalcRequest request = new V2TradeFeecalcRequest();
             // 商户号
-            request.setHuifuId("6666000116584429");
+            request.setHuifuId("6666000109133323");
             // 请求日期
             request.setReqDate(DateTime.Now.ToString("yyyyMMdd"));
             // 请求流水号
             request.setReqSeqId(DateTime.Now.ToString("yyy-MM-dd HH.mm.ss.fff"));
             // 交易类型
-            request.setTradeType("ENCASHMENT");
+            request.setTradeType("ONLINE_PAY");
             // 交易金额
             request.setTransAmt("1000.00");
 
@@ -61,7 +61,7 @@ namespace BasePayDemo
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
             // 网银交易类型
-            extendInfoMap.Add("online_trans_type", "");
+            extendInfoMap.Add("online_trans_type", "3000");
             // 付款方银行编号
             extendInfoMap.Add("bank_id", "01020000");
             // 卡类型

@@ -70,6 +70,14 @@ namespace BasePayDemo
             extendInfoMap.Add("certificate_name", "沈显龙");
             // 入账标识
             extendInfoMap.Add("in_acct_flag", "YDNI2NDJIKKPAFGQ");
+            // 订单模式
+            // extendInfoMap.Add("order_mode", "");
+            // 实际打款日期
+            // extendInfoMap.Add("remit_date", "");
+            // 每页条数
+            // extendInfoMap.Add("page_size", "");
+            // 分页页码
+            // extendInfoMap.Add("page_no", "");
             return extendInfoMap;
         }
 

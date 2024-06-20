@@ -25,7 +25,7 @@ namespace BasePayDemo
             // 2.组装请求参数
             V2TradeHostingPaymentPreorderAliRequest request = new V2TradeHostingPaymentPreorderAliRequest();
             // 商户号
-            request.setHuifuId("6666000111546360");
+            request.setHuifuId("6666000109133323");
             // 请求日期
             request.setReqDate(DateTime.Now.ToString("yyyyMMdd"));
             // 请求流水号
@@ -84,7 +84,7 @@ namespace BasePayDemo
             // 分账金额
             obj.Add("div_amt", "0.08");
             // 分账接收方ID
-            obj.Add("huifu_id", "6666000111546360");
+            obj.Add("huifu_id", "6666000109133323");
 
             JArray objList = new JArray();
             objList.Add(JToken.FromObject(obj));

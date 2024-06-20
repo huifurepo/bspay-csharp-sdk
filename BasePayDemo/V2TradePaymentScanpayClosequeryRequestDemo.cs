@@ -29,9 +29,9 @@ namespace BasePayDemo
             // 请求流水号
             request.setReqSeqId(DateTime.Now.ToString("yyy-MM-dd HH.mm.ss.fff"));
             // 商户号
-            request.setHuifuId("6666000018328947");
+            request.setHuifuId("6666000109133323");
             // 原交易请求日期
-            request.setOrgReqDate("20210918");
+            request.setOrgReqDate("20240328");
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -59,7 +59,7 @@ namespace BasePayDemo
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
             // 原交易请求流水号
-            extendInfoMap.Add("org_req_seq_id", "202109187312431237001");
+            extendInfoMap.Add("org_req_seq_id", "20240129555522220211711612931");
             // 原交易返回的全局流水号
             // extendInfoMap.Add("org_hf_seq_id", "");
             return extendInfoMap;
