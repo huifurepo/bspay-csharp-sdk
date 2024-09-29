@@ -104,6 +104,10 @@ namespace BasePayDemo
             // extendInfoMap.Add("use_upper_mer_auth_flag", "");
             // 允许使用上级商户号发起AT交易
             // extendInfoMap.Add("use_upper_mer_at_trans_flag", "");
+            // 大额支付配置
+            // extendInfoMap.Add("large_amt_pay_config_list", getLargeAmtPayConfigList());
+            // 全域资金管理配置(苏商)
+            // extendInfoMap.Add("out_order_funds_su_shang_config", getOutOrderFundsSuShangConfig());
             return extendInfoMap;
         }
 
@@ -332,6 +336,38 @@ namespace BasePayDemo
             // obj.Add("trans_fee_out_flag", "test");
             // 支持取现手续费外扣
             // obj.Add("cash_out_fee_flag", "test");
+
+            return JsonConvert.SerializeObject(obj);
+        }
+        private static string getLargeAmtPayConfigList() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 手续费（%）
+            // obj.Add("fee_rate", "test");
+            // 固定手续费(元)
+            // obj.Add("fee_fix_amt", "test");
+            // 允许开通大额转账业务
+            // obj.Add("open_flag", "test");
+            // 大额支付业务模式
+            // obj.Add("business_model", "test");
+            // 允许用户入账
+            // obj.Add("allow_user_deposit_flag", "");
+            // 银行卡绑定支付权限
+            // obj.Add("mer_same_card_recharge_flag", "");
+
+            return JsonConvert.SerializeObject(obj);
+        }
+        private static string getOutOrderFundsSuShangConfig() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 手续费（%）
+            // obj.Add("fee_rate", "test");
+            // 保底手续费(元)
+            // obj.Add("fee_min_amt", "test");
+            // 对公固定手续费(元)
+            // obj.Add("public_fee_fix_amt", "test");
+            // 对私固定手续费(元)
+            // obj.Add("private_fee_fix_amt", "test");
+            // 允许开通全域资金业务(苏商)
+            // obj.Add("open_flag", "test");
 
             return JsonConvert.SerializeObject(obj);
         }

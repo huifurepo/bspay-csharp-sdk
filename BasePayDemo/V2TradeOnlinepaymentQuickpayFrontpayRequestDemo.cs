@@ -29,7 +29,7 @@ namespace BasePayDemo
             // 请求日期
             request.setReqDate(DateTime.Now.ToString("yyyyMMdd"));
             // 商户号
-            request.setHuifuId("6666000109812884");
+            request.setHuifuId("6666000109133323");
             // 订单金额
             request.setTransAmt("0.01");
             // 银行扩展信息
@@ -92,11 +92,13 @@ namespace BasePayDemo
         private static object getAcctInfos() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 分账接收方ID
-            obj.Add("huifu_id", "6666000109812884");
+            obj.Add("huifu_id", "6666000109133323");
             // 分账金额
             obj.Add("div_amt", "0.01");
             // 账户号
             // obj.Add("acct_id", "");
+            // 分账百分比%
+            // obj.Add("percentage_div", "");
 
             JArray objList = new JArray();
             objList.Add(JToken.FromObject(obj));
@@ -106,6 +108,10 @@ namespace BasePayDemo
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 分账明细
             obj.Add("acct_infos", getAcctInfos());
+            // 百分比分账标志
+            // obj.Add("percentage_flag", "");
+            // 是否净值分账
+            // obj.Add("is_clean_split", "");
 
             return JsonConvert.SerializeObject(obj);
         }

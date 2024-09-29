@@ -66,7 +66,7 @@ namespace BasePayDemo
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
             // 微信公众号APPID对应的秘钥
             extendInfoMap.Add("wx_woa_secret", "64afb60bef3a22ac282aa7880cdaca98");
-            // 微信插件类交易APPID
+            // 微信反扫类交易APPID
             // extendInfoMap.Add("micro_sub_appid", "");
             // 微信小程序APPID对应的秘钥
             extendInfoMap.Add("wx_applet_secret", "1323a4165a662d6e4f9f51b3f7a58e3f");

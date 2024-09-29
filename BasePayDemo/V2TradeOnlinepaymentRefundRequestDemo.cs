@@ -70,10 +70,6 @@ namespace BasePayDemo
             extendInfoMap.Add("org_req_seq_id", "295700155481522176");
             // 分账对象
             // extendInfoMap.Add("acct_split_bunch", getAcctSplitBunchRucan());
-            // 补贴支付信息
-            // extendInfoMap.Add("combinedpay_data", getCombinedpayData());
-            // 大额转账支付账户信息数据
-            // extendInfoMap.Add("bank_info_data", getBankInfoData());
             // 备注
             // extendInfoMap.Add("remark", "");
             // 异步通知地址
@@ -84,9 +80,11 @@ namespace BasePayDemo
         private static object getAcctInfosRucan() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 商户号
-            // obj.Add("huifu_id", "");
+            // obj.Add("huifu_id", "test");
             // 支付金额
             // obj.Add("div_amt", "");
+            // 账户号
+            // obj.Add("acct_id", "");
 
             JArray objList = new JArray();
             objList.Add(JToken.FromObject(obj));
@@ -96,36 +94,6 @@ namespace BasePayDemo
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 分账信息列表
             // obj.Add("acct_infos", getAcctInfosRucan());
-
-            return JsonConvert.SerializeObject(obj);
-        }
-        private static string getCombinedpayData() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 补贴方汇付编号
-            // obj.Add("huifu_id", "test");
-            // 补贴方类型
-            // obj.Add("user_type", "test");
-            // 补贴方账户号
-            // obj.Add("acct_id", "test");
-            // 补贴金额
-            // obj.Add("amount", "test");
-
-            JArray objList = new JArray();
-            objList.Add(JToken.FromObject(obj));
-            return JsonConvert.SerializeObject(objList);
-        }
-        private static string getBankInfoData() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 付款方账户类型
-            // obj.Add("card_acct_type", "test");
-            // 省份
-            // obj.Add("province", "");
-            // 地区
-            // obj.Add("area", "");
-            // 银行编号
-            // obj.Add("bank_code", "");
-            // 联行号
-            // obj.Add("correspondent_code", "");
 
             return JsonConvert.SerializeObject(obj);
         }
@@ -152,14 +120,14 @@ namespace BasePayDemo
         }
         private static string getRiskCheckData() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 经度
+            // obj.Add("longitude", "test");
+            // 纬度
+            // obj.Add("latitude", "test");
+            // 基站地址
+            // obj.Add("base_station", "test");
             // ip地址
             obj.Add("ip_addr", "172.1.1.1");
-            // 基站地址
-            // obj.Add("base_station", "");
-            // 纬度
-            // obj.Add("latitude", "");
-            // 经度
-            // obj.Add("longitude", "");
 
             return JsonConvert.SerializeObject(obj);
         }

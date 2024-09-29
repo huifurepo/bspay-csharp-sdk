@@ -43,6 +43,10 @@ namespace BasePaySdk.Request
          * 手机号
          */
         private string mobileNo;
+        /**
+         * 地址开通中信E管家必填
+         */
+        private string address;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_USER_BASICDATA_INDV;
@@ -51,7 +55,7 @@ namespace BasePaySdk.Request
         public V2UserBasicdataIndvRequest() {
         }
 
-        public V2UserBasicdataIndvRequest(string reqSeqId, string reqDate, string name, string certType, string certNo, string certValidityType, string certBeginDate, string mobileNo) {
+        public V2UserBasicdataIndvRequest(string reqSeqId, string reqDate, string name, string certType, string certNo, string certValidityType, string certBeginDate, string mobileNo, string address) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.name = name;
@@ -60,6 +64,7 @@ namespace BasePaySdk.Request
             this.certValidityType = certValidityType;
             this.certBeginDate = certBeginDate;
             this.mobileNo = mobileNo;
+            this.address = address;
         }
 
         public string getReqSeqId() {
@@ -124,6 +129,14 @@ namespace BasePaySdk.Request
 
         public void setMobileNo(string mobileNo) {
             this.mobileNo = mobileNo;
+        }
+
+        public string getAddress() {
+            return address;
+        }
+
+        public void setAddress(string address) {
+            this.address = address;
         }
 
 

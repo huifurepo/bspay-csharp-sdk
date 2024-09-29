@@ -64,9 +64,9 @@ namespace BasePaySdk.Request
          */
         private string goodsDesc;
         /**
-         * 汇款凭证文件内容
+         * 汇款凭证文件id
          */
-        private string certificateContent;
+        private string certificateFileId;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_TRADE_ONLINEPAYMENT_TRANSFER_BANKMISTAKE_APPLY;
@@ -75,7 +75,7 @@ namespace BasePaySdk.Request
         public V2TradeOnlinepaymentTransferBankmistakeApplyRequest() {
         }
 
-        public V2TradeOnlinepaymentTransferBankmistakeApplyRequest(string reqSeqId, string reqDate, string huifuId, string transAmt, string orderType, string orgReqSeqId, string orgReqDate, string remitDate, string certificateName, string bankCardNo, string bankName, string notifyUrl, string goodsDesc, string certificateContent) {
+        public V2TradeOnlinepaymentTransferBankmistakeApplyRequest(string reqSeqId, string reqDate, string huifuId, string transAmt, string orderType, string orgReqSeqId, string orgReqDate, string remitDate, string certificateName, string bankCardNo, string bankName, string notifyUrl, string goodsDesc, string certificateFileId) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.huifuId = huifuId;
@@ -89,7 +89,7 @@ namespace BasePaySdk.Request
             this.bankName = bankName;
             this.notifyUrl = notifyUrl;
             this.goodsDesc = goodsDesc;
-            this.certificateContent = certificateContent;
+            this.certificateFileId = certificateFileId;
         }
 
         public string getReqSeqId() {
@@ -196,12 +196,12 @@ namespace BasePaySdk.Request
             this.goodsDesc = goodsDesc;
         }
 
-        public string getCertificateContent() {
-            return certificateContent;
+        public string getCertificateFileId() {
+            return certificateFileId;
         }
 
-        public void setCertificateContent(string certificateContent) {
-            this.certificateContent = certificateContent;
+        public void setCertificateFileId(string certificateFileId) {
+            this.certificateFileId = certificateFileId;
         }
 
 

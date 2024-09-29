@@ -42,9 +42,9 @@ namespace BasePayDemo
             // request.setRedApplyReason("test");
             // 冲红申请来源open_type&#x3D;1时必填01：销方02：购方
             // request.setRedApplySource("test");
-            // 原发票代码openType&#x3D;1时必填；参见[发票右上角](https://paas.huifu.com/partners/api/#/fp/api_fp_yanglitu.md)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：144032209110&lt;/font&gt;
+            // 原发票代码openType&#x3D;1时必填；参见[发票右上角](https://paas.huifu.com/open/doc/api/#/fp/api_fp_yanglitu.md)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：144032209110&lt;/font&gt;
             request.setOriIvcCode("90222082");
-            // 原发票号码openType&#x3D;1时必填；参见[发票右上角](https://paas.huifu.com/partners/api/#/fp/api_fp_yanglitu.md)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：20685767&lt;/font&gt;
+            // 原发票号码openType&#x3D;1时必填；参见[发票右上角](https://paas.huifu.com/open/doc/api/#/fp/api_fp_yanglitu.md)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：20685767&lt;/font&gt;
             request.setOriIvcNumber("150000020026");
             // 开票商品信息
             request.setGoodsInfos(getGoodsInfosRc());
@@ -137,7 +137,7 @@ namespace BasePayDemo
             obj.Add("add_tax_spec_manage", "");
             // 含税标识
             obj.Add("is_price_con_tax", "1");
-            // 数量
+            // 商品数量
             obj.Add("goods_count", "7");
             // 单价
             obj.Add("goods_price", "10");

@@ -60,6 +60,8 @@ namespace BasePayDemo
             extendInfoMap.Add("bank_fq_list", getBankFqList());
             // 花呗分期费率
             extendInfoMap.Add("hb_fq_fee_list", getHbFqFeeList());
+            // 白条分期配置对象
+            // extendInfoMap.Add("jdbt_data", getJdbtData());
             return extendInfoMap;
         }
 
@@ -143,6 +145,44 @@ namespace BasePayDemo
             JArray objList = new JArray();
             objList.Add(JToken.FromObject(obj));
             return JsonConvert.SerializeObject(objList);
+        }
+        private static string getJdbtFeeData() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 支付场景
+            // obj.Add("pay_scene", "test");
+            // 业务开通标识
+            // obj.Add("open_flag", "test");
+            // 手续费率(%)
+            // obj.Add("fee_rate", "");
+            // 手续费扣取方式
+            // obj.Add("fee_rec_type", "");
+            // 交易手续费扣款标记
+            // obj.Add("fee_flag", "");
+            // 手续费外扣的汇付商户号
+            // obj.Add("out_fee_huifu_id", "");
+            // 手续费外扣的汇付账户号
+            // obj.Add("out_fee_acct_id", "");
+
+            JArray objList = new JArray();
+            objList.Add(JToken.FromObject(obj));
+            return JsonConvert.SerializeObject(objList);
+        }
+        private static string getJdbtData() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 商户汇付Id
+            // obj.Add("huifu_id", "test");
+            // 签约人类型
+            // obj.Add("sign_user_type", "test");
+            // 签约人姓名
+            // obj.Add("name", "test");
+            // 签约人手机号
+            // obj.Add("mobile_no", "test");
+            // 签约人身份证号
+            // obj.Add("cert_no", "test");
+            // 京东白条费率数据
+            // obj.Add("jdbt_fee_data", getJdbtFeeData());
+
+            return JsonConvert.SerializeObject(obj);
         }
     }
 }

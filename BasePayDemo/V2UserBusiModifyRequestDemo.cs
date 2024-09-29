@@ -32,6 +32,8 @@ namespace BasePayDemo
             request.setUpperHuifuId("6666000104633228");
             // 汇付ID
             request.setHuifuId("6666000104896342");
+            // 乐接活配置当合作平台为乐接活，必填
+            // request.setLjhData(getLjhData());
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -74,6 +76,8 @@ namespace BasePayDemo
             // extendInfoMap.Add("elec_acct_config", getElecAcctConfig());
             // 灵活用工开关
             // extendInfoMap.Add("open_tax_flag", "");
+            // 合作平台
+            // extendInfoMap.Add("lg_platform_type", "");
             return extendInfoMap;
         }
 
@@ -83,11 +87,11 @@ namespace BasePayDemo
             obj.Add("settle_status", "1");
             // 结算周期
             obj.Add("settle_cycle", "D1");
-            // 结算批次号settle_pattern为P0时必填；[参见结算批次说明](https://paas.huifu.com/partners/api/#/csfl/api_csfl_jspc)
+            // 结算批次号settle_pattern为P0时必填；[参见结算批次说明](https://paas.huifu.com/open/doc/api/#/csfl/api_csfl_jspc)
             obj.Add("settle_batch_no", "0");
             // 是否优先到账settle_pattern为P0时选填， Y：是 N：否（为空默认取值）；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：Y&lt;/font&gt;
             obj.Add("is_priority_receipt", "Y");
-            // 自定义结算处理时间settle_pattern为P1时必填，注意：00:00到00:30不能指定；格式：HHmmss；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：103000&lt;/font&gt;
+            // 自定义结算处理时间settle_pattern为P1/P2时必填，注意：00:00到00:30不能指定；格式：HHmmss；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：103000&lt;/font&gt;
             obj.Add("settle_time", "");
             // 节假日结算手续费率settle_cycle为D1时必填。单位%，需保留小数点后两位。取值范围[0.00，100.00]，不收费请填写0.00；settle_cycle&#x3D;T1时，不生效 ；settle_cycle为D1时，遇节假日按此费率结算 ；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：0.05&lt;/font&gt;
             obj.Add("fixed_ratio", "0.1");
@@ -124,9 +128,9 @@ namespace BasePayDemo
             obj.Add("prov_id", "310000");
             // 银行所在市
             obj.Add("area_id", "310100");
-            // 银行号当card_type&#x3D;0时必填，对私可以为空；[参见银行编码](https://paas.huifu.com/partners/api/#/csfl/api_csfl_yhbm)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：01020000&lt;/font&gt;
+            // 银行号当card_type&#x3D;0时必填，对私可以为空；[参见银行编码](https://paas.huifu.com/open/doc/api/#/csfl/api_csfl_yhbm)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：01020000&lt;/font&gt;
             obj.Add("bank_code", "01050000");
-            // 支行联行号当card_type&#x3D;0时必填，[点击查看](https://paas.huifu.com/partners/api/#/csfl/api_csfl_yhzhbm)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：102290026507&lt;/font&gt;
+            // 支行联行号当card_type&#x3D;0时必填，[点击查看](https://paas.huifu.com/open/doc/api/#/csfl/api_csfl_yhzhbm)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：102290026507&lt;/font&gt;
             obj.Add("branch_code", "105305264815");
             // 持卡人证件类型
             obj.Add("cert_type", "00");
@@ -234,6 +238,13 @@ namespace BasePayDemo
             // obj.Add("**elec_card_list**", getElecCardList());
             // 银行信息
             // obj.Add("bank_message", "");
+
+            return JsonConvert.SerializeObject(obj);
+        }
+        private static string getLjhData() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 税源地id当合作平台为乐接活，必填
+            // obj.Add("tax_area_id", "test");
 
             return JsonConvert.SerializeObject(obj);
         }

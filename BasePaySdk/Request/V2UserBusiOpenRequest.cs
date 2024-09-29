@@ -27,6 +27,10 @@ namespace BasePaySdk.Request
          * 渠道商/商户汇付Id
          */
         private string upperHuifuId;
+        /**
+         * 乐接活配置当合作平台为乐接活，必填
+         */
+        private string ljhData;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_USER_BUSI_OPEN;
@@ -35,11 +39,12 @@ namespace BasePaySdk.Request
         public V2UserBusiOpenRequest() {
         }
 
-        public V2UserBusiOpenRequest(string huifuId, string reqSeqId, string reqDate, string upperHuifuId) {
+        public V2UserBusiOpenRequest(string huifuId, string reqSeqId, string reqDate, string upperHuifuId, string ljhData) {
             this.huifuId = huifuId;
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.upperHuifuId = upperHuifuId;
+            this.ljhData = ljhData;
         }
 
         public string getHuifuId() {
@@ -72,6 +77,14 @@ namespace BasePaySdk.Request
 
         public void setUpperHuifuId(string upperHuifuId) {
             this.upperHuifuId = upperHuifuId;
+        }
+
+        public string getLjhData() {
+            return ljhData;
+        }
+
+        public void setLjhData(string ljhData) {
+            this.ljhData = ljhData;
         }
 
 

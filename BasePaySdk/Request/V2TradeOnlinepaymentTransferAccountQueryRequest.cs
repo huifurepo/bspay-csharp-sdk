@@ -23,22 +23,6 @@ namespace BasePaySdk.Request
          * 商户号
          */
         private string huifuId;
-        /**
-         * 原请求流水号
-         */
-        private string orgReqSeqId;
-        /**
-         * 原请求日期
-         */
-        private string orgReqDate;
-        /**
-         * 打款结束日期
-         */
-        private string transEndDate;
-        /**
-         * 交易开始日期
-         */
-        private string transStartDate;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_TRADE_ONLINEPAYMENT_TRANSFER_ACCOUNT_QUERY;
@@ -47,14 +31,10 @@ namespace BasePaySdk.Request
         public V2TradeOnlinepaymentTransferAccountQueryRequest() {
         }
 
-        public V2TradeOnlinepaymentTransferAccountQueryRequest(string reqSeqId, string reqDate, string huifuId, string orgReqSeqId, string orgReqDate, string transEndDate, string transStartDate) {
+        public V2TradeOnlinepaymentTransferAccountQueryRequest(string reqSeqId, string reqDate, string huifuId) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.huifuId = huifuId;
-            this.orgReqSeqId = orgReqSeqId;
-            this.orgReqDate = orgReqDate;
-            this.transEndDate = transEndDate;
-            this.transStartDate = transStartDate;
         }
 
         public string getReqSeqId() {
@@ -79,38 +59,6 @@ namespace BasePaySdk.Request
 
         public void setHuifuId(string huifuId) {
             this.huifuId = huifuId;
-        }
-
-        public string getOrgReqSeqId() {
-            return orgReqSeqId;
-        }
-
-        public void setOrgReqSeqId(string orgReqSeqId) {
-            this.orgReqSeqId = orgReqSeqId;
-        }
-
-        public string getOrgReqDate() {
-            return orgReqDate;
-        }
-
-        public void setOrgReqDate(string orgReqDate) {
-            this.orgReqDate = orgReqDate;
-        }
-
-        public string getTransEndDate() {
-            return transEndDate;
-        }
-
-        public void setTransEndDate(string transEndDate) {
-            this.transEndDate = transEndDate;
-        }
-
-        public string getTransStartDate() {
-            return transStartDate;
-        }
-
-        public void setTransStartDate(string transStartDate) {
-            this.transStartDate = transStartDate;
         }
 
 

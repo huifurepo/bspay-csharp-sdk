@@ -59,6 +59,10 @@ namespace BasePaySdk.Request
          * 所属省
          */
         private string provId;
+        /**
+         * 所属市
+         */
+        private string cityId;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_INVOICE_MER_REG;
@@ -67,7 +71,7 @@ namespace BasePaySdk.Request
         public V2InvoiceMerRegRequest() {
         }
 
-        public V2InvoiceMerRegRequest(string reqSeqId, string reqDate, string huifuId, string taxPayerId, string taxPayerName, string telNo, string regAddress, string bankName, string accountNo, string contactPhoneNo, string openMode, string provId) {
+        public V2InvoiceMerRegRequest(string reqSeqId, string reqDate, string huifuId, string taxPayerId, string taxPayerName, string telNo, string regAddress, string bankName, string accountNo, string contactPhoneNo, string openMode, string provId, string cityId) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.huifuId = huifuId;
@@ -80,6 +84,7 @@ namespace BasePaySdk.Request
             this.contactPhoneNo = contactPhoneNo;
             this.openMode = openMode;
             this.provId = provId;
+            this.cityId = cityId;
         }
 
         public string getReqSeqId() {
@@ -176,6 +181,14 @@ namespace BasePaySdk.Request
 
         public void setProvId(string provId) {
             this.provId = provId;
+        }
+
+        public string getCityId() {
+            return cityId;
+        }
+
+        public void setCityId(string cityId) {
+            this.cityId = cityId;
         }
 
 

@@ -36,7 +36,7 @@ namespace BasePaySdk.Request
          */
         private string riskCheckData;
         /**
-         * 资金类型资金类型。支付渠道为中信E管家时，资金类型必填（[详见说明](https://paas.huifu.com/partners/api/#/yuer/api_zxegjzllx)）
+         * 资金类型资金类型。支付渠道为中信E管家时，资金类型必填（[详见说明](https://paas.huifu.com/open/doc/api/#/yuer/api_zxegjzllx)）
          */
         private string fundType;
         /**

@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.6.30114.105
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33801.468
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasePaySdk", "BasePaySdk\BasePaySdk.csproj", "{C7920385-927C-4567-ABD7-AFDC614E6133}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasePaySdk", "BasePaySdk\BasePaySdk.csproj", "{C7920385-927C-4567-ABD7-AFDC614E6133}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasePayDemo", "BasePayDemo\BasePayDemo.csproj", "{09562814-75E8-49FB-9209-EFA439C6347C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasePayDemo", "BasePayDemo\BasePayDemo.csproj", "{09562814-75E8-49FB-9209-EFA439C6347C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +15,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{C7920385-927C-4567-ABD7-AFDC614E6133}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -44,5 +41,11 @@ Global
 		{09562814-75E8-49FB-9209-EFA439C6347C}.Release|x64.Build.0 = Release|Any CPU
 		{09562814-75E8-49FB-9209-EFA439C6347C}.Release|x86.ActiveCfg = Release|Any CPU
 		{09562814-75E8-49FB-9209-EFA439C6347C}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {484C55FE-D54C-44E3-AC62-A1B4FB89F3DB}
 	EndGlobalSection
 EndGlobal

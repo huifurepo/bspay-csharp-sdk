@@ -74,12 +74,14 @@ namespace BasePayDemo
             extendInfoMap.Add("remark", "remark123");
             // 灵活用工标志
             // extendInfoMap.Add("hyc_flag", "");
+            // 灵活用工平台
+            // extendInfoMap.Add("lg_platform_type", "");
             // 代发模式
             // extendInfoMap.Add("salary_modle_type", "");
             // 落地公司商户号
             // extendInfoMap.Add("bmember_id", "");
-            // 灵活用工代发批次号
-            // extendInfoMap.Add("hyc_attach_id", "");
+            // 乐接活请求参数集合
+            // extendInfoMap.Add("ljh_data", getLjhData());
             // 异步通知地址
             // extendInfoMap.Add("notify_url", "");
             return extendInfoMap;
@@ -87,10 +89,12 @@ namespace BasePayDemo
 
         private static object getAcctInfosRucan() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 分账金额
+            // 分账金额(元)单位元，需保留小数点后两位，最低传入0.01 ，&lt;font color&#x3D;&quot;green&quot;&gt;示例值：1.00&lt;/font&gt; ，percentage_flag非Y时必填；&lt;br/&gt;percentage_flag&#x3D;Y时div_amt不填，div_amt&#x3D;total_div_amt*percentage_div
             obj.Add("div_amt", "0.01");
             // 分账接收方ID
             obj.Add("huifu_id", "6666000109133323");
+            // 分账百分比%
+            // obj.Add("percentage_div", "");
             // 分账接收方账户号
             // obj.Add("acct_id", "");
 
@@ -100,6 +104,10 @@ namespace BasePayDemo
         }
         private static string getAcctSplitBunch() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 分账总金额（元）本次交易确认总额。需保留小数点后两位&lt;br/&gt;percentage_flag&#x3D;Y时必填。该金额与分账百分比用来计算分账金额。&lt;font color&#x3D;&quot;green&quot;&gt;示例值：10.00&lt;/font&gt;；
+            // obj.Add("total_div_amt", "test");
+            // 百分比分账标志
+            // obj.Add("percentage_flag", "");
             // 分账明细
             obj.Add("acct_infos", getAcctInfosRucan());
 
@@ -119,6 +127,15 @@ namespace BasePayDemo
             // obj.Add("sub_product", "");
             // 转账原因
             // obj.Add("transfer_type", "");
+
+            return JsonConvert.SerializeObject(obj);
+        }
+        private static string getLjhData() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 税源地ID
+            // obj.Add("tax_area_id", "");
+            // 任务模板ID
+            // obj.Add("template_id", "");
 
             return JsonConvert.SerializeObject(obj);
         }

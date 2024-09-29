@@ -36,7 +36,7 @@ namespace BasePayDemo
             request.setAcctSplitBunch(getAcctSplitBunch());
             // 安全信息
             request.setRiskCheckData(getRiskCheckData());
-            // 资金类型资金类型。支付渠道为中信E管家时，资金类型必填（[详见说明](https://paas.huifu.com/partners/api/#/yuer/api_zxegjzllx)）
+            // 资金类型资金类型。支付渠道为中信E管家时，资金类型必填（[详见说明](https://paas.huifu.com/open/doc/api/#/yuer/api_zxegjzllx)）
             // request.setFundType("test");
             // 手续费承担方标识余额支付手续费承担方标识；商户余额支付扣收规则为接口指定承担方时必填！枚举值：&lt;br/&gt;OUT：出款方；&lt;br/&gt;IN：分账接受方。&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：IN&lt;/font&gt;
             // request.setTransFeeTakeFlag("test");
@@ -80,10 +80,14 @@ namespace BasePayDemo
             // extendInfoMap.Add("acct_channel", "");
             // 灵活用工标志
             // extendInfoMap.Add("hyc_flag", "");
+            // 灵活用工平台
+            // extendInfoMap.Add("lg_platform_type", "");
             // 代发模式
             // extendInfoMap.Add("salary_modle_type", "");
             // 落地公司商户号
             // extendInfoMap.Add("bmember_id", "");
+            // 乐接活请求参数集合
+            // extendInfoMap.Add("ljh_data", getLjhData());
             // 异步通知地址
             // extendInfoMap.Add("notify_url", "");
             return extendInfoMap;
@@ -91,12 +95,14 @@ namespace BasePayDemo
 
         private static object getAcctInfos() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 分账金额
-            obj.Add("div_amt", "0.01");
             // 分账接收方ID
             obj.Add("huifu_id", "6666000109133323");
+            // 分账金额
+            obj.Add("div_amt", "0.01");
             // 账户号
             // obj.Add("acct_id", "");
+            // 分账百分比%
+            // obj.Add("percentage_div", "");
 
             JArray objList = new JArray();
             objList.Add(JToken.FromObject(obj));
@@ -106,6 +112,10 @@ namespace BasePayDemo
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 分账明细
             obj.Add("acct_infos", getAcctInfos());
+            // 百分比分账标志
+            // obj.Add("percentage_flag", "");
+            // 是否净值分账
+            // obj.Add("is_clean_split", "");
 
             return JsonConvert.SerializeObject(obj);
         }
@@ -123,6 +133,15 @@ namespace BasePayDemo
             // obj.Add("base_station", "");
             // IP地址
             // obj.Add("ip_addr", "");
+
+            return JsonConvert.SerializeObject(obj);
+        }
+        private static string getLjhData() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 税源地ID
+            // obj.Add("tax_area_id", "");
+            // 任务模板ID
+            // obj.Add("template_id", "");
 
             return JsonConvert.SerializeObject(obj);
         }

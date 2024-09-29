@@ -101,12 +101,14 @@ namespace BasePayDemo
 
         private static object getAcctInfosRucan() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 分账金额
-            // obj.Add("div_amt", "test");
             // 分账接收方ID
             // obj.Add("huifu_id", "test");
+            // 分账金额
+            // obj.Add("div_amt", "");
             // 账户号
             // obj.Add("acct_id", "");
+            // 分账百分比%
+            // obj.Add("percentage_div", "");
 
             JArray objList = new JArray();
             objList.Add(JToken.FromObject(obj));
@@ -116,6 +118,10 @@ namespace BasePayDemo
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 分账明细
             // obj.Add("acct_infos", getAcctInfosRucan());
+            // 百分比分账标志
+            // obj.Add("percentage_flag", "");
+            // 是否净值分账
+            // obj.Add("is_clean_split", "");
 
             return JsonConvert.SerializeObject(obj);
         }
@@ -276,8 +282,8 @@ namespace BasePayDemo
             // obj.Add("invoice_st", "");
             // 商户类别
             // obj.Add("mer_cat_code", "");
-            // 银联参数集合
-            // obj.Add("pnrins_id_cd", "");
+            // 服务商机构标识码
+            // obj.Add("pnr_ins_id_cd", "");
             // 特殊计费信息
             // obj.Add("specfeeinfo", "");
             // 终端号

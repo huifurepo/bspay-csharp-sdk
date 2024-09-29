@@ -125,7 +125,7 @@ namespace BasePayDemo
             // 单品列表
             obj.Add("goods_detail", getGoodsDetailWxRucan());
             // 订单原价(元)
-            obj.Add("cost_price", "999.00");
+            obj.Add("cost_price", "43.00");
             // 商品小票ID
             obj.Add("receipt_id", "20220628132043853798");
 
@@ -153,12 +153,10 @@ namespace BasePayDemo
         }
         private static string getWxData() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 子商户公众账号id
+            // 子商户应用ID
             obj.Add("sub_appid", "wxdfe9a5d141f96685");
-            // 用户标识
-            obj.Add("openid", "o8jhotzittQSetZ-N0Yj4Hz91Rqc");
             // 子商户用户标识
-            obj.Add("sub_openid", "");
+            obj.Add("sub_openid", "o8jhotzittQSetZ-N0Yj4Hz91Rqc");
             // 附加数据
             // obj.Add("attach", "");
             // 商品描述
@@ -212,9 +210,9 @@ namespace BasePayDemo
             // 商品的编号
             obj.Add("goods_id", "12312321");
             // 商品名称
-            obj.Add("goods_name", "阿里");
+            obj.Add("goods_name", "汇付");
             // 商品单价(元)
-            obj.Add("price", "0.01");
+            obj.Add("price", "43.00");
             // 商品数量
             obj.Add("quantity", "20");
             // 商品描述信息
@@ -299,6 +297,8 @@ namespace BasePayDemo
         }
         private static string getUnionpayData() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 二维码
+            // obj.Add("qr_code", "");
             // 收款方附加数据
             // obj.Add("addn_data", "");
             // 地区信息
@@ -333,12 +333,14 @@ namespace BasePayDemo
         }
         private static object getAcctInfosRucan() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 分账金额
-            obj.Add("div_amt", "0.10");
             // 分账接收方ID
             obj.Add("huifu_id", "6666000109133323");
+            // 分账金额
+            obj.Add("div_amt", "0.10");
             // 账户号
             // obj.Add("acct_id", "");
+            // 分账百分比%
+            // obj.Add("percentage_div", "");
 
             JArray objList = new JArray();
             objList.Add(JToken.FromObject(obj));
@@ -348,6 +350,10 @@ namespace BasePayDemo
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 分账明细
             obj.Add("acct_infos", getAcctInfosRucan());
+            // 百分比分账标志
+            // obj.Add("percentage_flag", "");
+            // 是否净值分账
+            // obj.Add("is_clean_split", "");
 
             return JsonConvert.SerializeObject(obj);
         }

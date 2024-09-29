@@ -69,7 +69,7 @@ namespace BasePayDemo
             // 文件列表
             // extendInfoMap.Add("file_list", getFileList());
             // 地址
-            // extendInfoMap.Add("**address**", "");
+            // extendInfoMap.Add("address", "");
             return extendInfoMap;
         }
 

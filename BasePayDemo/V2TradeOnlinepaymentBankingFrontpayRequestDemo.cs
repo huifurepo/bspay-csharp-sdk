@@ -101,6 +101,8 @@ namespace BasePayDemo
             // obj.Add("huifu_id", "");
             // 接收方账户号
             // obj.Add("acct_id", "");
+            // 分账百分比%
+            // obj.Add("percentage_div", "");
 
             JArray objList = new JArray();
             objList.Add(JToken.FromObject(obj));
@@ -110,6 +112,10 @@ namespace BasePayDemo
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 分账明细
             // obj.Add("acct_infos", getAcctInfos());
+            // 百分比分账标志
+            // obj.Add("percentage_flag", "");
+            // 是否净值分账
+            // obj.Add("is_clean_split", "");
 
             return JsonConvert.SerializeObject(obj);
         }
