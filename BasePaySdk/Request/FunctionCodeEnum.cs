@@ -9,6 +9,38 @@ namespace BasePaySdk.Request
     public class FunctionCodeEnum
     {
         /**
+        * 服务单关闭
+        */
+        public const string V2_TRADE_PAYAFTERUSE_CREDITBIZORDER_CLOSE = "v2.trade.payafteruse.creditbizorder.close";
+        /**
+         * 服务单查询
+         */
+        public const string V2_TRADE_PAYAFTERUSE_CREDITBIZORDER_QUERY = "v2.trade.payafteruse.creditbizorder.query";
+        /**
+         * 服务单创建
+         */
+        public const string V2_TRADE_PAYAFTERUSE_CREDITBIZORDER_CREATE = "v2.trade.payafteruse.creditbizorder.create";
+        /**
+         * 分期扣款查询
+         */
+        public const string V2_TRADE_PAYAFTERUSE_INSTALLMENT_QUERY = "v2.trade.payafteruse.installment.query";
+        /**
+         * 分期扣款
+         */
+        public const string V2_TRADE_PAYAFTERUSE_INSTALLMENT_PAY = "v2.trade.payafteruse.installment.pay";
+        /**
+         * 分期交易退款查询
+         */
+        public const string V2_TRADE_PAYAFTERUSE_INSTALLMENT_REFUNDQUERY = "v2.trade.payafteruse.installment.refundquery";
+        /**
+         * 分期交易退款
+         */
+        public const string V2_TRADE_PAYAFTERUSE_INSTALLMENT_REFUND = "v2.trade.payafteruse.installment.refund";
+        /**
+         * 分期单创建
+         */
+        public const string V2_TRADE_PAYAFTERUSE_INSTALLMENT_CREATE = "v2.trade.payafteruse.installment.create";
+        /**
          * 云MIS订单详情查询接口
          */
         public const string V2_TRADE_CLOUDMIS_ORDER_DETAIL = "v2.trade.cloudmis.order.detail";
