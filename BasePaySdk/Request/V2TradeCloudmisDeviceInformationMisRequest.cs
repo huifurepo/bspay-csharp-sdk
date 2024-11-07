@@ -3,7 +3,7 @@ using System;
 namespace BasePaySdk.Request
 {
     /**
-     * 终端云MIS接入
+     * 终端云MIS交易
      *
      * @author sdk-generator
      * @Description

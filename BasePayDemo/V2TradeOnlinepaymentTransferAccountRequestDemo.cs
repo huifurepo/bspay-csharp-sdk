@@ -82,8 +82,6 @@ namespace BasePayDemo
             // extendInfoMap.Add("bank_mode", "");
             // 延时标记
             // extendInfoMap.Add("delay_acct_flag", "");
-            // 分账对象
-            // extendInfoMap.Add("acct_split_bunch", getAcctSplitBunch());
             // 订单模式
             // extendInfoMap.Add("order_mode", "");
             // 原汇款订单号
@@ -95,23 +93,5 @@ namespace BasePayDemo
             return extendInfoMap;
         }
 
-        private static object getAcctInfos() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 支付金额
-            // obj.Add("div_amt", "");
-            // 商户号
-            // obj.Add("huifu_id", "");
-
-            JArray objList = new JArray();
-            objList.Add(JToken.FromObject(obj));
-            return objList;
-        }
-        private static object getAcctSplitBunch() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 分账信息列表
-            // obj.Add("acct_infos", getAcctInfos());
-
-            return obj;
-        }
     }
 }

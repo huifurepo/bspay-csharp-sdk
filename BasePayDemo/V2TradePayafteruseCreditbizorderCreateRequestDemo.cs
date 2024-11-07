@@ -51,18 +51,16 @@ namespace BasePayDemo
             Dictionary<string, object> extendInfoMap = getExtendInfos();
             request.setExtendInfo(extendInfoMap);
 
-            try
-            {
+            try {
                 // 3. 发起API调用
                 // 调用接口,使用默认商户配置时可省略配置key
                 Dictionary<string, Object> result = null;
-                result = BasePayClient.postRequest(request, null);
+                result = BasePayClient.postRequest(request,null);
                 // 使用指定配置调用接口
                 // result = BasePayClient.postRequest(request,null,"merchantKey2");
                 Console.WriteLine(JsonConvert.SerializeObject(result));
             }
-            catch (Exception ex)
-            {
+            catch (Exception ex) {
                 Console.WriteLine(ex);
             }
         }
@@ -71,8 +69,7 @@ namespace BasePayDemo
          * 非必填字段
          * @return
          */
-        private static Dictionary<string, object> getExtendInfos()
-        {
+        private static Dictionary<string, object> getExtendInfos() {
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
             // 异步通知地址
@@ -86,8 +83,7 @@ namespace BasePayDemo
             return extendInfoMap;
         }
 
-        private static object getItemInstallmentInfo()
-        {
+        private static object getItemInstallmentInfo() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 总分期数
             obj.Add("period_num", 1);
@@ -98,8 +94,7 @@ namespace BasePayDemo
 
             return obj;
         }
-        private static string getItemInfos()
-        {
+        private static string getItemInfos() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 商户商品ID
             obj.Add("out_item_id", "1234567");

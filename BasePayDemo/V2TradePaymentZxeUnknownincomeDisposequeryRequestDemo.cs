@@ -8,28 +8,24 @@ using Newtonsoft.Json.Linq;
 namespace BasePayDemo
 {
     /**
-     * 服务单关闭 - 示例
+     * 不明来账处理结果查询 - 示例
      *
      * @author sdk-generator
      * @Description
      */
-    public class V2TradePayafteruseCreditbizorderCloseRequestDemo
+    public class V2TradePaymentZxeUnknownincomeDisposequeryRequestDemo
     {
 
-        public static void V2TradePayafteruseCreditbizorderCloseRequestDemoTest()
+        public static void V2TradePaymentZxeUnknownincomeDisposequeryRequestDemoTest()
         {
 
             // 1. 数据初始化
             InitMerConfig.init();
 
             // 2.组装请求参数
-            V2TradePayafteruseCreditbizorderCloseRequest request = new V2TradePayafteruseCreditbizorderCloseRequest();
-            // 请求流水号
-            request.setReqSeqId(DateTime.Now.ToString("yyy-MM-dd HH.mm.ss.fff"));
-            // 请求日期
-            request.setReqDate(DateTime.Now.ToString("yyyyMMdd"));
+            V2TradePaymentZxeUnknownincomeDisposequeryRequest request = new V2TradePaymentZxeUnknownincomeDisposequeryRequest();
             // 商户号
-            request.setHuifuId("6666000108281250");
+            request.setHuifuId("6666000109133323");
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -57,11 +53,11 @@ namespace BasePayDemo
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
             // 原请求流水号
-            extendInfoMap.Add("org_req_seq_id", "20241010test10000111111q1");
+            extendInfoMap.Add("org_req_seq_id", "20240925test100001");
             // 原请求日期
-            extendInfoMap.Add("org_req_date", "20241010");
+            extendInfoMap.Add("org_req_date", "20240925");
             // 原全局流水号
-            extendInfoMap.Add("org_hf_seq_id", "0056default241010165618P219c0a831b900000");
+            extendInfoMap.Add("org_hf_seq_id", "");
             return extendInfoMap;
         }
 

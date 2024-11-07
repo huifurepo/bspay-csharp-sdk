@@ -173,14 +173,14 @@ namespace BasePayDemo
             // obj.Add("huifu_id", "test");
             // 签约人类型
             // obj.Add("sign_user_type", "test");
-            // 签约人姓名
-            // obj.Add("name", "test");
             // 签约人手机号
             // obj.Add("mobile_no", "test");
-            // 签约人身份证号
-            // obj.Add("cert_no", "test");
             // 京东白条费率数据
             // obj.Add("jdbt_fee_data", getJdbtFeeData());
+            // 签约人姓名
+            // obj.Add("name", "");
+            // 签约人身份证号
+            // obj.Add("cert_no", "");
 
             return JsonConvert.SerializeObject(obj);
         }

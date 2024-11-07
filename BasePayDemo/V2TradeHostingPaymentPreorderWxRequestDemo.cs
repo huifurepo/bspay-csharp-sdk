@@ -76,6 +76,8 @@ namespace BasePayDemo
             // extendInfoMap.Add("biz_info", getBizInfo());
             // 交易异步通知地址
             extendInfoMap.Add("notify_url", "https://callback.service.com/xx");
+            // 微信参数集合
+            // extendInfoMap.Add("wx_data", getWxData());
             return extendInfoMap;
         }
 
@@ -134,6 +136,87 @@ namespace BasePayDemo
             // obj.Add("payer_check_wx", getPayCheckWx());
             // 个人付款人信息
             // obj.Add("person_payer", getPersonPayer());
+
+            return JsonConvert.SerializeObject(obj);
+        }
+        private static object getGoodsDetailWxRucan() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 商品编码
+            // obj.Add("goods_id", "");
+            // 商品名称
+            // obj.Add("goods_name", "");
+            // 商品单价(元)
+            // obj.Add("price", "");
+            // 商品数量
+            // obj.Add("quantity", "");
+            // 微信侧商品编码
+            // obj.Add("wxpay_goods_id", "");
+
+            JArray objList = new JArray();
+            objList.Add(JToken.FromObject(obj));
+            return objList;
+        }
+        private static object getDetail() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 单品列表
+            // obj.Add("goods_detail", getGoodsDetailWxRucan());
+            // 订单原价(元)
+            // obj.Add("cost_price", "");
+            // 商品小票ID
+            // obj.Add("receipt_id", "");
+
+            return obj;
+        }
+        private static object getStoreInfo() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 门店id
+            // obj.Add("id", "");
+            // 门店名称
+            // obj.Add("name", "");
+            // 门店行政区划码
+            // obj.Add("area_code", "");
+            // 门店详细地址
+            // obj.Add("address", "");
+
+            return obj;
+        }
+        private static object getSceneInfo() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 门店信息
+            // obj.Add("store_info", getStoreInfo());
+
+            return obj;
+        }
+        private static string getWxData() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 子商户应用ID
+            // obj.Add("sub_appid", "");
+            // 子商户用户标识
+            // obj.Add("sub_openid", "");
+            // 附加数据
+            // obj.Add("attach", "");
+            // 商品描述
+            // obj.Add("body", "");
+            // 商品详情
+            // obj.Add("detail", getDetail());
+            // 设备号
+            // obj.Add("device_info", "");
+            // 订单优惠标记
+            // obj.Add("goods_tag", "");
+            // 实名支付
+            // obj.Add("identity", "");
+            // 开发票入口开放标识
+            // obj.Add("receipt", "");
+            // 场景信息
+            // obj.Add("scene_info", getSceneInfo());
+            // 终端ip
+            // obj.Add("spbill_create_ip", "");
+            // 单品优惠标识
+            // obj.Add("promotion_flag", "");
+            // 新增商品ID
+            // obj.Add("product_id", "");
+            // 指定支付者
+            // obj.Add("limit_payer", "");
 
             return JsonConvert.SerializeObject(obj);
         }

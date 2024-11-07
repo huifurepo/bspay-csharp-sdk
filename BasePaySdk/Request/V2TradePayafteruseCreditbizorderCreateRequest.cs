@@ -56,17 +56,14 @@ namespace BasePaySdk.Request
          */
         private string itemInfos;
 
-        public override string getFunctionCode()
-        {
+        public override string getFunctionCode() {
             return FunctionCodeEnum.V2_TRADE_PAYAFTERUSE_CREDITBIZORDER_CREATE;
         }
 
-        public V2TradePayafteruseCreditbizorderCreateRequest()
-        {
+        public V2TradePayafteruseCreditbizorderCreateRequest() {
         }
 
-        public V2TradePayafteruseCreditbizorderCreateRequest(string reqSeqId, string reqDate, string huifuId, string transAmt, string sourceId, string buyerId, string title, string merchantBizType, string path, string zmServiceId, string itemInfos)
-        {
+        public V2TradePayafteruseCreditbizorderCreateRequest(string reqSeqId, string reqDate, string huifuId, string transAmt, string sourceId, string buyerId, string title, string merchantBizType, string path, string zmServiceId, string itemInfos) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.huifuId = huifuId;
@@ -80,113 +77,91 @@ namespace BasePaySdk.Request
             this.itemInfos = itemInfos;
         }
 
-        public string getReqSeqId()
-        {
+        public string getReqSeqId() {
             return reqSeqId;
         }
 
-        public void setReqSeqId(string reqSeqId)
-        {
+        public void setReqSeqId(string reqSeqId) {
             this.reqSeqId = reqSeqId;
         }
 
-        public string getReqDate()
-        {
+        public string getReqDate() {
             return reqDate;
         }
 
-        public void setReqDate(string reqDate)
-        {
+        public void setReqDate(string reqDate) {
             this.reqDate = reqDate;
         }
 
-        public string getHuifuId()
-        {
+        public string getHuifuId() {
             return huifuId;
         }
 
-        public void setHuifuId(string huifuId)
-        {
+        public void setHuifuId(string huifuId) {
             this.huifuId = huifuId;
         }
 
-        public string getTransAmt()
-        {
+        public string getTransAmt() {
             return transAmt;
         }
 
-        public void setTransAmt(string transAmt)
-        {
+        public void setTransAmt(string transAmt) {
             this.transAmt = transAmt;
         }
 
-        public string getSourceId()
-        {
+        public string getSourceId() {
             return sourceId;
         }
 
-        public void setSourceId(string sourceId)
-        {
+        public void setSourceId(string sourceId) {
             this.sourceId = sourceId;
         }
 
-        public string getBuyerId()
-        {
+        public string getBuyerId() {
             return buyerId;
         }
 
-        public void setBuyerId(string buyerId)
-        {
+        public void setBuyerId(string buyerId) {
             this.buyerId = buyerId;
         }
 
-        public string getTitle()
-        {
+        public string getTitle() {
             return title;
         }
 
-        public void setTitle(string title)
-        {
+        public void setTitle(string title) {
             this.title = title;
         }
 
-        public string getMerchantBizType()
-        {
+        public string getMerchantBizType() {
             return merchantBizType;
         }
 
-        public void setMerchantBizType(string merchantBizType)
-        {
+        public void setMerchantBizType(string merchantBizType) {
             this.merchantBizType = merchantBizType;
         }
 
-        public string getPath()
-        {
+        public string getPath() {
             return path;
         }
 
-        public void setPath(string path)
-        {
+        public void setPath(string path) {
             this.path = path;
         }
 
-        public string getZmServiceId()
-        {
+        public string getZmServiceId() {
             return zmServiceId;
         }
 
-        public void setZmServiceId(string zmServiceId)
-        {
+        public void setZmServiceId(string zmServiceId) {
             this.zmServiceId = zmServiceId;
         }
 
-        public string getItemInfos()
-        {
+        public string getItemInfos() {
             return itemInfos;
         }
 
-        public void setItemInfos(string itemInfos)
-        {
+        public void setItemInfos(string itemInfos) {
             this.itemInfos = itemInfos;
         }
 

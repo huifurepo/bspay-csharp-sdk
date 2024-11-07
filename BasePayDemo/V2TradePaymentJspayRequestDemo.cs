@@ -140,7 +140,7 @@ namespace BasePayDemo
             // 门店行政区划码
             // obj.Add("area_code", "");
             // 门店详细地址
-            // obj.Add("ass", "");
+            // obj.Add("address", "");
 
             return obj;
         }
@@ -251,6 +251,8 @@ namespace BasePayDemo
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 买家的支付宝唯一用户号
             obj.Add("buyer_id", "2088702699908257");
+            // 优惠明细参数
+            // obj.Add("ali_promo_params", "test");
             // 支付宝的店铺编号
             obj.Add("alipay_store_id", "");
             // 买家支付宝账号
@@ -279,6 +281,8 @@ namespace BasePayDemo
             // obj.Add("op_app_id", "");
             // 商户业务信息
             // obj.Add("ali_business_params", "");
+            // 订单描述
+            // obj.Add("body", "");
 
             return JsonConvert.SerializeObject(obj);
         }

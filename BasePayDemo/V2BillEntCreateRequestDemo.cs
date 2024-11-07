@@ -71,7 +71,7 @@ namespace BasePayDemo
             // 账单说明
             extendInfoMap.Add("bill_remark", "您本次 SaaS 服务周期为[开始日期]至[结束日期]。费用包括基础服务套餐[X]元，高级功能模块[X]元，总计[X]元。");
             // 汇总信息
-            // extendInfoMap.Add("bill_summary_info", "");
+            // extendInfoMap.Add("bill_summary_info", getBillSummaryInfo());
             // 更多信息
             // extendInfoMap.Add("bill_extend_info", getBillExtendInfo());
             // 账单推送方式
@@ -87,6 +87,15 @@ namespace BasePayDemo
             return extendInfoMap;
         }
 
+        private static string getBillSummaryInfo() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 字段名
+            // obj.Add("extend_name", "test");
+            // 字段值
+            // obj.Add("extend_value", "test");
+
+            return JsonConvert.SerializeObject(obj);
+        }
         private static string getBillExtendInfo() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 字段名

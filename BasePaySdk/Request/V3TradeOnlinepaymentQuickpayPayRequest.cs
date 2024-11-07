@@ -3,12 +3,12 @@ using System;
 namespace BasePaySdk.Request
 {
     /**
-     * 分期单创建
+     * 快捷支付
      *
      * @author sdk-generator
      * @Description
      */
-    public class V2TradePayafteruseInstallmentCreateRequest : BaseRequest
+    public class V3TradeOnlinepaymentQuickpayPayRequest : BaseRequest
     {
 
         /**
@@ -24,22 +24,22 @@ namespace BasePaySdk.Request
          */
         private string huifuId;
         /**
-         * 分期金额
+         * 短信验证码
          */
-        private string fqAmt;
+        private string smsCode;
 
         public override string getFunctionCode() {
-            return FunctionCodeEnum.V2_TRADE_PAYAFTERUSE_INSTALLMENT_CREATE;
+            return FunctionCodeEnum.V3_TRADE_ONLINEPAYMENT_QUICKPAY_PAY;
         }
 
-        public V2TradePayafteruseInstallmentCreateRequest() {
+        public V3TradeOnlinepaymentQuickpayPayRequest() {
         }
 
-        public V2TradePayafteruseInstallmentCreateRequest(string reqSeqId, string reqDate, string huifuId, string fqAmt) {
+        public V3TradeOnlinepaymentQuickpayPayRequest(string reqSeqId, string reqDate, string huifuId, string smsCode) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.huifuId = huifuId;
-            this.fqAmt = fqAmt;
+            this.smsCode = smsCode;
         }
 
         public string getReqSeqId() {
@@ -66,12 +66,12 @@ namespace BasePaySdk.Request
             this.huifuId = huifuId;
         }
 
-        public string getFqAmt() {
-            return fqAmt;
+        public string getSmsCode() {
+            return smsCode;
         }
 
-        public void setFqAmt(string fqAmt) {
-            this.fqAmt = fqAmt;
+        public void setSmsCode(string smsCode) {
+            this.smsCode = smsCode;
         }
 
 

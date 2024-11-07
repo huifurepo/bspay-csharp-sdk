@@ -3,12 +3,12 @@ using System;
 namespace BasePaySdk.Request
 {
     /**
-     * 分期扣款查询
+     * 不明来账处理结果查询
      *
      * @author sdk-generator
      * @Description
      */
-    public class V2TradePayafteruseInstallmentQueryRequest : BaseRequest
+    public class V2TradePaymentZxeUnknownincomeDisposequeryRequest : BaseRequest
     {
 
         /**
@@ -17,13 +17,13 @@ namespace BasePaySdk.Request
         private string huifuId;
 
         public override string getFunctionCode() {
-            return FunctionCodeEnum.V2_TRADE_PAYAFTERUSE_INSTALLMENT_QUERY;
+            return FunctionCodeEnum.V2_TRADE_PAYMENT_ZXE_UNKNOWNINCOME_DISPOSEQUERY;
         }
 
-        public V2TradePayafteruseInstallmentQueryRequest() {
+        public V2TradePaymentZxeUnknownincomeDisposequeryRequest() {
         }
 
-        public V2TradePayafteruseInstallmentQueryRequest(string huifuId) {
+        public V2TradePaymentZxeUnknownincomeDisposequeryRequest(string huifuId) {
             this.huifuId = huifuId;
         }
 

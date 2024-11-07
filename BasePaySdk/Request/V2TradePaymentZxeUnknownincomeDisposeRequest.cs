@@ -3,12 +3,12 @@ using System;
 namespace BasePaySdk.Request
 {
     /**
-     * 分期单创建
+     * 不明来账处理
      *
      * @author sdk-generator
      * @Description
      */
-    public class V2TradePayafteruseInstallmentCreateRequest : BaseRequest
+    public class V2TradePaymentZxeUnknownincomeDisposeRequest : BaseRequest
     {
 
         /**
@@ -24,22 +24,27 @@ namespace BasePaySdk.Request
          */
         private string huifuId;
         /**
-         * 分期金额
+         * 银行侧交易流水号
          */
-        private string fqAmt;
+        private string bankSerialNo;
+        /**
+         * 操作类型
+         */
+        private string operateType;
 
         public override string getFunctionCode() {
-            return FunctionCodeEnum.V2_TRADE_PAYAFTERUSE_INSTALLMENT_CREATE;
+            return FunctionCodeEnum.V2_TRADE_PAYMENT_ZXE_UNKNOWNINCOME_DISPOSE;
         }
 
-        public V2TradePayafteruseInstallmentCreateRequest() {
+        public V2TradePaymentZxeUnknownincomeDisposeRequest() {
         }
 
-        public V2TradePayafteruseInstallmentCreateRequest(string reqSeqId, string reqDate, string huifuId, string fqAmt) {
+        public V2TradePaymentZxeUnknownincomeDisposeRequest(string reqSeqId, string reqDate, string huifuId, string bankSerialNo, string operateType) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.huifuId = huifuId;
-            this.fqAmt = fqAmt;
+            this.bankSerialNo = bankSerialNo;
+            this.operateType = operateType;
         }
 
         public string getReqSeqId() {
@@ -66,12 +71,20 @@ namespace BasePaySdk.Request
             this.huifuId = huifuId;
         }
 
-        public string getFqAmt() {
-            return fqAmt;
+        public string getBankSerialNo() {
+            return bankSerialNo;
         }
 
-        public void setFqAmt(string fqAmt) {
-            this.fqAmt = fqAmt;
+        public void setBankSerialNo(string bankSerialNo) {
+            this.bankSerialNo = bankSerialNo;
+        }
+
+        public string getOperateType() {
+            return operateType;
+        }
+
+        public void setOperateType(string operateType) {
+            this.operateType = operateType;
         }
 
 

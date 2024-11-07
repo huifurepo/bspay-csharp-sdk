@@ -8,28 +8,30 @@ using Newtonsoft.Json.Linq;
 namespace BasePayDemo
 {
     /**
-     * 服务单关闭 - 示例
+     * 快捷支付 - 示例
      *
      * @author sdk-generator
      * @Description
      */
-    public class V2TradePayafteruseCreditbizorderCloseRequestDemo
+    public class V3TradeOnlinepaymentQuickpayPayRequestDemo
     {
 
-        public static void V2TradePayafteruseCreditbizorderCloseRequestDemoTest()
+        public static void V3TradeOnlinepaymentQuickpayPayRequestDemoTest()
         {
 
             // 1. 数据初始化
             InitMerConfig.init();
 
             // 2.组装请求参数
-            V2TradePayafteruseCreditbizorderCloseRequest request = new V2TradePayafteruseCreditbizorderCloseRequest();
+            V3TradeOnlinepaymentQuickpayPayRequest request = new V3TradeOnlinepaymentQuickpayPayRequest();
             // 请求流水号
             request.setReqSeqId(DateTime.Now.ToString("yyy-MM-dd HH.mm.ss.fff"));
             // 请求日期
             request.setReqDate(DateTime.Now.ToString("yyyyMMdd"));
             // 商户号
-            request.setHuifuId("6666000108281250");
+            request.setHuifuId("6666000109133323");
+            // 短信验证码
+            request.setSmsCode("222222");
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -56,12 +58,10 @@ namespace BasePayDemo
         private static Dictionary<string, object> getExtendInfos() {
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
-            // 原请求流水号
-            extendInfoMap.Add("org_req_seq_id", "20241010test10000111111q1");
-            // 原请求日期
-            extendInfoMap.Add("org_req_date", "20241010");
-            // 原全局流水号
-            extendInfoMap.Add("org_hf_seq_id", "0056default241010165618P219c0a831b900000");
+            // 备注
+            // extendInfoMap.Add("remark", "");
+            // 异步通知地址
+            extendInfoMap.Add("notify_url", "http://www.baidu.com");
             return extendInfoMap;
         }
 

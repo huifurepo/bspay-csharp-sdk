@@ -3,12 +3,12 @@ using System;
 namespace BasePaySdk.Request
 {
     /**
-     * 分期单创建
+     * 不明来账列表查询
      *
      * @author sdk-generator
      * @Description
      */
-    public class V2TradePayafteruseInstallmentCreateRequest : BaseRequest
+    public class V2TradePaymentZxeUnknownincomeQueryRequest : BaseRequest
     {
 
         /**
@@ -24,22 +24,27 @@ namespace BasePaySdk.Request
          */
         private string huifuId;
         /**
-         * 分期金额
+         * 交易开始日期
          */
-        private string fqAmt;
+        private string transStartDate;
+        /**
+         * 交易结束日期
+         */
+        private string transEndDate;
 
         public override string getFunctionCode() {
-            return FunctionCodeEnum.V2_TRADE_PAYAFTERUSE_INSTALLMENT_CREATE;
+            return FunctionCodeEnum.V2_TRADE_PAYMENT_ZXE_UNKNOWNINCOME_QUERY;
         }
 
-        public V2TradePayafteruseInstallmentCreateRequest() {
+        public V2TradePaymentZxeUnknownincomeQueryRequest() {
         }
 
-        public V2TradePayafteruseInstallmentCreateRequest(string reqSeqId, string reqDate, string huifuId, string fqAmt) {
+        public V2TradePaymentZxeUnknownincomeQueryRequest(string reqSeqId, string reqDate, string huifuId, string transStartDate, string transEndDate) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.huifuId = huifuId;
-            this.fqAmt = fqAmt;
+            this.transStartDate = transStartDate;
+            this.transEndDate = transEndDate;
         }
 
         public string getReqSeqId() {
@@ -66,12 +71,20 @@ namespace BasePaySdk.Request
             this.huifuId = huifuId;
         }
 
-        public string getFqAmt() {
-            return fqAmt;
+        public string getTransStartDate() {
+            return transStartDate;
         }
 
-        public void setFqAmt(string fqAmt) {
-            this.fqAmt = fqAmt;
+        public void setTransStartDate(string transStartDate) {
+            this.transStartDate = transStartDate;
+        }
+
+        public string getTransEndDate() {
+            return transEndDate;
+        }
+
+        public void setTransEndDate(string transEndDate) {
+            this.transEndDate = transEndDate;
         }
 
 

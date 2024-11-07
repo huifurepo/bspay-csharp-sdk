@@ -38,14 +38,6 @@ namespace BasePayDemo
             request.setOrgReqSeqId("202308312345678931");
             // 原请求日期
             request.setOrgReqDate("20230831");
-            // 实际打款日期
-            request.setRemitDate("20230615");
-            // 实际付款方姓名
-            request.setCertificateName("孙洁");
-            // 实际付款方银行卡号
-            request.setBankCardNo("V2olJv4Srh…………78M8A==");
-            // 实际付款方银行名称
-            request.setBankName("招商银行");
             // 异步通知地址
             request.setNotifyUrl("http://www.baidu.com");
             // 商品描述
@@ -78,6 +70,8 @@ namespace BasePayDemo
         private static Dictionary<string, object> getExtendInfos() {
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
+            // 下单标识
+            // extendInfoMap.Add("order_flag", "");
             // 备注
             extendInfoMap.Add("remark", "大额支付补入账验证");
             // 银行信息数据
@@ -86,6 +80,8 @@ namespace BasePayDemo
             // extendInfoMap.Add("delay_acct_flag", "");
             // 分账对象
             // extendInfoMap.Add("acct_split_bunch", getAcctSplitBunch());
+            // 实际打款信息
+            // extendInfoMap.Add("actual_remit_data", getActualRemitData());
             return extendInfoMap;
         }
 
@@ -101,16 +97,8 @@ namespace BasePayDemo
             obj.Add("correspondent_code", "103290076178");
             // 对公对私标识
             obj.Add("card_acct_type", "P");
-            // 证件类型
-            obj.Add("certificate_type", "01");
-            // 手机号
-            obj.Add("mobile_no", "oO6XYz…………Is3nZb/5dFj860Z+nQ==");
-            // 证件号
-            obj.Add("certify_no", "yL09mhS5…………WK04Kdfyg==");
             // 支行名
             obj.Add("subbranch_bank_name", "中国农业银行股份有限公司上海联洋支行");
-            // 付款方三证合一码
-            obj.Add("bank_acct_three_in_one", "92650109MA79R8E308");
 
             return JsonConvert.SerializeObject(obj);
         }
@@ -131,6 +119,25 @@ namespace BasePayDemo
             // obj.Add("acct_infos", getAcctInfos());
 
             return obj;
+        }
+        private static string getActualRemitData() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 实际打款日期
+            // obj.Add("actual_remit_date", "test");
+            // 实际打款方姓名
+            // obj.Add("actual_remit_name", "test");
+            // 实际打款金额
+            // obj.Add("actual_remit_amt", "test");
+            // 实际打款方银行卡号
+            // obj.Add("actual_remit_card_no", "test");
+            // 实际打款卡号银行名称
+            // obj.Add("actual_bank_name", "test");
+            // 汇款凭证文件ID
+            // obj.Add("certificate_file_id", "test");
+            // 退款卡标识
+            // obj.Add("refund_card_flag", "test");
+
+            return JsonConvert.SerializeObject(obj);
         }
     }
 }

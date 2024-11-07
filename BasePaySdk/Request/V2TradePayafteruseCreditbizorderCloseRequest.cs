@@ -24,49 +24,40 @@ namespace BasePaySdk.Request
          */
         private string huifuId;
 
-        public override string getFunctionCode()
-        {
+        public override string getFunctionCode() {
             return FunctionCodeEnum.V2_TRADE_PAYAFTERUSE_CREDITBIZORDER_CLOSE;
         }
 
-        public V2TradePayafteruseCreditbizorderCloseRequest()
-        {
+        public V2TradePayafteruseCreditbizorderCloseRequest() {
         }
 
-        public V2TradePayafteruseCreditbizorderCloseRequest(string reqSeqId, string reqDate, string huifuId)
-        {
+        public V2TradePayafteruseCreditbizorderCloseRequest(string reqSeqId, string reqDate, string huifuId) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.huifuId = huifuId;
         }
 
-        public string getReqSeqId()
-        {
+        public string getReqSeqId() {
             return reqSeqId;
         }
 
-        public void setReqSeqId(string reqSeqId)
-        {
+        public void setReqSeqId(string reqSeqId) {
             this.reqSeqId = reqSeqId;
         }
 
-        public string getReqDate()
-        {
+        public string getReqDate() {
             return reqDate;
         }
 
-        public void setReqDate(string reqDate)
-        {
+        public void setReqDate(string reqDate) {
             this.reqDate = reqDate;
         }
 
-        public string getHuifuId()
-        {
+        public string getHuifuId() {
             return huifuId;
         }
 
-        public void setHuifuId(string huifuId)
-        {
+        public void setHuifuId(string huifuId) {
             this.huifuId = huifuId;
         }
 

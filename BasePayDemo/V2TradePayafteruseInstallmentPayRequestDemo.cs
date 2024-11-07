@@ -45,18 +45,16 @@ namespace BasePayDemo
             Dictionary<string, object> extendInfoMap = getExtendInfos();
             request.setExtendInfo(extendInfoMap);
 
-            try
-            {
+            try {
                 // 3. 发起API调用
                 // 调用接口,使用默认商户配置时可省略配置key
                 Dictionary<string, Object> result = null;
-                result = BasePayClient.postRequest(request, null);
+                result = BasePayClient.postRequest(request,null);
                 // 使用指定配置调用接口
                 // result = BasePayClient.postRequest(request,null,"merchantKey2");
                 Console.WriteLine(JsonConvert.SerializeObject(result));
             }
-            catch (Exception ex)
-            {
+            catch (Exception ex) {
                 Console.WriteLine(ex);
             }
         }
@@ -65,16 +63,13 @@ namespace BasePayDemo
          * 非必填字段
          * @return
          */
-        private static Dictionary<string, object> getExtendInfos()
-        {
+        private static Dictionary<string, object> getExtendInfos() {
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
             // 入账账户号
             extendInfoMap.Add("acct_id", "C02682415");
             // 交易备注
             extendInfoMap.Add("remark", "");
-            // 交易有效期
-            extendInfoMap.Add("time_expire", "");
             // 是否延迟交易
             // extendInfoMap.Add("delay_acct_flag", "");
             // 分账串
@@ -86,8 +81,7 @@ namespace BasePayDemo
             return extendInfoMap;
         }
 
-        private static object getAcctInfos()
-        {
+        private static object getAcctInfos() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 分账金额
             // obj.Add("div_amt", "test");
@@ -102,8 +96,7 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return objList;
         }
-        private static string getAcctSplitBunch()
-        {
+        private static string getAcctSplitBunch() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 百分比分账标志
             // obj.Add("percentage_flag", "");
@@ -114,8 +107,7 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string getRiskCheckData()
-        {
+        private static string getRiskCheckData() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // IP地址
             // obj.Add("ip_addr", "test");
@@ -126,8 +118,7 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string getTerminalDeviceInfo()
-        {
+        private static string getTerminalDeviceInfo() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 商户设备类型
             obj.Add("mer_device_type", "01");
@@ -156,8 +147,7 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static object getGoodsDetail()
-        {
+        private static object getGoodsDetail() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 商品的编号
             // obj.Add("goods_id", "test");
@@ -178,8 +168,7 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return objList;
         }
-        private static object getExtendParams()
-        {
+        private static object getExtendParams() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 业务主单号
             obj.Add("trade_component_order_id", "2024101001502300000002570023887054");
@@ -190,8 +179,7 @@ namespace BasePayDemo
 
             return obj;
         }
-        private static string getAlipayData()
-        {
+        private static string getAlipayData() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 业务扩展参数
             obj.Add("extend_params", getExtendParams());

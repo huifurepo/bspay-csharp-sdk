@@ -3,12 +3,12 @@ using System;
 namespace BasePaySdk.Request
 {
     /**
-     * 分期扣款
+     * 分期支付
      *
      * @author sdk-generator
      * @Description
      */
-    public class V2TradePayafteruseInstallmentPayRequest : BaseRequest
+    public class V2TradeInstallmentPaymentRequest : BaseRequest
     {
 
         /**
@@ -20,7 +20,7 @@ namespace BasePaySdk.Request
          */
         private string reqSeqId;
         /**
-         * 客户号
+         * 商户号
          */
         private string huifuId;
         /**
@@ -28,38 +28,38 @@ namespace BasePaySdk.Request
          */
         private string transAmt;
         /**
+         * 分期数
+         */
+        private string installmentNum;
+        /**
          * 商品描述
          */
         private string goodsDesc;
         /**
-         * 风控信息
+         * 安全信息
          */
         private string riskCheckData;
         /**
-         * 交易有效期
+         * 京东白条分期信息trans_type&#x3D;JDBT时，必填jsonObject字符串，京东白条分期相关信息通过该参数集上送
          */
-        private string timeExpire;
-        /**
-         * 支付宝扩展参数集合
-         */
-        private string alipayData;
+        private string jdbtData;
 
         public override string getFunctionCode() {
-            return FunctionCodeEnum.V2_TRADE_PAYAFTERUSE_INSTALLMENT_PAY;
+            return FunctionCodeEnum.V2_TRADE_INSTALLMENT_PAYMENT;
         }
 
-        public V2TradePayafteruseInstallmentPayRequest() {
+        public V2TradeInstallmentPaymentRequest() {
         }
 
-        public V2TradePayafteruseInstallmentPayRequest(string reqDate, string reqSeqId, string huifuId, string transAmt, string goodsDesc, string riskCheckData, string timeExpire, string alipayData) {
+        public V2TradeInstallmentPaymentRequest(string reqDate, string reqSeqId, string huifuId, string transAmt, string installmentNum, string goodsDesc, string riskCheckData, string jdbtData) {
             this.reqDate = reqDate;
             this.reqSeqId = reqSeqId;
             this.huifuId = huifuId;
             this.transAmt = transAmt;
+            this.installmentNum = installmentNum;
             this.goodsDesc = goodsDesc;
             this.riskCheckData = riskCheckData;
-            this.timeExpire = timeExpire;
-            this.alipayData = alipayData;
+            this.jdbtData = jdbtData;
         }
 
         public string getReqDate() {
@@ -94,6 +94,14 @@ namespace BasePaySdk.Request
             this.transAmt = transAmt;
         }
 
+        public string getInstallmentNum() {
+            return installmentNum;
+        }
+
+        public void setInstallmentNum(string installmentNum) {
+            this.installmentNum = installmentNum;
+        }
+
         public string getGoodsDesc() {
             return goodsDesc;
         }
@@ -110,20 +118,12 @@ namespace BasePaySdk.Request
             this.riskCheckData = riskCheckData;
         }
 
-        public string getTimeExpire() {
-            return timeExpire;
+        public string getJdbtData() {
+            return jdbtData;
         }
 
-        public void setTimeExpire(string timeExpire) {
-            this.timeExpire = timeExpire;
-        }
-
-        public string getAlipayData() {
-            return alipayData;
-        }
-
-        public void setAlipayData(string alipayData) {
-            this.alipayData = alipayData;
+        public void setJdbtData(string jdbtData) {
+            this.jdbtData = jdbtData;
         }
 
 

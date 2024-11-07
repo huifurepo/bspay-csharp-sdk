@@ -74,6 +74,8 @@ namespace BasePayDemo
             // extendInfoMap.Add("remark", "");
             // 异步通知地址
             extendInfoMap.Add("notify_url", "http://www.baidu.com");
+            // 大额转账支付账户信息数据
+            // extendInfoMap.Add("bank_info_data", getBankInfoData());
             return extendInfoMap;
         }
 
@@ -128,6 +130,21 @@ namespace BasePayDemo
             // obj.Add("base_station", "test");
             // ip地址
             obj.Add("ip_addr", "172.1.1.1");
+
+            return JsonConvert.SerializeObject(obj);
+        }
+        private static string getBankInfoData() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 付款方账户类型
+            // obj.Add("card_acct_type", "test");
+            // 省份
+            // obj.Add("province", "");
+            // 地区
+            // obj.Add("area", "");
+            // 银行编号
+            // obj.Add("bank_code", "");
+            // 联行号
+            // obj.Add("correspondent_code", "");
 
             return JsonConvert.SerializeObject(obj);
         }

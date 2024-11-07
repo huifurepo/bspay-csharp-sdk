@@ -257,6 +257,8 @@ namespace BasePayDemo
         }
         private static string getAlipayData() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 优惠明细参数
+            // obj.Add("ali_promo_params", "test");
             // 支付宝的店铺编号
             // obj.Add("alipay_store_id", "");
             // 订单包含的商品列表信息
@@ -271,6 +273,8 @@ namespace BasePayDemo
             // obj.Add("ext_user_info", getExtUserInfo());
             // 商户业务信息
             // obj.Add("ali_business_params", "");
+            // 订单描述
+            // obj.Add("body", "");
 
             return JsonConvert.SerializeObject(obj);
         }
@@ -296,13 +300,13 @@ namespace BasePayDemo
         private static string getRiskCheckData() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // ip地址
-            // obj.Add("ip_addr", "");
+            obj.Add("ip_addr", "180.167.105.130");
             // 基站地址
-            obj.Add("base_station", "3");
+            obj.Add("base_station", "192.168.1.1");
             // 纬度
-            obj.Add("latitude", "2");
+            obj.Add("latitude", "33.3");
             // 经度
-            obj.Add("longitude", "1");
+            obj.Add("longitude", "33.3");
 
             return JsonConvert.SerializeObject(obj);
         }

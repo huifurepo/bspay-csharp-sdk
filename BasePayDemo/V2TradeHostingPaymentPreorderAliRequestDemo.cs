@@ -76,6 +76,8 @@ namespace BasePayDemo
             // extendInfoMap.Add("biz_info", getBizInfo());
             // 异步通知地址
             extendInfoMap.Add("notify_url", "https://callback.service.com/xx");
+            // 支付宝参数集合
+            // extendInfoMap.Add("alipay_data", getAlipayData());
             return extendInfoMap;
         }
 
@@ -136,6 +138,77 @@ namespace BasePayDemo
             // obj.Add("payer_check_ali", getPayerCheckAli());
             // 个人付款人信息
             // obj.Add("person_payer", getPersonPayer());
+
+            return JsonConvert.SerializeObject(obj);
+        }
+        private static object getExtendParams() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 卡类型
+            // obj.Add("card_type", "");
+            // 支付宝点餐场景类型
+            // obj.Add("food_order_type", "");
+            // 花呗分期数
+            // obj.Add("hb_fq_num", "");
+            // 花呗卖家手续费百分比
+            // obj.Add("hb_fq_seller_percent", "");
+            // 行业数据回流信息
+            // obj.Add("industry_reflux_info", "");
+            // 信用卡分期资产方式
+            // obj.Add("fq_channels", "");
+            // 停车场id
+            // obj.Add("parking_id", "");
+            // 系统商编号
+            // obj.Add("sys_service_provider_id", "");
+
+            return obj;
+        }
+        private static object getGoodsDetail() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 商品的编号
+            // obj.Add("goods_id", "test");
+            // 商品名称
+            // obj.Add("goods_name", "test");
+            // 商品单价(元)
+            // obj.Add("price", "test");
+            // 商品数量
+            // obj.Add("quantity", "test");
+            // 商品描述信息
+            // obj.Add("body", "");
+            // 商品类目树
+            // obj.Add("categories_tree", "");
+            // 商品类目
+            // obj.Add("goods_category", "");
+            // 商品的展示地址
+            // obj.Add("show_url", "");
+
+            JArray objList = new JArray();
+            objList.Add(JToken.FromObject(obj));
+            return objList;
+        }
+        private static string getAlipayData() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 支付宝的店铺编号
+            // obj.Add("alipay_store_id", "");
+            // 业务扩展参数
+            // obj.Add("extend_params", getExtendParams());
+            // 订单包含的商品列表信息
+            // obj.Add("goods_detail", getGoodsDetail());
+            // 商户原始订单号
+            // obj.Add("merchant_order_no", "");
+            // 商户操作员编号
+            // obj.Add("operator_id", "");
+            // 销售产品码
+            // obj.Add("product_code", "");
+            // 卖家支付宝用户号
+            // obj.Add("seller_id", "");
+            // 商户门店编号
+            // obj.Add("store_id", "");
+            // 订单标题
+            // obj.Add("subject", "");
+            // 商家门店名称
+            // obj.Add("store_name", "");
+            // 商户业务信息
+            // obj.Add("ali_business_params", "");
 
             return JsonConvert.SerializeObject(obj);
         }

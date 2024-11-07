@@ -9,8 +9,12 @@ namespace BasePaySdk.Request
     public class FunctionCodeEnum
     {
         /**
-        * 服务单关闭
-        */
+         * 分期支付
+         */
+        public const string V2_TRADE_INSTALLMENT_PAYMENT = "v2.trade.installment.payment";
+        /**
+         * 服务单关闭
+         */
         public const string V2_TRADE_PAYAFTERUSE_CREDITBIZORDER_CLOSE = "v2.trade.payafteruse.creditbizorder.close";
         /**
          * 服务单查询
@@ -41,11 +45,35 @@ namespace BasePaySdk.Request
          */
         public const string V2_TRADE_PAYAFTERUSE_INSTALLMENT_CREATE = "v2.trade.payafteruse.installment.create";
         /**
+         * 快捷支付
+         */
+        public const string V3_TRADE_ONLINEPAYMENT_QUICKPAY_PAY = "v3.trade.onlinepayment.quickpay.pay";
+        /**
+         * 快捷短信发送
+         */
+        public const string V3_TRADE_ONLINEPAYMENT_QUICKPAY_SMSSEND = "v3.trade.onlinepayment.quickpay.smssend";
+        /**
+         * 电子账户余额查询
+         */
+        public const string V2_BANK_BALANCE_QUERY = "v2.bank.balance.query";
+        /**
+         * 不明来账列表查询
+         */
+        public const string V2_TRADE_PAYMENT_ZXE_UNKNOWNINCOME_QUERY = "v2.trade.payment.zxe.unknownincome.query";
+        /**
+         * 不明来账处理结果查询
+         */
+        public const string V2_TRADE_PAYMENT_ZXE_UNKNOWNINCOME_DISPOSEQUERY = "v2.trade.payment.zxe.unknownincome.disposequery";
+        /**
+         * 不明来账处理
+         */
+        public const string V2_TRADE_PAYMENT_ZXE_UNKNOWNINCOME_DISPOSE = "v2.trade.payment.zxe.unknownincome.dispose";
+        /**
          * 云MIS订单详情查询接口
          */
         public const string V2_TRADE_CLOUDMIS_ORDER_DETAIL = "v2.trade.cloudmis.order.detail";
         /**
-         * 终端云MIS接入
+         * 终端云MIS交易
          */
         public const string V2_TRADE_CLOUDMIS_DEVICE_INFORMATION_MIS = "v2.trade.cloudmis.device.information.mis";
         /**
@@ -263,7 +291,7 @@ namespace BasePaySdk.Request
          */
         public const string V2_INVOICE_SELFSCANOPEN = "v2.invoice.selfscanopen";
         /**
-         * 发票开具申请查询
+         * 发票开具状态查询
          */
         public const string V2_INVOICE_QUERYAPPLY = "v2.invoice.queryapply";
         /**

@@ -16,27 +16,22 @@ namespace BasePaySdk.Request
          */
         private string huifuId;
 
-        public override string getFunctionCode()
-        {
+        public override string getFunctionCode() {
             return FunctionCodeEnum.V2_TRADE_PAYAFTERUSE_CREDITBIZORDER_QUERY;
         }
 
-        public V2TradePayafteruseCreditbizorderQueryRequest()
-        {
+        public V2TradePayafteruseCreditbizorderQueryRequest() {
         }
 
-        public V2TradePayafteruseCreditbizorderQueryRequest(string huifuId)
-        {
+        public V2TradePayafteruseCreditbizorderQueryRequest(string huifuId) {
             this.huifuId = huifuId;
         }
 
-        public string getHuifuId()
-        {
+        public string getHuifuId() {
             return huifuId;
         }
 
-        public void setHuifuId(string huifuId)
-        {
+        public void setHuifuId(string huifuId) {
             this.huifuId = huifuId;
         }
 

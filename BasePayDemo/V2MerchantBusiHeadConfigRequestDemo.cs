@@ -165,7 +165,7 @@ namespace BasePayDemo
             // 借记卡手续费（%）
             // obj.Add("debit_fee_rate", "test");
             // 贷记卡手续费（%）
-            // obj.Add("credit_fee_limit", "test");
+            // obj.Add("credit_fee_rate&lt;!--任雪梅发现要改正--&gt;", "test");
             // 允许开通银行卡业务
             // obj.Add("open_flag", "test");
             // 借记卡封顶值

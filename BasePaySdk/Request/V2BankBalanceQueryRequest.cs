@@ -3,12 +3,12 @@ using System;
 namespace BasePaySdk.Request
 {
     /**
-     * 分期单创建
+     * 电子账户余额查询
      *
      * @author sdk-generator
      * @Description
      */
-    public class V2TradePayafteruseInstallmentCreateRequest : BaseRequest
+    public class V2BankBalanceQueryRequest : BaseRequest
     {
 
         /**
@@ -20,26 +20,21 @@ namespace BasePaySdk.Request
          */
         private string reqDate;
         /**
-         * 商户号
+         * 汇付Id
          */
         private string huifuId;
-        /**
-         * 分期金额
-         */
-        private string fqAmt;
 
         public override string getFunctionCode() {
-            return FunctionCodeEnum.V2_TRADE_PAYAFTERUSE_INSTALLMENT_CREATE;
+            return FunctionCodeEnum.V2_BANK_BALANCE_QUERY;
         }
 
-        public V2TradePayafteruseInstallmentCreateRequest() {
+        public V2BankBalanceQueryRequest() {
         }
 
-        public V2TradePayafteruseInstallmentCreateRequest(string reqSeqId, string reqDate, string huifuId, string fqAmt) {
+        public V2BankBalanceQueryRequest(string reqSeqId, string reqDate, string huifuId) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.huifuId = huifuId;
-            this.fqAmt = fqAmt;
         }
 
         public string getReqSeqId() {
@@ -64,14 +59,6 @@ namespace BasePaySdk.Request
 
         public void setHuifuId(string huifuId) {
             this.huifuId = huifuId;
-        }
-
-        public string getFqAmt() {
-            return fqAmt;
-        }
-
-        public void setFqAmt(string fqAmt) {
-            this.fqAmt = fqAmt;
         }
 
 

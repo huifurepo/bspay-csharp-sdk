@@ -40,22 +40,6 @@ namespace BasePaySdk.Request
          */
         private string orgReqDate;
         /**
-         * 实际打款日期
-         */
-        private string remitDate;
-        /**
-         * 实际付款方姓名
-         */
-        private string certificateName;
-        /**
-         * 实际付款方银行卡号
-         */
-        private string bankCardNo;
-        /**
-         * 实际付款方银行名称
-         */
-        private string bankName;
-        /**
          * 异步通知地址
          */
         private string notifyUrl;
@@ -75,7 +59,7 @@ namespace BasePaySdk.Request
         public V2TradeOnlinepaymentTransferBankmistakeApplyRequest() {
         }
 
-        public V2TradeOnlinepaymentTransferBankmistakeApplyRequest(string reqSeqId, string reqDate, string huifuId, string transAmt, string orderType, string orgReqSeqId, string orgReqDate, string remitDate, string certificateName, string bankCardNo, string bankName, string notifyUrl, string goodsDesc, string certificateFileId) {
+        public V2TradeOnlinepaymentTransferBankmistakeApplyRequest(string reqSeqId, string reqDate, string huifuId, string transAmt, string orderType, string orgReqSeqId, string orgReqDate, string notifyUrl, string goodsDesc, string certificateFileId) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.huifuId = huifuId;
@@ -83,10 +67,6 @@ namespace BasePaySdk.Request
             this.orderType = orderType;
             this.orgReqSeqId = orgReqSeqId;
             this.orgReqDate = orgReqDate;
-            this.remitDate = remitDate;
-            this.certificateName = certificateName;
-            this.bankCardNo = bankCardNo;
-            this.bankName = bankName;
             this.notifyUrl = notifyUrl;
             this.goodsDesc = goodsDesc;
             this.certificateFileId = certificateFileId;
@@ -146,38 +126,6 @@ namespace BasePaySdk.Request
 
         public void setOrgReqDate(string orgReqDate) {
             this.orgReqDate = orgReqDate;
-        }
-
-        public string getRemitDate() {
-            return remitDate;
-        }
-
-        public void setRemitDate(string remitDate) {
-            this.remitDate = remitDate;
-        }
-
-        public string getCertificateName() {
-            return certificateName;
-        }
-
-        public void setCertificateName(string certificateName) {
-            this.certificateName = certificateName;
-        }
-
-        public string getBankCardNo() {
-            return bankCardNo;
-        }
-
-        public void setBankCardNo(string bankCardNo) {
-            this.bankCardNo = bankCardNo;
-        }
-
-        public string getBankName() {
-            return bankName;
-        }
-
-        public void setBankName(string bankName) {
-            this.bankName = bankName;
         }
 
         public string getNotifyUrl() {

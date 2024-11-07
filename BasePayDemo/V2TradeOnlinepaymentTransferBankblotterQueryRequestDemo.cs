@@ -60,6 +60,16 @@ namespace BasePayDemo
         private static Dictionary<string, object> getExtendInfos() {
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
+            // 实际付款方银行卡号
+            // extendInfoMap.Add("bank_card_no", "");
+            // 实际付款方姓名
+            extendInfoMap.Add("certificate_name", "沈显龙");
+            // 实际付款日期
+            // extendInfoMap.Add("trans_date", "");
+            // 交易金额
+            // extendInfoMap.Add("trans_amt", "");
+            // 收款账号/打款备注
+            // extendInfoMap.Add("bank_remark", "");
             return extendInfoMap;
         }
 

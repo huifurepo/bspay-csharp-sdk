@@ -3,7 +3,7 @@ using System;
 namespace BasePaySdk.Request
 {
     /**
-     * 发票开具申请查询
+     * 发票开具状态查询
      *
      * @author sdk-generator
      * @Description
@@ -20,13 +20,9 @@ namespace BasePaySdk.Request
          */
         private string reqDate;
         /**
-         * 渠道号汇付商户号为空时，必传；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：6666000109812124&lt;/font&gt;
+         * 汇付商户号
          */
-        private string channelId;
-        /**
-         * 流水号
-         */
-        private string seqId;
+        private string huifuId;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_INVOICE_QUERYAPPLY;
@@ -35,11 +31,10 @@ namespace BasePaySdk.Request
         public V2InvoiceQueryapplyRequest() {
         }
 
-        public V2InvoiceQueryapplyRequest(string reqSeqId, string reqDate, string channelId, string seqId) {
+        public V2InvoiceQueryapplyRequest(string reqSeqId, string reqDate, string huifuId) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
-            this.channelId = channelId;
-            this.seqId = seqId;
+            this.huifuId = huifuId;
         }
 
         public string getReqSeqId() {
@@ -58,20 +53,12 @@ namespace BasePaySdk.Request
             this.reqDate = reqDate;
         }
 
-        public string getChannelId() {
-            return channelId;
+        public string getHuifuId() {
+            return huifuId;
         }
 
-        public void setChannelId(string channelId) {
-            this.channelId = channelId;
-        }
-
-        public string getSeqId() {
-            return seqId;
-        }
-
-        public void setSeqId(string seqId) {
-            this.seqId = seqId;
+        public void setHuifuId(string huifuId) {
+            this.huifuId = huifuId;
         }
 
 
