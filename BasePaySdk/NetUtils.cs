@@ -73,13 +73,13 @@ namespace BasePaySdk
                 {
                     responseText = streamReader.ReadToEnd();
                     CoreUtils.Log("response:" + responseText);
-                    if (responseText != null && responseText.Contains("html")) {
+                 /*   if (responseText != null && responseText.Contains("html")) {
 
                         // 页面版本支付，需要将页面直接返回给
                         responseJson = new Dictionary<string, object>();
                         responseJson.Add("data", responseText);
                         return responseJson;
-                    }
+                    }*/
                     Dictionary<string, object> response = (Dictionary<string, object>)JsonConvert.DeserializeObject<Dictionary<string, object>>(responseText);
                     Dictionary<string, object> data = (Dictionary<string, object>)JsonConvert.DeserializeObject<Dictionary<string, object>>(response["data"].ToString());
                 
