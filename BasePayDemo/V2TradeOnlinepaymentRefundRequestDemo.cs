@@ -135,8 +135,6 @@ namespace BasePayDemo
         }
         private static string getBankInfoData() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 付款方账户类型
-            // obj.Add("card_acct_type", "test");
             // 省份
             // obj.Add("province", "");
             // 地区
@@ -145,6 +143,8 @@ namespace BasePayDemo
             // obj.Add("bank_code", "");
             // 联行号
             // obj.Add("correspondent_code", "");
+            // 付款方账户类型
+            // obj.Add("card_acct_type", "");
 
             return JsonConvert.SerializeObject(obj);
         }

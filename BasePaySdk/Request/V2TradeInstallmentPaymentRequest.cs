@@ -43,6 +43,10 @@ namespace BasePaySdk.Request
          * 京东白条分期信息trans_type&#x3D;JDBT时，必填jsonObject字符串，京东白条分期相关信息通过该参数集上送
          */
         private string jdbtData;
+        /**
+         * 银联聚分期信息trans_type&#x3D;YLJFQ-银联聚分期时，必填jsonObject字符串，银联聚分期相关信息通过该参数集上送
+         */
+        private string yljfqData;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_TRADE_INSTALLMENT_PAYMENT;
@@ -51,7 +55,7 @@ namespace BasePaySdk.Request
         public V2TradeInstallmentPaymentRequest() {
         }
 
-        public V2TradeInstallmentPaymentRequest(string reqDate, string reqSeqId, string huifuId, string transAmt, string installmentNum, string goodsDesc, string riskCheckData, string jdbtData) {
+        public V2TradeInstallmentPaymentRequest(string reqDate, string reqSeqId, string huifuId, string transAmt, string installmentNum, string goodsDesc, string riskCheckData, string jdbtData, string yljfqData) {
             this.reqDate = reqDate;
             this.reqSeqId = reqSeqId;
             this.huifuId = huifuId;
@@ -60,6 +64,7 @@ namespace BasePaySdk.Request
             this.goodsDesc = goodsDesc;
             this.riskCheckData = riskCheckData;
             this.jdbtData = jdbtData;
+            this.yljfqData = yljfqData;
         }
 
         public string getReqDate() {
@@ -124,6 +129,14 @@ namespace BasePaySdk.Request
 
         public void setJdbtData(string jdbtData) {
             this.jdbtData = jdbtData;
+        }
+
+        public string getYljfqData() {
+            return yljfqData;
+        }
+
+        public void setYljfqData(string yljfqData) {
+            this.yljfqData = yljfqData;
         }
 
 

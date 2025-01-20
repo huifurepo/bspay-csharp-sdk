@@ -40,6 +40,10 @@ namespace BasePaySdk.Request
          */
         private string certBeginDate;
         /**
+         * 个人国籍个人证件类型为外国人居留证时，必填，参见《[国籍编码](https://cloudpnrcdn.oss-cn-shanghai.aliyuncs.com/opps/api/prod/download_file/area/%E5%9B%BD%E7%B1%8D.xlsx)》&lt;font color&#x3D;&quot;green&quot;&gt;示例值：CHN&lt;/font&gt;
+         */
+        private string certNationality;
+        /**
          * 手机号
          */
         private string mobileNo;
@@ -55,7 +59,7 @@ namespace BasePaySdk.Request
         public V2UserBasicdataIndvRequest() {
         }
 
-        public V2UserBasicdataIndvRequest(string reqSeqId, string reqDate, string name, string certType, string certNo, string certValidityType, string certBeginDate, string mobileNo, string address) {
+        public V2UserBasicdataIndvRequest(string reqSeqId, string reqDate, string name, string certType, string certNo, string certValidityType, string certBeginDate, string certNationality, string mobileNo, string address) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.name = name;
@@ -63,6 +67,7 @@ namespace BasePaySdk.Request
             this.certNo = certNo;
             this.certValidityType = certValidityType;
             this.certBeginDate = certBeginDate;
+            this.certNationality = certNationality;
             this.mobileNo = mobileNo;
             this.address = address;
         }
@@ -121,6 +126,14 @@ namespace BasePaySdk.Request
 
         public void setCertBeginDate(string certBeginDate) {
             this.certBeginDate = certBeginDate;
+        }
+
+        public string getCertNationality() {
+            return certNationality;
+        }
+
+        public void setCertNationality(string certNationality) {
+            this.certNationality = certNationality;
         }
 
         public string getMobileNo() {

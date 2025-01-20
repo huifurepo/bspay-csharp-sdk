@@ -64,6 +64,8 @@ namespace BasePayDemo
         private static Dictionary<string, object> getExtendInfos() {
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
+            // 收款汇付账户号
+            // extendInfoMap.Add("acct_id", "");
             // 收银台样式
             // extendInfoMap.Add("style_id", "");
             // 是否延迟交易
@@ -76,8 +78,12 @@ namespace BasePayDemo
             // extendInfoMap.Add("biz_info", getBizInfo());
             // 交易异步通知地址
             extendInfoMap.Add("notify_url", "https://callback.service.com/xx");
+            // 回调地址
+            // extendInfoMap.Add("callback_url", "");
             // 微信参数集合
             // extendInfoMap.Add("wx_data", getWxData());
+            // 设备信息
+            // extendInfoMap.Add("terminal_device_data", getTerminalDeviceData());
             return extendInfoMap;
         }
 
@@ -87,6 +93,10 @@ namespace BasePayDemo
             obj.Add("div_amt", "0.01");
             // 分账接收方ID
             obj.Add("huifu_id", "6666000109133323");
+            // 收款汇付账户号
+            // obj.Add("acct_id", "");
+            // 分账百分比%
+            // obj.Add("percentage_div", "");
 
             JArray objList = new JArray();
             objList.Add(JToken.FromObject(obj));
@@ -96,6 +106,10 @@ namespace BasePayDemo
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 分账明细
             obj.Add("acct_infos", getAcctInfosRucan());
+            // 百分比分账标志
+            // obj.Add("percentage_flag", "");
+            // 是否净值分账
+            // obj.Add("is_clean_split", "");
 
             return JsonConvert.SerializeObject(obj);
         }
@@ -217,6 +231,13 @@ namespace BasePayDemo
             // obj.Add("product_id", "");
             // 指定支付者
             // obj.Add("limit_payer", "");
+
+            return JsonConvert.SerializeObject(obj);
+        }
+        private static string getTerminalDeviceData() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 汇付机具号
+            // obj.Add("devs_id", "test");
 
             return JsonConvert.SerializeObject(obj);
         }

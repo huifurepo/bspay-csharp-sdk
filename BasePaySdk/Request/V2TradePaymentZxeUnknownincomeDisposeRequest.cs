@@ -24,9 +24,25 @@ namespace BasePaySdk.Request
          */
         private string huifuId;
         /**
-         * 银行侧交易流水号
+         * 银行侧交易流水号参照异步通知里的bank_serial_no；&lt;br/&gt;“银行侧交易流水号”和“来账银行账号，来账账户名称，交易金额，交易日期”二选一必填。
          */
         private string bankSerialNo;
+        /**
+         * 来账银行账号需要密文传输，使用汇付RSA公钥加密(加密前64位，加密后最长2048位），参见[参考文档](https://paas.huifu.com/open/doc/guide/#/api_jiami_jiemi)；示例值：Ly+fnExeyPOTzfOtgRRur77nJB9TAe4PGgK9M……fc6XJXZss&#x3D;“银行侧交易流水号”和“来账银行账号，来账账户名称，交易金额，交易日期”二选一必填。
+         */
+        private string payAcct;
+        /**
+         * 来账账户名称“银行侧交易流水号”和“来账银行账号，来账账户名称，交易金额，交易日期”二选一必填。
+         */
+        private string payAcctName;
+        /**
+         * 交易金额“银行侧交易流水号”和“来账银行账号，来账账户名称，交易金额，交易日期”二选一必填。
+         */
+        private string transAmt;
+        /**
+         * 交易日期“银行侧交易流水号”和“来账银行账号，来账账户名称，交易金额，交易日期”二选一必填。
+         */
+        private string transDate;
         /**
          * 操作类型
          */
@@ -39,11 +55,15 @@ namespace BasePaySdk.Request
         public V2TradePaymentZxeUnknownincomeDisposeRequest() {
         }
 
-        public V2TradePaymentZxeUnknownincomeDisposeRequest(string reqSeqId, string reqDate, string huifuId, string bankSerialNo, string operateType) {
+        public V2TradePaymentZxeUnknownincomeDisposeRequest(string reqSeqId, string reqDate, string huifuId, string bankSerialNo, string payAcct, string payAcctName, string transAmt, string transDate, string operateType) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.huifuId = huifuId;
             this.bankSerialNo = bankSerialNo;
+            this.payAcct = payAcct;
+            this.payAcctName = payAcctName;
+            this.transAmt = transAmt;
+            this.transDate = transDate;
             this.operateType = operateType;
         }
 
@@ -77,6 +97,38 @@ namespace BasePaySdk.Request
 
         public void setBankSerialNo(string bankSerialNo) {
             this.bankSerialNo = bankSerialNo;
+        }
+
+        public string getPayAcct() {
+            return payAcct;
+        }
+
+        public void setPayAcct(string payAcct) {
+            this.payAcct = payAcct;
+        }
+
+        public string getPayAcctName() {
+            return payAcctName;
+        }
+
+        public void setPayAcctName(string payAcctName) {
+            this.payAcctName = payAcctName;
+        }
+
+        public string getTransAmt() {
+            return transAmt;
+        }
+
+        public void setTransAmt(string transAmt) {
+            this.transAmt = transAmt;
+        }
+
+        public string getTransDate() {
+            return transDate;
+        }
+
+        public void setTransDate(string transDate) {
+            this.transDate = transDate;
         }
 
         public string getOperateType() {

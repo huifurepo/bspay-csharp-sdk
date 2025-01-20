@@ -90,6 +90,8 @@ namespace BasePayDemo
             // extendInfoMap.Add("dynamic_flag", "");
             // 订单失效时间
             // extendInfoMap.Add("time_expire", "");
+            // 手续费扣款标志
+            // extendInfoMap.Add("fee_flag", "");
             return extendInfoMap;
         }
 

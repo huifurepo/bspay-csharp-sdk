@@ -39,6 +39,10 @@ namespace BasePaySdk.Request
          * 银行编码
          */
         private string bankCode;
+        /**
+         * 手机号
+         */
+        private string mobileNo;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_LARGEAMT_BINDCARD_BIND;
@@ -47,7 +51,7 @@ namespace BasePaySdk.Request
         public V2LargeamtBindcardBindRequest() {
         }
 
-        public V2LargeamtBindcardBindRequest(string reqSeqId, string reqDate, string huifuId, string cardType, string cardName, string cardNo, string bankCode) {
+        public V2LargeamtBindcardBindRequest(string reqSeqId, string reqDate, string huifuId, string cardType, string cardName, string cardNo, string bankCode, string mobileNo) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.huifuId = huifuId;
@@ -55,6 +59,7 @@ namespace BasePaySdk.Request
             this.cardName = cardName;
             this.cardNo = cardNo;
             this.bankCode = bankCode;
+            this.mobileNo = mobileNo;
         }
 
         public string getReqSeqId() {
@@ -111,6 +116,14 @@ namespace BasePaySdk.Request
 
         public void setBankCode(string bankCode) {
             this.bankCode = bankCode;
+        }
+
+        public string getMobileNo() {
+            return mobileNo;
+        }
+
+        public void setMobileNo(string mobileNo) {
+            this.mobileNo = mobileNo;
         }
 
 

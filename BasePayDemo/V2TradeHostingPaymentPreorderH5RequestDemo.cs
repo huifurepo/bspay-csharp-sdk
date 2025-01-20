@@ -64,6 +64,8 @@ namespace BasePayDemo
         private static Dictionary<string, object> getExtendInfos() {
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
+            // 收款汇付账户号
+            // extendInfoMap.Add("acct_id", "");
             // 收银台样式
             // extendInfoMap.Add("style_id", "");
             // 是否延迟交易
@@ -86,6 +88,8 @@ namespace BasePayDemo
             // extendInfoMap.Add("alipay_data", getAlipayData());
             // 银联参数集合
             // extendInfoMap.Add("unionpay_data", getUnionpayData());
+            // 设备信息
+            // extendInfoMap.Add("terminal_device_data", getTerminalDeviceData());
             return extendInfoMap;
         }
 
@@ -95,6 +99,10 @@ namespace BasePayDemo
             obj.Add("div_amt", "0.08");
             // 分账接收方ID
             obj.Add("huifu_id", "6666000111546360");
+            // 收款汇付账户号
+            // obj.Add("acct_id", "");
+            // 分账百分比%
+            // obj.Add("percentage_div", "");
 
             JArray objList = new JArray();
             objList.Add(JToken.FromObject(obj));
@@ -104,6 +112,10 @@ namespace BasePayDemo
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 分账明细
             obj.Add("acct_infos", getAcctInfosRucan());
+            // 百分比分账标志
+            // obj.Add("percentage_flag", "");
+            // 是否净值分账
+            // obj.Add("is_clean_split", "");
 
             return JsonConvert.SerializeObject(obj);
         }
@@ -256,16 +268,22 @@ namespace BasePayDemo
         }
         private static object getGoodsDetail() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 商品编码
+            // 商品的编号
             // obj.Add("goods_id", "test");
-            // 商品优惠金额
-            // obj.Add("discount_amount", "test");
+            // 商品名称
+            // obj.Add("goods_name", "test");
+            // 商品单价(元)
+            // obj.Add("price", "test");
             // 商品数量
             // obj.Add("quantity", "test");
-            // 商品价格
-            // obj.Add("price", "test");
-            // 商品备注
-            // obj.Add("goods_remark", "");
+            // 商品描述信息
+            // obj.Add("body", "");
+            // 商品类目树
+            // obj.Add("categories_tree", "");
+            // 商品类目
+            // obj.Add("goods_category", "");
+            // 商品的展示地址
+            // obj.Add("show_url", "");
 
             JArray objList = new JArray();
             objList.Add(JToken.FromObject(obj));
@@ -329,6 +347,13 @@ namespace BasePayDemo
             // obj.Add("req_reserved", "");
             // 终端信息
             // obj.Add("term_info", "");
+
+            return JsonConvert.SerializeObject(obj);
+        }
+        private static string getTerminalDeviceData() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 汇付机具号
+            // obj.Add("devs_id", "test");
 
             return JsonConvert.SerializeObject(obj);
         }

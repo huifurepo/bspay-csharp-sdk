@@ -63,6 +63,14 @@ namespace BasePaySdk.Request
          * 开票人信息
          */
         private string payerInfo;
+        /**
+         * 不动产销售特殊字段specialFlag为05时，必填；jsonArray格式
+         */
+        private string estateSales;
+        /**
+         * 不动产租赁特殊字段specialFlag为16时，必填；jsonArray格式
+         */
+        private string estateLease;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_INVOICE_OPEN;
@@ -71,7 +79,7 @@ namespace BasePaySdk.Request
         public V2InvoiceOpenRequest() {
         }
 
-        public V2InvoiceOpenRequest(string reqSeqId, string reqDate, string channelId, string ivcType, string openType, string buyerName, string orderAmt, string redApplyReason, string redApplySource, string oriIvcCode, string oriIvcNumber, string goodsInfos, string payerInfo) {
+        public V2InvoiceOpenRequest(string reqSeqId, string reqDate, string channelId, string ivcType, string openType, string buyerName, string orderAmt, string redApplyReason, string redApplySource, string oriIvcCode, string oriIvcNumber, string goodsInfos, string payerInfo, string estateSales, string estateLease) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.channelId = channelId;
@@ -85,6 +93,8 @@ namespace BasePaySdk.Request
             this.oriIvcNumber = oriIvcNumber;
             this.goodsInfos = goodsInfos;
             this.payerInfo = payerInfo;
+            this.estateSales = estateSales;
+            this.estateLease = estateLease;
         }
 
         public string getReqSeqId() {
@@ -189,6 +199,22 @@ namespace BasePaySdk.Request
 
         public void setPayerInfo(string payerInfo) {
             this.payerInfo = payerInfo;
+        }
+
+        public string getEstateSales() {
+            return estateSales;
+        }
+
+        public void setEstateSales(string estateSales) {
+            this.estateSales = estateSales;
+        }
+
+        public string getEstateLease() {
+            return estateLease;
+        }
+
+        public void setEstateLease(string estateLease) {
+            this.estateLease = estateLease;
         }
 
 

@@ -62,6 +62,8 @@ namespace BasePayDemo
             extendInfoMap.Add("hb_fq_fee_list", getHbFqFeeList());
             // 白条分期配置对象
             // extendInfoMap.Add("jdbt_data", getJdbtData());
+            // 银联聚分期配置对象
+            // extendInfoMap.Add("yljfq_data", getYljfqData());
             return extendInfoMap;
         }
 
@@ -181,6 +183,59 @@ namespace BasePayDemo
             // obj.Add("name", "");
             // 签约人身份证号
             // obj.Add("cert_no", "");
+
+            return JsonConvert.SerializeObject(obj);
+        }
+        private static string getYljfqFeeData() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 支付场景
+            // obj.Add("pay_scene", "test");
+            // 业务开通标识
+            // obj.Add("open_flag", "test");
+            // 贴息模式
+            // obj.Add("discount_model", "");
+            // 手续费率(%)
+            // obj.Add("fee_rate", "");
+            // 手续费扣取方式
+            // obj.Add("fee_rec_type", "");
+            // 交易手续费扣款标记
+            // obj.Add("fee_flag", "");
+            // 手续费外扣的汇付商户号
+            // obj.Add("out_fee_huifu_id", "");
+            // 手续费外扣的汇付账户号
+            // obj.Add("out_fee_acct_id", "");
+
+            JArray objList = new JArray();
+            objList.Add(JToken.FromObject(obj));
+            return JsonConvert.SerializeObject(objList);
+        }
+        private static object getFileList() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 文件id
+            // obj.Add("file_id", "test");
+            // 文件类型
+            // obj.Add("file_type", "");
+
+            JArray objList = new JArray();
+            objList.Add(JToken.FromObject(obj));
+            return objList;
+        }
+        private static string getYljfqData() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 商户汇付Id
+            // obj.Add("huifu_id", "test");
+            // 签约人类型
+            // obj.Add("sign_user_type", "test");
+            // 签约人手机号
+            // obj.Add("mobile_no", "test");
+            // 银联聚分期费率数据
+            // obj.Add("yljfq_fee_data", getYljfqFeeData());
+            // 签约人姓名
+            // obj.Add("name", "");
+            // 签约人身份证号
+            // obj.Add("cert_no", "");
+            // 补充业务信息
+            // obj.Add("file_list", getFileList());
 
             return JsonConvert.SerializeObject(obj);
         }

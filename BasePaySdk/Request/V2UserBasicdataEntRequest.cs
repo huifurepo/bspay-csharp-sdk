@@ -80,6 +80,10 @@ namespace BasePaySdk.Request
          */
         private string legalCertEndDate;
         /**
+         * 法人国籍法人的证件类型为外国人居留证时，必填，参见《[国籍编码](https://cloudpnrcdn.oss-cn-shanghai.aliyuncs.com/opps/api/prod/download_file/area/%E5%9B%BD%E7%B1%8D.xlsx)》&lt;font color&#x3D;&quot;green&quot;&gt;示例值：CHN&lt;/font&gt;
+         */
+        private string legalCertNationality;
+        /**
          * 联系人姓名
          */
         private string contactName;
@@ -99,7 +103,7 @@ namespace BasePaySdk.Request
         public V2UserBasicdataEntRequest() {
         }
 
-        public V2UserBasicdataEntRequest(string reqSeqId, string reqDate, string regName, string licenseCode, string licenseValidityType, string licenseBeginDate, string licenseEndDate, string regProvId, string regAreaId, string regDistrictId, string regDetail, string legalName, string legalCertType, string legalCertNo, string legalCertValidityType, string legalCertBeginDate, string legalCertEndDate, string contactName, string contactMobile, string loginName) {
+        public V2UserBasicdataEntRequest(string reqSeqId, string reqDate, string regName, string licenseCode, string licenseValidityType, string licenseBeginDate, string licenseEndDate, string regProvId, string regAreaId, string regDistrictId, string regDetail, string legalName, string legalCertType, string legalCertNo, string legalCertValidityType, string legalCertBeginDate, string legalCertEndDate, string legalCertNationality, string contactName, string contactMobile, string loginName) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.regName = regName;
@@ -117,6 +121,7 @@ namespace BasePaySdk.Request
             this.legalCertValidityType = legalCertValidityType;
             this.legalCertBeginDate = legalCertBeginDate;
             this.legalCertEndDate = legalCertEndDate;
+            this.legalCertNationality = legalCertNationality;
             this.contactName = contactName;
             this.contactMobile = contactMobile;
             this.loginName = loginName;
@@ -256,6 +261,14 @@ namespace BasePaySdk.Request
 
         public void setLegalCertEndDate(string legalCertEndDate) {
             this.legalCertEndDate = legalCertEndDate;
+        }
+
+        public string getLegalCertNationality() {
+            return legalCertNationality;
+        }
+
+        public void setLegalCertNationality(string legalCertNationality) {
+            this.legalCertNationality = legalCertNationality;
         }
 
         public string getContactName() {

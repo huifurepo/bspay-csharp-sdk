@@ -9,6 +9,10 @@ namespace BasePaySdk.Request
     public class FunctionCodeEnum
     {
         /**
+         * 交易确认查询接口
+         */
+        public const string V3_TRADE_PAYMENT_DELAYTRANS_CONFIRMQUERY = "v3.trade.payment.delaytrans.confirmquery";
+        /**
          * 分期支付
          */
         public const string V2_TRADE_INSTALLMENT_PAYMENT = "v2.trade.installment.payment";

@@ -32,8 +32,6 @@ namespace BasePayDemo
             request.setHuifuId("6666000108281250");
             // 订单总金额
             request.setTransAmt("0.01");
-            // 追踪ID
-            request.setSourceId("MjA4ODcwMjY5OTkwODI1N3wyMDIxMDAzMTUwNjM4MTE2fDE3Mjg1NDk3OTU0OTl8ZmFsc2V8VE9LRU5fSVNfTlVMTA==");
             // 支付宝用户ID
             request.setBuyerId("2088000000000000");
             // 订单标题
@@ -74,12 +72,18 @@ namespace BasePayDemo
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
             // 异步通知地址
             extendInfoMap.Add("notify_url", "https://mock.uutool.cn/4pga0jqv8vv0");
+            // 追踪ID
+            extendInfoMap.Add("source_id", "MjA4ODcwMjY5OTkwODI1N3wyMDIxMDAzMTUwNjM4MTE2fDE3Mjg1NDk3OTU0OTl8ZmFsc2V8VE9LRU5fSVNfTlVMTA==");
             // 支付宝交易号
             extendInfoMap.Add("trade_no", "2024092722001408251414114417");
             // 代扣协议签约场景
             extendInfoMap.Add("deduct_sign_scene", "INDUSTRY|XIANXIANG_BIKE_CHARGE");
             // 芝麻信用外部类⽬
             extendInfoMap.Add("zm_category_id", "credit_pay_for_battery_charging");
+            // 是否不需要核身
+            // extendInfoMap.Add("no_need_verify_identity", "");
+            // 开通成功后跳转地址
+            // extendInfoMap.Add("acceptance_jump_url", "");
             return extendInfoMap;
         }
 

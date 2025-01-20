@@ -50,6 +50,10 @@ namespace BasePayDemo
             request.setGoodsInfos(getGoodsInfosRc());
             // 开票人信息
             request.setPayerInfo(getPayerInfo());
+            // 不动产销售特殊字段specialFlag为05时，必填；jsonArray格式
+            // request.setEstateSales(getEstateSales());
+            // 不动产租赁特殊字段specialFlag为16时，必填；jsonArray格式
+            // request.setEstateLease(getEstateLease());
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -158,6 +162,52 @@ namespace BasePayDemo
             obj.Add("reviewer", "复核");
 
             return JsonConvert.SerializeObject(obj);
+        }
+        private static string getEstateSales() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 不动产地址
+            // obj.Add("addr", "test");
+            // 不动产详细地址
+            // obj.Add("detail_addr", "test");
+            // 跨地（市）标志
+            // obj.Add("area_flag", "test");
+            // 土地增值税项目编号
+            // obj.Add("tax_item_no", "test");
+            // 不动产单元代码/网签合同备案编号
+            // obj.Add("record_no", "test");
+            // 核定计税价格
+            // obj.Add("total_amt", "test");
+            // 实际成交含税金额
+            // obj.Add("deal_amt", "test");
+            // 房屋产权证书/不动产产权号
+            // obj.Add("estate_no", "test");
+            // 不动产单位
+            // obj.Add("unit", "test");
+
+            JArray objList = new JArray();
+            objList.Add(JToken.FromObject(obj));
+            return JsonConvert.SerializeObject(objList);
+        }
+        private static string getEstateLease() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 不动产地址
+            // obj.Add("addr", "test");
+            // 不动产详细地址
+            // obj.Add("detail_addr", "test");
+            // 跨地（市）标志
+            // obj.Add("area_flag", "test");
+            // 租赁日期起
+            // obj.Add("start_date", "test");
+            // 租赁日期止
+            // obj.Add("end_date", "test");
+            // 房屋产权证书/不动产产权号
+            // obj.Add("estate_no", "test");
+            // 不动产单位
+            // obj.Add("unit", "test");
+
+            JArray objList = new JArray();
+            objList.Add(JToken.FromObject(obj));
+            return JsonConvert.SerializeObject(objList);
         }
     }
 }

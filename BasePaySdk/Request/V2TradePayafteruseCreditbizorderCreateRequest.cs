@@ -28,10 +28,6 @@ namespace BasePaySdk.Request
          */
         private string transAmt;
         /**
-         * 追踪ID
-         */
-        private string sourceId;
-        /**
          * 支付宝用户ID
          */
         private string buyerId;
@@ -63,12 +59,11 @@ namespace BasePaySdk.Request
         public V2TradePayafteruseCreditbizorderCreateRequest() {
         }
 
-        public V2TradePayafteruseCreditbizorderCreateRequest(string reqSeqId, string reqDate, string huifuId, string transAmt, string sourceId, string buyerId, string title, string merchantBizType, string path, string zmServiceId, string itemInfos) {
+        public V2TradePayafteruseCreditbizorderCreateRequest(string reqSeqId, string reqDate, string huifuId, string transAmt, string buyerId, string title, string merchantBizType, string path, string zmServiceId, string itemInfos) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.huifuId = huifuId;
             this.transAmt = transAmt;
-            this.sourceId = sourceId;
             this.buyerId = buyerId;
             this.title = title;
             this.merchantBizType = merchantBizType;
@@ -107,14 +102,6 @@ namespace BasePaySdk.Request
 
         public void setTransAmt(string transAmt) {
             this.transAmt = transAmt;
-        }
-
-        public string getSourceId() {
-            return sourceId;
-        }
-
-        public void setSourceId(string sourceId) {
-            this.sourceId = sourceId;
         }
 
         public string getBuyerId() {

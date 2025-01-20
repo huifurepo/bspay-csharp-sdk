@@ -32,11 +32,11 @@ namespace BasePaySdk.Request
          */
         private string orderType;
         /**
-         * 原请求流水号
+         * 原请求流水号order_flag&#x3D;Y时必填；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：2022012514120615009&lt;/font&gt;
          */
         private string orgReqSeqId;
         /**
-         * 原请求日期
+         * 原请求日期格式:yyyyMMdd；order_flag&#x3D;Y时必填；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：20220125&lt;/font&gt;
          */
         private string orgReqDate;
         /**
@@ -47,10 +47,6 @@ namespace BasePaySdk.Request
          * 商品描述
          */
         private string goodsDesc;
-        /**
-         * 汇款凭证文件id
-         */
-        private string certificateFileId;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_TRADE_ONLINEPAYMENT_TRANSFER_BANKMISTAKE_APPLY;
@@ -59,7 +55,7 @@ namespace BasePaySdk.Request
         public V2TradeOnlinepaymentTransferBankmistakeApplyRequest() {
         }
 
-        public V2TradeOnlinepaymentTransferBankmistakeApplyRequest(string reqSeqId, string reqDate, string huifuId, string transAmt, string orderType, string orgReqSeqId, string orgReqDate, string notifyUrl, string goodsDesc, string certificateFileId) {
+        public V2TradeOnlinepaymentTransferBankmistakeApplyRequest(string reqSeqId, string reqDate, string huifuId, string transAmt, string orderType, string orgReqSeqId, string orgReqDate, string notifyUrl, string goodsDesc) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.huifuId = huifuId;
@@ -69,7 +65,6 @@ namespace BasePaySdk.Request
             this.orgReqDate = orgReqDate;
             this.notifyUrl = notifyUrl;
             this.goodsDesc = goodsDesc;
-            this.certificateFileId = certificateFileId;
         }
 
         public string getReqSeqId() {
@@ -142,14 +137,6 @@ namespace BasePaySdk.Request
 
         public void setGoodsDesc(string goodsDesc) {
             this.goodsDesc = goodsDesc;
-        }
-
-        public string getCertificateFileId() {
-            return certificateFileId;
-        }
-
-        public void setCertificateFileId(string certificateFileId) {
-            this.certificateFileId = certificateFileId;
         }
 
 
