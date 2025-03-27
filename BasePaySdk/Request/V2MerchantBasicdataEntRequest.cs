@@ -3,7 +3,7 @@ using System;
 namespace BasePaySdk.Request
 {
     /**
-     * 企业商户基本信息入驻(2022)
+     * 企业商户进件
      *
      * @author sdk-generator
      * @Description
@@ -20,7 +20,7 @@ namespace BasePaySdk.Request
          */
         private string reqDate;
         /**
-         * 直属渠道号
+         * 渠道商号
          */
         private string upperHuifuId;
         /**
@@ -32,33 +32,53 @@ namespace BasePaySdk.Request
          */
         private string shortName;
         /**
+         * 小票名称
+         */
+        private string receiptName;
+        /**
          * 公司类型
          */
         private string entType;
         /**
-         * 营业执照编号
+         * 所属行业参考[汇付MCC编码](https://paas.huifu.com/open/doc/api/#/csfl/api_csfl_hfmccbm) ；当use_head_info_flag&#x3D;Y时不填&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：5311&lt;/font&gt;
+         */
+        private string mcc;
+        /**
+         * 经营类型1：实体，2：虚拟 ；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：1&lt;/font&gt; ；当use_head_info_flag&#x3D;Y时不填
+         */
+        private string busiType;
+        /**
+         * 场景类型
+         */
+        private string sceneType;
+        /**
+         * 证照图片
+         */
+        private string licensePic;
+        /**
+         * 证照编号
          */
         private string licenseCode;
         /**
-         * 营业执照有效期类型
+         * 证照有效期类型
          */
         private string licenseValidityType;
         /**
-         * 营业执照有效期开始日期
+         * 证照有效期开始日期
          */
         private string licenseBeginDate;
         /**
-         * 营业执照有效期截止日期日期格式：yyyyMMdd，以北京时间为准。&lt;font color&#x3D;&quot;green&quot;&gt;示例值：20220125&lt;/font&gt;&lt;br/&gt;  当license_validity_type&#x3D;0时必填  ;当license_validity_type&#x3D;1时为空；当使用总部资质时不填
+         * 证照有效期截止日期格式：yyyyMMdd。&lt;font color&#x3D;&quot;green&quot;&gt;示例值：20220125&lt;/font&gt;&lt;br/&gt;  当license_validity_type&#x3D;0时必填；当license_validity_type&#x3D;1时为空；当use_head_info_flag&#x3D;Y时不填
          */
         private string licenseEndDate;
         /**
-         * 注册省
+         * 成立时间
          */
-        private string regProvId;
+        private string foundDate;
         /**
-         * 注册市
+         * 注册资本保留两位小数；条件选填，国营企业、私营企业、外资企业、事业单位、其他、集体经济必填，政府机构、个体工商户可为空；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：100.00&lt;/font&gt;
          */
-        private string regAreaId;
+        private string regCapital;
         /**
          * 注册区
          */
@@ -67,6 +87,14 @@ namespace BasePaySdk.Request
          * 注册详细地址
          */
         private string regDetail;
+        /**
+         * 经营区
+         */
+        private string districtId;
+        /**
+         * 经营详细地址scene_type&#x3D;OFFLINE/ALL时必填；&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：上海市徐汇区XX路XX号&lt;/font&gt;
+         */
+        private string detailAddr;
         /**
          * 法人姓名
          */
@@ -88,29 +116,21 @@ namespace BasePaySdk.Request
          */
         private string legalCertBeginDate;
         /**
-         * 法人证件有效期截止日期日期格式：yyyyMMdd，以北京时间为准。  &lt;font color&#x3D;&quot;green&quot;&gt;示例值：20220125&lt;/font&gt;&lt;br/&gt;当legal_cert_validity_type&#x3D;0时必填 ；当legal_cert_validity_type&#x3D;1时为空 ；当使用总部资质时不填
+         * 法人证件有效期截止日期日期格式：yyyyMMdd， &lt;font color&#x3D;&quot;green&quot;&gt;示例值：20220125&lt;/font&gt;&lt;br/&gt;当legal_cert_validity_type&#x3D;0时必填；&lt;br/&gt;当legal_cert_validity_type&#x3D;1时为空；&lt;br/&gt;当use_head_info_flag&#x3D;Y时不填
          */
         private string legalCertEndDate;
         /**
-         * 经营省
+         * 法人证件地址
          */
-        private string provId;
+        private string legalAddr;
         /**
-         * 经营市
+         * 法人身份证国徽面
          */
-        private string areaId;
+        private string legalCertBackPic;
         /**
-         * 经营区
+         * 法人身份证人像面
          */
-        private string districtId;
-        /**
-         * 经营详细地址
-         */
-        private string detailAddr;
-        /**
-         * 联系人姓名
-         */
-        private string contactName;
+        private string legalCertFrontPic;
         /**
          * 联系人手机号
          */
@@ -120,33 +140,57 @@ namespace BasePaySdk.Request
          */
         private string contactEmail;
         /**
-         * 客服电话
+         * 管理员账号
          */
-        private string servicePhone;
+        private string loginName;
         /**
-         * 经营类型
+         * 开户许可证企业商户需要，结算账号为对公账户必填；通过[图片上传接口](https://paas.huifu.com/open/doc/api/#/shgl/shjj/api_shjj_shtpsc)上传材料；文件类型：F08；&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：57cc7f00-600a-33ab-b614-6221bbf2e530&lt;/font&gt;
          */
-        private string busiType;
+        private string regAcctPic;
         /**
-         * 小票名称
-         */
-        private string receiptName;
-        /**
-         * 所属行业
-         */
-        private string mcc;
-        /**
-         * 结算卡信息配置
-         */
-        private string cardInfo;
-        /**
-         * 基本存款账户编号或核准号基本存款账户信息请填写基本存款账户编号；开户许可证请填写核准号 ；&lt;br/&gt;当注册地址或经营地址为如下地区时必填：浙江,海南,重庆,河南,江苏,宁波市,黑龙江,吉林,湖南,贵州,陕西,湖北 &lt;br/&gt;当使用总部资质时不填 ；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：J2900123456789&lt;/font&gt;
+         * 基本存款账户编号或核准号条件选填；当use_head_info_flag&#x3D;Y时不填 ；&lt;br/&gt;基本存款账户信息请填写基本存款账户编号；开户许可证请填写核准号。&lt;br/&gt;当注册地址或经营地址为如下地区时必填：江苏省、浙江省、湖南省、湖北省、云南省、贵州省、陕西省、河南省、吉林省、黑龙江省、福建省、海南省、重庆市、青海省、宁夏回族自治区；&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：J2900123456789&lt;/font&gt;
          */
         private string openLicenceNo;
         /**
-         * 总部汇付Id如果headOfficeFlag&#x3D;0，useHeadInfoFlag&#x3D;Y,且head_huifu_id不为空则基本信息部分复用总部的基本信息。&lt;br/&gt;如果head_office_flag&#x3D;0，则字段必填,如果head_office_flag&#x3D;1，总部汇付Id不可传&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：6666000123123123&lt;/font&gt;
+         * 银行卡信息配置
+         */
+        private string cardInfo;
+        /**
+         * 卡正面对私必填。通过[图片上传接口](https://paas.huifu.com/open/doc/api/#/shgl/shjj/api_shjj_shtpsc)上传材料；文件类型：F13 ；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：57cc7f00-600a-33ab-b614-6221bbf2e530&lt;/font&gt;
+         */
+        private string settleCardFrontPic;
+        /**
+         * 持卡人身份证国徽面**对私必填**。通过[图片上传接口](https://paas.huifu.com/open/doc/api/#/shgl/shjj/api_shjj_shtpsc)上传材料；文件类型：F56；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：57cc7f00-600a-33ab-b614-6221bbf2e530&lt;/font&gt;
+         */
+        private string settleCertBackPic;
+        /**
+         * 持卡人身份证人像面**对私必填**。通过[图片上传接口](https://paas.huifu.com/open/doc/api/#/shgl/shjj/api_shjj_shtpsc)上传材料；文件类型：F55；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：57cc7f00-600a-33ab-b614-6221bbf2e530&lt;/font&gt;
+         */
+        private string settleCertFrontPic;
+        /**
+         * 授权委托书**对私非法人、对公非同名结算必填**；通过[图片上传接口](https://paas.huifu.com/open/doc/api/#/shgl/shjj/api_shjj_shtpsc)上传材料；文件类型：F15；开通银行电子账户（中信E管家）需提供F520；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：57cc7f00-600a-33ab-b614-6221bbf2e530&lt;/font&gt;
+         */
+        private string authEnturstPic;
+        /**
+         * 上级汇付Id如果head_office_flag&#x3D;0，则字段必填，如果head_office_flag&#x3D;1，上级汇付Id不可传&lt;br/&gt;如果headOfficeFlag&#x3D;0，useHeadInfoFlag&#x3D;Y,且head_huifu_id不为空则基本信息部分复用上级的基本信息。&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：6666000123123123&lt;/font&gt;
          */
         private string headHuifuId;
+        /**
+         * 商户ICP备案编号商户ICP备案编号或网站许可证号；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：沪ICP备06046402号-28 &lt;/font&gt;&lt;br/&gt;类型为PC网站时，且为企业商户，且开通快捷或网银，或大额转账，或余额支付或分账业务（20%（不含）-100%），或为个人商户开通分账业务（10%（不含）-100%），必填
+         */
+        private string merIcp;
+        /**
+         * 店铺门头照
+         */
+        private string storeHeaderPic;
+        /**
+         * 店铺内景/工作区域照
+         */
+        private string storeIndoorPic;
+        /**
+         * 店铺收银台/公司前台照
+         */
+        private string storeCashierDeskPic;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_MERCHANT_BASICDATA_ENT;
@@ -155,41 +199,52 @@ namespace BasePaySdk.Request
         public V2MerchantBasicdataEntRequest() {
         }
 
-        public V2MerchantBasicdataEntRequest(string reqSeqId, string reqDate, string upperHuifuId, string regName, string shortName, string entType, string licenseCode, string licenseValidityType, string licenseBeginDate, string licenseEndDate, string regProvId, string regAreaId, string regDistrictId, string regDetail, string legalName, string legalCertType, string legalCertNo, string legalCertValidityType, string legalCertBeginDate, string legalCertEndDate, string provId, string areaId, string districtId, string detailAddr, string contactName, string contactMobileNo, string contactEmail, string servicePhone, string busiType, string receiptName, string mcc, string cardInfo, string openLicenceNo, string headHuifuId) {
+        public V2MerchantBasicdataEntRequest(string reqSeqId, string reqDate, string upperHuifuId, string regName, string shortName, string receiptName, string entType, string mcc, string busiType, string sceneType, string licensePic, string licenseCode, string licenseValidityType, string licenseBeginDate, string licenseEndDate, string foundDate, string regCapital, string regDistrictId, string regDetail, string districtId, string detailAddr, string legalName, string legalCertType, string legalCertNo, string legalCertValidityType, string legalCertBeginDate, string legalCertEndDate, string legalAddr, string legalCertBackPic, string legalCertFrontPic, string contactMobileNo, string contactEmail, string loginName, string regAcctPic, string openLicenceNo, string cardInfo, string settleCardFrontPic, string settleCertBackPic, string settleCertFrontPic, string authEnturstPic, string headHuifuId, string merIcp, string storeHeaderPic, string storeIndoorPic, string storeCashierDeskPic) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.upperHuifuId = upperHuifuId;
             this.regName = regName;
             this.shortName = shortName;
+            this.receiptName = receiptName;
             this.entType = entType;
+            this.mcc = mcc;
+            this.busiType = busiType;
+            this.sceneType = sceneType;
+            this.licensePic = licensePic;
             this.licenseCode = licenseCode;
             this.licenseValidityType = licenseValidityType;
             this.licenseBeginDate = licenseBeginDate;
             this.licenseEndDate = licenseEndDate;
-            this.regProvId = regProvId;
-            this.regAreaId = regAreaId;
+            this.foundDate = foundDate;
+            this.regCapital = regCapital;
             this.regDistrictId = regDistrictId;
             this.regDetail = regDetail;
+            this.districtId = districtId;
+            this.detailAddr = detailAddr;
             this.legalName = legalName;
             this.legalCertType = legalCertType;
             this.legalCertNo = legalCertNo;
             this.legalCertValidityType = legalCertValidityType;
             this.legalCertBeginDate = legalCertBeginDate;
             this.legalCertEndDate = legalCertEndDate;
-            this.provId = provId;
-            this.areaId = areaId;
-            this.districtId = districtId;
-            this.detailAddr = detailAddr;
-            this.contactName = contactName;
+            this.legalAddr = legalAddr;
+            this.legalCertBackPic = legalCertBackPic;
+            this.legalCertFrontPic = legalCertFrontPic;
             this.contactMobileNo = contactMobileNo;
             this.contactEmail = contactEmail;
-            this.servicePhone = servicePhone;
-            this.busiType = busiType;
-            this.receiptName = receiptName;
-            this.mcc = mcc;
-            this.cardInfo = cardInfo;
+            this.loginName = loginName;
+            this.regAcctPic = regAcctPic;
             this.openLicenceNo = openLicenceNo;
+            this.cardInfo = cardInfo;
+            this.settleCardFrontPic = settleCardFrontPic;
+            this.settleCertBackPic = settleCertBackPic;
+            this.settleCertFrontPic = settleCertFrontPic;
+            this.authEnturstPic = authEnturstPic;
             this.headHuifuId = headHuifuId;
+            this.merIcp = merIcp;
+            this.storeHeaderPic = storeHeaderPic;
+            this.storeIndoorPic = storeIndoorPic;
+            this.storeCashierDeskPic = storeCashierDeskPic;
         }
 
         public string getReqSeqId() {
@@ -232,12 +287,52 @@ namespace BasePaySdk.Request
             this.shortName = shortName;
         }
 
+        public string getReceiptName() {
+            return receiptName;
+        }
+
+        public void setReceiptName(string receiptName) {
+            this.receiptName = receiptName;
+        }
+
         public string getEntType() {
             return entType;
         }
 
         public void setEntType(string entType) {
             this.entType = entType;
+        }
+
+        public string getMcc() {
+            return mcc;
+        }
+
+        public void setMcc(string mcc) {
+            this.mcc = mcc;
+        }
+
+        public string getBusiType() {
+            return busiType;
+        }
+
+        public void setBusiType(string busiType) {
+            this.busiType = busiType;
+        }
+
+        public string getSceneType() {
+            return sceneType;
+        }
+
+        public void setSceneType(string sceneType) {
+            this.sceneType = sceneType;
+        }
+
+        public string getLicensePic() {
+            return licensePic;
+        }
+
+        public void setLicensePic(string licensePic) {
+            this.licensePic = licensePic;
         }
 
         public string getLicenseCode() {
@@ -272,20 +367,20 @@ namespace BasePaySdk.Request
             this.licenseEndDate = licenseEndDate;
         }
 
-        public string getRegProvId() {
-            return regProvId;
+        public string getFoundDate() {
+            return foundDate;
         }
 
-        public void setRegProvId(string regProvId) {
-            this.regProvId = regProvId;
+        public void setFoundDate(string foundDate) {
+            this.foundDate = foundDate;
         }
 
-        public string getRegAreaId() {
-            return regAreaId;
+        public string getRegCapital() {
+            return regCapital;
         }
 
-        public void setRegAreaId(string regAreaId) {
-            this.regAreaId = regAreaId;
+        public void setRegCapital(string regCapital) {
+            this.regCapital = regCapital;
         }
 
         public string getRegDistrictId() {
@@ -302,6 +397,22 @@ namespace BasePaySdk.Request
 
         public void setRegDetail(string regDetail) {
             this.regDetail = regDetail;
+        }
+
+        public string getDistrictId() {
+            return districtId;
+        }
+
+        public void setDistrictId(string districtId) {
+            this.districtId = districtId;
+        }
+
+        public string getDetailAddr() {
+            return detailAddr;
+        }
+
+        public void setDetailAddr(string detailAddr) {
+            this.detailAddr = detailAddr;
         }
 
         public string getLegalName() {
@@ -352,44 +463,28 @@ namespace BasePaySdk.Request
             this.legalCertEndDate = legalCertEndDate;
         }
 
-        public string getProvId() {
-            return provId;
+        public string getLegalAddr() {
+            return legalAddr;
         }
 
-        public void setProvId(string provId) {
-            this.provId = provId;
+        public void setLegalAddr(string legalAddr) {
+            this.legalAddr = legalAddr;
         }
 
-        public string getAreaId() {
-            return areaId;
+        public string getLegalCertBackPic() {
+            return legalCertBackPic;
         }
 
-        public void setAreaId(string areaId) {
-            this.areaId = areaId;
+        public void setLegalCertBackPic(string legalCertBackPic) {
+            this.legalCertBackPic = legalCertBackPic;
         }
 
-        public string getDistrictId() {
-            return districtId;
+        public string getLegalCertFrontPic() {
+            return legalCertFrontPic;
         }
 
-        public void setDistrictId(string districtId) {
-            this.districtId = districtId;
-        }
-
-        public string getDetailAddr() {
-            return detailAddr;
-        }
-
-        public void setDetailAddr(string detailAddr) {
-            this.detailAddr = detailAddr;
-        }
-
-        public string getContactName() {
-            return contactName;
-        }
-
-        public void setContactName(string contactName) {
-            this.contactName = contactName;
+        public void setLegalCertFrontPic(string legalCertFrontPic) {
+            this.legalCertFrontPic = legalCertFrontPic;
         }
 
         public string getContactMobileNo() {
@@ -408,44 +503,20 @@ namespace BasePaySdk.Request
             this.contactEmail = contactEmail;
         }
 
-        public string getServicePhone() {
-            return servicePhone;
+        public string getLoginName() {
+            return loginName;
         }
 
-        public void setServicePhone(string servicePhone) {
-            this.servicePhone = servicePhone;
+        public void setLoginName(string loginName) {
+            this.loginName = loginName;
         }
 
-        public string getBusiType() {
-            return busiType;
+        public string getRegAcctPic() {
+            return regAcctPic;
         }
 
-        public void setBusiType(string busiType) {
-            this.busiType = busiType;
-        }
-
-        public string getReceiptName() {
-            return receiptName;
-        }
-
-        public void setReceiptName(string receiptName) {
-            this.receiptName = receiptName;
-        }
-
-        public string getMcc() {
-            return mcc;
-        }
-
-        public void setMcc(string mcc) {
-            this.mcc = mcc;
-        }
-
-        public string getCardInfo() {
-            return cardInfo;
-        }
-
-        public void setCardInfo(string cardInfo) {
-            this.cardInfo = cardInfo;
+        public void setRegAcctPic(string regAcctPic) {
+            this.regAcctPic = regAcctPic;
         }
 
         public string getOpenLicenceNo() {
@@ -456,12 +527,84 @@ namespace BasePaySdk.Request
             this.openLicenceNo = openLicenceNo;
         }
 
+        public string getCardInfo() {
+            return cardInfo;
+        }
+
+        public void setCardInfo(string cardInfo) {
+            this.cardInfo = cardInfo;
+        }
+
+        public string getSettleCardFrontPic() {
+            return settleCardFrontPic;
+        }
+
+        public void setSettleCardFrontPic(string settleCardFrontPic) {
+            this.settleCardFrontPic = settleCardFrontPic;
+        }
+
+        public string getSettleCertBackPic() {
+            return settleCertBackPic;
+        }
+
+        public void setSettleCertBackPic(string settleCertBackPic) {
+            this.settleCertBackPic = settleCertBackPic;
+        }
+
+        public string getSettleCertFrontPic() {
+            return settleCertFrontPic;
+        }
+
+        public void setSettleCertFrontPic(string settleCertFrontPic) {
+            this.settleCertFrontPic = settleCertFrontPic;
+        }
+
+        public string getAuthEnturstPic() {
+            return authEnturstPic;
+        }
+
+        public void setAuthEnturstPic(string authEnturstPic) {
+            this.authEnturstPic = authEnturstPic;
+        }
+
         public string getHeadHuifuId() {
             return headHuifuId;
         }
 
         public void setHeadHuifuId(string headHuifuId) {
             this.headHuifuId = headHuifuId;
+        }
+
+        public string getMerIcp() {
+            return merIcp;
+        }
+
+        public void setMerIcp(string merIcp) {
+            this.merIcp = merIcp;
+        }
+
+        public string getStoreHeaderPic() {
+            return storeHeaderPic;
+        }
+
+        public void setStoreHeaderPic(string storeHeaderPic) {
+            this.storeHeaderPic = storeHeaderPic;
+        }
+
+        public string getStoreIndoorPic() {
+            return storeIndoorPic;
+        }
+
+        public void setStoreIndoorPic(string storeIndoorPic) {
+            this.storeIndoorPic = storeIndoorPic;
+        }
+
+        public string getStoreCashierDeskPic() {
+            return storeCashierDeskPic;
+        }
+
+        public void setStoreCashierDeskPic(string storeCashierDeskPic) {
+            this.storeCashierDeskPic = storeCashierDeskPic;
         }
 
 

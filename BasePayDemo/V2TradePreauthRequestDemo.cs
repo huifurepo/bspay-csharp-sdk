@@ -37,7 +37,7 @@ namespace BasePayDemo
             // 支付授权码
             request.setAuthCode("280426995846228615");
             // 安全信息
-            request.setRiskCheckData(getRiskCheckData());
+            request.setRiskCheckData(get88a48f6c221e4ff5B8006bf8874c4dd3());
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -79,9 +79,9 @@ namespace BasePayDemo
             // 传入分帐遇到优惠的处理规则
             extendInfoMap.Add("term_div_coupon_type", "1");
             // 支付宝扩展参数集合
-            extendInfoMap.Add("alipay_data", getAlipayData());
+            extendInfoMap.Add("alipay_data", get386c6c5f282c46f1A7232adc003f8634());
             // 微信扩展参数集合
-            extendInfoMap.Add("wx_data", getWxData());
+            extendInfoMap.Add("wx_data", get7dd691ab53b04a40Bc4085a152d039a5());
             // 商户扩展域
             extendInfoMap.Add("mer_priv", "{\"callType\":\"01\",\"lc\":\"12345678901234567890123456789012123\",\"softVersion\":\"6.5.3\"}");
             // 备注
@@ -95,13 +95,15 @@ namespace BasePayDemo
             // 输入密码提示
             // extendInfoMap.Add("password_trade", "");
             // 设备信息
-            extendInfoMap.Add("terminal_device_data", getTerminalDeviceData());
+            extendInfoMap.Add("terminal_device_data", get99f5455594464feeAa6a9f39230613f8());
             // 异步通知地址
             extendInfoMap.Add("notify_url", "http://www.baidu.com");
+            // 账户号
+            // extendInfoMap.Add("acct_id", "");
             return extendInfoMap;
         }
 
-        private static string getExtendParams() {
+        private static object getFc5a9d0c6088469684325146af94fd15() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 卡类型
             obj.Add("card_type", "");
@@ -116,9 +118,9 @@ namespace BasePayDemo
             // 系统商编号
             obj.Add("sys_service_provider_id", "");
 
-            return JsonConvert.SerializeObject(obj);
+            return obj;
         }
-        private static object getAliGoodsDetail() {
+        private static object get334aa3af21e2449b9ef567aef6e832f3() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 商品的编号
             obj.Add("goods_id", "12345678901234567890123456789012");
@@ -141,14 +143,14 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return objList;
         }
-        private static string getAlipayData() {
+        private static string get386c6c5f282c46f1A7232adc003f8634() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 支付宝的店铺编号
             obj.Add("alipay_store_id", "");
             // 业务扩展参数
-            obj.Add("extend_params", getExtendParams());
+            obj.Add("extend_params", getFc5a9d0c6088469684325146af94fd15());
             // 订单包含的商品列表信息
-            obj.Add("goods_detail", getAliGoodsDetail());
+            obj.Add("goods_detail", get334aa3af21e2449b9ef567aef6e832f3());
             // 商户操作员编号
             obj.Add("operator_id", "1234567890123456789012345678");
             // 商户门店编号
@@ -156,7 +158,7 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static object getWxGoodsDetailRucan() {
+        private static object get1475c6ac101f41fcBb3e7240e5b8b639() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 商品编码
             obj.Add("goods_id", "1232131");
@@ -173,10 +175,10 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return objList;
         }
-        private static object getWxGoodsRucan() {
+        private static object get0a4d393026664aa68b07Be0921a28479() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 单品列表
-            obj.Add("goods_detail", getWxGoodsDetailRucan());
+            obj.Add("goods_detail", get1475c6ac101f41fcBb3e7240e5b8b639());
             // 订单原价
             obj.Add("cost_price", "1");
             // 商品小票ID
@@ -184,7 +186,7 @@ namespace BasePayDemo
 
             return obj;
         }
-        private static object getWxStoreRucan() {
+        private static object get77b20125Baf94a3dA333C5fdeb7033d0() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 门店详细地址
             obj.Add("address", "汇付天下桂林路");
@@ -197,31 +199,31 @@ namespace BasePayDemo
 
             return obj;
         }
-        private static object getWxSceneRucan() {
+        private static object get3f7b8679D63e470a90c9F1bda7adaa66() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 门店信息
-            obj.Add("store_info", getWxStoreRucan());
+            obj.Add("store_info", get77b20125Baf94a3dA333C5fdeb7033d0());
 
             return obj;
         }
-        private static string getWxData() {
+        private static string get7dd691ab53b04a40Bc4085a152d039a5() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 附加数据
             obj.Add("attach", "");
             // 商品详情
-            obj.Add("detail", getWxGoodsRucan());
+            obj.Add("detail", get0a4d393026664aa68b07Be0921a28479());
             // 设备号
             obj.Add("device_info", "");
             // 订单优惠标记
             obj.Add("goods_tag", "12321312");
             // 场景信息
-            obj.Add("scene_info", getWxSceneRucan());
+            obj.Add("scene_info", get3f7b8679D63e470a90c9F1bda7adaa66());
             // 子商户公众账号ID
             obj.Add("sub_appid", "wx48abf94e085e98e1");
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string getRiskCheckData() {
+        private static string get88a48f6c221e4ff5B8006bf8874c4dd3() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 基站地址
             obj.Add("base_station", "192.168.1.1");
@@ -234,7 +236,7 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string getTerminalDeviceData() {
+        private static string get99f5455594464feeAa6a9f39230613f8() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 商户终端版本号
             obj.Add("app_version", "");

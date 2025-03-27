@@ -3,7 +3,7 @@ using System;
 namespace BasePaySdk.Request
 {
     /**
-     * 交易查询接口
+     * 扫码交易查询
      *
      * @author sdk-generator
      * @Description
@@ -16,7 +16,7 @@ namespace BasePaySdk.Request
          */
         private string huifuId;
         /**
-         * 原机构请求日期
+         * 原机构请求日期格式为yyyyMMdd，&lt;font color&#x3D;&quot;green&quot;&gt;示例值：20220125&lt;/font&gt;；&lt;/br&gt;传入org_hf_seq_id时非必填，其他场景必填；
          */
         private string orgReqDate;
         /**

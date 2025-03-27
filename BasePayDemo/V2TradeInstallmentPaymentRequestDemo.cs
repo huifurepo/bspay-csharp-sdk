@@ -37,11 +37,11 @@ namespace BasePayDemo
             // 商品描述
             request.setGoodsDesc("手机");
             // 安全信息
-            request.setRiskCheckData(getRiskCheckData());
+            request.setRiskCheckData(get8ffd705cC518438d82dc80f2a8dadbe8());
             // 京东白条分期信息trans_type&#x3D;JDBT时，必填jsonObject字符串，京东白条分期相关信息通过该参数集上送
-            request.setJdbtData(getJdbtData());
+            request.setJdbtData(getC6d5c1d9Db824cea95d9E487520daf21());
             // 银联聚分期信息trans_type&#x3D;YLJFQ-银联聚分期时，必填jsonObject字符串，银联聚分期相关信息通过该参数集上送
-            // request.setYljfqData(getYljfqData());
+            // request.setYljfqData(get893f8d024cbe4a618b8c9ed4fde12d4f());
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -85,11 +85,11 @@ namespace BasePayDemo
             // 异步通知地址
             extendInfoMap.Add("notify_url", "https://www.baidu.com/onlineAsync");
             // 分账对象
-            extendInfoMap.Add("acct_split_bunch", getAcctSplitBunch());
+            extendInfoMap.Add("acct_split_bunch", getCee92a5071ea4b9aB7f164e1ba7a96dc());
             return extendInfoMap;
         }
 
-        private static object getAcctInfosRc() {
+        private static object get40ef2900A8a74a0fAee78f703e29f8b8() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 商户号
             obj.Add("huifu_id", "6666000100000000");
@@ -104,18 +104,18 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return objList;
         }
-        private static string getAcctSplitBunch() {
+        private static string getCee92a5071ea4b9aB7f164e1ba7a96dc() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 百分比分账标志
             obj.Add("percentage_flag", "Y");
             // 是否净值分账
             obj.Add("is_clean_split", "N");
             // 分账明细
-            obj.Add("acct_infos", getAcctInfosRc());
+            obj.Add("acct_infos", get40ef2900A8a74a0fAee78f703e29f8b8());
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string getRiskCheckData() {
+        private static string get8ffd705cC518438d82dc80f2a8dadbe8() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 经度
             obj.Add("longitude", "126.630128");
@@ -128,7 +128,7 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string getJdbtData() {
+        private static string getC6d5c1d9Db824cea95d9E487520daf21() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 商品数量
             obj.Add("goods_num", "3");
@@ -141,7 +141,7 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static object getCustomerInfo() {
+        private static object get040e19baD7074c4a8ee22cfe02bad6ee() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 证件类型
             // obj.Add("certify_type", "test");
@@ -152,7 +152,7 @@ namespace BasePayDemo
 
             return obj;
         }
-        private static object getTokenPayInfo() {
+        private static object get809ec54cBaa1468bA56d9c4fb44f6827() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 标记类型
             // obj.Add("token_type", "test");
@@ -163,7 +163,7 @@ namespace BasePayDemo
 
             return obj;
         }
-        private static string getYljfqData() {
+        private static string get893f8d024cbe4a618b8c9ed4fde12d4f() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 限定付款银行卡号原文最大为20位，密文最大长度为2048；使用斗拱公钥做RSA加密；限定付款银行卡号与限定付款银行卡号掩码仅需上送一个,若限定了卡号信息该笔订单无法在pay_info拉起支付页面更换卡号支付示例值：b9LE5RccVVLChrHgo9lvp……PhWhjKrWg2NPfbe0mkQ&#x3D;&#x3D;
             // obj.Add("limit_pay_card_no", "test");
@@ -182,13 +182,13 @@ namespace BasePayDemo
             // 门店名称用于前端展示商户门店名称。（需与store_info一起上送该字段，不能单独上送），不能超过15个汉字和字符
             // obj.Add("store_name", "test");
             // 身份信息身份信息：场景标识为“01-实名认证”情况下，必须上送实名信息；场景标识为“02-联合登陆”下，可选上送。注：（1）实名认证场景下需同时上送姓名及证件号码（2）联合登录场景下可选上送姓名及证件号码（3）限定身份信息场景下必须上送姓名，证件号码可选上送，支持上送全量证件。
-            // obj.Add("customer_info", getCustomerInfo());
+            // obj.Add("customer_info", get040e19baD7074c4a8ee22cfe02bad6ee());
             // 商品详细信息
             // obj.Add("body_info", "");
             // 同步通知页面
             // obj.Add("callback_url", "");
             // 标记化支付信息
-            // obj.Add("token_pay_info", getTokenPayInfo());
+            // obj.Add("token_pay_info", get809ec54cBaa1468bA56d9c4fb44f6827());
 
             return JsonConvert.SerializeObject(obj);
         }

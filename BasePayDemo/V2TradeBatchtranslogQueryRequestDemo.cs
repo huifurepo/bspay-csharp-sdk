@@ -62,6 +62,8 @@ namespace BasePayDemo
             extendInfoMap.Add("page_num", "1");
             // 分页条数
             extendInfoMap.Add("page_size", "10");
+            // 原支付全局流水号
+            // extendInfoMap.Add("payment_hf_seq_id", "");
             return extendInfoMap;
         }
 

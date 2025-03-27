@@ -12,21 +12,25 @@ namespace BasePaySdk.Request
     {
 
         /**
-         * 系统号
+         * 请求日期
          */
-        private string sysId;
+        private string reqDate;
         /**
-         * 产品号
+         * 请求流水号
          */
-        private string productId;
+        private string reqSeqId;
         /**
-         * 加签结果
+         * 原交易的商户号
          */
-        private string sign;
+        private string huifuId;
         /**
-         * 数据
+         * 原交易请求日期
          */
-        private string data;
+        private string orgReqDate;
+        /**
+         * 原交易请求流水号
+         */
+        private string orgReqSeqId;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_TRADE_LGWX_SURROGATE_QUERY;
@@ -35,43 +39,52 @@ namespace BasePaySdk.Request
         public V2TradeLgwxSurrogateQueryRequest() {
         }
 
-        public V2TradeLgwxSurrogateQueryRequest(string sysId, string productId, string sign, string data) {
-            this.sysId = sysId;
-            this.productId = productId;
-            this.sign = sign;
-            this.data = data;
+        public V2TradeLgwxSurrogateQueryRequest(string reqDate, string reqSeqId, string huifuId, string orgReqDate, string orgReqSeqId) {
+            this.reqDate = reqDate;
+            this.reqSeqId = reqSeqId;
+            this.huifuId = huifuId;
+            this.orgReqDate = orgReqDate;
+            this.orgReqSeqId = orgReqSeqId;
         }
 
-        public string getSysId() {
-            return sysId;
+        public string getReqDate() {
+            return reqDate;
         }
 
-        public void setSysId(string sysId) {
-            this.sysId = sysId;
+        public void setReqDate(string reqDate) {
+            this.reqDate = reqDate;
         }
 
-        public string getProductId() {
-            return productId;
+        public string getReqSeqId() {
+            return reqSeqId;
         }
 
-        public void setProductId(string productId) {
-            this.productId = productId;
+        public void setReqSeqId(string reqSeqId) {
+            this.reqSeqId = reqSeqId;
         }
 
-        public string getSign() {
-            return sign;
+        public string getHuifuId() {
+            return huifuId;
         }
 
-        public void setSign(string sign) {
-            this.sign = sign;
+        public void setHuifuId(string huifuId) {
+            this.huifuId = huifuId;
         }
 
-        public string getData() {
-            return data;
+        public string getOrgReqDate() {
+            return orgReqDate;
         }
 
-        public void setData(string data) {
-            this.data = data;
+        public void setOrgReqDate(string orgReqDate) {
+            this.orgReqDate = orgReqDate;
+        }
+
+        public string getOrgReqSeqId() {
+            return orgReqSeqId;
+        }
+
+        public void setOrgReqSeqId(string orgReqSeqId) {
+            this.orgReqSeqId = orgReqSeqId;
         }
 
 

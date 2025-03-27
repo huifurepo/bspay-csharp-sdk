@@ -28,6 +28,10 @@ namespace BasePayDemo
             request.setReqSeqId(DateTime.Now.ToString("yyy-MM-dd HH.mm.ss.fff"));
             // 请求时间
             request.setReqDate(DateTime.Now.ToString("yyyyMMdd"));
+            // 汇付商户号huifu_id与ext_mer_id二选一必填，汇付商户号优先；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：6666000109812123&lt;/font&gt;
+            request.setHuifuId("6666000107430944");
+            // 外部商户号&lt;font color&#x3D;&quot;green&quot;&gt;示例值：&lt;/font&gt;
+            request.setExtMerId("");
             // 渠道号汇付商户号为空时，必传；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：6666000109812124&lt;/font&gt;
             // request.setChannelId("test");
             // 发票类型
@@ -47,13 +51,13 @@ namespace BasePayDemo
             // 原发票号码openType&#x3D;1时必填；参见[发票右上角](https://paas.huifu.com/open/doc/api/#/fp/api_fp_yanglitu.md)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：20685767&lt;/font&gt;
             request.setOriIvcNumber("150000020026");
             // 开票商品信息
-            request.setGoodsInfos(getGoodsInfosRc());
+            request.setGoodsInfos(getCc865b09A9d1454588fd0ec915ac54b3());
             // 开票人信息
-            request.setPayerInfo(getPayerInfo());
+            request.setPayerInfo(getB166bc1dA4484a67A2d763b011609a76());
             // 不动产销售特殊字段specialFlag为05时，必填；jsonArray格式
-            // request.setEstateSales(getEstateSales());
+            // request.setEstateSales(get834e08f62dcd4cdaBc97F6aadd5b60f7());
             // 不动产租赁特殊字段specialFlag为16时，必填；jsonArray格式
-            // request.setEstateLease(getEstateLease());
+            // request.setEstateLease(get95c5269197664358A5b57488affb02da());
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -80,10 +84,6 @@ namespace BasePayDemo
         private static Dictionary<string, object> getExtendInfos() {
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
-            // 汇付商户号
-            extendInfoMap.Add("huifu_id", "6666000107430944");
-            // 外部商户号
-            extendInfoMap.Add("ext_mer_id", "");
             // 税控盘编号
             extendInfoMap.Add("tax_device_id", "661919694739");
             // 购方单位识别号
@@ -110,25 +110,29 @@ namespace BasePayDemo
             extendInfoMap.Add("red_info_number", "");
             // 开票结果异步通知地址
             extendInfoMap.Add("callback_url", "virgo://http://192.168.85.157:30031/sspm/testVirgo");
+            // 强制开票标识
+            extendInfoMap.Add("buyer_info_confirm", "");
             return extendInfoMap;
         }
 
-        private static string getGoodsInfosRc() {
+        private static string getCc865b09A9d1454588fd0ec915ac54b3() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 发票行性质
             obj.Add("ivc_nature", "0");
             // 商品序号ivc_type&#x3D;1 红票必填，要与开具的蓝票商品一致；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：备注&lt;/font&gt;
             obj.Add("goods_serial_num", "");
+            // 商品id二选一必填，税收分类编码优先；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：&lt;/font&gt;
+            obj.Add("goods_id", "");
+            // 商品税收分类编码&lt;font color&#x3D;&quot;green&quot;&gt;示例值：&lt;/font&gt;
+            obj.Add("goods_code", "6010000000000000000");
             // 商品名称goodsCode不为空时必填；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：&lt;/font&gt;
             obj.Add("goods_name", "预付卡");
             // 税率goodsCode不为空时必填，最多三位小数；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：0.130&lt;/font&gt;
             obj.Add("tax_rate", "0.03");
+            // 含税标识
+            obj.Add("is_price_con_tax", "1");
             // 金额(元)
             obj.Add("trans_amt", "70.00");
-            // 商品id
-            obj.Add("goods_id", "");
-            // 商品税收分类编码
-            obj.Add("goods_code", "6010000000000000000");
             // 规格型号
             obj.Add("goods_model", "");
             // 计量单位
@@ -139,8 +143,6 @@ namespace BasePayDemo
             obj.Add("zero_tax_rate_flag", "");
             // 增值税特殊管理
             obj.Add("add_tax_spec_manage", "");
-            // 含税标识
-            obj.Add("is_price_con_tax", "1");
             // 商品数量
             obj.Add("goods_count", "7");
             // 单价
@@ -152,7 +154,7 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return JsonConvert.SerializeObject(objList);
         }
-        private static string getPayerInfo() {
+        private static string getB166bc1dA4484a67A2d763b011609a76() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 开票人
             obj.Add("payer_name", "开票人");
@@ -163,7 +165,28 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string getEstateSales() {
+        private static string get834e08f62dcd4cdaBc97F6aadd5b60f7() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 不动产地址
+            // obj.Add("addr", "test");
+            // 不动产详细地址
+            // obj.Add("detail_addr", "test");
+            // 跨地（市）标志
+            // obj.Add("area_flag", "test");
+            // 租赁日期起
+            // obj.Add("start_date", "test");
+            // 租赁日期止
+            // obj.Add("end_date", "test");
+            // 房屋产权证书/不动产产权号
+            // obj.Add("estate_no", "test");
+            // 不动产单位
+            // obj.Add("unit", "test");
+
+            JArray objList = new JArray();
+            objList.Add(JToken.FromObject(obj));
+            return JsonConvert.SerializeObject(objList);
+        }
+        private static string get95c5269197664358A5b57488affb02da() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 不动产地址
             // obj.Add("addr", "test");
@@ -179,27 +202,6 @@ namespace BasePayDemo
             // obj.Add("total_amt", "test");
             // 实际成交含税金额
             // obj.Add("deal_amt", "test");
-            // 房屋产权证书/不动产产权号
-            // obj.Add("estate_no", "test");
-            // 不动产单位
-            // obj.Add("unit", "test");
-
-            JArray objList = new JArray();
-            objList.Add(JToken.FromObject(obj));
-            return JsonConvert.SerializeObject(objList);
-        }
-        private static string getEstateLease() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 不动产地址
-            // obj.Add("addr", "test");
-            // 不动产详细地址
-            // obj.Add("detail_addr", "test");
-            // 跨地（市）标志
-            // obj.Add("area_flag", "test");
-            // 租赁日期起
-            // obj.Add("start_date", "test");
-            // 租赁日期止
-            // obj.Add("end_date", "test");
             // 房屋产权证书/不动产产权号
             // obj.Add("estate_no", "test");
             // 不动产单位

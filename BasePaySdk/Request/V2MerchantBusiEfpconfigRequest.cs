@@ -28,14 +28,6 @@ namespace BasePaySdk.Request
          */
         private string upperHuifuId;
         /**
-         * 开关
-         */
-        private string switchState;
-        /**
-         * 自动入账开关0:关闭 1:开通；switch_state为1时必填；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：1&lt;/font&gt;
-         */
-        private string outOrderAutoAcctFlag;
-        /**
          * 支付手续费外扣汇付ID支付手续费外扣标记为1时必填；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：6666000109812123&lt;/font&gt;
          */
         private string outFeeHuifuid;
@@ -75,13 +67,11 @@ namespace BasePaySdk.Request
         public V2MerchantBusiEfpconfigRequest() {
         }
 
-        public V2MerchantBusiEfpconfigRequest(string reqSeqId, string reqDate, string huifuId, string upperHuifuId, string switchState, string outOrderAutoAcctFlag, string outFeeHuifuid, string outOrderAcctCard, string outOrderAcctOpenFees, string otherPaymentInstitutionsPic, string xwDigitalCertificatePic, string outFundsGateId, string signUserInfo, string acctSource) {
+        public V2MerchantBusiEfpconfigRequest(string reqSeqId, string reqDate, string huifuId, string upperHuifuId, string outFeeHuifuid, string outOrderAcctCard, string outOrderAcctOpenFees, string otherPaymentInstitutionsPic, string xwDigitalCertificatePic, string outFundsGateId, string signUserInfo, string acctSource) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.huifuId = huifuId;
             this.upperHuifuId = upperHuifuId;
-            this.switchState = switchState;
-            this.outOrderAutoAcctFlag = outOrderAutoAcctFlag;
             this.outFeeHuifuid = outFeeHuifuid;
             this.outOrderAcctCard = outOrderAcctCard;
             this.outOrderAcctOpenFees = outOrderAcctOpenFees;
@@ -122,22 +112,6 @@ namespace BasePaySdk.Request
 
         public void setUpperHuifuId(string upperHuifuId) {
             this.upperHuifuId = upperHuifuId;
-        }
-
-        public string getSwitchState() {
-            return switchState;
-        }
-
-        public void setSwitchState(string switchState) {
-            this.switchState = switchState;
-        }
-
-        public string getOutOrderAutoAcctFlag() {
-            return outOrderAutoAcctFlag;
-        }
-
-        public void setOutOrderAutoAcctFlag(string outOrderAutoAcctFlag) {
-            this.outOrderAutoAcctFlag = outOrderAutoAcctFlag;
         }
 
         public string getOutFeeHuifuid() {

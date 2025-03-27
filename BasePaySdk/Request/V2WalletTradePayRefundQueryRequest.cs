@@ -12,21 +12,13 @@ namespace BasePaySdk.Request
     {
 
         /**
-         * 系统号
+         * 原退款交易请求日期
          */
-        private string sysId;
+        private string orgReqDate;
         /**
-         * 产品号
+         * 原退款交易请求流水号
          */
-        private string productId;
-        /**
-         * 加签结果
-         */
-        private string sign;
-        /**
-         * 数据
-         */
-        private string data;
+        private string orgReqSeqId;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_WALLET_TRADE_PAY_REFUND_QUERY;
@@ -35,43 +27,25 @@ namespace BasePaySdk.Request
         public V2WalletTradePayRefundQueryRequest() {
         }
 
-        public V2WalletTradePayRefundQueryRequest(string sysId, string productId, string sign, string data) {
-            this.sysId = sysId;
-            this.productId = productId;
-            this.sign = sign;
-            this.data = data;
+        public V2WalletTradePayRefundQueryRequest(string orgReqDate, string orgReqSeqId) {
+            this.orgReqDate = orgReqDate;
+            this.orgReqSeqId = orgReqSeqId;
         }
 
-        public string getSysId() {
-            return sysId;
+        public string getOrgReqDate() {
+            return orgReqDate;
         }
 
-        public void setSysId(string sysId) {
-            this.sysId = sysId;
+        public void setOrgReqDate(string orgReqDate) {
+            this.orgReqDate = orgReqDate;
         }
 
-        public string getProductId() {
-            return productId;
+        public string getOrgReqSeqId() {
+            return orgReqSeqId;
         }
 
-        public void setProductId(string productId) {
-            this.productId = productId;
-        }
-
-        public string getSign() {
-            return sign;
-        }
-
-        public void setSign(string sign) {
-            this.sign = sign;
-        }
-
-        public string getData() {
-            return data;
-        }
-
-        public void setData(string data) {
-            this.data = data;
+        public void setOrgReqSeqId(string orgReqSeqId) {
+            this.orgReqSeqId = orgReqSeqId;
         }
 
 

@@ -23,6 +23,10 @@ namespace BasePaySdk.Request
          * 图片类型
          */
         private string fileType;
+        /**
+         * 图片名称
+         */
+        private string picture;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_SUPPLEMENTARY_PICTURE;
@@ -31,10 +35,11 @@ namespace BasePaySdk.Request
         public V2SupplementaryPictureRequest() {
         }
 
-        public V2SupplementaryPictureRequest(string reqSeqId, string reqDate, string fileType) {
+        public V2SupplementaryPictureRequest(string reqSeqId, string reqDate, string fileType, string picture) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.fileType = fileType;
+            this.picture = picture;
         }
 
         public string getReqSeqId() {
@@ -59,6 +64,14 @@ namespace BasePaySdk.Request
 
         public void setFileType(string fileType) {
             this.fileType = fileType;
+        }
+
+        public string getPicture() {
+            return picture;
+        }
+
+        public void setPicture(string picture) {
+            this.picture = picture;
         }
 
 

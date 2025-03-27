@@ -62,6 +62,8 @@ namespace BasePayDemo
             extendInfoMap.Add("page_num", "1");
             // 账户号
             // extendInfoMap.Add("acct_id", "");
+            // 账户类型
+            extendInfoMap.Add("acct_type", "01");
             return extendInfoMap;
         }
 

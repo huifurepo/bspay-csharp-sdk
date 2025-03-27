@@ -24,14 +24,18 @@ namespace BasePayDemo
 
             // 2.组装请求参数
             V2WalletTradePayRefundRequest request = new V2WalletTradePayRefundRequest();
-            // 系统号
-            // request.setSysId("test");
-            // 产品号
-            // request.setProductId("test");
-            // 加签结果
-            // request.setSign("test");
-            // 数据
-            // request.setData("test");
+            // 请求流水号
+            request.setReqSeqId(DateTime.Now.ToString("yyy-MM-dd HH.mm.ss.fff"));
+            // 请求日期
+            request.setReqDate(DateTime.Now.ToString("yyyyMMdd"));
+            // 商户号
+            request.setHuifuId("6666000135653240");
+            // 钱包用户ID
+            request.setUserHuifuId("6666000136655020");
+            // 退款金额
+            request.setTransAmt("0.02");
+            // 原交易请求日期
+            // request.setOrgReqDate("test");
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -58,6 +62,14 @@ namespace BasePayDemo
         private static Dictionary<string, object> getExtendInfos() {
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
+            // 原交易请求流水号
+            // extendInfoMap.Add("org_req_seq_id", "");
+            // 原交易全局流水号
+            // extendInfoMap.Add("org_hf_seq_id", "");
+            // 备注
+            extendInfoMap.Add("remark", "remark11");
+            // 商户扩展信息
+            // extendInfoMap.Add("mer_priv", "");
             return extendInfoMap;
         }
 

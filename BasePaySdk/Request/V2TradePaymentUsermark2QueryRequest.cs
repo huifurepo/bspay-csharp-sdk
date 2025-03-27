@@ -24,9 +24,13 @@ namespace BasePaySdk.Request
          */
         private string huifuId;
         /**
-         * 支付授权码
+         * 授权码
          */
         private string authCode;
+        /**
+         * 银联支付标识
+         */
+        private string appUpIdentifier;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_TRADE_PAYMENT_USERMARK2_QUERY;
@@ -35,11 +39,12 @@ namespace BasePaySdk.Request
         public V2TradePaymentUsermark2QueryRequest() {
         }
 
-        public V2TradePaymentUsermark2QueryRequest(string reqDate, string reqSeqId, string huifuId, string authCode) {
+        public V2TradePaymentUsermark2QueryRequest(string reqDate, string reqSeqId, string huifuId, string authCode, string appUpIdentifier) {
             this.reqDate = reqDate;
             this.reqSeqId = reqSeqId;
             this.huifuId = huifuId;
             this.authCode = authCode;
+            this.appUpIdentifier = appUpIdentifier;
         }
 
         public string getReqDate() {
@@ -72,6 +77,14 @@ namespace BasePaySdk.Request
 
         public void setAuthCode(string authCode) {
             this.authCode = authCode;
+        }
+
+        public string getAppUpIdentifier() {
+            return appUpIdentifier;
+        }
+
+        public void setAppUpIdentifier(string appUpIdentifier) {
+            this.appUpIdentifier = appUpIdentifier;
         }
 
 

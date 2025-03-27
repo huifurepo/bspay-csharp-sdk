@@ -3,7 +3,7 @@ using System;
 namespace BasePaySdk.Request
 {
     /**
-     * 商户基本信息修改(2022)
+     * 商户基本信息修改
      *
      * @author sdk-generator
      * @Description
@@ -20,13 +20,17 @@ namespace BasePaySdk.Request
          */
         private string reqDate;
         /**
-         * 上级主体ID
+         * 直属渠道号
          */
         private string upperHuifuId;
         /**
          * 汇付客户Id
          */
         private string huifuId;
+        /**
+         * 签约人jsonObject格式；agreement_info中选择电子签约时必填；个人商户填本人信息。
+         */
+        private string signUserInfo;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_MERCHANT_BASICDATA_MODIFY;
@@ -35,11 +39,12 @@ namespace BasePaySdk.Request
         public V2MerchantBasicdataModifyRequest() {
         }
 
-        public V2MerchantBasicdataModifyRequest(string reqSeqId, string reqDate, string upperHuifuId, string huifuId) {
+        public V2MerchantBasicdataModifyRequest(string reqSeqId, string reqDate, string upperHuifuId, string huifuId, string signUserInfo) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.upperHuifuId = upperHuifuId;
             this.huifuId = huifuId;
+            this.signUserInfo = signUserInfo;
         }
 
         public string getReqSeqId() {
@@ -72,6 +77,14 @@ namespace BasePaySdk.Request
 
         public void setHuifuId(string huifuId) {
             this.huifuId = huifuId;
+        }
+
+        public string getSignUserInfo() {
+            return signUserInfo;
+        }
+
+        public void setSignUserInfo(string signUserInfo) {
+            this.signUserInfo = signUserInfo;
         }
 
 

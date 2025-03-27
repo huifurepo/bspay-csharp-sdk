@@ -81,11 +81,11 @@ namespace BasePayDemo
             // 拓展方字段
             extendInfoMap.Add("expand_id", "");
             // 文件列表
-            extendInfoMap.Add("file_list", getFileList());
+            extendInfoMap.Add("file_list", getA2b3ad80C6e54290Ad01D1bd6ad4753b());
             return extendInfoMap;
         }
 
-        private static string getFileList() {
+        private static string getA2b3ad80C6e54290Ad01D1bd6ad4753b() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 文件类型
             obj.Add("file_type", "F04");

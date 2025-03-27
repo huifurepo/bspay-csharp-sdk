@@ -24,14 +24,12 @@ namespace BasePayDemo
 
             // 2.组装请求参数
             V2HycMersignQueryRequest request = new V2HycMersignQueryRequest();
-            // 系统号
-            // request.setSysId("test");
-            // 产品号
-            // request.setProductId("test");
-            // 加签结果
-            // request.setSign("test");
-            // 数据
-            // request.setData("test");
+            // 请求流水号
+            request.setReqSeqId(DateTime.Now.ToString("yyy-MM-dd HH.mm.ss.fff"));
+            // 请求日期
+            request.setReqDate(DateTime.Now.ToString("yyyyMMdd"));
+            // 商户汇付id
+            request.setHuifuId("6666000144060581");
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -58,6 +56,10 @@ namespace BasePayDemo
         private static Dictionary<string, object> getExtendInfos() {
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
+            // 开始时间
+            extendInfoMap.Add("start_date", "20240112");
+            // 结束时间
+            extendInfoMap.Add("end_date", "20240112");
             return extendInfoMap;
         }
 

@@ -44,6 +44,10 @@ namespace BasePaySdk.Request
          */
         private string withholdType;
         /**
+         * 异步通知地址
+         */
+        private string notifyUrl;
+        /**
          * 银行扩展数据
          */
         private string extendPayData;
@@ -55,10 +59,6 @@ namespace BasePaySdk.Request
          * 设备信息数据
          */
         private string terminalDeviceData;
-        /**
-         * 异步通知地址
-         */
-        private string notifyUrl;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_TRADE_ONLINEPAYMENT_WITHHOLDPAY;
@@ -67,7 +67,7 @@ namespace BasePaySdk.Request
         public V2TradeOnlinepaymentWithholdpayRequest() {
         }
 
-        public V2TradeOnlinepaymentWithholdpayRequest(string reqDate, string reqSeqId, string huifuId, string userHuifuId, string cardBindId, string transAmt, string goodsDesc, string withholdType, string extendPayData, string riskCheckData, string terminalDeviceData, string notifyUrl) {
+        public V2TradeOnlinepaymentWithholdpayRequest(string reqDate, string reqSeqId, string huifuId, string userHuifuId, string cardBindId, string transAmt, string goodsDesc, string withholdType, string notifyUrl, string extendPayData, string riskCheckData, string terminalDeviceData) {
             this.reqDate = reqDate;
             this.reqSeqId = reqSeqId;
             this.huifuId = huifuId;
@@ -76,10 +76,10 @@ namespace BasePaySdk.Request
             this.transAmt = transAmt;
             this.goodsDesc = goodsDesc;
             this.withholdType = withholdType;
+            this.notifyUrl = notifyUrl;
             this.extendPayData = extendPayData;
             this.riskCheckData = riskCheckData;
             this.terminalDeviceData = terminalDeviceData;
-            this.notifyUrl = notifyUrl;
         }
 
         public string getReqDate() {
@@ -146,6 +146,14 @@ namespace BasePaySdk.Request
             this.withholdType = withholdType;
         }
 
+        public string getNotifyUrl() {
+            return notifyUrl;
+        }
+
+        public void setNotifyUrl(string notifyUrl) {
+            this.notifyUrl = notifyUrl;
+        }
+
         public string getExtendPayData() {
             return extendPayData;
         }
@@ -168,14 +176,6 @@ namespace BasePaySdk.Request
 
         public void setTerminalDeviceData(string terminalDeviceData) {
             this.terminalDeviceData = terminalDeviceData;
-        }
-
-        public string getNotifyUrl() {
-            return notifyUrl;
-        }
-
-        public void setNotifyUrl(string notifyUrl) {
-            this.notifyUrl = notifyUrl;
         }
 
 

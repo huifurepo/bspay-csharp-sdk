@@ -67,11 +67,11 @@ namespace BasePayDemo
             // 备注
             extendInfoMap.Add("remark", "我是备注1111101");
             // 文件列表
-            extendInfoMap.Add("file_info", getFileInfo());
+            extendInfoMap.Add("file_info", get8e7653eaD27d4c589fdd887b957250c4());
             return extendInfoMap;
         }
 
-        private static string getFileInfo() {
+        private static string get8e7653eaD27d4c589fdd887b957250c4() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 拒绝退款的举证图片1
             obj.Add("reject_media_pic1", "a8a096a3-0dd4-3b0e-886c-9afb20d23b1a");

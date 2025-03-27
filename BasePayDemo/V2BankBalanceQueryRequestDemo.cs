@@ -57,7 +57,7 @@ namespace BasePayDemo
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
             // 操作类型
-            // extendInfoMap.Add("elect_acct_type", "");
+            extendInfoMap.Add("elect_acct_type", "MERCH");
             return extendInfoMap;
         }
 

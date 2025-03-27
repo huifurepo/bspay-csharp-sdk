@@ -12,21 +12,25 @@ namespace BasePaySdk.Request
     {
 
         /**
-         * 系统号
+         * 请求流水号
          */
-        private string sysId;
+        private string reqSeqId;
         /**
-         * 产品号
+         * 请求日期
          */
-        private string productId;
+        private string reqDate;
         /**
-         * 加签结果
+         * 出款方商户号
          */
-        private string sign;
+        private string huifuId;
         /**
-         * 数据
+         * 收款方用户号
          */
-        private string data;
+        private string userHuifuId;
+        /**
+         * 转账金额
+         */
+        private string transAmt;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_WALLET_TRADE_RECHARGE_TRANSFER;
@@ -35,43 +39,52 @@ namespace BasePaySdk.Request
         public V2WalletTradeRechargeTransferRequest() {
         }
 
-        public V2WalletTradeRechargeTransferRequest(string sysId, string productId, string sign, string data) {
-            this.sysId = sysId;
-            this.productId = productId;
-            this.sign = sign;
-            this.data = data;
+        public V2WalletTradeRechargeTransferRequest(string reqSeqId, string reqDate, string huifuId, string userHuifuId, string transAmt) {
+            this.reqSeqId = reqSeqId;
+            this.reqDate = reqDate;
+            this.huifuId = huifuId;
+            this.userHuifuId = userHuifuId;
+            this.transAmt = transAmt;
         }
 
-        public string getSysId() {
-            return sysId;
+        public string getReqSeqId() {
+            return reqSeqId;
         }
 
-        public void setSysId(string sysId) {
-            this.sysId = sysId;
+        public void setReqSeqId(string reqSeqId) {
+            this.reqSeqId = reqSeqId;
         }
 
-        public string getProductId() {
-            return productId;
+        public string getReqDate() {
+            return reqDate;
         }
 
-        public void setProductId(string productId) {
-            this.productId = productId;
+        public void setReqDate(string reqDate) {
+            this.reqDate = reqDate;
         }
 
-        public string getSign() {
-            return sign;
+        public string getHuifuId() {
+            return huifuId;
         }
 
-        public void setSign(string sign) {
-            this.sign = sign;
+        public void setHuifuId(string huifuId) {
+            this.huifuId = huifuId;
         }
 
-        public string getData() {
-            return data;
+        public string getUserHuifuId() {
+            return userHuifuId;
         }
 
-        public void setData(string data) {
-            this.data = data;
+        public void setUserHuifuId(string userHuifuId) {
+            this.userHuifuId = userHuifuId;
+        }
+
+        public string getTransAmt() {
+            return transAmt;
+        }
+
+        public void setTransAmt(string transAmt) {
+            this.transAmt = transAmt;
         }
 
 

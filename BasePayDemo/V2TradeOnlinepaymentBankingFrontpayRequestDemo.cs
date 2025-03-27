@@ -35,11 +35,11 @@ namespace BasePayDemo
             // 商品描述
             request.setGoodsDesc("网银支付下单");
             // 网联扩展数据
-            request.setExtendPayData(getExtendPayData());
+            request.setExtendPayData(get3194e7baDdea4c7188127b568d867933());
             // 设备信息
-            request.setTerminalDeviceData(getTerminalDeviceData());
+            request.setTerminalDeviceData(get311c0af960b243a4Ae3797b5e7958321());
             // 安全信息
-            request.setRiskCheckData(getRiskCheckData());
+            request.setRiskCheckData(get3189111156d949719cc958f824f77fbd());
             // 异步通知地址
             request.setNotifyUrl("http://www.chinapnr.com");
 
@@ -85,7 +85,7 @@ namespace BasePayDemo
             // 延时标记
             extendInfoMap.Add("delay_acct_flag", "N");
             // 分账对象
-            // extendInfoMap.Add("acct_split_bunch", getAcctSplitBunchRucan());
+            // extendInfoMap.Add("acct_split_bunch", get25c8debcE5ba43afAcd2738c16b98199());
             // 手续费扣款标志
             // extendInfoMap.Add("fee_flag", "");
             // 页面跳转地址
@@ -93,7 +93,7 @@ namespace BasePayDemo
             return extendInfoMap;
         }
 
-        private static object getAcctInfos() {
+        private static object getD0d7f539767c4784A84eA384d0e3ee19() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 分账金额
             // obj.Add("div_amt", "");
@@ -108,10 +108,10 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return objList;
         }
-        private static string getAcctSplitBunchRucan() {
+        private static string get25c8debcE5ba43afAcd2738c16b98199() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 分账明细
-            // obj.Add("acct_infos", getAcctInfos());
+            // obj.Add("acct_infos", getD0d7f539767c4784A84eA384d0e3ee19());
             // 百分比分账标志
             // obj.Add("percentage_flag", "");
             // 是否净值分账
@@ -119,7 +119,7 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string getExtendPayData() {
+        private static string get3194e7baDdea4c7188127b568d867933() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 商品简称
             obj.Add("goods_short_name", "011111");
@@ -130,7 +130,7 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string getTerminalDeviceData() {
+        private static string get311c0af960b243a4Ae3797b5e7958321() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 交易设备类型
             obj.Add("device_type", "1");
@@ -151,7 +151,7 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string getRiskCheckData() {
+        private static string get3189111156d949719cc958f824f77fbd() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // ip地址
             obj.Add("ip_addr", "1");

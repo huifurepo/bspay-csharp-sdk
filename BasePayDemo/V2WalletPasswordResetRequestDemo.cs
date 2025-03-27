@@ -24,14 +24,22 @@ namespace BasePayDemo
 
             // 2.组装请求参数
             V2WalletPasswordResetRequest request = new V2WalletPasswordResetRequest();
-            // 系统号
-            // request.setSysId("test");
-            // 产品号
-            // request.setProductId("test");
-            // 加签结果
-            // request.setSign("test");
-            // 数据
-            // request.setData("test");
+            // 请求流水号
+            request.setReqSeqId(DateTime.Now.ToString("yyy-MM-dd HH.mm.ss.fff"));
+            // 请求日期
+            request.setReqDate(DateTime.Now.ToString("yyyyMMdd"));
+            // 商户号
+            request.setHuifuId("6666000107309462");
+            // 钱包用户ID
+            request.setUserHuifuId("6666000107355468");
+            // 钱包绑定手机号
+            request.setCustMobile("13771817106");
+            // 手机短信验证码
+            request.setVerifyNo("652364");
+            // 短信验证流水号
+            request.setVerifySeqId("WALLET0000000054024907");
+            // 跳转地址
+            request.setFrontUrl("");
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -58,6 +66,14 @@ namespace BasePayDemo
         private static Dictionary<string, object> getExtendInfos() {
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
+            // 请求失效时间
+            extendInfoMap.Add("time_expired", "");
+            // 个人证件号码
+            // extendInfoMap.Add("cert_no", "");
+            // 银行卡号
+            extendInfoMap.Add("card_no", "");
+            // 银行卡绑定手机号
+            // extendInfoMap.Add("card_mobile", "");
             return extendInfoMap;
         }
 

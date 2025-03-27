@@ -31,7 +31,7 @@ namespace BasePayDemo
             // 请求流水号
             request.setReqSeqId(DateTime.Now.ToString("yyy-MM-dd HH.mm.ss.fff"));
             // 付款关系明细
-            request.setPayRelations(getPayRelationsRc());
+            request.setPayRelations(getA4340f0d9f434de0910eC4522943e67d());
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -61,7 +61,7 @@ namespace BasePayDemo
             return extendInfoMap;
         }
 
-        private static string getPayRelationsRc() {
+        private static string getA4340f0d9f434de0910eC4522943e67d() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 入账方商户号
             obj.Add("in_huifu_id", "6666000104558835");

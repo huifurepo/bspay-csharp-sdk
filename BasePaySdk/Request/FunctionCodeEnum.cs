@@ -9,7 +9,43 @@ namespace BasePaySdk.Request
     public class FunctionCodeEnum
     {
         /**
-         * 交易确认查询接口
+         * 发票邮件重发接口
+         */
+        public const string V2_INVOICE_RESENDMAIL = "v2.invoice.resendMail";
+        /**
+         * 防断链子商户号列表查询
+         */
+        public const string V2_MERCHANT_ATPREVENT_QUERYSUBMERLIST = "v2.merchant.atPrevent.querySubMerList";
+        /**
+         * 防断链入驻
+         */
+        public const string V2_MERCHANT_ATPREVENT_APPLY = "v2.merchant.atPrevent.apply";
+        /**
+         * 全渠道资金提现申请
+         */
+        public const string V2_EFP_ENCASH = "v2.efp.encash";
+        /**
+         * 全渠道资金付款提现记录查询
+         */
+        public const string V2_EFP_WITHDRAW_QUERY = "v2.efp.withdraw.query";
+        /**
+         * 全渠道资金付款申请
+         */
+        public const string V2_EFP_SURROGATE = "v2.efp.surrogate";
+        /**
+         * 托管交易关单
+         */
+        public const string V2_TRADE_HOSTING_PAYMENT_CLOSE = "v2.trade.hosting.payment.close";
+        /**
+         * 取现
+         */
+        public const string V2_TRADE_SETTLEMENT_ENCASHMENT = "v2.trade.settlement.encashment";
+        /**
+         * 红字发票开具接口
+         */
+        public const string V2_INVOICE_REDOPEN = "v2.invoice.redopen";
+        /**
+         * 交易确认查询
          */
         public const string V3_TRADE_PAYMENT_DELAYTRANS_CONFIRMQUERY = "v3.trade.payment.delaytrans.confirmquery";
         /**
@@ -331,7 +367,7 @@ namespace BasePaySdk.Request
          */
         public const string V2_TRADE_PAYMENT_ZXE_INCASH_QUERY = "v2.trade.payment.zxe.incash.query";
         /**
-         * 电子账户账务明细查询
+         * E账户账务明细查询
          */
         public const string V2_TRADE_PAYMENT_ZXE_ACCTDETAIL_QUERY = "v2.trade.payment.zxe.acctdetail.query";
         /**
@@ -383,7 +419,7 @@ namespace BasePaySdk.Request
          */
         public const string V2_WALLET_CARD_QUERY = "v2.wallet.card.query";
         /**
-         * 新增绑定银行卡
+         * 新增绑定卡
          */
         public const string V2_WALLET_CARD_ADD = "v2.wallet.card.add";
         /**
@@ -451,7 +487,7 @@ namespace BasePaySdk.Request
          */
         public const string V2_TRADE_PAYSCORE_SERVICEORDER_QUERY = "v2.trade.payscore.serviceorder.query";
         /**
-         * 创建支付分订单
+         * 创建支付分
          */
         public const string V2_TRADE_PAYSCORE_SERVICEORDER_CREATE = "v2.trade.payscore.serviceorder.create";
         /**
@@ -519,7 +555,7 @@ namespace BasePaySdk.Request
          */
         public const string V2_QUICKBUCKLE_WITHHOLD_QUERY = "v2.quickbuckle.withhold.query";
         /**
-         * 汇付入账确认
+         * 汇付入账通知
          */
         public const string V2_TRADE_ONLINEPAYMENT_TRANSFER_REMITTANCE = "v2.trade.onlinepayment.transfer.remittance";
         /**
@@ -535,11 +571,11 @@ namespace BasePaySdk.Request
          */
         public const string V2_TRADE_SETTLEMENT_ENCHASHMENT_DMAMT_QUERY = "v2.trade.settlement.enchashment.dmamt.query";
         /**
-         * 子账户开通配置(2022)
+         * 子账户开通配置
          */
         public const string V2_MERCHANT_SETTLE_CONFIG = "v2.merchant.settle.config";
         /**
-         * 修改子账户配置(2022)
+         * 修改子账户配置
          */
         public const string V2_MERCHANT_SETTLE_MODIFY = "v2.merchant.settle.modify";
         /**
@@ -651,7 +687,7 @@ namespace BasePaySdk.Request
          */
         public const string V2_MERCHANT_BUSI_MODIFY_BUSISTATUS = "v2.merchant.busi.modify.busistatus";
         /**
-         * 交易关单查询接口
+         * 扫码交易关单查询
          */
         public const string V2_TRADE_PAYMENT_SCANPAY_CLOSEQUERY = "v2.trade.payment.scanpay.closequery";
         /**
@@ -863,7 +899,7 @@ namespace BasePaySdk.Request
          */
         public const string V2_MERCHANT_BASICDATA_STATUS_QUERY = "v2.merchant.basicdata.status.query";
         /**
-         * 商户详细信息查询(2022)
+         * 商户详细信息查询
          */
         public const string V2_MERCHANT_BASICDATA_QUERY = "v2.merchant.basicdata.query";
         /**
@@ -875,7 +911,7 @@ namespace BasePaySdk.Request
          */
         public const string V2_MERCHANT_INTEGRATE_UPDATE = "v2.merchant.integrate.update";
         /**
-         * 商户基本信息修改(2022)
+         * 商户基本信息修改
          */
         public const string V2_MERCHANT_BASICDATA_MODIFY = "v2.merchant.basicdata.modify";
         /**
@@ -887,11 +923,11 @@ namespace BasePaySdk.Request
          */
         public const string V2_MERCHANT_ACTIVITY_ADD = "v2.merchant.activity.add";
         /**
-         * 企业商户基本信息入驻(2022)
+         * 企业商户进件
          */
         public const string V2_MERCHANT_BASICDATA_ENT = "v2.merchant.basicdata.ent";
         /**
-         * 个人商户基本信息入驻(2022)
+         * 个人商户进件
          */
         public const string V2_MERCHANT_BASICDATA_INDV = "v2.merchant.basicdata.indv";
         /**
@@ -899,7 +935,7 @@ namespace BasePaySdk.Request
          */
         public const string V2_MERCHANT_BUSI_AT_MODIFY = "v2.merchant.busi.at.modify";
         /**
-         * 商户业务开通修改(2022)
+         * 商户业务开通修改
          */
         public const string V2_MERCHANT_BUSI_MODIFY = "v2.merchant.busi.modify";
         /**
@@ -911,7 +947,7 @@ namespace BasePaySdk.Request
          */
         public const string V2_TRADE_PAYMENT_USERMARK2_QUERY = "v2.trade.payment.usermark2.query";
         /**
-         * 交易退款查询接口
+         * 扫码交易退款查询
          */
         public const string V2_TRADE_PAYMENT_SCANPAY_REFUNDQUERY = "v2.trade.payment.scanpay.refundquery";
         /**
@@ -919,7 +955,7 @@ namespace BasePaySdk.Request
          */
         public const string V2_TRADE_PAYMENT_SCANPAY_REFUND = "v2.trade.payment.scanpay.refund";
         /**
-         * 交易查询接口
+         * 扫码交易查询
          */
         public const string V2_TRADE_PAYMENT_SCANPAY_QUERY = "v2.trade.payment.scanpay.query";
         /**
@@ -931,7 +967,7 @@ namespace BasePaySdk.Request
          */
         public const string V2_TRADE_ONLINEPAYMENT_QUICKPAY_CONFIRM = "v2.trade.onlinepayment.quickpay.confirm";
         /**
-         * 快捷支付页面版接口
+         * 快捷支付页面版
          */
         public const string V2_TRADE_ONLINEPAYMENT_QUICKPAY_PAGEINFO = "v2.trade.onlinepayment.quickpay.pageinfo";
         /**
@@ -947,7 +983,7 @@ namespace BasePaySdk.Request
          */
         public const string V2_QUICKBUCKLE_CONFIRM = "v2.quickbuckle.confirm";
         /**
-         * 交易确认退款接口
+         * 交易确认退款
          */
         public const string V2_TRADE_PAYMENT_DELAYTRANS_CONFIRMREFUND = "v2.trade.payment.delaytrans.confirmrefund";
         /**
@@ -955,11 +991,11 @@ namespace BasePaySdk.Request
          */
         public const string V2_TRADE_PAYMENT_DELAYTRANS_CONFIRMQUERY = "v2.trade.payment.delaytrans.confirmquery";
         /**
-         * 交易确认接口
+         * 交易确认
          */
         public const string V2_TRADE_PAYMENT_DELAYTRANS_CONFIRM = "v2.trade.payment.delaytrans.confirm";
         /**
-         * 账户余额信息查询接口
+         * 账户余额信息查询
          */
         public const string V2_TRADE_ACCTPAYMENT_BALANCE_QUERY = "v2.trade.acctpayment.balance.query";
         /**
@@ -979,7 +1015,7 @@ namespace BasePaySdk.Request
          */
         public const string V2_TRADE_CHECK_REPLAY = "v2.trade.check.replay";
         /**
-         * 交易关单接口
+         * 扫码交易关单
          */
         public const string V2_TRADE_PAYMENT_SCANPAY_CLOSE = "v2.trade.payment.scanpay.close";
         /**
@@ -987,15 +1023,15 @@ namespace BasePaySdk.Request
          */
         public const string V2_MERCHANT_BASICDATA_SETTLEMENT_QUERY = "v2.merchant.basicdata.settlement.query";
         /**
-         * 聚合正扫接口
+         * 应用场景
          */
         public const string V2_TRADE_PAYMENT_JSPAY = "v2.trade.payment.jspay";
         /**
-         * 聚合反扫接口
+         * 聚合反扫
          */
         public const string V2_TRADE_PAYMENT_MICROPAY = "v2.trade.payment.micropay";
         /**
-         * 商户分期配置详情查询
+         * 商户分期配置查询
          */
         public const string V2_PCREDIT_FEE_DETAIL = "v2.pcredit.fee.detail";
         /**
@@ -1051,7 +1087,7 @@ namespace BasePaySdk.Request
          */
         public const string V2_TRADE_HOSTING_PAYMENT_PREORDER = "v2.trade.hosting.payment.preorder";
         /**
-         * 出金交易查询接口
+         * 出金交易查询
          */
         public const string V2_TRADE_SETTLEMENT_QUERY = "v2.trade.settlement.query";
         /**
@@ -1083,7 +1119,7 @@ namespace BasePaySdk.Request
          */
         public const string V2_SUPPLEMENTARY_PICTURE = "v2.supplementary.picture";
         /**
-         * 商户业务开通(2022)
+         * 商户业务开通
          */
         public const string V2_MERCHANT_BUSI_OPEN = "v2.merchant.busi.open";
 

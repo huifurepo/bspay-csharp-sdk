@@ -103,13 +103,13 @@ namespace BasePayDemo
             // 扩展方字段
             extendInfoMap.Add("expand_id", "");
             // 文件列表
-            // extendInfoMap.Add("file_list", getFileList());
+            // extendInfoMap.Add("file_list", get20d74ac41da44b12Aeee688f03e91870());
             // 公司类型
             // extendInfoMap.Add("ent_type", "");
             return extendInfoMap;
         }
 
-        private static string getFileList() {
+        private static string get20d74ac41da44b12Aeee688f03e91870() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 文件类型
             // obj.Add("file_type", "test");

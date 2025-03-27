@@ -12,21 +12,33 @@ namespace BasePaySdk.Request
     {
 
         /**
-         * 系统号
+         * 请求流水号
          */
-        private string sysId;
+        private string reqSeqId;
         /**
-         * 产品号
+         * 请求日期
          */
-        private string productId;
+        private string reqDate;
         /**
-         * 加签结果
+         * 商户号
          */
-        private string sign;
+        private string huifuId;
         /**
-         * 数据
+         * 钱包用户ID
          */
-        private string data;
+        private string userHuifuId;
+        /**
+         * 订单金额
+         */
+        private string transAmt;
+        /**
+         * 微信充值信息微信充值必填
+         */
+        private string wxRechareInfo;
+        /**
+         * 支付宝充值信息支付宝充值必填
+         */
+        private string alipayRechargeInfo;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_WALLET_TRADE_RECHARGE_CARD;
@@ -35,43 +47,70 @@ namespace BasePaySdk.Request
         public V2WalletTradeRechargeCardRequest() {
         }
 
-        public V2WalletTradeRechargeCardRequest(string sysId, string productId, string sign, string data) {
-            this.sysId = sysId;
-            this.productId = productId;
-            this.sign = sign;
-            this.data = data;
+        public V2WalletTradeRechargeCardRequest(string reqSeqId, string reqDate, string huifuId, string userHuifuId, string transAmt, string wxRechareInfo, string alipayRechargeInfo) {
+            this.reqSeqId = reqSeqId;
+            this.reqDate = reqDate;
+            this.huifuId = huifuId;
+            this.userHuifuId = userHuifuId;
+            this.transAmt = transAmt;
+            this.wxRechareInfo = wxRechareInfo;
+            this.alipayRechargeInfo = alipayRechargeInfo;
         }
 
-        public string getSysId() {
-            return sysId;
+        public string getReqSeqId() {
+            return reqSeqId;
         }
 
-        public void setSysId(string sysId) {
-            this.sysId = sysId;
+        public void setReqSeqId(string reqSeqId) {
+            this.reqSeqId = reqSeqId;
         }
 
-        public string getProductId() {
-            return productId;
+        public string getReqDate() {
+            return reqDate;
         }
 
-        public void setProductId(string productId) {
-            this.productId = productId;
+        public void setReqDate(string reqDate) {
+            this.reqDate = reqDate;
         }
 
-        public string getSign() {
-            return sign;
+        public string getHuifuId() {
+            return huifuId;
         }
 
-        public void setSign(string sign) {
-            this.sign = sign;
+        public void setHuifuId(string huifuId) {
+            this.huifuId = huifuId;
         }
 
-        public string getData() {
-            return data;
+        public string getUserHuifuId() {
+            return userHuifuId;
         }
 
-        public void setData(string data) {
-            this.data = data;
+        public void setUserHuifuId(string userHuifuId) {
+            this.userHuifuId = userHuifuId;
+        }
+
+        public string getTransAmt() {
+            return transAmt;
+        }
+
+        public void setTransAmt(string transAmt) {
+            this.transAmt = transAmt;
+        }
+
+        public string getWxRechareInfo() {
+            return wxRechareInfo;
+        }
+
+        public void setWxRechareInfo(string wxRechareInfo) {
+            this.wxRechareInfo = wxRechareInfo;
+        }
+
+        public string getAlipayRechargeInfo() {
+            return alipayRechargeInfo;
+        }
+
+        public void setAlipayRechargeInfo(string alipayRechargeInfo) {
+            this.alipayRechargeInfo = alipayRechargeInfo;
         }
 
 

@@ -36,6 +36,8 @@ namespace BasePayDemo
             request.setLoginAccount("31011520010");
             // 登录密码
             request.setLoginPassword("1******5");
+            // 开票员手机号
+            request.setClerkPhoneNo("17621100776");
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -62,8 +64,6 @@ namespace BasePayDemo
         private static Dictionary<string, object> getExtendInfos() {
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
-            // 开票员手机号
-            extendInfoMap.Add("clerk_phone_no", "17621100776");
             return extendInfoMap;
         }
 

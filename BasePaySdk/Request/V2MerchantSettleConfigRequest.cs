@@ -3,7 +3,7 @@ using System;
 namespace BasePaySdk.Request
 {
     /**
-     * 子账户开通配置(2022)
+     * 子账户开通配置
      *
      * @author sdk-generator
      * @Description
@@ -20,7 +20,7 @@ namespace BasePaySdk.Request
          */
         private string reqDate;
         /**
-         * 商户/用户汇付Id
+         * 商户汇付Id
          */
         private string huifuId;
         /**
@@ -35,6 +35,10 @@ namespace BasePaySdk.Request
          * 账户名称
          */
         private string acctName;
+        /**
+         * 结算卡信息配置新账户绑定的结算银行账户。jsonObject格式。若结算规则中上送token_no，则card_info不填。
+         */
+        private string cardInfo;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_MERCHANT_SETTLE_CONFIG;
@@ -43,13 +47,14 @@ namespace BasePaySdk.Request
         public V2MerchantSettleConfigRequest() {
         }
 
-        public V2MerchantSettleConfigRequest(string reqSeqId, string reqDate, string huifuId, string upperHuifuId, string acctType, string acctName) {
+        public V2MerchantSettleConfigRequest(string reqSeqId, string reqDate, string huifuId, string upperHuifuId, string acctType, string acctName, string cardInfo) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.huifuId = huifuId;
             this.upperHuifuId = upperHuifuId;
             this.acctType = acctType;
             this.acctName = acctName;
+            this.cardInfo = cardInfo;
         }
 
         public string getReqSeqId() {
@@ -98,6 +103,14 @@ namespace BasePaySdk.Request
 
         public void setAcctName(string acctName) {
             this.acctName = acctName;
+        }
+
+        public string getCardInfo() {
+            return cardInfo;
+        }
+
+        public void setCardInfo(string cardInfo) {
+            this.cardInfo = cardInfo;
         }
 
 

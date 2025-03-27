@@ -12,21 +12,41 @@ namespace BasePaySdk.Request
     {
 
         /**
-         * 系统号
+         * 请求日期
          */
-        private string sysId;
+        private string reqDate;
         /**
-         * 产品号
+         * 请求流水号
          */
-        private string productId;
+        private string reqSeqId;
         /**
-         * 加签结果
+         * 出款方商户号
          */
-        private string sign;
+        private string huifuId;
         /**
-         * 数据
+         * 支付金额(元)
          */
-        private string data;
+        private string cashAmt;
+        /**
+         * 代发模式
+         */
+        private string salaryModleType;
+        /**
+         * 落地公司商户号
+         */
+        private string bmemberId;
+        /**
+         * 子商户应用ID
+         */
+        private string subAppid;
+        /**
+         * 异步通知地址
+         */
+        private string notifyUrl;
+        /**
+         * 分账明细
+         */
+        private string acctSplitBunch;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_TRADE_LGWX_SURROGATE;
@@ -35,43 +55,88 @@ namespace BasePaySdk.Request
         public V2TradeLgwxSurrogateRequest() {
         }
 
-        public V2TradeLgwxSurrogateRequest(string sysId, string productId, string sign, string data) {
-            this.sysId = sysId;
-            this.productId = productId;
-            this.sign = sign;
-            this.data = data;
+        public V2TradeLgwxSurrogateRequest(string reqDate, string reqSeqId, string huifuId, string cashAmt, string salaryModleType, string bmemberId, string subAppid, string notifyUrl, string acctSplitBunch) {
+            this.reqDate = reqDate;
+            this.reqSeqId = reqSeqId;
+            this.huifuId = huifuId;
+            this.cashAmt = cashAmt;
+            this.salaryModleType = salaryModleType;
+            this.bmemberId = bmemberId;
+            this.subAppid = subAppid;
+            this.notifyUrl = notifyUrl;
+            this.acctSplitBunch = acctSplitBunch;
         }
 
-        public string getSysId() {
-            return sysId;
+        public string getReqDate() {
+            return reqDate;
         }
 
-        public void setSysId(string sysId) {
-            this.sysId = sysId;
+        public void setReqDate(string reqDate) {
+            this.reqDate = reqDate;
         }
 
-        public string getProductId() {
-            return productId;
+        public string getReqSeqId() {
+            return reqSeqId;
         }
 
-        public void setProductId(string productId) {
-            this.productId = productId;
+        public void setReqSeqId(string reqSeqId) {
+            this.reqSeqId = reqSeqId;
         }
 
-        public string getSign() {
-            return sign;
+        public string getHuifuId() {
+            return huifuId;
         }
 
-        public void setSign(string sign) {
-            this.sign = sign;
+        public void setHuifuId(string huifuId) {
+            this.huifuId = huifuId;
         }
 
-        public string getData() {
-            return data;
+        public string getCashAmt() {
+            return cashAmt;
         }
 
-        public void setData(string data) {
-            this.data = data;
+        public void setCashAmt(string cashAmt) {
+            this.cashAmt = cashAmt;
+        }
+
+        public string getSalaryModleType() {
+            return salaryModleType;
+        }
+
+        public void setSalaryModleType(string salaryModleType) {
+            this.salaryModleType = salaryModleType;
+        }
+
+        public string getBmemberId() {
+            return bmemberId;
+        }
+
+        public void setBmemberId(string bmemberId) {
+            this.bmemberId = bmemberId;
+        }
+
+        public string getSubAppid() {
+            return subAppid;
+        }
+
+        public void setSubAppid(string subAppid) {
+            this.subAppid = subAppid;
+        }
+
+        public string getNotifyUrl() {
+            return notifyUrl;
+        }
+
+        public void setNotifyUrl(string notifyUrl) {
+            this.notifyUrl = notifyUrl;
+        }
+
+        public string getAcctSplitBunch() {
+            return acctSplitBunch;
+        }
+
+        public void setAcctSplitBunch(string acctSplitBunch) {
+            this.acctSplitBunch = acctSplitBunch;
         }
 
 

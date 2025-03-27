@@ -65,15 +65,15 @@ namespace BasePayDemo
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
             // 分账对象
-            // extendInfoMap.Add("acct_split_bunch", getAcctSplitBunch());
+            // extendInfoMap.Add("acct_split_bunch", get9128befdE59846c78e5b5db4cb062ef2());
             // 安全信息
-            extendInfoMap.Add("risk_check_data", getRiskCheckData());
+            extendInfoMap.Add("risk_check_data", get506673b064014081830918c73b5747ba());
             // 备注
             extendInfoMap.Add("remark", "1234567890");
             return extendInfoMap;
         }
 
-        private static object getAcctInfos() {
+        private static object get26f8ea3aF58d4562894b3b3360aa8987() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 退款金额
             // obj.Add("div_amt", "test");
@@ -84,14 +84,14 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return objList;
         }
-        private static string getAcctSplitBunch() {
+        private static string get9128befdE59846c78e5b5db4cb062ef2() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 退账明细
-            // obj.Add("acct_infos", getAcctInfos());
+            // obj.Add("acct_infos", get26f8ea3aF58d4562894b3b3360aa8987());
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string getRiskCheckData() {
+        private static string get506673b064014081830918c73b5747ba() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 转账原因
             obj.Add("transfer_type", "04");

@@ -39,6 +39,10 @@ namespace BasePaySdk.Request
          * 设备信息线上交易退款必填，参见线上退款接口；jsonObject字符串
          */
         private string terminalDeviceData;
+        /**
+         * 大额转账支付账户信息数据jsonObject格式；银行大额转账支付交易退款申请时必填
+         */
+        private string bankInfoData;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_TRADE_HOSTING_PAYMENT_HTREFUND;
@@ -47,7 +51,7 @@ namespace BasePaySdk.Request
         public V2TradeHostingPaymentHtrefundRequest() {
         }
 
-        public V2TradeHostingPaymentHtrefundRequest(string reqDate, string reqSeqId, string huifuId, string ordAmt, string orgReqDate, string riskCheckData, string terminalDeviceData) {
+        public V2TradeHostingPaymentHtrefundRequest(string reqDate, string reqSeqId, string huifuId, string ordAmt, string orgReqDate, string riskCheckData, string terminalDeviceData, string bankInfoData) {
             this.reqDate = reqDate;
             this.reqSeqId = reqSeqId;
             this.huifuId = huifuId;
@@ -55,6 +59,7 @@ namespace BasePaySdk.Request
             this.orgReqDate = orgReqDate;
             this.riskCheckData = riskCheckData;
             this.terminalDeviceData = terminalDeviceData;
+            this.bankInfoData = bankInfoData;
         }
 
         public string getReqDate() {
@@ -111,6 +116,14 @@ namespace BasePaySdk.Request
 
         public void setTerminalDeviceData(string terminalDeviceData) {
             this.terminalDeviceData = terminalDeviceData;
+        }
+
+        public string getBankInfoData() {
+            return bankInfoData;
+        }
+
+        public void setBankInfoData(string bankInfoData) {
+            this.bankInfoData = bankInfoData;
         }
 
 

@@ -32,14 +32,6 @@ namespace BasePaySdk.Request
          */
         private string responseContent;
         /**
-         * 跳转链接
-         */
-        private string jumpUrl;
-        /**
-         * 跳转链接文案
-         */
-        private string jumpUrlText;
-        /**
          * 微信商户号
          */
         private string mchId;
@@ -51,14 +43,12 @@ namespace BasePaySdk.Request
         public V2MerchantComplaintReplyRequest() {
         }
 
-        public V2MerchantComplaintReplyRequest(string reqSeqId, string reqDate, string complaintId, string complaintedMchid, string responseContent, string jumpUrl, string jumpUrlText, string mchId) {
+        public V2MerchantComplaintReplyRequest(string reqSeqId, string reqDate, string complaintId, string complaintedMchid, string responseContent, string mchId) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.complaintId = complaintId;
             this.complaintedMchid = complaintedMchid;
             this.responseContent = responseContent;
-            this.jumpUrl = jumpUrl;
-            this.jumpUrlText = jumpUrlText;
             this.mchId = mchId;
         }
 
@@ -100,22 +90,6 @@ namespace BasePaySdk.Request
 
         public void setResponseContent(string responseContent) {
             this.responseContent = responseContent;
-        }
-
-        public string getJumpUrl() {
-            return jumpUrl;
-        }
-
-        public void setJumpUrl(string jumpUrl) {
-            this.jumpUrl = jumpUrl;
-        }
-
-        public string getJumpUrlText() {
-            return jumpUrlText;
-        }
-
-        public void setJumpUrlText(string jumpUrlText) {
-            this.jumpUrlText = jumpUrlText;
         }
 
         public string getMchId() {

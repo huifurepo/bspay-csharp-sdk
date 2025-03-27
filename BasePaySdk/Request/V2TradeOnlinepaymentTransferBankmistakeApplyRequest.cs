@@ -43,10 +43,6 @@ namespace BasePaySdk.Request
          * 异步通知地址
          */
         private string notifyUrl;
-        /**
-         * 商品描述
-         */
-        private string goodsDesc;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_TRADE_ONLINEPAYMENT_TRANSFER_BANKMISTAKE_APPLY;
@@ -55,7 +51,7 @@ namespace BasePaySdk.Request
         public V2TradeOnlinepaymentTransferBankmistakeApplyRequest() {
         }
 
-        public V2TradeOnlinepaymentTransferBankmistakeApplyRequest(string reqSeqId, string reqDate, string huifuId, string transAmt, string orderType, string orgReqSeqId, string orgReqDate, string notifyUrl, string goodsDesc) {
+        public V2TradeOnlinepaymentTransferBankmistakeApplyRequest(string reqSeqId, string reqDate, string huifuId, string transAmt, string orderType, string orgReqSeqId, string orgReqDate, string notifyUrl) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.huifuId = huifuId;
@@ -64,7 +60,6 @@ namespace BasePaySdk.Request
             this.orgReqSeqId = orgReqSeqId;
             this.orgReqDate = orgReqDate;
             this.notifyUrl = notifyUrl;
-            this.goodsDesc = goodsDesc;
         }
 
         public string getReqSeqId() {
@@ -129,14 +124,6 @@ namespace BasePaySdk.Request
 
         public void setNotifyUrl(string notifyUrl) {
             this.notifyUrl = notifyUrl;
-        }
-
-        public string getGoodsDesc() {
-            return goodsDesc;
-        }
-
-        public void setGoodsDesc(string goodsDesc) {
-            this.goodsDesc = goodsDesc;
         }
 
 

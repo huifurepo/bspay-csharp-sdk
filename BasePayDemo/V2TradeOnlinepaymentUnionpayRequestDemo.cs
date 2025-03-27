@@ -35,9 +35,9 @@ namespace BasePayDemo
             // 商品描述
             request.setOrderDesc("通用性商品1");
             // 安全信息
-            request.setRiskCheckData(getRiskCheckData());
+            request.setRiskCheckData(get039a5a632a524bedBdf01306634c96e2());
             // 三方支付数据jsonObject；pay_scene为云闪付公众号与云闪付小程序时必填
-            // request.setThirdPayData(getThirdPayData());
+            // request.setThirdPayData(getFd7b99d3543a4935Aece1411798bc9d5());
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -75,7 +75,7 @@ namespace BasePayDemo
             // 订单失效时间
             extendInfoMap.Add("time_expire", "");
             // 分账对象
-            // extendInfoMap.Add("acct_split_bunch", getAcctSplitBunchRucan());
+            // extendInfoMap.Add("acct_split_bunch", get962ca1cb6e3c44d8A1c13660223fe9fd());
             // 前端跳转地址
             extendInfoMap.Add("front_url", "https://www.service.com/getresp");
             // 异步通知地址
@@ -89,7 +89,7 @@ namespace BasePayDemo
             return extendInfoMap;
         }
 
-        private static object getAcctInfos() {
+        private static object get634a1ff623df402fA0a621cd0982a65d() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 分账金额
             // obj.Add("div_amt", "");
@@ -104,10 +104,10 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return objList;
         }
-        private static string getAcctSplitBunchRucan() {
+        private static string get962ca1cb6e3c44d8A1c13660223fe9fd() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 分账明细
-            // obj.Add("acct_infos", getAcctInfos());
+            // obj.Add("acct_infos", get634a1ff623df402fA0a621cd0982a65d());
             // 百分比分账标志
             // obj.Add("percentage_flag", "");
             // 是否净值分账
@@ -115,7 +115,7 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string getRiskCheckData() {
+        private static string get039a5a632a524bedBdf01306634c96e2() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 基站地址
             obj.Add("base_station", "7");
@@ -128,7 +128,7 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string getThirdPayData() {
+        private static string getFd7b99d3543a4935Aece1411798bc9d5() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 小程序id
             // obj.Add("app_id", "");

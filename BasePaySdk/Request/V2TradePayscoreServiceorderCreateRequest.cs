@@ -3,7 +3,7 @@ using System;
 namespace BasePaySdk.Request
 {
     /**
-     * 创建支付分订单
+     * 创建支付分
      *
      * @author sdk-generator
      * @Description

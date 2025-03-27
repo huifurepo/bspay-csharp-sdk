@@ -36,10 +36,6 @@ namespace BasePaySdk.Request
          */
         private string riskCheckData;
         /**
-         * 交易有效期
-         */
-        private string timeExpire;
-        /**
          * 支付宝扩展参数集合
          */
         private string alipayData;
@@ -51,14 +47,13 @@ namespace BasePaySdk.Request
         public V2TradePayafteruseInstallmentPayRequest() {
         }
 
-        public V2TradePayafteruseInstallmentPayRequest(string reqDate, string reqSeqId, string huifuId, string transAmt, string goodsDesc, string riskCheckData, string timeExpire, string alipayData) {
+        public V2TradePayafteruseInstallmentPayRequest(string reqDate, string reqSeqId, string huifuId, string transAmt, string goodsDesc, string riskCheckData, string alipayData) {
             this.reqDate = reqDate;
             this.reqSeqId = reqSeqId;
             this.huifuId = huifuId;
             this.transAmt = transAmt;
             this.goodsDesc = goodsDesc;
             this.riskCheckData = riskCheckData;
-            this.timeExpire = timeExpire;
             this.alipayData = alipayData;
         }
 
@@ -108,14 +103,6 @@ namespace BasePaySdk.Request
 
         public void setRiskCheckData(string riskCheckData) {
             this.riskCheckData = riskCheckData;
-        }
-
-        public string getTimeExpire() {
-            return timeExpire;
-        }
-
-        public void setTimeExpire(string timeExpire) {
-            this.timeExpire = timeExpire;
         }
 
         public string getAlipayData() {

@@ -3,7 +3,7 @@ using System;
 namespace BasePaySdk.Request
 {
     /**
-     * 新增绑定银行卡
+     * 新增绑定卡
      *
      * @author sdk-generator
      * @Description
@@ -12,21 +12,29 @@ namespace BasePaySdk.Request
     {
 
         /**
-         * 系统号
+         * 请求流水号
          */
-        private string sysId;
+        private string reqSeqId;
         /**
-         * 产品号
+         * 请求日期
          */
-        private string productId;
+        private string reqDate;
         /**
-         * 加签结果
+         * 商户号
          */
-        private string sign;
+        private string huifuId;
         /**
-         * 数据
+         * 钱包用户ID
          */
-        private string data;
+        private string userHuifuId;
+        /**
+         * 跳转地址
+         */
+        private string frontUrl;
+        /**
+         * 设备信息域
+         */
+        private string trxDeviceInfo ;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_WALLET_CARD_ADD;
@@ -35,43 +43,61 @@ namespace BasePaySdk.Request
         public V2WalletCardAddRequest() {
         }
 
-        public V2WalletCardAddRequest(string sysId, string productId, string sign, string data) {
-            this.sysId = sysId;
-            this.productId = productId;
-            this.sign = sign;
-            this.data = data;
+        public V2WalletCardAddRequest(string reqSeqId, string reqDate, string huifuId, string userHuifuId, string frontUrl, string trxDeviceInfo ) {
+            this.reqSeqId = reqSeqId;
+            this.reqDate = reqDate;
+            this.huifuId = huifuId;
+            this.userHuifuId = userHuifuId;
+            this.frontUrl = frontUrl;
+            this.trxDeviceInfo  = trxDeviceInfo ;
         }
 
-        public string getSysId() {
-            return sysId;
+        public string getReqSeqId() {
+            return reqSeqId;
         }
 
-        public void setSysId(string sysId) {
-            this.sysId = sysId;
+        public void setReqSeqId(string reqSeqId) {
+            this.reqSeqId = reqSeqId;
         }
 
-        public string getProductId() {
-            return productId;
+        public string getReqDate() {
+            return reqDate;
         }
 
-        public void setProductId(string productId) {
-            this.productId = productId;
+        public void setReqDate(string reqDate) {
+            this.reqDate = reqDate;
         }
 
-        public string getSign() {
-            return sign;
+        public string getHuifuId() {
+            return huifuId;
         }
 
-        public void setSign(string sign) {
-            this.sign = sign;
+        public void setHuifuId(string huifuId) {
+            this.huifuId = huifuId;
         }
 
-        public string getData() {
-            return data;
+        public string getUserHuifuId() {
+            return userHuifuId;
         }
 
-        public void setData(string data) {
-            this.data = data;
+        public void setUserHuifuId(string userHuifuId) {
+            this.userHuifuId = userHuifuId;
+        }
+
+        public string getFrontUrl() {
+            return frontUrl;
+        }
+
+        public void setFrontUrl(string frontUrl) {
+            this.frontUrl = frontUrl;
+        }
+
+        public string getTrxDeviceInfo () {
+            return trxDeviceInfo ;
+        }
+
+        public void setTrxDeviceInfo (string trxDeviceInfo ) {
+            this.trxDeviceInfo  = trxDeviceInfo ;
         }
 
 

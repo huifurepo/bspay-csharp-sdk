@@ -35,9 +35,11 @@ namespace BasePayDemo
             // 原交易请求日期
             request.setOrgReqDate("20240229");
             // 安全信息线上交易退款必填，参见线上退款接口；jsonObject字符串
-            request.setRiskCheckData(getRiskCheckData());
+            request.setRiskCheckData(get195595a868964f2bB023E9566fcd0297());
             // 设备信息线上交易退款必填，参见线上退款接口；jsonObject字符串
-            request.setTerminalDeviceData(getTerminalDeviceData());
+            request.setTerminalDeviceData(get8d8843c250f94e9b80a253d37ec6f80a());
+            // 大额转账支付账户信息数据jsonObject格式；银行大额转账支付交易退款申请时必填
+            // request.setBankInfoData(getAa3a4591240343e2Bad5D6a0764f06dc());
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -71,7 +73,7 @@ namespace BasePayDemo
             // 原交易请求流水号
             extendInfoMap.Add("org_req_seq_id", "202207099803123123199941");
             // 分账对象
-            extendInfoMap.Add("acct_split_bunch", getAcctSplitBunch());
+            extendInfoMap.Add("acct_split_bunch", get4a68d378Cb6e41dfA9405a589b476160());
             // 备注
             // extendInfoMap.Add("remark", "");
             // 异步通知地址
@@ -79,7 +81,7 @@ namespace BasePayDemo
             return extendInfoMap;
         }
 
-        private static object getAcctInfosRucan() {
+        private static object get33a52525B1614d3bBc18Ff7d935b2bca() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 分账金额
             obj.Add("div_amt", "0.12");
@@ -90,14 +92,14 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return objList;
         }
-        private static string getAcctSplitBunch() {
+        private static string get4a68d378Cb6e41dfA9405a589b476160() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 分账明细
-            obj.Add("acct_infos", getAcctInfosRucan());
+            obj.Add("acct_infos", get33a52525B1614d3bBc18Ff7d935b2bca());
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string getRiskCheckData() {
+        private static string get195595a868964f2bB023E9566fcd0297() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // ip地址
             // obj.Add("ip_addr", "");
@@ -110,7 +112,7 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string getTerminalDeviceData() {
+        private static string get8d8843c250f94e9b80a253d37ec6f80a() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 设备类型
             obj.Add("device_type", "4");
@@ -128,6 +130,21 @@ namespace BasePayDemo
             // obj.Add("device_icc_id", "");
             // 交易设备WIFIMAC
             // obj.Add("device_wifi_mac", "");
+
+            return JsonConvert.SerializeObject(obj);
+        }
+        private static string getAa3a4591240343e2Bad5D6a0764f06dc() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 省份付款方为对公账户时必填，参见省市地区码；示例值：0013
+            // obj.Add("province", "test");
+            // 地区付款方为对公账户时必填，参见省市地区码；示例值：1301
+            // obj.Add("area", "test");
+            // 银行编号付款方为对公账户时必填，参考：银行编码； 示例值：01040000
+            // obj.Add("bank_code", "test");
+            // 联行号付款方为对公账户时必填，参见：银行支行编码； 示例值：102290026507
+            // obj.Add("correspondent_code", "test");
+            // 付款方账户类型
+            // obj.Add("card_acct_type", "");
 
             return JsonConvert.SerializeObject(obj);
         }

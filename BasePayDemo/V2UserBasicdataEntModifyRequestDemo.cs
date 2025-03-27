@@ -97,11 +97,11 @@ namespace BasePayDemo
             // 注册地址(详细信息)
             extendInfoMap.Add("reg_detail", "上海市宜山路");
             // 文件列表
-            extendInfoMap.Add("file_list", getFileList());
+            extendInfoMap.Add("file_list", get62fd798c1b4240bdAfbeC31785f5ae41());
             return extendInfoMap;
         }
 
-        private static string getFileList() {
+        private static string get62fd798c1b4240bdAfbeC31785f5ae41() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 文件类型
             obj.Add("file_type", "F01");

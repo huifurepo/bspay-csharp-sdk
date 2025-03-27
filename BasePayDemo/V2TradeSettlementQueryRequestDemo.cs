@@ -8,7 +8,7 @@ using Newtonsoft.Json.Linq;
 namespace BasePayDemo
 {
     /**
-     * 出金交易查询接口 - 示例
+     * 出金交易查询 - 示例
      *
      * @author sdk-generator
      * @Description

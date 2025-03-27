@@ -51,7 +51,7 @@ namespace BasePayDemo
             // 预算提醒手机号列表
             request.setBudgetWarningMobileNoList("13940001100");
             // 子门店信息集合
-            request.setSubShopInfoList(getSubShopInfoList());
+            request.setSubShopInfoList(get5b9e78e1B07f4c27Aea4A87833d62a7e());
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -83,7 +83,7 @@ namespace BasePayDemo
             return extendInfoMap;
         }
 
-        private static string getSubShopInfoList() {
+        private static string get5b9e78e1B07f4c27Aea4A87833d62a7e() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 二级商户号
             obj.Add("sub_mer_id", "A4854135335181517376");

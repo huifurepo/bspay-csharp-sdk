@@ -40,7 +40,7 @@ namespace BasePaySdk.Request
          */
         private string area;
         /**
-         * 银行编号
+         * 银行编号参考： [银行编码](https://paas.huifu.com/open/doc/api/#/csfl/api_csfl_yhbm)； &lt;font color&#x3D;&quot;green&quot;&gt;&lt;br/&gt; 选填 ，card_acct_type&#x3D;E 时必填， 示例值：01040000&lt;/font&gt;
          */
         private string bankCode;
         /**

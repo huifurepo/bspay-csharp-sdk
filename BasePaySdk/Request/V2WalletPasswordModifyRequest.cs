@@ -12,21 +12,33 @@ namespace BasePaySdk.Request
     {
 
         /**
-         * 系统号
+         * 请求流水号
          */
-        private string sysId;
+        private string reqSeqId;
         /**
-         * 产品号
+         * 请求日期
          */
-        private string productId;
+        private string reqDate;
         /**
-         * 加签结果
+         * 商户号
          */
-        private string sign;
+        private string huifuId;
         /**
-         * 数据
+         * 钱包用户ID
          */
-        private string data;
+        private string userHuifuId;
+        /**
+         * 手机短信验证码
+         */
+        private string verifyNo;
+        /**
+         * 短信验证流水号
+         */
+        private string verifySeqId;
+        /**
+         * 跳转地址
+         */
+        private string frontUrl;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_WALLET_PASSWORD_MODIFY;
@@ -35,43 +47,70 @@ namespace BasePaySdk.Request
         public V2WalletPasswordModifyRequest() {
         }
 
-        public V2WalletPasswordModifyRequest(string sysId, string productId, string sign, string data) {
-            this.sysId = sysId;
-            this.productId = productId;
-            this.sign = sign;
-            this.data = data;
+        public V2WalletPasswordModifyRequest(string reqSeqId, string reqDate, string huifuId, string userHuifuId, string verifyNo, string verifySeqId, string frontUrl) {
+            this.reqSeqId = reqSeqId;
+            this.reqDate = reqDate;
+            this.huifuId = huifuId;
+            this.userHuifuId = userHuifuId;
+            this.verifyNo = verifyNo;
+            this.verifySeqId = verifySeqId;
+            this.frontUrl = frontUrl;
         }
 
-        public string getSysId() {
-            return sysId;
+        public string getReqSeqId() {
+            return reqSeqId;
         }
 
-        public void setSysId(string sysId) {
-            this.sysId = sysId;
+        public void setReqSeqId(string reqSeqId) {
+            this.reqSeqId = reqSeqId;
         }
 
-        public string getProductId() {
-            return productId;
+        public string getReqDate() {
+            return reqDate;
         }
 
-        public void setProductId(string productId) {
-            this.productId = productId;
+        public void setReqDate(string reqDate) {
+            this.reqDate = reqDate;
         }
 
-        public string getSign() {
-            return sign;
+        public string getHuifuId() {
+            return huifuId;
         }
 
-        public void setSign(string sign) {
-            this.sign = sign;
+        public void setHuifuId(string huifuId) {
+            this.huifuId = huifuId;
         }
 
-        public string getData() {
-            return data;
+        public string getUserHuifuId() {
+            return userHuifuId;
         }
 
-        public void setData(string data) {
-            this.data = data;
+        public void setUserHuifuId(string userHuifuId) {
+            this.userHuifuId = userHuifuId;
+        }
+
+        public string getVerifyNo() {
+            return verifyNo;
+        }
+
+        public void setVerifyNo(string verifyNo) {
+            this.verifyNo = verifyNo;
+        }
+
+        public string getVerifySeqId() {
+            return verifySeqId;
+        }
+
+        public void setVerifySeqId(string verifySeqId) {
+            this.verifySeqId = verifySeqId;
+        }
+
+        public string getFrontUrl() {
+            return frontUrl;
+        }
+
+        public void setFrontUrl(string frontUrl) {
+            this.frontUrl = frontUrl;
         }
 
 

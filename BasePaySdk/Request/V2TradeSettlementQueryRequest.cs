@@ -3,7 +3,7 @@ using System;
 namespace BasePaySdk.Request
 {
     /**
-     * 出金交易查询接口
+     * 出金交易查询
      *
      * @author sdk-generator
      * @Description

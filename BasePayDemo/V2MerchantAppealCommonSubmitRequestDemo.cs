@@ -99,11 +99,11 @@ namespace BasePayDemo
             // 员工人数
             extendInfoMap.Add("employee_cnt", "10");
             // 申诉文件列表
-            extendInfoMap.Add("appeal_file_list", getAppealFileList());
+            extendInfoMap.Add("appeal_file_list", get0c986afe8b424cad8c63F947666296c8());
             return extendInfoMap;
         }
 
-        private static string getAppealFileList() {
+        private static string get0c986afe8b424cad8c63F947666296c8() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 申诉文件名称
             obj.Add("item_name", "法人身份证正面");

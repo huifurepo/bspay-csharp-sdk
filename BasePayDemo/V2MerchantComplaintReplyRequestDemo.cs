@@ -34,10 +34,6 @@ namespace BasePayDemo
             request.setComplaintedMchid("535295270");
             // 回复内容
             request.setResponseContent("该问题请联系商家处理，谢谢。");
-            // 跳转链接
-            request.setJumpUrl("");
-            // 跳转链接文案
-            request.setJumpUrlText("");
             // 微信商户号
             request.setMchId("1502073961");
 
@@ -67,11 +63,15 @@ namespace BasePayDemo
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
             // 文件列表
-            // extendInfoMap.Add("file_info", getFileInfo());
+            // extendInfoMap.Add("file_info", get42b0f39dAdb944a8B720B6b3a55f3c41());
+            // 跳转链接
+            extendInfoMap.Add("jump_url", "");
+            // 跳转链接文案
+            extendInfoMap.Add("jump_url_text", "");
             return extendInfoMap;
         }
 
-        private static string getFileInfo() {
+        private static string get42b0f39dAdb944a8B720B6b3a55f3c41() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 回复图片1
             // obj.Add("response_pic1", "");

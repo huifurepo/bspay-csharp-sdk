@@ -24,14 +24,14 @@ namespace BasePayDemo
 
             // 2.组装请求参数
             V2WalletTradeQueryRequest request = new V2WalletTradeQueryRequest();
-            // 系统号
-            // request.setSysId("test");
-            // 产品号
-            // request.setProductId("test");
-            // 加签结果
-            // request.setSign("test");
-            // 数据
-            // request.setData("test");
+            // 商户号
+            request.setHuifuId("6666000135653240");
+            // 原交易请求日期
+            request.setOrgReqDate("20230803");
+            // 原交易请求流水号
+            request.setOrgReqSeqId("2023080325123001");
+            // 交易类型
+            request.setTransType("WALLET_PAY");
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();

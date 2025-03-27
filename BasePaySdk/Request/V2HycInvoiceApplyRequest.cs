@@ -12,21 +12,37 @@ namespace BasePaySdk.Request
     {
 
         /**
-         * 系统号
+         * 请求流水号
          */
-        private string sysId;
+        private string reqSeqId;
         /**
-         * 产品号
+         * 请求日期
          */
-        private string productId;
+        private string reqDate;
         /**
-         * 加签结果
+         * 商户汇付id
          */
-        private string sign;
+        private string huifuId;
         /**
-         * 数据
+         * 交易流水列表
          */
-        private string data;
+        private string batchList;
+        /**
+         * 接收人手机号
+         */
+        private string receiveMobile;
+        /**
+         * 接收人姓名
+         */
+        private string receiveName;
+        /**
+         * 快递地址
+         */
+        private string courierAddress;
+        /**
+         * 开票类目
+         */
+        private string invoiceCategory;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_HYC_INVOICE_APPLY;
@@ -35,43 +51,79 @@ namespace BasePaySdk.Request
         public V2HycInvoiceApplyRequest() {
         }
 
-        public V2HycInvoiceApplyRequest(string sysId, string productId, string sign, string data) {
-            this.sysId = sysId;
-            this.productId = productId;
-            this.sign = sign;
-            this.data = data;
+        public V2HycInvoiceApplyRequest(string reqSeqId, string reqDate, string huifuId, string batchList, string receiveMobile, string receiveName, string courierAddress, string invoiceCategory) {
+            this.reqSeqId = reqSeqId;
+            this.reqDate = reqDate;
+            this.huifuId = huifuId;
+            this.batchList = batchList;
+            this.receiveMobile = receiveMobile;
+            this.receiveName = receiveName;
+            this.courierAddress = courierAddress;
+            this.invoiceCategory = invoiceCategory;
         }
 
-        public string getSysId() {
-            return sysId;
+        public string getReqSeqId() {
+            return reqSeqId;
         }
 
-        public void setSysId(string sysId) {
-            this.sysId = sysId;
+        public void setReqSeqId(string reqSeqId) {
+            this.reqSeqId = reqSeqId;
         }
 
-        public string getProductId() {
-            return productId;
+        public string getReqDate() {
+            return reqDate;
         }
 
-        public void setProductId(string productId) {
-            this.productId = productId;
+        public void setReqDate(string reqDate) {
+            this.reqDate = reqDate;
         }
 
-        public string getSign() {
-            return sign;
+        public string getHuifuId() {
+            return huifuId;
         }
 
-        public void setSign(string sign) {
-            this.sign = sign;
+        public void setHuifuId(string huifuId) {
+            this.huifuId = huifuId;
         }
 
-        public string getData() {
-            return data;
+        public string getBatchList() {
+            return batchList;
         }
 
-        public void setData(string data) {
-            this.data = data;
+        public void setBatchList(string batchList) {
+            this.batchList = batchList;
+        }
+
+        public string getReceiveMobile() {
+            return receiveMobile;
+        }
+
+        public void setReceiveMobile(string receiveMobile) {
+            this.receiveMobile = receiveMobile;
+        }
+
+        public string getReceiveName() {
+            return receiveName;
+        }
+
+        public void setReceiveName(string receiveName) {
+            this.receiveName = receiveName;
+        }
+
+        public string getCourierAddress() {
+            return courierAddress;
+        }
+
+        public void setCourierAddress(string courierAddress) {
+            this.courierAddress = courierAddress;
+        }
+
+        public string getInvoiceCategory() {
+            return invoiceCategory;
+        }
+
+        public void setInvoiceCategory(string invoiceCategory) {
+            this.invoiceCategory = invoiceCategory;
         }
 
 

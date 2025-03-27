@@ -40,8 +40,6 @@ namespace BasePayDemo
             request.setOrgReqDate("20230831");
             // 异步通知地址
             request.setNotifyUrl("http://www.baidu.com");
-            // 商品描述
-            // request.setGoodsDesc("test");
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -73,34 +71,26 @@ namespace BasePayDemo
             // 备注
             extendInfoMap.Add("remark", "大额支付补入账验证");
             // 银行信息数据
-            extendInfoMap.Add("bank_info_data", getBankInfoData());
+            extendInfoMap.Add("bank_info_data", getAbecf41199e2427189e378ecb5bc0872());
             // 延时标记
             // extendInfoMap.Add("delay_acct_flag", "");
             // 分账对象
-            // extendInfoMap.Add("acct_split_bunch", getAcctSplitBunch());
+            // extendInfoMap.Add("acct_split_bunch", get887cec5eC9324ee3B2b5282eb708eb87());
             // 实际打款信息
-            // extendInfoMap.Add("actual_remit_data", getActualRemitData());
+            // extendInfoMap.Add("actual_remit_data", get8bcd25edC7614d4181cf7d7f6bd6e4b5());
             return extendInfoMap;
         }
 
-        private static string getBankInfoData() {
+        private static string getAbecf41199e2427189e378ecb5bc0872() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 省份对公代发必填，[参见省市地区码](https://cloudpnrcdn.oss-cn-shanghai.aliyuncs.com/opps/api/prod/download_file/area/%E6%96%97%E6%8B%B1%E4%BB%A3%E5%8F%91%E7%9C%81%E4%BB%BD%E5%9C%B0%E5%8C%BA%E7%BC%96%E7%A0%81.xlsx)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：0013&lt;/font&gt;
-            obj.Add("province", "0031");
-            // 地区对公代发必填，[参见省市地区码](https://cloudpnrcdn.oss-cn-shanghai.aliyuncs.com/opps/api/prod/download_file/area/%E6%96%97%E6%8B%B1%E4%BB%A3%E5%8F%91%E7%9C%81%E4%BB%BD%E5%9C%B0%E5%8C%BA%E7%BC%96%E7%A0%81.xlsx)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：1301&lt;/font&gt;
-            obj.Add("area", "3100");
             // 银行编号
             obj.Add("bank_code", "03080000");
-            // 联行号选填，参见：[银行支行编码](https://paas.huifu.com/open/doc/api/#/csfl/api_csfl_yhzhbm)； &lt;font color&#x3D;&quot;green&quot;&gt;示例值：102290026507&lt;/font&gt;&lt;br/&gt;对私代发非必填；
-            obj.Add("correspondent_code", "103290076178");
             // 对公对私标识
             obj.Add("card_acct_type", "P");
-            // 支行名
-            obj.Add("subbranch_bank_name", "中国农业银行股份有限公司上海联洋支行");
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static object getAcctInfos() {
+        private static object get7cb41945E40f4907Ab1e1dd0dcfaee14() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 支付金额
             // obj.Add("div_amt", "");
@@ -111,14 +101,14 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return objList;
         }
-        private static object getAcctSplitBunch() {
+        private static string get887cec5eC9324ee3B2b5282eb708eb87() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 分账信息列表
-            // obj.Add("acct_infos", getAcctInfos());
+            // obj.Add("acct_infos", get7cb41945E40f4907Ab1e1dd0dcfaee14());
 
-            return obj;
+            return JsonConvert.SerializeObject(obj);
         }
-        private static string getActualRemitData() {
+        private static string get8bcd25edC7614d4181cf7d7f6bd6e4b5() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 实际打款日期
             // obj.Add("actual_remit_date", "test");

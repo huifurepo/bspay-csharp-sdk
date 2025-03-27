@@ -35,6 +35,10 @@ namespace BasePaySdk.Request
          * 登录密码
          */
         private string loginPassword;
+        /**
+         * 开票员手机号
+         */
+        private string clerkPhoneNo;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_INVOICE_CLERK_REG;
@@ -43,13 +47,14 @@ namespace BasePaySdk.Request
         public V2InvoiceClerkRegRequest() {
         }
 
-        public V2InvoiceClerkRegRequest(string reqSeqId, string reqDate, string huifuId, string clerkIdentity, string loginAccount, string loginPassword) {
+        public V2InvoiceClerkRegRequest(string reqSeqId, string reqDate, string huifuId, string clerkIdentity, string loginAccount, string loginPassword, string clerkPhoneNo) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.huifuId = huifuId;
             this.clerkIdentity = clerkIdentity;
             this.loginAccount = loginAccount;
             this.loginPassword = loginPassword;
+            this.clerkPhoneNo = clerkPhoneNo;
         }
 
         public string getReqSeqId() {
@@ -98,6 +103,14 @@ namespace BasePaySdk.Request
 
         public void setLoginPassword(string loginPassword) {
             this.loginPassword = loginPassword;
+        }
+
+        public string getClerkPhoneNo() {
+            return clerkPhoneNo;
+        }
+
+        public void setClerkPhoneNo(string clerkPhoneNo) {
+            this.clerkPhoneNo = clerkPhoneNo;
         }
 
 

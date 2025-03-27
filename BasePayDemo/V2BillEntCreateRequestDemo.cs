@@ -41,7 +41,7 @@ namespace BasePayDemo
             // 账单截止日期
             request.setBillEndDate("20990909");
             // 收款人信息
-            request.setPayeeInfo(getPayeeInfo());
+            request.setPayeeInfo(get7cb71210B6e945638ed7D26989882224());
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -71,9 +71,9 @@ namespace BasePayDemo
             // 账单说明
             extendInfoMap.Add("bill_remark", "您本次 SaaS 服务周期为[开始日期]至[结束日期]。费用包括基础服务套餐[X]元，高级功能模块[X]元，总计[X]元。");
             // 汇总信息
-            // extendInfoMap.Add("bill_summary_info", getBillSummaryInfo());
+            // extendInfoMap.Add("bill_summary_info", getB7fe106a1ade4660865e83374ad40fbf());
             // 更多信息
-            // extendInfoMap.Add("bill_extend_info", getBillExtendInfo());
+            // extendInfoMap.Add("bill_extend_info", get31ba075559984fd7B7d0C256e889b5c0());
             // 账单推送方式
             extendInfoMap.Add("push_type", "EMAIL");
             // 抄送邮箱
@@ -87,7 +87,7 @@ namespace BasePayDemo
             return extendInfoMap;
         }
 
-        private static string getBillSummaryInfo() {
+        private static string getB7fe106a1ade4660865e83374ad40fbf() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 字段名
             // obj.Add("extend_name", "test");
@@ -96,7 +96,7 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string getBillExtendInfo() {
+        private static string get31ba075559984fd7B7d0C256e889b5c0() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 字段名
             // obj.Add("extend_name", "test");
@@ -105,7 +105,7 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string getPayeeInfo() {
+        private static string get7cb71210B6e945638ed7D26989882224() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 收款联系人姓名
             obj.Add("payee_name", "黄云");

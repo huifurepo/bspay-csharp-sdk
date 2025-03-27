@@ -35,7 +35,7 @@ namespace BasePayDemo
             // 解限风险类型
             request.setRelieveRiskType("SMID_MERCHANT");
             // 提交的凭证数据
-            request.setRelieveCertDataList(getRelieveCertDataList());
+            request.setRelieveCertDataList(get28cea73e4b8543ad899a4d2cdd0659ab());
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -65,7 +65,7 @@ namespace BasePayDemo
             return extendInfoMap;
         }
 
-        private static string getRelieveCertDataList() {
+        private static string get28cea73e4b8543ad899a4d2cdd0659ab() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 凭证的唯一ID
             obj.Add("request_id", "1efc8c73afd64fc1b1fc50a834a54be0");

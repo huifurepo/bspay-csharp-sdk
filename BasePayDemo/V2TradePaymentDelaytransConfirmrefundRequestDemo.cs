@@ -8,7 +8,7 @@ using Newtonsoft.Json.Linq;
 namespace BasePayDemo
 {
     /**
-     * 交易确认退款接口 - 示例
+     * 交易确认退款 - 示例
      *
      * @author sdk-generator
      * @Description
@@ -61,17 +61,19 @@ namespace BasePayDemo
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
             // 分账对象
-            extendInfoMap.Add("acct_split_bunch", getAcctSplitBunch());
+            extendInfoMap.Add("acct_split_bunch", get52147df86c694d86B9305a431b675f29());
             // 是否垫资退款
             // extendInfoMap.Add("loan_flag", "");
             // 垫资承担者
             // extendInfoMap.Add("loan_undertaker", "");
             // 垫资账户类型
             // extendInfoMap.Add("loan_acct_type", "");
+            // 备注
+            // extendInfoMap.Add("remark", "");
             return extendInfoMap;
         }
 
-        private static object getAcctInfos() {
+        private static object get8b3eddeaB8474c7f905e858f0050be27() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 分账接收方ID
             obj.Add("huifu_id", "6666000109133323");
@@ -84,10 +86,10 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return objList;
         }
-        private static string getAcctSplitBunch() {
+        private static string get52147df86c694d86B9305a431b675f29() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 分账明细
-            obj.Add("acct_infos", getAcctInfos());
+            obj.Add("acct_infos", get8b3eddeaB8474c7f905e858f0050be27());
 
             return JsonConvert.SerializeObject(obj);
         }

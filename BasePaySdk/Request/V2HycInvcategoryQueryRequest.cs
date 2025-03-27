@@ -12,21 +12,17 @@ namespace BasePaySdk.Request
     {
 
         /**
-         * 系统号
+         * 请求流水号
          */
-        private string sysId;
+        private string reqSeqId;
         /**
-         * 产品号
+         * 请求日期
          */
-        private string productId;
+        private string reqDate;
         /**
-         * 加签结果
+         * 落地公司机构号
          */
-        private string sign;
-        /**
-         * 数据
-         */
-        private string data;
+        private string minorAgentId;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_HYC_INVCATEGORY_QUERY;
@@ -35,43 +31,34 @@ namespace BasePaySdk.Request
         public V2HycInvcategoryQueryRequest() {
         }
 
-        public V2HycInvcategoryQueryRequest(string sysId, string productId, string sign, string data) {
-            this.sysId = sysId;
-            this.productId = productId;
-            this.sign = sign;
-            this.data = data;
+        public V2HycInvcategoryQueryRequest(string reqSeqId, string reqDate, string minorAgentId) {
+            this.reqSeqId = reqSeqId;
+            this.reqDate = reqDate;
+            this.minorAgentId = minorAgentId;
         }
 
-        public string getSysId() {
-            return sysId;
+        public string getReqSeqId() {
+            return reqSeqId;
         }
 
-        public void setSysId(string sysId) {
-            this.sysId = sysId;
+        public void setReqSeqId(string reqSeqId) {
+            this.reqSeqId = reqSeqId;
         }
 
-        public string getProductId() {
-            return productId;
+        public string getReqDate() {
+            return reqDate;
         }
 
-        public void setProductId(string productId) {
-            this.productId = productId;
+        public void setReqDate(string reqDate) {
+            this.reqDate = reqDate;
         }
 
-        public string getSign() {
-            return sign;
+        public string getMinorAgentId() {
+            return minorAgentId;
         }
 
-        public void setSign(string sign) {
-            this.sign = sign;
-        }
-
-        public string getData() {
-            return data;
-        }
-
-        public void setData(string data) {
-            this.data = data;
+        public void setMinorAgentId(string minorAgentId) {
+            this.minorAgentId = minorAgentId;
         }
 
 

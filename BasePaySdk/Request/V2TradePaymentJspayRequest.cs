@@ -3,7 +3,7 @@ using System;
 namespace BasePaySdk.Request
 {
     /**
-     * 聚合正扫接口
+     * 应用场景
      *
      * @author sdk-generator
      * @Description

@@ -32,6 +32,8 @@ namespace BasePayDemo
             request.setHuifuId("6666000108281250");
             // 申请退款金额
             request.setOrdAmt("0.01");
+            // 原请求日期
+            request.setOrgReqDate("20241010");
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -59,11 +61,9 @@ namespace BasePayDemo
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
             // 分账串
-            // extendInfoMap.Add("acct_split_bunch", getAcctSplitBunch());
+            // extendInfoMap.Add("acct_split_bunch", getF7787e9670d544d18daf492c5188d4b8());
             // 原请求流水号
             extendInfoMap.Add("org_req_seq_id", "20241010test10000111qccrr");
-            // 原请求日期
-            extendInfoMap.Add("org_req_date", "20241010");
             // 原全局流水号
             // extendInfoMap.Add("org_hf_seq_id", "");
             // 交易备注
@@ -73,7 +73,7 @@ namespace BasePayDemo
             return extendInfoMap;
         }
 
-        private static object getAcctInfos() {
+        private static object get78d9342b81254eae998c1de697882410() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 分账金额
             // obj.Add("div_amt", "test");
@@ -86,16 +86,16 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return objList;
         }
-        private static object getAcctSplitBunch() {
+        private static string getF7787e9670d544d18daf492c5188d4b8() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 百分比分账标志
             // obj.Add("percentage_flag", "");
             // 是否净值分账
             // obj.Add("is_clean_split", "");
             // 分账明细
-            // obj.Add("acct_infos", getAcctInfos());
+            // obj.Add("acct_infos", get78d9342b81254eae998c1de697882410());
 
-            return obj;
+            return JsonConvert.SerializeObject(obj);
         }
     }
 }

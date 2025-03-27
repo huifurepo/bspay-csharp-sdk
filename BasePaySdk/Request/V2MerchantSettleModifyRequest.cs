@@ -3,7 +3,7 @@ using System;
 namespace BasePaySdk.Request
 {
     /**
-     * 修改子账户配置(2022)
+     * 修改子账户配置
      *
      * @author sdk-generator
      * @Description
@@ -20,7 +20,7 @@ namespace BasePaySdk.Request
          */
         private string reqDate;
         /**
-         * 商户/用户汇付Id
+         * 商户汇付Id
          */
         private string huifuId;
         /**
@@ -31,6 +31,14 @@ namespace BasePaySdk.Request
          * 子账户号
          */
         private string acctId;
+        /**
+         * 结算规则配置
+         */
+        private string settleConfig;
+        /**
+         * 结算卡信息配置新账户绑定的结算银行账户。jsonObject格式。若结算规则中上送token_no，则card_info不填。
+         */
+        private string cardInfo;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_MERCHANT_SETTLE_MODIFY;
@@ -39,12 +47,14 @@ namespace BasePaySdk.Request
         public V2MerchantSettleModifyRequest() {
         }
 
-        public V2MerchantSettleModifyRequest(string reqSeqId, string reqDate, string huifuId, string upperHuifuId, string acctId) {
+        public V2MerchantSettleModifyRequest(string reqSeqId, string reqDate, string huifuId, string upperHuifuId, string acctId, string settleConfig, string cardInfo) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.huifuId = huifuId;
             this.upperHuifuId = upperHuifuId;
             this.acctId = acctId;
+            this.settleConfig = settleConfig;
+            this.cardInfo = cardInfo;
         }
 
         public string getReqSeqId() {
@@ -85,6 +95,22 @@ namespace BasePaySdk.Request
 
         public void setAcctId(string acctId) {
             this.acctId = acctId;
+        }
+
+        public string getSettleConfig() {
+            return settleConfig;
+        }
+
+        public void setSettleConfig(string settleConfig) {
+            this.settleConfig = settleConfig;
+        }
+
+        public string getCardInfo() {
+            return cardInfo;
+        }
+
+        public void setCardInfo(string cardInfo) {
+            this.cardInfo = cardInfo;
         }
 
 

@@ -30,8 +30,10 @@ namespace BasePayDemo
             request.setReqSeqId(DateTime.Now.ToString("yyy-MM-dd HH.mm.ss.fff"));
             // 商户号
             request.setHuifuId("6666000018328947");
-            // 支付授权码
+            // 授权码
             request.setAuthCode("6264664305553562612");
+            // 银联支付标识
+            request.setAppUpIdentifier("UnionPay/1.0 CloudPay");
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -58,8 +60,6 @@ namespace BasePayDemo
         private static Dictionary<string, object> getExtendInfos() {
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
-            // 银联支付标识
-            extendInfoMap.Add("app_up_identifier", "CloudPay");
             return extendInfoMap;
         }
 

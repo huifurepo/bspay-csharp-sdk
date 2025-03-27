@@ -12,21 +12,25 @@ namespace BasePaySdk.Request
     {
 
         /**
-         * 系统号
+         * 请求流水号
          */
-        private string sysId;
+        private string reqSeqId;
         /**
-         * 产品号
+         * 请求日期
          */
-        private string productId;
+        private string reqDate;
         /**
-         * 加签结果
+         * 商户汇付id
          */
-        private string sign;
+        private string huifuId;
         /**
-         * 数据
+         * 开始时间
          */
-        private string data;
+        private string startDate;
+        /**
+         * 结束时间
+         */
+        private string endDate;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_HYC_TAX_QUERY;
@@ -35,43 +39,52 @@ namespace BasePaySdk.Request
         public V2HycTaxQueryRequest() {
         }
 
-        public V2HycTaxQueryRequest(string sysId, string productId, string sign, string data) {
-            this.sysId = sysId;
-            this.productId = productId;
-            this.sign = sign;
-            this.data = data;
+        public V2HycTaxQueryRequest(string reqSeqId, string reqDate, string huifuId, string startDate, string endDate) {
+            this.reqSeqId = reqSeqId;
+            this.reqDate = reqDate;
+            this.huifuId = huifuId;
+            this.startDate = startDate;
+            this.endDate = endDate;
         }
 
-        public string getSysId() {
-            return sysId;
+        public string getReqSeqId() {
+            return reqSeqId;
         }
 
-        public void setSysId(string sysId) {
-            this.sysId = sysId;
+        public void setReqSeqId(string reqSeqId) {
+            this.reqSeqId = reqSeqId;
         }
 
-        public string getProductId() {
-            return productId;
+        public string getReqDate() {
+            return reqDate;
         }
 
-        public void setProductId(string productId) {
-            this.productId = productId;
+        public void setReqDate(string reqDate) {
+            this.reqDate = reqDate;
         }
 
-        public string getSign() {
-            return sign;
+        public string getHuifuId() {
+            return huifuId;
         }
 
-        public void setSign(string sign) {
-            this.sign = sign;
+        public void setHuifuId(string huifuId) {
+            this.huifuId = huifuId;
         }
 
-        public string getData() {
-            return data;
+        public string getStartDate() {
+            return startDate;
         }
 
-        public void setData(string data) {
-            this.data = data;
+        public void setStartDate(string startDate) {
+            this.startDate = startDate;
+        }
+
+        public string getEndDate() {
+            return endDate;
+        }
+
+        public void setEndDate(string endDate) {
+            this.endDate = endDate;
         }
 
 

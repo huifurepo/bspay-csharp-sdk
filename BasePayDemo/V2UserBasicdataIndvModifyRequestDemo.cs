@@ -67,13 +67,13 @@ namespace BasePayDemo
             // 手机号
             extendInfoMap.Add("mobile_no", "15556622000");
             // 文件列表
-            // extendInfoMap.Add("file_list", getFileList());
+            // extendInfoMap.Add("file_list", get8ace1c78E20e4c36B860Bf175485748a());
             // 地址
             // extendInfoMap.Add("address", "");
             return extendInfoMap;
         }
 
-        private static string getFileList() {
+        private static string get8ace1c78E20e4c36B860Bf175485748a() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 文件类型
             // obj.Add("file_type", "test");

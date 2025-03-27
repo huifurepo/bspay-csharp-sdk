@@ -12,21 +12,21 @@ namespace BasePaySdk.Request
     {
 
         /**
-         * 系统号
+         * 商户号
          */
-        private string sysId;
+        private string huifuId;
         /**
-         * 产品号
+         * 原交易请求日期
          */
-        private string productId;
+        private string orgReqDate;
         /**
-         * 加签结果
+         * 原交易请求流水号
          */
-        private string sign;
+        private string orgReqSeqId;
         /**
-         * 数据
+         * 交易类型
          */
-        private string data;
+        private string transType;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_WALLET_TRADE_QUERY;
@@ -35,43 +35,43 @@ namespace BasePaySdk.Request
         public V2WalletTradeQueryRequest() {
         }
 
-        public V2WalletTradeQueryRequest(string sysId, string productId, string sign, string data) {
-            this.sysId = sysId;
-            this.productId = productId;
-            this.sign = sign;
-            this.data = data;
+        public V2WalletTradeQueryRequest(string huifuId, string orgReqDate, string orgReqSeqId, string transType) {
+            this.huifuId = huifuId;
+            this.orgReqDate = orgReqDate;
+            this.orgReqSeqId = orgReqSeqId;
+            this.transType = transType;
         }
 
-        public string getSysId() {
-            return sysId;
+        public string getHuifuId() {
+            return huifuId;
         }
 
-        public void setSysId(string sysId) {
-            this.sysId = sysId;
+        public void setHuifuId(string huifuId) {
+            this.huifuId = huifuId;
         }
 
-        public string getProductId() {
-            return productId;
+        public string getOrgReqDate() {
+            return orgReqDate;
         }
 
-        public void setProductId(string productId) {
-            this.productId = productId;
+        public void setOrgReqDate(string orgReqDate) {
+            this.orgReqDate = orgReqDate;
         }
 
-        public string getSign() {
-            return sign;
+        public string getOrgReqSeqId() {
+            return orgReqSeqId;
         }
 
-        public void setSign(string sign) {
-            this.sign = sign;
+        public void setOrgReqSeqId(string orgReqSeqId) {
+            this.orgReqSeqId = orgReqSeqId;
         }
 
-        public string getData() {
-            return data;
+        public string getTransType() {
+            return transType;
         }
 
-        public void setData(string data) {
-            this.data = data;
+        public void setTransType(string transType) {
+            this.transType = transType;
         }
 
 

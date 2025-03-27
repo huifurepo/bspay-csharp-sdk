@@ -24,14 +24,14 @@ namespace BasePayDemo
 
             // 2.组装请求参数
             V2WalletQueryRequest request = new V2WalletQueryRequest();
-            // 系统号
-            // request.setSysId("test");
-            // 产品号
-            // request.setProductId("test");
-            // 加签结果
-            // request.setSign("test");
-            // 数据
-            // request.setData("test");
+            // 请求流水号
+            request.setReqSeqId(DateTime.Now.ToString("yyy-MM-dd HH.mm.ss.fff"));
+            // 请求日期
+            request.setReqDate(DateTime.Now.ToString("yyyyMMdd"));
+            // 商户号
+            request.setHuifuId("6666000107309462");
+            // 钱包用户ID
+            request.setUserHuifuId("6666000107355468");
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();

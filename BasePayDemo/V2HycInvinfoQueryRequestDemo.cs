@@ -24,14 +24,14 @@ namespace BasePayDemo
 
             // 2.组装请求参数
             V2HycInvinfoQueryRequest request = new V2HycInvinfoQueryRequest();
-            // 系统号
-            // request.setSysId("test");
-            // 产品号
-            // request.setProductId("test");
-            // 加签结果
-            // request.setSign("test");
-            // 数据
-            // request.setData("test");
+            // 请求流水号
+            request.setReqSeqId(DateTime.Now.ToString("yyy-MM-dd HH.mm.ss.fff"));
+            // 请求日期
+            request.setReqDate(DateTime.Now.ToString("yyyyMMdd"));
+            // 商户汇付id
+            request.setHuifuId("6666000109133323");
+            // 开票批次号
+            request.setInvoiceBatch("IB000228133");
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();

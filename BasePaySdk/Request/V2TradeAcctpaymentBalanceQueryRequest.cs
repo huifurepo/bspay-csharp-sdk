@@ -3,7 +3,7 @@ using System;
 namespace BasePaySdk.Request
 {
     /**
-     * 账户余额信息查询接口
+     * 账户余额信息查询
      *
      * @author sdk-generator
      * @Description

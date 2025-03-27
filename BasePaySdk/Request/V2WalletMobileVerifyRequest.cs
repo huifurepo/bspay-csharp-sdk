@@ -12,21 +12,29 @@ namespace BasePaySdk.Request
     {
 
         /**
-         * 系统号
+         * 请求流水号
          */
-        private string sysId;
+        private string reqSeqId;
         /**
-         * 产品号
+         * 请求日期
          */
-        private string productId;
+        private string reqDate;
         /**
-         * 加签结果
+         * 商户号
          */
-        private string sign;
+        private string huifuId;
         /**
-         * 数据
+         * 钱包用户ID斗拱系统生成的钱包用户ID。&lt;font color&#x3D;&quot;green&quot;&gt;示例值：6666000123122343&lt;/font&gt;&lt;br/&gt;验证类型为2-密码修改和3-密码重置时，必须提供钱包用户的汇付ID。
          */
-        private string data;
+        private string userHuifuId;
+        /**
+         * 用户手机号
+         */
+        private string mobileNo;
+        /**
+         * 验证类型
+         */
+        private string type;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_WALLET_MOBILE_VERIFY;
@@ -35,43 +43,61 @@ namespace BasePaySdk.Request
         public V2WalletMobileVerifyRequest() {
         }
 
-        public V2WalletMobileVerifyRequest(string sysId, string productId, string sign, string data) {
-            this.sysId = sysId;
-            this.productId = productId;
-            this.sign = sign;
-            this.data = data;
+        public V2WalletMobileVerifyRequest(string reqSeqId, string reqDate, string huifuId, string userHuifuId, string mobileNo, string type) {
+            this.reqSeqId = reqSeqId;
+            this.reqDate = reqDate;
+            this.huifuId = huifuId;
+            this.userHuifuId = userHuifuId;
+            this.mobileNo = mobileNo;
+            this.type = type;
         }
 
-        public string getSysId() {
-            return sysId;
+        public string getReqSeqId() {
+            return reqSeqId;
         }
 
-        public void setSysId(string sysId) {
-            this.sysId = sysId;
+        public void setReqSeqId(string reqSeqId) {
+            this.reqSeqId = reqSeqId;
         }
 
-        public string getProductId() {
-            return productId;
+        public string getReqDate() {
+            return reqDate;
         }
 
-        public void setProductId(string productId) {
-            this.productId = productId;
+        public void setReqDate(string reqDate) {
+            this.reqDate = reqDate;
         }
 
-        public string getSign() {
-            return sign;
+        public string getHuifuId() {
+            return huifuId;
         }
 
-        public void setSign(string sign) {
-            this.sign = sign;
+        public void setHuifuId(string huifuId) {
+            this.huifuId = huifuId;
         }
 
-        public string getData() {
-            return data;
+        public string getUserHuifuId() {
+            return userHuifuId;
         }
 
-        public void setData(string data) {
-            this.data = data;
+        public void setUserHuifuId(string userHuifuId) {
+            this.userHuifuId = userHuifuId;
+        }
+
+        public string getMobileNo() {
+            return mobileNo;
+        }
+
+        public void setMobileNo(string mobileNo) {
+            this.mobileNo = mobileNo;
+        }
+
+        public string getType() {
+            return type;
+        }
+
+        public void setType(string type) {
+            this.type = type;
         }
 
 

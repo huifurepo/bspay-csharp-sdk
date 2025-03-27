@@ -20,6 +20,14 @@ namespace BasePaySdk.Request
          */
         private string reqDate;
         /**
+         * 汇付商户号huifu_id与ext_mer_id二选一必填，汇付商户号优先；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：6666000109812123&lt;/font&gt;
+         */
+        private string huifuId;
+        /**
+         * 外部商户号&lt;font color&#x3D;&quot;green&quot;&gt;示例值：&lt;/font&gt;
+         */
+        private string extMerId;
+        /**
          * 渠道号汇付商户号为空时，必传；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：6666000109812124&lt;/font&gt;
          */
         private string channelId;
@@ -79,9 +87,11 @@ namespace BasePaySdk.Request
         public V2InvoiceOpenRequest() {
         }
 
-        public V2InvoiceOpenRequest(string reqSeqId, string reqDate, string channelId, string ivcType, string openType, string buyerName, string orderAmt, string redApplyReason, string redApplySource, string oriIvcCode, string oriIvcNumber, string goodsInfos, string payerInfo, string estateSales, string estateLease) {
+        public V2InvoiceOpenRequest(string reqSeqId, string reqDate, string huifuId, string extMerId, string channelId, string ivcType, string openType, string buyerName, string orderAmt, string redApplyReason, string redApplySource, string oriIvcCode, string oriIvcNumber, string goodsInfos, string payerInfo, string estateSales, string estateLease) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
+            this.huifuId = huifuId;
+            this.extMerId = extMerId;
             this.channelId = channelId;
             this.ivcType = ivcType;
             this.openType = openType;
@@ -111,6 +121,22 @@ namespace BasePaySdk.Request
 
         public void setReqDate(string reqDate) {
             this.reqDate = reqDate;
+        }
+
+        public string getHuifuId() {
+            return huifuId;
+        }
+
+        public void setHuifuId(string huifuId) {
+            this.huifuId = huifuId;
+        }
+
+        public string getExtMerId() {
+            return extMerId;
+        }
+
+        public void setExtMerId(string extMerId) {
+            this.extMerId = extMerId;
         }
 
         public string getChannelId() {

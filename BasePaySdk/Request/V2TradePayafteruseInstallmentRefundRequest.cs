@@ -27,6 +27,10 @@ namespace BasePaySdk.Request
          * 申请退款金额
          */
         private string ordAmt;
+        /**
+         * 原请求日期
+         */
+        private string orgReqDate;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_TRADE_PAYAFTERUSE_INSTALLMENT_REFUND;
@@ -35,11 +39,12 @@ namespace BasePaySdk.Request
         public V2TradePayafteruseInstallmentRefundRequest() {
         }
 
-        public V2TradePayafteruseInstallmentRefundRequest(string reqDate, string reqSeqId, string huifuId, string ordAmt) {
+        public V2TradePayafteruseInstallmentRefundRequest(string reqDate, string reqSeqId, string huifuId, string ordAmt, string orgReqDate) {
             this.reqDate = reqDate;
             this.reqSeqId = reqSeqId;
             this.huifuId = huifuId;
             this.ordAmt = ordAmt;
+            this.orgReqDate = orgReqDate;
         }
 
         public string getReqDate() {
@@ -72,6 +77,14 @@ namespace BasePaySdk.Request
 
         public void setOrdAmt(string ordAmt) {
             this.ordAmt = ordAmt;
+        }
+
+        public string getOrgReqDate() {
+            return orgReqDate;
+        }
+
+        public void setOrgReqDate(string orgReqDate) {
+            this.orgReqDate = orgReqDate;
         }
 
 

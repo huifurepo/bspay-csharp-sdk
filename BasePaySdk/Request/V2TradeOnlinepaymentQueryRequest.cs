@@ -27,6 +27,10 @@ namespace BasePaySdk.Request
          * 原交易请求流水号原交易请求流水号、原交易返回的全局流水号至少要送其中一项；&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：2021091708126665001&lt;/font&gt;
          */
         private string orgReqSeqId;
+        /**
+         * 原交易支付类型QUICK_PAY：快捷支付、快捷充值(查询快捷交易必填)&lt;br/&gt;ONLINE_PAY：网银支付、网银充值&lt;br/&gt;WAP_PAY：手机WAP支付&lt;br/&gt;UNION_PAY：银联APP统一支付&lt;br/&gt;QUICK_PAY_APPLY：银行卡分期申请&lt;br/&gt;QUICK_PAY_CONFIRM：银行卡分期确认&lt;br/&gt;TRANSFER_ACCT：网银转账&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：TRANSFER_ACCT&lt;/font&gt;&lt;br/&gt;注意：**不支持聚合扫码接口生成的微信、支付宝、银联二维码等交易的查询。**
+         */
+        private string payType;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_TRADE_ONLINEPAYMENT_QUERY;
@@ -35,11 +39,12 @@ namespace BasePaySdk.Request
         public V2TradeOnlinepaymentQueryRequest() {
         }
 
-        public V2TradeOnlinepaymentQueryRequest(string huifuId, string orgReqDate, string orgHfSeqId, string orgReqSeqId) {
+        public V2TradeOnlinepaymentQueryRequest(string huifuId, string orgReqDate, string orgHfSeqId, string orgReqSeqId, string payType) {
             this.huifuId = huifuId;
             this.orgReqDate = orgReqDate;
             this.orgHfSeqId = orgHfSeqId;
             this.orgReqSeqId = orgReqSeqId;
+            this.payType = payType;
         }
 
         public string getHuifuId() {
@@ -72,6 +77,14 @@ namespace BasePaySdk.Request
 
         public void setOrgReqSeqId(string orgReqSeqId) {
             this.orgReqSeqId = orgReqSeqId;
+        }
+
+        public string getPayType() {
+            return payType;
+        }
+
+        public void setPayType(string payType) {
+            this.payType = payType;
         }
 
 

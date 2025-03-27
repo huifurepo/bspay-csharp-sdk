@@ -37,7 +37,7 @@ namespace BasePayDemo
             // 商品描述
             request.setGoodsDesc("1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567");
             // 安全信息
-            request.setRiskCheckData(getRiskCheckData());
+            request.setRiskCheckData(get4144db46B82147ec88aeE3e50491fe02());
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -81,13 +81,13 @@ namespace BasePayDemo
             // 扩展域
             // extendInfoMap.Add("mer_priv", "");
             // 设备信息
-            extendInfoMap.Add("terminal_device_data", getTerminalDeviceData());
+            extendInfoMap.Add("terminal_device_data", get4a4f4c37D30a405fB03aB630cd659632());
             // 异步通知地址
             extendInfoMap.Add("notify_url", "http://www.baidu.com");
             return extendInfoMap;
         }
 
-        private static string getRiskCheckData() {
+        private static string get4144db46B82147ec88aeE3e50491fe02() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 基站地址
             obj.Add("base_station", "192.168.1.1");
@@ -100,7 +100,7 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string getTerminalDeviceData() {
+        private static string get4a4f4c37D30a405fB03aB630cd659632() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 商户终端序列号
             obj.Add("app_version", "");

@@ -31,7 +31,7 @@ namespace BasePayDemo
             // 开发者的应用ID
             request.setAppId("2019090666961966");
             // 证书文件列表
-            request.setFileList(getFileList());
+            request.setFileList(getEbe71eceF1a04373A7e1C99bb697b700());
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -61,7 +61,7 @@ namespace BasePayDemo
             return extendInfoMap;
         }
 
-        private static string getFileList() {
+        private static string getEbe71eceF1a04373A7e1C99bb697b700() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 文件类型
             obj.Add("file_type", "F120");
