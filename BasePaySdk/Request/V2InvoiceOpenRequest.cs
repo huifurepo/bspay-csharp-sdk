@@ -68,10 +68,6 @@ namespace BasePaySdk.Request
          */
         private string goodsInfos;
         /**
-         * 开票人信息
-         */
-        private string payerInfo;
-        /**
          * 不动产销售特殊字段specialFlag为05时，必填；jsonArray格式
          */
         private string estateSales;
@@ -87,7 +83,7 @@ namespace BasePaySdk.Request
         public V2InvoiceOpenRequest() {
         }
 
-        public V2InvoiceOpenRequest(string reqSeqId, string reqDate, string huifuId, string extMerId, string channelId, string ivcType, string openType, string buyerName, string orderAmt, string redApplyReason, string redApplySource, string oriIvcCode, string oriIvcNumber, string goodsInfos, string payerInfo, string estateSales, string estateLease) {
+        public V2InvoiceOpenRequest(string reqSeqId, string reqDate, string huifuId, string extMerId, string channelId, string ivcType, string openType, string buyerName, string orderAmt, string redApplyReason, string redApplySource, string oriIvcCode, string oriIvcNumber, string goodsInfos, string estateSales, string estateLease) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.huifuId = huifuId;
@@ -102,7 +98,6 @@ namespace BasePaySdk.Request
             this.oriIvcCode = oriIvcCode;
             this.oriIvcNumber = oriIvcNumber;
             this.goodsInfos = goodsInfos;
-            this.payerInfo = payerInfo;
             this.estateSales = estateSales;
             this.estateLease = estateLease;
         }
@@ -217,14 +212,6 @@ namespace BasePaySdk.Request
 
         public void setGoodsInfos(string goodsInfos) {
             this.goodsInfos = goodsInfos;
-        }
-
-        public string getPayerInfo() {
-            return payerInfo;
-        }
-
-        public void setPayerInfo(string payerInfo) {
-            this.payerInfo = payerInfo;
         }
 
         public string getEstateSales() {

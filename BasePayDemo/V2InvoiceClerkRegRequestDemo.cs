@@ -64,6 +64,8 @@ namespace BasePayDemo
         private static Dictionary<string, object> getExtendInfos() {
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
+            // 开票员名字
+            extendInfoMap.Add("clerk_name", "张三");
             return extendInfoMap;
         }
 

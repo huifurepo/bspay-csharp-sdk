@@ -51,13 +51,11 @@ namespace BasePayDemo
             // 原发票号码openType&#x3D;1时必填；参见[发票右上角](https://paas.huifu.com/open/doc/api/#/fp/api_fp_yanglitu.md)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：20685767&lt;/font&gt;
             request.setOriIvcNumber("150000020026");
             // 开票商品信息
-            request.setGoodsInfos(getCc865b09A9d1454588fd0ec915ac54b3());
-            // 开票人信息
-            request.setPayerInfo(getB166bc1dA4484a67A2d763b011609a76());
+            request.setGoodsInfos(get1c25f631D7734ad0Bfe823da7968c0f2());
             // 不动产销售特殊字段specialFlag为05时，必填；jsonArray格式
-            // request.setEstateSales(get834e08f62dcd4cdaBc97F6aadd5b60f7());
+            // request.setEstateSales(get305c27dd202b4bf4B2e203dce31d7ec4());
             // 不动产租赁特殊字段specialFlag为16时，必填；jsonArray格式
-            // request.setEstateLease(get95c5269197664358A5b57488affb02da());
+            // request.setEstateLease(get616ba0918c104e75A8666e879dd88a10());
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -108,6 +106,8 @@ namespace BasePayDemo
             extendInfoMap.Add("special_flag", "00");
             // 红字信息表编号
             extendInfoMap.Add("red_info_number", "");
+            // 开票人信息
+            extendInfoMap.Add("payer_info", getB61e2485D61f4b3bA6699eec840c7544());
             // 开票结果异步通知地址
             extendInfoMap.Add("callback_url", "virgo://http://192.168.85.157:30031/sspm/testVirgo");
             // 强制开票标识
@@ -115,7 +115,7 @@ namespace BasePayDemo
             return extendInfoMap;
         }
 
-        private static string getCc865b09A9d1454588fd0ec915ac54b3() {
+        private static string get1c25f631D7734ad0Bfe823da7968c0f2() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 发票行性质
             obj.Add("ivc_nature", "0");
@@ -154,7 +154,7 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return JsonConvert.SerializeObject(objList);
         }
-        private static string getB166bc1dA4484a67A2d763b011609a76() {
+        private static string getB61e2485D61f4b3bA6699eec840c7544() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 开票人
             obj.Add("payer_name", "开票人");
@@ -165,7 +165,7 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string get834e08f62dcd4cdaBc97F6aadd5b60f7() {
+        private static string get305c27dd202b4bf4B2e203dce31d7ec4() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 不动产地址
             // obj.Add("addr", "test");
@@ -186,7 +186,7 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return JsonConvert.SerializeObject(objList);
         }
-        private static string get95c5269197664358A5b57488affb02da() {
+        private static string get616ba0918c104e75A8666e879dd88a10() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 不动产地址
             // obj.Add("addr", "test");

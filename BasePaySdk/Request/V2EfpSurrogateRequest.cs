@@ -28,27 +28,27 @@ namespace BasePaySdk.Request
          */
         private string cashAmt;
         /**
-         * 银行账号
+         * 银行账号使用斗拱系统的公钥对银行账号进行RSA加密得到秘文；  示例值：b9LE5RccVVLChrHgo9lvp……PhWhjKrWg2NPfbe0mkQ&#x3D;&#x3D; 到账类型标识为E或P时必填
          */
         private string cardNo;
         /**
-         * 银行编号
+         * 银行编号银行编号 到账类型标识为E或P时必填
          */
         private string bankCode;
         /**
-         * 银行卡用户名
+         * 银行卡用户名银行卡用户名 到账类型标识为E或P时必填
          */
         private string cardName;
         /**
-         * 对公对私标识
+         * 到账类型标识
          */
         private string cardAcctType;
         /**
-         * 省份
+         * 省份到账类型标识为E或P时必填
          */
         private string provId;
         /**
-         * 地区
+         * 地区到账类型标识为E或P时必填
          */
         private string areaId;
         /**
@@ -56,21 +56,25 @@ namespace BasePaySdk.Request
          */
         private string mobileNo;
         /**
-         * 证件类型
+         * 证件类型证件类型01：身份证  03：护照  06：港澳通行证  07：台湾通行证  09：外国人居留证  11：营业执照  12：组织机构代码证  14：统一社会信用代码  99：其他  示例值：14 到账类型标识为E或P时必填
          */
         private string certType;
         /**
-         * 证件号
+         * 证件号使用斗拱系统的公钥对证件号进行RSA加密得到秘文；  示例值：b9LE5RccVVLChrHgo9lvp……PhWhjKrWg2NPfbe0mkQ 到账类型标识为E或P时必填
          */
         private string certNo;
         /**
-         * 统一社会信用代码对公必填
+         * 统一社会信用代码到账类型标识为E时必填
          */
         private string licenceCode;
         /**
          * 挂网协议地址
          */
         private string agreementUrl;
+        /**
+         * 入账接收方对象json格式,到账类型标识为H时必填
+         */
+        private string acctSplitBunch;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_EFP_SURROGATE;
@@ -79,7 +83,7 @@ namespace BasePaySdk.Request
         public V2EfpSurrogateRequest() {
         }
 
-        public V2EfpSurrogateRequest(string reqSeqId, string reqDate, string huifuId, string cashAmt, string cardNo, string bankCode, string cardName, string cardAcctType, string provId, string areaId, string mobileNo, string certType, string certNo, string licenceCode, string agreementUrl) {
+        public V2EfpSurrogateRequest(string reqSeqId, string reqDate, string huifuId, string cashAmt, string cardNo, string bankCode, string cardName, string cardAcctType, string provId, string areaId, string mobileNo, string certType, string certNo, string licenceCode, string agreementUrl, string acctSplitBunch) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.huifuId = huifuId;
@@ -95,6 +99,7 @@ namespace BasePaySdk.Request
             this.certNo = certNo;
             this.licenceCode = licenceCode;
             this.agreementUrl = agreementUrl;
+            this.acctSplitBunch = acctSplitBunch;
         }
 
         public string getReqSeqId() {
@@ -215,6 +220,14 @@ namespace BasePaySdk.Request
 
         public void setAgreementUrl(string agreementUrl) {
             this.agreementUrl = agreementUrl;
+        }
+
+        public string getAcctSplitBunch() {
+            return acctSplitBunch;
+        }
+
+        public void setAcctSplitBunch(string acctSplitBunch) {
+            this.acctSplitBunch = acctSplitBunch;
         }
 
 

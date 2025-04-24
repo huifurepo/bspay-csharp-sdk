@@ -3,7 +3,7 @@ using System;
 namespace BasePaySdk.Request
 {
     /**
-     * 汇付入账确认
+     * 汇付入账通知
      *
      * @author sdk-generator
      * @Description

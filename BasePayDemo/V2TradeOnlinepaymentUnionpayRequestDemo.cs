@@ -35,9 +35,9 @@ namespace BasePayDemo
             // 商品描述
             request.setOrderDesc("通用性商品1");
             // 安全信息
-            request.setRiskCheckData(get039a5a632a524bedBdf01306634c96e2());
+            request.setRiskCheckData(get24cac05aE51448a1960b54ff953dcaf2());
             // 三方支付数据jsonObject；pay_scene为云闪付公众号与云闪付小程序时必填
-            // request.setThirdPayData(getFd7b99d3543a4935Aece1411798bc9d5());
+            // request.setThirdPayData(get7945798a32654321Bea45a70676268d8());
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -75,7 +75,7 @@ namespace BasePayDemo
             // 订单失效时间
             extendInfoMap.Add("time_expire", "");
             // 分账对象
-            // extendInfoMap.Add("acct_split_bunch", get962ca1cb6e3c44d8A1c13660223fe9fd());
+            // extendInfoMap.Add("acct_split_bunch", get4629873c1e2342f689ccE0172d96371f());
             // 前端跳转地址
             extendInfoMap.Add("front_url", "https://www.service.com/getresp");
             // 异步通知地址
@@ -84,12 +84,14 @@ namespace BasePayDemo
             extendInfoMap.Add("remark", "merPriv11");
             // 支付场景
             // extendInfoMap.Add("pay_scene", "");
+            // 签约令牌号
+            // extendInfoMap.Add("sign_token_no", "");
             // 延时标记
             extendInfoMap.Add("delay_acct_flag", "Y");
             return extendInfoMap;
         }
 
-        private static object get634a1ff623df402fA0a621cd0982a65d() {
+        private static object get10d0f278Ee0e4dedB75b4d7f64376944() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 分账金额
             // obj.Add("div_amt", "");
@@ -104,10 +106,10 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return objList;
         }
-        private static string get962ca1cb6e3c44d8A1c13660223fe9fd() {
+        private static string get4629873c1e2342f689ccE0172d96371f() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 分账明细
-            // obj.Add("acct_infos", get634a1ff623df402fA0a621cd0982a65d());
+            // obj.Add("acct_infos", get10d0f278Ee0e4dedB75b4d7f64376944());
             // 百分比分账标志
             // obj.Add("percentage_flag", "");
             // 是否净值分账
@@ -115,7 +117,7 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string get039a5a632a524bedBdf01306634c96e2() {
+        private static string get24cac05aE51448a1960b54ff953dcaf2() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 基站地址
             obj.Add("base_station", "7");
@@ -128,7 +130,7 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string getFd7b99d3543a4935Aece1411798bc9d5() {
+        private static string get7945798a32654321Bea45a70676268d8() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 小程序id
             // obj.Add("app_id", "");

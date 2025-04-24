@@ -8,36 +8,32 @@ using Newtonsoft.Json.Linq;
 namespace BasePayDemo
 {
     /**
-     * 汇付入账通知 - 示例
+     * 扫码交易退款查询 - 示例
      *
      * @author sdk-generator
      * @Description
      */
-    public class V2TradeOnlinepaymentTransferRemittanceRequestDemo
+    public class V3TradePaymentScanpayRefundqueryRequestDemo
     {
 
-        public static void V2TradeOnlinepaymentTransferRemittanceRequestDemoTest()
+        public static void V3TradePaymentScanpayRefundqueryRequestDemoTest()
         {
 
             // 1. 数据初始化
             InitMerConfig.init();
 
             // 2.组装请求参数
-            V2TradeOnlinepaymentTransferRemittanceRequest request = new V2TradeOnlinepaymentTransferRemittanceRequest();
-            // 请求流水号
-            request.setReqSeqId(DateTime.Now.ToString("yyy-MM-dd HH.mm.ss.fff"));
-            // 请求日期
-            request.setReqDate(DateTime.Now.ToString("yyyyMMdd"));
+            V3TradePaymentScanpayRefundqueryRequest request = new V3TradePaymentScanpayRefundqueryRequest();
             // 商户号
-            request.setHuifuId("6666000106521787");
-            // 交易金额
-            request.setTransAmt("1019.00");
-            // 异步通知地址
-            request.setNotifyUrl("http://C_TOPAT_NOTIFY");
-            // 原汇付通道流水号
-            request.setOrgRemittanceOrderId("20230214170030defaultit656505030");
-            // 商品描述
-            request.setGoodsDesc("商品描述001");
+            request.setHuifuId("6666000108854952");
+            // 退款请求日期退款发生的日期，格式为yyyyMMdd，&lt;font color&#x3D;&quot;green&quot;&gt;示例值：20220925&lt;/font&gt;；&lt;/br&gt;传入退款全局流水号时，非必填，其他场景必填；
+            request.setOrgReqDate("20221110");
+            // 退款全局流水号退款请求流水号,退款全局流水号,终端订单号三选一不能都为空；&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：0030default220825182711P099ac1f343f00000&lt;/font&gt;
+            request.setOrgHfSeqId("003100TOP2B221110093241P139ac139c0c00000");
+            // 退款请求流水号退款请求流水号,退款全局流水号,终端订单号三选一不能都为空；&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：202110210012100005&lt;/font&gt;
+            request.setOrgReqSeqId("");
+            // 终端订单号退款请求流水号,退款全局流水号,终端订单号三选一不能都为空；&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：16672670833524393&lt;/font&gt;
+            request.setMerOrdId("");
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -64,8 +60,6 @@ namespace BasePayDemo
         private static Dictionary<string, object> getExtendInfos() {
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
-            // 备注
-            extendInfoMap.Add("remark", "标记123");
             return extendInfoMap;
         }
 

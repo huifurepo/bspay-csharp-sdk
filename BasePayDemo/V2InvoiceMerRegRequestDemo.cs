@@ -84,7 +84,7 @@ namespace BasePayDemo
             extendInfoMap.Add("valid_period", "1");
             // 自动续约
             extendInfoMap.Add("auto_renewal", "Y");
-            // 开票结果异步通知地址
+            // 商户入驻结果异步通知地址
             extendInfoMap.Add("callback_url", "http: //service.example.com/to/path");
             return extendInfoMap;
         }

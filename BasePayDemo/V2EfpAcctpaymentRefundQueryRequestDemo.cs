@@ -8,36 +8,32 @@ using Newtonsoft.Json.Linq;
 namespace BasePayDemo
 {
     /**
-     * 汇付入账通知 - 示例
+     * 全渠道资金付款到账户退款查询 - 示例
      *
      * @author sdk-generator
      * @Description
      */
-    public class V2TradeOnlinepaymentTransferRemittanceRequestDemo
+    public class V2EfpAcctpaymentRefundQueryRequestDemo
     {
 
-        public static void V2TradeOnlinepaymentTransferRemittanceRequestDemoTest()
+        public static void V2EfpAcctpaymentRefundQueryRequestDemoTest()
         {
 
             // 1. 数据初始化
             InitMerConfig.init();
 
             // 2.组装请求参数
-            V2TradeOnlinepaymentTransferRemittanceRequest request = new V2TradeOnlinepaymentTransferRemittanceRequest();
+            V2EfpAcctpaymentRefundQueryRequest request = new V2EfpAcctpaymentRefundQueryRequest();
             // 请求流水号
             request.setReqSeqId(DateTime.Now.ToString("yyy-MM-dd HH.mm.ss.fff"));
             // 请求日期
             request.setReqDate(DateTime.Now.ToString("yyyyMMdd"));
-            // 商户号
-            request.setHuifuId("6666000106521787");
-            // 交易金额
-            request.setTransAmt("1019.00");
-            // 异步通知地址
-            request.setNotifyUrl("http://C_TOPAT_NOTIFY");
-            // 原汇付通道流水号
-            request.setOrgRemittanceOrderId("20230214170030defaultit656505030");
-            // 商品描述
-            request.setGoodsDesc("商品描述001");
+            // 汇付商户号
+            request.setHuifuId("6666000123123123");
+            // 退款交易请求流水号
+            request.setOrgReqSeqId("2021091708126665002");
+            // 退款交易请求日期
+            request.setOrgReqDate("20221022");
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -64,8 +60,6 @@ namespace BasePayDemo
         private static Dictionary<string, object> getExtendInfos() {
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
-            // 备注
-            extendInfoMap.Add("remark", "标记123");
             return extendInfoMap;
         }
 

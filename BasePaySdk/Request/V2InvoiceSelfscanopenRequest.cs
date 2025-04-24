@@ -39,10 +39,6 @@ namespace BasePaySdk.Request
          * 开票商品信息
          */
         private string goodsInfos;
-        /**
-         * 开票人信息
-         */
-        private string payerInfo;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_INVOICE_SELFSCANOPEN;
@@ -51,7 +47,7 @@ namespace BasePaySdk.Request
         public V2InvoiceSelfscanopenRequest() {
         }
 
-        public V2InvoiceSelfscanopenRequest(string reqSeqId, string reqDate, string huifuId, string ivcType, string openType, string orderAmt, string goodsInfos, string payerInfo) {
+        public V2InvoiceSelfscanopenRequest(string reqSeqId, string reqDate, string huifuId, string ivcType, string openType, string orderAmt, string goodsInfos) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.huifuId = huifuId;
@@ -59,7 +55,6 @@ namespace BasePaySdk.Request
             this.openType = openType;
             this.orderAmt = orderAmt;
             this.goodsInfos = goodsInfos;
-            this.payerInfo = payerInfo;
         }
 
         public string getReqSeqId() {
@@ -116,14 +111,6 @@ namespace BasePaySdk.Request
 
         public void setGoodsInfos(string goodsInfos) {
             this.goodsInfos = goodsInfos;
-        }
-
-        public string getPayerInfo() {
-            return payerInfo;
-        }
-
-        public void setPayerInfo(string payerInfo) {
-            this.payerInfo = payerInfo;
         }
 
 
