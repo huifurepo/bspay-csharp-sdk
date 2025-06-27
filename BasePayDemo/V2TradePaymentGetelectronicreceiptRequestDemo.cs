@@ -66,6 +66,8 @@ namespace BasePayDemo
             // extendInfoMap.Add("template_type", "");
             // 是否分账
             // extendInfoMap.Add("is_div", "");
+            // 电子回单名称显示
+            // extendInfoMap.Add("payer_name", "");
             return extendInfoMap;
         }
 

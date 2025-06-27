@@ -60,6 +60,8 @@ namespace BasePayDemo
         private static Dictionary<string, object> getExtendInfos() {
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
+            // 登记薄类型
+            // extendInfoMap.Add("register_type", "");
             // 页码
             extendInfoMap.Add("page_num", "1");
             return extendInfoMap;

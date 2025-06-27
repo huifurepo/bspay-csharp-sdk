@@ -68,10 +68,6 @@ namespace BasePaySdk.Request
          */
         private string licenceCode;
         /**
-         * 挂网协议地址
-         */
-        private string agreementUrl;
-        /**
          * 入账接收方对象json格式,到账类型标识为H时必填
          */
         private string acctSplitBunch;
@@ -83,7 +79,7 @@ namespace BasePaySdk.Request
         public V2EfpSurrogateRequest() {
         }
 
-        public V2EfpSurrogateRequest(string reqSeqId, string reqDate, string huifuId, string cashAmt, string cardNo, string bankCode, string cardName, string cardAcctType, string provId, string areaId, string mobileNo, string certType, string certNo, string licenceCode, string agreementUrl, string acctSplitBunch) {
+        public V2EfpSurrogateRequest(string reqSeqId, string reqDate, string huifuId, string cashAmt, string cardNo, string bankCode, string cardName, string cardAcctType, string provId, string areaId, string mobileNo, string certType, string certNo, string licenceCode, string acctSplitBunch) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.huifuId = huifuId;
@@ -98,7 +94,6 @@ namespace BasePaySdk.Request
             this.certType = certType;
             this.certNo = certNo;
             this.licenceCode = licenceCode;
-            this.agreementUrl = agreementUrl;
             this.acctSplitBunch = acctSplitBunch;
         }
 
@@ -212,14 +207,6 @@ namespace BasePaySdk.Request
 
         public void setLicenceCode(string licenceCode) {
             this.licenceCode = licenceCode;
-        }
-
-        public string getAgreementUrl() {
-            return agreementUrl;
-        }
-
-        public void setAgreementUrl(string agreementUrl) {
-            this.agreementUrl = agreementUrl;
         }
 
         public string getAcctSplitBunch() {

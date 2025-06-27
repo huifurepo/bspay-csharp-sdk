@@ -81,11 +81,19 @@ namespace BasePayDemo
             // 拓展方字段
             extendInfoMap.Add("expand_id", "");
             // 文件列表
-            extendInfoMap.Add("file_list", getA2b3ad80C6e54290Ad01D1bd6ad4753b());
+            extendInfoMap.Add("file_list", getDb2bd6a770dd4fbc80f23305842efb38());
+            // 所属行业
+            // extendInfoMap.Add("mcc", "");
+            // 省
+            // extendInfoMap.Add("prov_id", "");
+            // 市
+            // extendInfoMap.Add("area_id", "");
+            // 区
+            // extendInfoMap.Add("district_id", "");
             return extendInfoMap;
         }
 
-        private static string getA2b3ad80C6e54290Ad01D1bd6ad4753b() {
+        private static string getDb2bd6a770dd4fbc80f23305842efb38() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 文件类型
             obj.Add("file_type", "F04");

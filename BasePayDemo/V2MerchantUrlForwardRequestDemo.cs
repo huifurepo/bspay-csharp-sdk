@@ -29,9 +29,9 @@ namespace BasePayDemo
             // 请求日期
             request.setReqDate(DateTime.Now.ToString("yyyyMMdd"));
             // 渠道商号
-            request.setUpperHuifuId("6666000123123123");
+            request.setUpperHuifuId("6666000108290240");
             // 门店号
-            // request.setStoreId("test");
+            request.setStoreId("store128");
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -66,6 +66,8 @@ namespace BasePayDemo
             // extendInfoMap.Add("back_page_url", "");
             // 异步接收URL
             // extendInfoMap.Add("async_receive_url", "");
+            // 模版编号
+            extendInfoMap.Add("template_id", "155625");
             return extendInfoMap;
         }
 

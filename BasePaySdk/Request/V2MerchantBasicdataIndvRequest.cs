@@ -28,11 +28,11 @@ namespace BasePaySdk.Request
          */
         private string regName;
         /**
-         * *所属行业*
+         * 所属行业
          */
         private string mcc;
         /**
-         * *场景类型*
+         * 场景类型
          */
         private string sceneType;
         /**
@@ -44,19 +44,19 @@ namespace BasePaySdk.Request
          */
         private string detailAddr;
         /**
-         * *负责人证件号码*
+         * 负责人证件号码
          */
         private string legalCertNo;
         /**
-         * *负责人证件有效期开始日期*
+         * 负责人证件有效期开始日期
          */
         private string legalCertBeginDate;
         /**
-         * *负责人证件有效期截止日期*
+         * 负责人证件有效期截止日期
          */
         private string legalCertEndDate;
         /**
-         * *负责人身份证地址*
+         * 负责人身份证地址
          */
         private string legalAddr;
         /**
@@ -84,7 +84,7 @@ namespace BasePaySdk.Request
          */
         private string settleCardFrontPic;
         /**
-         * *商户ICP备案编号*商户ICP备案编号或网站许可证号；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：沪ICP备06046402号-28 &lt;/font&gt;&lt;br/&gt;类型为PC网站时，且为企业商户，且开通快捷或网银，或大额转账，或余额支付或分账业务（20%（不含）-100%），或为个人商户开通分账业务（10%（不含）-100%），必填
+         * 商户ICP备案编号商户ICP备案编号或网站许可证号；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：沪ICP备06046402号-28 &lt;/font&gt;&lt;br/&gt;类型为PC网站时，且为企业商户，且开通快捷或网银，或大额转账，或余额支付或分账业务（20%（不含）-100%），或为个人商户开通分账业务（10%（不含）-100%），必填
          */
         private string merIcp;
         /**

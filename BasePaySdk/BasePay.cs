@@ -9,7 +9,7 @@ namespace BasePaySdk
         // 是否生产模式
         public static bool prodMode = true;
         // sdk版本号
-        public const string sdk_version = "1.0.17";
+        public const string sdk_version = "1.0.18";
         // 接口生产基础地址
         public const string BASE_URL = "https://api.huifu.com";
         // 接口测试基础地址

@@ -58,6 +58,8 @@ namespace BasePayDemo
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
             // 操作类型
             extendInfoMap.Add("elect_acct_type", "MERCH");
+            // 登记簿类型
+            // extendInfoMap.Add("register_attr", "");
             return extendInfoMap;
         }
 

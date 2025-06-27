@@ -37,11 +37,11 @@ namespace BasePayDemo
             // 银行卡号instalments_num不为空时必填；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：6228480031509440000&lt;/font&gt;
             request.setBankCardNo("6222021102043040313");
             // 网联扩展数据
-            request.setExtendPayData(getCf4cb2ef02d648cb9e1b0b20679972ad());
+            request.setExtendPayData(getE236f3e2A5774278813b68f967f8db3e());
             // 安全信息
-            request.setRiskCheckData(get1f8253a4Fbf2498e8907Ca25050286a9());
+            request.setRiskCheckData(getEd6bb3aaBe474bba91da630a1272ee02());
             // 设备信息
-            request.setTerminalDeviceData(getDc79daa055e84e08A6d9Acb7c6852009());
+            request.setTerminalDeviceData(get642463d25eb543ffB49d07c169d8229b());
             // 页面跳转地址
             request.setFrontUrl("http://www.baidu.com");
             // 异步通知地址
@@ -77,7 +77,7 @@ namespace BasePayDemo
             // 交易有效期
             extendInfoMap.Add("time_expire", "20220406210038");
             // 分账对象
-            extendInfoMap.Add("acct_split_bunch", getB6e97b2d46914697Aba811c3a961e747());
+            extendInfoMap.Add("acct_split_bunch", getFc676215E3594ef1Ba9e03f35781872f());
             // 备注
             extendInfoMap.Add("remark", "");
             // 页面失败跳转地址
@@ -85,7 +85,7 @@ namespace BasePayDemo
             return extendInfoMap;
         }
 
-        private static string getCf4cb2ef02d648cb9e1b0b20679972ad() {
+        private static string getE236f3e2A5774278813b68f967f8db3e() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 商品简称
             obj.Add("goods_short_name", "一般商品");
@@ -96,7 +96,7 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static object getA82d6734Fde04413B5e365e64f965e1f() {
+        private static object get26c547a0B0894cfaAc8509ea166da9ae() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 支付金额
             // obj.Add("div_amt", "");
@@ -111,10 +111,10 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return objList;
         }
-        private static string getB6e97b2d46914697Aba811c3a961e747() {
+        private static string getFc676215E3594ef1Ba9e03f35781872f() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 分账信息列表
-            obj.Add("acct_infos", getA82d6734Fde04413B5e365e64f965e1f());
+            obj.Add("acct_infos", get26c547a0B0894cfaAc8509ea166da9ae());
             // 百分比分账标志
             // obj.Add("percentage_flag", "");
             // 是否净值分账
@@ -122,7 +122,7 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string get1f8253a4Fbf2498e8907Ca25050286a9() {
+        private static string getEd6bb3aaBe474bba91da630a1272ee02() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // ip地址
             obj.Add("ip_addr", "111");
@@ -135,7 +135,7 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string getDc79daa055e84e08A6d9Acb7c6852009() {
+        private static string get642463d25eb543ffB49d07c169d8229b() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 交易设备ip
             obj.Add("device_ip", "127.0.0.1");

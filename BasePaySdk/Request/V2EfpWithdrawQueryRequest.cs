@@ -24,11 +24,11 @@ namespace BasePaySdk.Request
          */
         private string huifuId;
         /**
-         * 原请求流水号
+         * 付款或提现的请求流水号
          */
         private string orgReqSeqId;
         /**
-         * 原请求日期
+         * 付款或提现的请求日期
          */
         private string orgReqDate;
 

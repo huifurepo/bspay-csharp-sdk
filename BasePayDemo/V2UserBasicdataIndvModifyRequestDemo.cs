@@ -67,13 +67,21 @@ namespace BasePayDemo
             // 手机号
             extendInfoMap.Add("mobile_no", "15556622000");
             // 文件列表
-            // extendInfoMap.Add("file_list", get8ace1c78E20e4c36B860Bf175485748a());
+            // extendInfoMap.Add("file_list", getB751a3d0C54d4718808cFd8fbde4bf08());
             // 地址
             // extendInfoMap.Add("address", "");
+            // 所属行业
+            // extendInfoMap.Add("mcc", "");
+            // 省
+            // extendInfoMap.Add("prov_id", "");
+            // 市
+            // extendInfoMap.Add("area_id", "");
+            // 区
+            // extendInfoMap.Add("district_id", "");
             return extendInfoMap;
         }
 
-        private static string get8ace1c78E20e4c36B860Bf175485748a() {
+        private static string getB751a3d0C54d4718808cFd8fbde4bf08() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 文件类型
             // obj.Add("file_type", "test");

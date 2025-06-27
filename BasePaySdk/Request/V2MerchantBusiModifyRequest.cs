@@ -24,14 +24,6 @@ namespace BasePaySdk.Request
          */
         private string huifuId;
         /**
-         * 是否交易手续费外扣
-         */
-        private string outFeeFlag;
-        /**
-         * 交易手续费外扣汇付ID
-         */
-        private string outFeeHuifuid;
-        /**
          * *线上业务类型编码*开通快捷、网银、余额支付、分账必填；参见[线上业务类型编码及补充材料说明](https://cloudpnrcdn.oss-cn-shanghai.aliyuncs.com/opps/api/prod/download_file/kyc/KYC-%E7%BA%BF%E4%B8%8A%E4%B8%9A%E5%8A%A1%E7%B1%BB%E5%9E%8B%E7%BC%96%E7%A0%81%E5%8F%8A%E8%A1%A5%E5%85%85%E6%9D%90%E6%96%99%E8%AF%B4%E6%98%8E.xlsx)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：H7999AL&lt;/font&gt;
          */
         private string onlineBusiType;
@@ -47,12 +39,10 @@ namespace BasePaySdk.Request
         public V2MerchantBusiModifyRequest() {
         }
 
-        public V2MerchantBusiModifyRequest(string reqSeqId, string reqDate, string huifuId, string outFeeFlag, string outFeeHuifuid, string onlineBusiType, string signUserInfo) {
+        public V2MerchantBusiModifyRequest(string reqSeqId, string reqDate, string huifuId, string onlineBusiType, string signUserInfo) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.huifuId = huifuId;
-            this.outFeeFlag = outFeeFlag;
-            this.outFeeHuifuid = outFeeHuifuid;
             this.onlineBusiType = onlineBusiType;
             this.signUserInfo = signUserInfo;
         }
@@ -79,22 +69,6 @@ namespace BasePaySdk.Request
 
         public void setHuifuId(string huifuId) {
             this.huifuId = huifuId;
-        }
-
-        public string getOutFeeFlag() {
-            return outFeeFlag;
-        }
-
-        public void setOutFeeFlag(string outFeeFlag) {
-            this.outFeeFlag = outFeeFlag;
-        }
-
-        public string getOutFeeHuifuid() {
-            return outFeeHuifuid;
-        }
-
-        public void setOutFeeHuifuid(string outFeeHuifuid) {
-            this.outFeeHuifuid = outFeeHuifuid;
         }
 
         public string getOnlineBusiType() {

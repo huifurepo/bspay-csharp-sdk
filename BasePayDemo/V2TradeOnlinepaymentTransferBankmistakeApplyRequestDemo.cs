@@ -71,17 +71,17 @@ namespace BasePayDemo
             // 备注
             extendInfoMap.Add("remark", "大额支付补入账验证");
             // 银行信息数据
-            extendInfoMap.Add("bank_info_data", getAbecf41199e2427189e378ecb5bc0872());
+            extendInfoMap.Add("bank_info_data", get69940cb5C5a44806851224ad4bee6c98());
             // 延时标记
             // extendInfoMap.Add("delay_acct_flag", "");
             // 分账对象
-            // extendInfoMap.Add("acct_split_bunch", get887cec5eC9324ee3B2b5282eb708eb87());
+            // extendInfoMap.Add("acct_split_bunch", get50f05b5e5f6b41fc8cfa7b30b4fcf212());
             // 实际打款信息
-            // extendInfoMap.Add("actual_remit_data", get8bcd25edC7614d4181cf7d7f6bd6e4b5());
+            // extendInfoMap.Add("actual_remit_data", get17063808A8024a02A58aA0786ccadcc0());
             return extendInfoMap;
         }
 
-        private static string getAbecf41199e2427189e378ecb5bc0872() {
+        private static string get69940cb5C5a44806851224ad4bee6c98() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 银行编号
             obj.Add("bank_code", "03080000");
@@ -90,7 +90,7 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static object get7cb41945E40f4907Ab1e1dd0dcfaee14() {
+        private static object get142421f44e274e9eAb00Dc45474aa16f() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 支付金额
             // obj.Add("div_amt", "");
@@ -101,14 +101,14 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return objList;
         }
-        private static string get887cec5eC9324ee3B2b5282eb708eb87() {
+        private static string get50f05b5e5f6b41fc8cfa7b30b4fcf212() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 分账信息列表
-            // obj.Add("acct_infos", get7cb41945E40f4907Ab1e1dd0dcfaee14());
+            // obj.Add("acct_infos", get142421f44e274e9eAb00Dc45474aa16f());
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string get8bcd25edC7614d4181cf7d7f6bd6e4b5() {
+        private static string get17063808A8024a02A58aA0786ccadcc0() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 实际打款日期
             // obj.Add("actual_remit_date", "test");
