@@ -131,6 +131,10 @@ namespace BasePaySdk.Request
          * 百度合作证明材料入账来源包含20:百度时必填 文件类型F616；详见[文件类型说明](https://paas.huifu.com/open/doc/api/#/csfl/api_csfl_wjlx)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：57cc7f00-600a-33ab-b614-6221bbf2e530&lt;/font&gt;
          */
         private string bdCooperationProvePic;
+        /**
+         * 主店商户号是否店群为是时必填
+         */
+        private string mainStoreHuifuId;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_MERCHANT_BUSI_EFPCONFIG;
@@ -139,7 +143,7 @@ namespace BasePaySdk.Request
         public V2MerchantBusiEfpconfigRequest() {
         }
 
-        public V2MerchantBusiEfpconfigRequest(string reqSeqId, string reqDate, string huifuId, string upperHuifuId, string outFeeHuifuid, string outOrderAcctCard, string outOrderAcctOpenFees, string outFundsGateId, string signUserInfo, string acctSource, string dyCooperationProvePic, string mtCooperationProvePic, string ksCooperationProvePic, string pddCooperationProvePic, string xhsCooperationProvePic, string zfbCooperationProvePic, string wxCooperationProvePic, string jdCooperationProvePic, string elmCooperationProvePic, string dwCooperationProvePic, string wphCooperationProvePic, string xcCooperationProvePic, string zfbzlCooperationProvePic, string wxzlCooperationProvePic, string ddjyCooperationProvePic, string tyCooperationProvePic, string tlCooperationProvePic, string ybCooperationProvePic, string efpPaperAgreementFile, string bdCooperationProvePic) {
+        public V2MerchantBusiEfpconfigRequest(string reqSeqId, string reqDate, string huifuId, string upperHuifuId, string outFeeHuifuid, string outOrderAcctCard, string outOrderAcctOpenFees, string outFundsGateId, string signUserInfo, string acctSource, string dyCooperationProvePic, string mtCooperationProvePic, string ksCooperationProvePic, string pddCooperationProvePic, string xhsCooperationProvePic, string zfbCooperationProvePic, string wxCooperationProvePic, string jdCooperationProvePic, string elmCooperationProvePic, string dwCooperationProvePic, string wphCooperationProvePic, string xcCooperationProvePic, string zfbzlCooperationProvePic, string wxzlCooperationProvePic, string ddjyCooperationProvePic, string tyCooperationProvePic, string tlCooperationProvePic, string ybCooperationProvePic, string efpPaperAgreementFile, string bdCooperationProvePic, string mainStoreHuifuId) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.huifuId = huifuId;
@@ -170,6 +174,7 @@ namespace BasePaySdk.Request
             this.ybCooperationProvePic = ybCooperationProvePic;
             this.efpPaperAgreementFile = efpPaperAgreementFile;
             this.bdCooperationProvePic = bdCooperationProvePic;
+            this.mainStoreHuifuId = mainStoreHuifuId;
         }
 
         public string getReqSeqId() {
@@ -410,6 +415,14 @@ namespace BasePaySdk.Request
 
         public void setBdCooperationProvePic(string bdCooperationProvePic) {
             this.bdCooperationProvePic = bdCooperationProvePic;
+        }
+
+        public string getMainStoreHuifuId() {
+            return mainStoreHuifuId;
+        }
+
+        public void setMainStoreHuifuId(string mainStoreHuifuId) {
+            this.mainStoreHuifuId = mainStoreHuifuId;
         }
 
 

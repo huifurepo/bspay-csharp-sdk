@@ -28,9 +28,13 @@ namespace BasePaySdk.Request
          */
         private string orgReqDate;
         /**
-         * 原交易请求流水号
+         * 原交易请求流水号与**party_order_id**二选一，必填；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：rQ2021121311173944&lt;/font&gt;
          */
         private string orgReqSeqId;
+        /**
+         * 用户账单上的商户订单号与**org_req_seq_id**二选一，必填；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：03232109190255105603561&lt;/font&gt;
+         */
+        private string partyOrderId;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_TRADE_HOSTING_PAYMENT_QUERYORDERINFO;
@@ -39,12 +43,13 @@ namespace BasePaySdk.Request
         public V2TradeHostingPaymentQueryorderinfoRequest() {
         }
 
-        public V2TradeHostingPaymentQueryorderinfoRequest(string reqDate, string reqSeqId, string huifuId, string orgReqDate, string orgReqSeqId) {
+        public V2TradeHostingPaymentQueryorderinfoRequest(string reqDate, string reqSeqId, string huifuId, string orgReqDate, string orgReqSeqId, string partyOrderId) {
             this.reqDate = reqDate;
             this.reqSeqId = reqSeqId;
             this.huifuId = huifuId;
             this.orgReqDate = orgReqDate;
             this.orgReqSeqId = orgReqSeqId;
+            this.partyOrderId = partyOrderId;
         }
 
         public string getReqDate() {
@@ -85,6 +90,14 @@ namespace BasePaySdk.Request
 
         public void setOrgReqSeqId(string orgReqSeqId) {
             this.orgReqSeqId = orgReqSeqId;
+        }
+
+        public string getPartyOrderId() {
+            return partyOrderId;
+        }
+
+        public void setPartyOrderId(string partyOrderId) {
+            this.partyOrderId = partyOrderId;
         }
 
 

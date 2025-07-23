@@ -41,7 +41,7 @@ namespace BasePayDemo
             // 账单截止日期
             request.setBillEndDate("20990909");
             // 收款人信息
-            request.setPayeeInfo(get7cb71210B6e945638ed7D26989882224());
+            request.setPayeeInfo(get0117bed87ef6433bAc7f831d09c77a76());
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -71,13 +71,13 @@ namespace BasePayDemo
             // 账单说明
             extendInfoMap.Add("bill_remark", "您本次 SaaS 服务周期为[开始日期]至[结束日期]。费用包括基础服务套餐[X]元，高级功能模块[X]元，总计[X]元。");
             // 汇总信息
-            // extendInfoMap.Add("bill_summary_info", getB7fe106a1ade4660865e83374ad40fbf());
+            extendInfoMap.Add("bill_summary_info", get00cfe2af4f494258A34084b55e2d10f9());
             // 更多信息
-            // extendInfoMap.Add("bill_extend_info", get31ba075559984fd7B7d0C256e889b5c0());
+            extendInfoMap.Add("bill_extend_info", get0d92fec96d1c42aaA519B4fe44b194f4());
             // 账单推送方式
             extendInfoMap.Add("push_type", "EMAIL");
             // 抄送邮箱
-            extendInfoMap.Add("copy_email", "xuemei.ren@huifu.com,guowen.jiang@huifu.com");
+            extendInfoMap.Add("copy_email", "xxx@163.com,xxxx@163.com");
             // 备注信息
             extendInfoMap.Add("remark", "I_remark");
             // 账单信息异步通知地址
@@ -87,25 +87,29 @@ namespace BasePayDemo
             return extendInfoMap;
         }
 
-        private static string getB7fe106a1ade4660865e83374ad40fbf() {
+        private static string get00cfe2af4f494258A34084b55e2d10f9() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 字段名
-            // obj.Add("extend_name", "test");
+            obj.Add("extend_name", "账单金额");
             // 字段值
-            // obj.Add("extend_value", "test");
+            obj.Add("extend_value", "128.00");
 
-            return JsonConvert.SerializeObject(obj);
+            JArray objList = new JArray();
+            objList.Add(JToken.FromObject(obj));
+            return JsonConvert.SerializeObject(objList);
         }
-        private static string get31ba075559984fd7B7d0C256e889b5c0() {
+        private static string get0d92fec96d1c42aaA519B4fe44b194f4() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 字段名
-            // obj.Add("extend_name", "test");
+            obj.Add("extend_name", "备注");
             // 字段值
-            // obj.Add("extend_value", "test");
+            obj.Add("extend_value", "额外额外");
 
-            return JsonConvert.SerializeObject(obj);
+            JArray objList = new JArray();
+            objList.Add(JToken.FromObject(obj));
+            return JsonConvert.SerializeObject(objList);
         }
-        private static string get7cb71210B6e945638ed7D26989882224() {
+        private static string get0117bed87ef6433bAc7f831d09c77a76() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 收款联系人姓名
             obj.Add("payee_name", "黄云");

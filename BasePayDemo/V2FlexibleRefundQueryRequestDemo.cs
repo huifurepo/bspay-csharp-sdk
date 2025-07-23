@@ -8,34 +8,32 @@ using Newtonsoft.Json.Linq;
 namespace BasePayDemo
 {
     /**
-     * 托管交易查询 - 示例
+     * 灵工支付退款查询 - 示例
      *
      * @author sdk-generator
      * @Description
      */
-    public class V2TradeHostingPaymentQueryorderinfoRequestDemo
+    public class V2FlexibleRefundQueryRequestDemo
     {
 
-        public static void V2TradeHostingPaymentQueryorderinfoRequestDemoTest()
+        public static void V2FlexibleRefundQueryRequestDemoTest()
         {
 
             // 1. 数据初始化
             InitMerConfig.init();
 
             // 2.组装请求参数
-            V2TradeHostingPaymentQueryorderinfoRequest request = new V2TradeHostingPaymentQueryorderinfoRequest();
-            // 请求日期
-            request.setReqDate(DateTime.Now.ToString("yyyyMMdd"));
+            V2FlexibleRefundQueryRequest request = new V2FlexibleRefundQueryRequest();
             // 请求流水号
             request.setReqSeqId(DateTime.Now.ToString("yyy-MM-dd HH.mm.ss.fff"));
-            // 商户号
-            request.setHuifuId("6666000109133323");
-            // 原交易请求日期
-            request.setOrgReqDate("20231020");
-            // 原交易请求流水号与**party_order_id**二选一，必填；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：rQ2021121311173944&lt;/font&gt;
-            request.setOrgReqSeqId("202310201652361987182512");
-            // 用户账单上的商户订单号与**org_req_seq_id**二选一，必填；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：03232109190255105603561&lt;/font&gt;
-            // request.setPartyOrderId("test");
+            // 请求日期
+            request.setReqDate(DateTime.Now.ToString("yyyyMMdd"));
+            // 退款请求流水号
+            request.setOrgReqSeqId("2025061871011243181811test001");
+            // 退款请求日期
+            request.setOrgReqDate("20250617");
+            // 汇付商户号
+            request.setHuifuId("6666000108903745");
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();

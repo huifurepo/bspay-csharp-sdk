@@ -3,12 +3,12 @@ using System;
 namespace BasePaySdk.Request
 {
     /**
-     * 申请开票
+     * 灵工用户信息查询
      *
      * @author sdk-generator
      * @Description
      */
-    public class V2HycInvoiceApplyRequest : BaseRequest
+    public class V2FlexibleIndvQueryRequest : BaseRequest
     {
 
         /**
@@ -20,31 +20,21 @@ namespace BasePaySdk.Request
          */
         private string reqDate;
         /**
-         * 商户汇付id
+         * 用户号
          */
         private string huifuId;
-        /**
-         * 开票类目
-         */
-        private string invoiceCategory;
-        /**
-         * 汇付全局流水号集合
-         */
-        private string hfSeqIds;
 
         public override string getFunctionCode() {
-            return FunctionCodeEnum.V2_HYC_INVOICE_APPLY;
+            return FunctionCodeEnum.V2_FLEXIBLE_INDV_QUERY;
         }
 
-        public V2HycInvoiceApplyRequest() {
+        public V2FlexibleIndvQueryRequest() {
         }
 
-        public V2HycInvoiceApplyRequest(string reqSeqId, string reqDate, string huifuId, string invoiceCategory, string hfSeqIds) {
+        public V2FlexibleIndvQueryRequest(string reqSeqId, string reqDate, string huifuId) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.huifuId = huifuId;
-            this.invoiceCategory = invoiceCategory;
-            this.hfSeqIds = hfSeqIds;
         }
 
         public string getReqSeqId() {
@@ -69,22 +59,6 @@ namespace BasePaySdk.Request
 
         public void setHuifuId(string huifuId) {
             this.huifuId = huifuId;
-        }
-
-        public string getInvoiceCategory() {
-            return invoiceCategory;
-        }
-
-        public void setInvoiceCategory(string invoiceCategory) {
-            this.invoiceCategory = invoiceCategory;
-        }
-
-        public string getHfSeqIds() {
-            return hfSeqIds;
-        }
-
-        public void setHfSeqIds(string hfSeqIds) {
-            this.hfSeqIds = hfSeqIds;
         }
 
 

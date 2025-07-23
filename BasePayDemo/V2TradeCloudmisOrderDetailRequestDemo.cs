@@ -24,6 +24,8 @@ namespace BasePayDemo
 
             // 2.组装请求参数
             V2TradeCloudmisOrderDetailRequest request = new V2TradeCloudmisOrderDetailRequest();
+            // 请求流水号
+            // request.setReqId("test");
             // 原MIS请求商户号
             request.setOrgHuifuId("6666000141203565");
             // 原MIS请求终端号

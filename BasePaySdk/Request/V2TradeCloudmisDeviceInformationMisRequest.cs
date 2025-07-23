@@ -12,6 +12,10 @@ namespace BasePaySdk.Request
     {
 
         /**
+         * 请求流水号
+         */
+        private string reqId;
+        /**
          * 终端设备号
          */
         private string deviceId;
@@ -31,10 +35,19 @@ namespace BasePaySdk.Request
         public V2TradeCloudmisDeviceInformationMisRequest() {
         }
 
-        public V2TradeCloudmisDeviceInformationMisRequest(string deviceId, string huifuId, string jsonData) {
+        public V2TradeCloudmisDeviceInformationMisRequest(string reqId, string deviceId, string huifuId, string jsonData) {
+            this.reqId = reqId;
             this.deviceId = deviceId;
             this.huifuId = huifuId;
             this.jsonData = jsonData;
+        }
+
+        public string getReqId() {
+            return reqId;
+        }
+
+        public void setReqId(string reqId) {
+            this.reqId = reqId;
         }
 
         public string getDeviceId() {

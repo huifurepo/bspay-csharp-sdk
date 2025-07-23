@@ -8,34 +8,36 @@ using Newtonsoft.Json.Linq;
 namespace BasePayDemo
 {
     /**
-     * 托管交易查询 - 示例
+     * 灵工支付退款 - 示例
      *
      * @author sdk-generator
      * @Description
      */
-    public class V2TradeHostingPaymentQueryorderinfoRequestDemo
+    public class V2FlexibleRefundRequestDemo
     {
 
-        public static void V2TradeHostingPaymentQueryorderinfoRequestDemoTest()
+        public static void V2FlexibleRefundRequestDemoTest()
         {
 
             // 1. 数据初始化
             InitMerConfig.init();
 
             // 2.组装请求参数
-            V2TradeHostingPaymentQueryorderinfoRequest request = new V2TradeHostingPaymentQueryorderinfoRequest();
-            // 请求日期
-            request.setReqDate(DateTime.Now.ToString("yyyyMMdd"));
+            V2FlexibleRefundRequest request = new V2FlexibleRefundRequest();
             // 请求流水号
             request.setReqSeqId(DateTime.Now.ToString("yyy-MM-dd HH.mm.ss.fff"));
-            // 商户号
-            request.setHuifuId("6666000109133323");
-            // 原交易请求日期
-            request.setOrgReqDate("20231020");
-            // 原交易请求流水号与**party_order_id**二选一，必填；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：rQ2021121311173944&lt;/font&gt;
-            request.setOrgReqSeqId("202310201652361987182512");
-            // 用户账单上的商户订单号与**org_req_seq_id**二选一，必填；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：03232109190255105603561&lt;/font&gt;
-            // request.setPartyOrderId("test");
+            // 请求日期
+            request.setReqDate(DateTime.Now.ToString("yyyyMMdd"));
+            // 原请求日期
+            request.setOrgReqDate("20250617");
+            // 原灵工支付交易流水号&lt;font color&#x3D;&quot;green&quot;&gt;示例值：2021091708126665231&lt;/font&gt;
+            request.setOrgReqSeqId("20250618710431811test001");
+            // 原灵工支付汇付全局流水号与原灵工支付交易流水号必选其一&lt;font color&#x3D;&quot;green&quot;&gt;示例值：2021091708126665001&lt;/font&gt;
+            request.setOrgHfSeqId("");
+            // 发起方商户号
+            request.setHuifuId("6666000108903745");
+            // 支付金额
+            request.setOrdAmt("10");
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -62,6 +64,8 @@ namespace BasePayDemo
         private static Dictionary<string, object> getExtendInfos() {
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
+            // 备注
+            extendInfoMap.Add("remark", "备注11111");
             return extendInfoMap;
         }
 
