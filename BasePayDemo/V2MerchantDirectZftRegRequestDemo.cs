@@ -29,9 +29,7 @@ namespace BasePayDemo
             // 请求时间
             request.setReqDate(DateTime.Now.ToString("yyyyMMdd"));
             // 汇付ID
-            request.setHuifuId("6666000103521825");
-            // 开发者的应用ID
-            request.setAppId("2021002122659346");
+            request.setHuifuId("6666000108942745");
             // 进件的二级商户名称
             request.setName("雷均一");
             // 商家类型
@@ -67,7 +65,7 @@ namespace BasePayDemo
             // 联系人手机号
             request.setContactMobileNo("13576266246");
             // 商户结算卡信息jsonArray格式。本业务当前只允许传入一张结算卡。与支付宝账号字段二选一必填
-            request.setZftCardInfoList("[{\"card_type\":\"1\",\"card_flag\":\"D\",\"card_name\":\"雷均一\",\"card_no\":\"6228480123456789\",\"prov_id\":\"310000\",\"area_id\":\"310100\",\"bank_code\":\"01030000\",\"bank_name\":\"中国农业银行\",\"branch_code\":\"103290076178\",\"branch_name\":\"中国农业银行股份有限公司上海徐汇支行\"}]");
+            request.setZftCardInfoList(get89b50602766148fd8b78E5b1178b7e6d());
             // 商户支付宝账号商户支付宝账号，用作结算账号。与银行卡对象字段二选一必填。&lt;br/&gt;本字段要求支付宝账号的名称与商户名称mch_name同名，且是实名认证过的支付宝账户。&lt;font color&#x3D;&quot;green&quot;&gt;示例值：test@huifu.com&lt;/font&gt;
             request.setAlipayLogonId("13576266246");
             // 商户行业资质类型当商户是特殊行业时必填，具体取值[参见表格](https://mif-pub.alipayobjects.com/QualificationType.xlsx)。&lt;font color&#x3D;&quot;green&quot;&gt;示例值：310&lt;/font&gt;
@@ -81,7 +79,7 @@ namespace BasePayDemo
             // 默认结算类型
             request.setDefaultSettleType("alipayAccount");
             // 文件列表
-            request.setFileList("[{\"file_type\":\"F41\",\"file_id\":\"c679752a-9abc-326d-bb02-8cf770f56d12\",\"file_name\":\"身份证国徽面\"},{\"file_type\":\"F40\",\"file_id\":\"c679752a-9abc-326d-bb02-8cf770f56d12\",\"file_name\":\"身份证人像面\"},{\"file_type\":\"F40\",\"file_id\":\"c679752a-9abc-326d-bb02-8cf770f56d12\",\"file_name\":\"身份证人像面\"}]");
+            request.setFileList(getDa4424ccD76c449aAd0f0a6cf846ae87());
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -109,7 +107,7 @@ namespace BasePayDemo
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
             // 渠道商汇付ID
-            extendInfoMap.Add("upper_huifu_id", "6666000103521824");
+            extendInfoMap.Add("upper_huifu_id", "6666000108290240");
             // 商户别名
             extendInfoMap.Add("alias_name", "哈市盈超市");
             // 法人证件类型
@@ -121,13 +119,70 @@ namespace BasePayDemo
             // 联系人电子邮箱
             extendInfoMap.Add("contact_email", "a066545074@qq.com");
             // 商户站点信息
-            extendInfoMap.Add("zft_site_info_list", "[{\"site_type\":\"02\",\"site_url\":\"站点地址\",\"site_name\":\"站点名称\",\"account\":\"\",\"password\":\"测试密码\"}]");
-            // 开票资料信息
-            extendInfoMap.Add("zft_invoice_info_list", "[{\"auto_invoice_flag\":\"N\",\"accept_electronic_flag\":\"N\",\"tax_payer_qualification\":\"01\",\"title\":\"发票抬头\",\"tax_no\":\"纳税人识别号\",\"tax_payer_valid\":\"20210127\",\"address\":\"开票地址\",\"telephone\":\"10087\",\"bank_account\":\"6228480123456789\",\"mail_name\":\"雷均一\",\"prov_id\":\"310000\",\"area_id\":\"310100\",\"district_id\":\"310104\",\"detail_addr\":\"经营详细地址\",\"mail_telephone\":\"13576266246\",\"bank_name\":\"中国农业银行\"}]");
+            extendInfoMap.Add("zft_site_info_list", get74e88be88f46423bB56343dda05a086f());
             // 审核结果异步通知地址
             extendInfoMap.Add("async_return_url", "http://192.168.85.157:30031/sspm/testVirgo");
+            // 直付通退款不退手续费开关
+            extendInfoMap.Add("no_refund_flag", "N");
             return extendInfoMap;
         }
 
+        private static object get89b50602766148fd8b78E5b1178b7e6d() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 卡类型
+            obj.Add("card_type", "1");
+            // 卡借贷类型
+            obj.Add("card_flag", "D");
+            // 户名
+            obj.Add("card_name", "雷均一");
+            // 卡号
+            obj.Add("card_no", "6228480123456789");
+            // 银行所在省
+            obj.Add("prov_id", "310000");
+            // 银行所在市
+            obj.Add("area_id", "310100");
+            // 银行号
+            obj.Add("bank_code", "01030000");
+            // 银行名称
+            obj.Add("bank_name", "中国农业银行");
+            // 联行号
+            obj.Add("branch_code", "103290076178");
+            // 支行名称
+            obj.Add("branch_name", "中国农业银行股份有限公司上海徐汇支行");
+
+            JArray objList = new JArray();
+            objList.Add(JToken.FromObject(obj));
+            return objList;
+        }
+        private static object get74e88be88f46423bB56343dda05a086f() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 站点类型
+            obj.Add("site_type", "02");
+            // 站点地址
+            obj.Add("site_url", "站点地址");
+            // 站点名称
+            obj.Add("site_name", "站点名称");
+            // 测试账号
+            obj.Add("account", "");
+            // 测试密码
+            obj.Add("password", "测试密码");
+
+            JArray objList = new JArray();
+            objList.Add(JToken.FromObject(obj));
+            return objList;
+        }
+        private static object getDa4424ccD76c449aAd0f0a6cf846ae87() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 文件类型
+            obj.Add("file_type", "F41");
+            // 文件ID
+            obj.Add("file_id", "c679752a-9abc-326d-bb02-8cf770f56d12");
+            // 文件名称
+            obj.Add("file_name", "身份证国徽面");
+
+            JArray objList = new JArray();
+            objList.Add(JToken.FromObject(obj));
+            return objList;
+        }
     }
 }

@@ -56,6 +56,8 @@ namespace BasePayDemo
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
             // 请求流水号
             extendInfoMap.Add("req_seq_id", DateTime.Now.ToString("yyy-MM-dd HH.mm.ss.fff"));
+            // 账务日期
+            // extendInfoMap.Add("acct_date", "");
             return extendInfoMap;
         }
 

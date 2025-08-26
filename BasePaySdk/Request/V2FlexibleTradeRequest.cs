@@ -24,10 +24,6 @@ namespace BasePaySdk.Request
          */
         private string outHuifuId;
         /**
-         * 出款方账户号
-         */
-        private string outAcctId;
-        /**
          * 交易阶段操作类型
          */
         private string stageOperationType;
@@ -39,6 +35,10 @@ namespace BasePaySdk.Request
          * 支付金额
          */
         private string ordAmt;
+        /**
+         * 分账对象
+         */
+        private string acctSplitBunch;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_FLEXIBLE_TRADE;
@@ -47,14 +47,14 @@ namespace BasePaySdk.Request
         public V2FlexibleTradeRequest() {
         }
 
-        public V2FlexibleTradeRequest(string reqSeqId, string reqDate, string outHuifuId, string outAcctId, string stageOperationType, string phaseHfSeqId, string ordAmt) {
+        public V2FlexibleTradeRequest(string reqSeqId, string reqDate, string outHuifuId, string stageOperationType, string phaseHfSeqId, string ordAmt, string acctSplitBunch) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.outHuifuId = outHuifuId;
-            this.outAcctId = outAcctId;
             this.stageOperationType = stageOperationType;
             this.phaseHfSeqId = phaseHfSeqId;
             this.ordAmt = ordAmt;
+            this.acctSplitBunch = acctSplitBunch;
         }
 
         public string getReqSeqId() {
@@ -81,14 +81,6 @@ namespace BasePaySdk.Request
             this.outHuifuId = outHuifuId;
         }
 
-        public string getOutAcctId() {
-            return outAcctId;
-        }
-
-        public void setOutAcctId(string outAcctId) {
-            this.outAcctId = outAcctId;
-        }
-
         public string getStageOperationType() {
             return stageOperationType;
         }
@@ -111,6 +103,14 @@ namespace BasePaySdk.Request
 
         public void setOrdAmt(string ordAmt) {
             this.ordAmt = ordAmt;
+        }
+
+        public string getAcctSplitBunch() {
+            return acctSplitBunch;
+        }
+
+        public void setAcctSplitBunch(string acctSplitBunch) {
+            this.acctSplitBunch = acctSplitBunch;
         }
 
 

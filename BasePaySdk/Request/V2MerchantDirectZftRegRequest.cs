@@ -24,10 +24,6 @@ namespace BasePaySdk.Request
          */
         private string huifuId;
         /**
-         * 开发者的应用ID
-         */
-        private string appId;
-        /**
          * 进件的二级商户名称
          */
         private string name;
@@ -135,11 +131,10 @@ namespace BasePaySdk.Request
         public V2MerchantDirectZftRegRequest() {
         }
 
-        public V2MerchantDirectZftRegRequest(string reqSeqId, string reqDate, string huifuId, string appId, string name, string merchantType, string mcc, string certType, string certNo, string certName, string legalName, string legalCertNo, string servicePhone, string provId, string areaId, string districtId, string detailAddr, string contactName, string contactTag, string contactType, string contactMobileNo, string zftCardInfoList, string alipayLogonId, string industryQualificationType, string service, string signTimeWithIsv, string bindingAlipayLogonId, string defaultSettleType, string fileList) {
+        public V2MerchantDirectZftRegRequest(string reqSeqId, string reqDate, string huifuId, string name, string merchantType, string mcc, string certType, string certNo, string certName, string legalName, string legalCertNo, string servicePhone, string provId, string areaId, string districtId, string detailAddr, string contactName, string contactTag, string contactType, string contactMobileNo, string zftCardInfoList, string alipayLogonId, string industryQualificationType, string service, string signTimeWithIsv, string bindingAlipayLogonId, string defaultSettleType, string fileList) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.huifuId = huifuId;
-            this.appId = appId;
             this.name = name;
             this.merchantType = merchantType;
             this.mcc = mcc;
@@ -189,14 +184,6 @@ namespace BasePaySdk.Request
 
         public void setHuifuId(string huifuId) {
             this.huifuId = huifuId;
-        }
-
-        public string getAppId() {
-            return appId;
-        }
-
-        public void setAppId(string appId) {
-            this.appId = appId;
         }
 
         public string getName() {

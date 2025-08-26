@@ -30,6 +30,8 @@ namespace BasePayDemo
             request.setReqDate(DateTime.Now.ToString("yyyyMMdd"));
             // 渠道商/商户汇付Id
             request.setUpperHuifuId("6666000108329682");
+            // 汇付ID
+            request.setHuifuId("6666000108894951");
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -57,15 +59,15 @@ namespace BasePayDemo
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
             // 基本信息
-            // extendInfoMap.Add("basic_info", get34a3e4b95be148d7B2547819e1b99346());
+            // extendInfoMap.Add("basic_info", get85557b1d7f4945348f719444c35fef3e());
             // 取现配置列表
-            extendInfoMap.Add("cash_config", getFe3a0d1d38ec4885B59603888696de3f());
+            extendInfoMap.Add("cash_config", getFab986af2f5a46c293be27111b433af5());
             // 卡信息
-            extendInfoMap.Add("card_info", getE8224b0485914e82A6f679fce70d1655());
+            extendInfoMap.Add("card_info", get7e4fcf80B2eb4346Ae2709b1139d8a3f());
             return extendInfoMap;
         }
 
-        private static string get34a3e4b95be148d7B2547819e1b99346() {
+        private static string get85557b1d7f4945348f719444c35fef3e() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 个人证件有效期类型
             // obj.Add("cert_validity_type", "");
@@ -78,7 +80,7 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string getFe3a0d1d38ec4885B59603888696de3f() {
+        private static string getFab986af2f5a46c293be27111b433af5() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 提现手续费（固定/元）fix_amt与fee_rate至少填写一项， 需保留小数点后两位，不收费请填写0.00；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：1.00&lt;/font&gt;注：当cash_type&#x3D;D1时为节假日取现手续费
             obj.Add("fix_amt", "");
@@ -88,6 +90,8 @@ namespace BasePayDemo
             obj.Add("weekday_fix_amt", "");
             // D1工作日取现手续费率单位%，需保留小数点后两位。取值范围[0.00，100.00]，不收费请填写0.00；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：0.05&lt;/font&gt;D1取现配置时选填，其他取现配置无效；cash_type取现类型为D1时，遇工作日按此费率结算 ，若未配置则默认按照节假日手续费计算
             obj.Add("weekday_fee_rate", "");
+            // 开通状态
+            obj.Add("switch_state", "1");
             // 业务类型
             obj.Add("cash_type", "D0");
             // 是否交易手续费外扣
@@ -98,14 +102,12 @@ namespace BasePayDemo
             obj.Add("out_fee_acct_type", "");
             // 是否优先到账
             obj.Add("is_priority_receipt", "");
-            // 开通状态
-            obj.Add("switch_state", "1");
 
             JArray objList = new JArray();
             objList.Add(JToken.FromObject(obj));
             return JsonConvert.SerializeObject(objList);
         }
-        private static string getE8224b0485914e82A6f679fce70d1655() {
+        private static string get7e4fcf80B2eb4346Ae2709b1139d8a3f() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 卡号
             obj.Add("card_no", "6228481269040908115");

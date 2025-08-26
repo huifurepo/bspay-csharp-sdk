@@ -69,11 +69,11 @@ namespace BasePayDemo
             // 操作人姓名
             // extendInfoMap.Add("operator_name", "");
             // 核销额外参数
-            // extendInfoMap.Add("verify_extra", get11f3d825Aad642ec886f1867af6dfb8e());
+            // extendInfoMap.Add("verify_extra", get014d6e414b0943a3A679383914e2bb49());
             return extendInfoMap;
         }
 
-        private static object get11f3d825Aad642ec886f1867af6dfb8e() {
+        private static object get014d6e414b0943a3A679383914e2bb49() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 开台时间（秒）
             // obj.Add("biz_time", "test");

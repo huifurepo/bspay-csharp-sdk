@@ -82,6 +82,8 @@ namespace BasePayDemo
         private static Dictionary<string, object> getExtendInfos() {
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
+            // 账户号
+            // extendInfoMap.Add("acct_id", "");
             // 支行名
             extendInfoMap.Add("subbranch_bank_name", "subbranchBankName");
             // 收款方三证合一码

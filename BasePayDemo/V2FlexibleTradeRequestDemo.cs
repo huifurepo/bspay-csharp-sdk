@@ -30,14 +30,14 @@ namespace BasePayDemo
             request.setReqDate(DateTime.Now.ToString("yyyyMMdd"));
             // 出款方商户号
             request.setOutHuifuId("6666000108903745");
-            // 出款方账户号
-            request.setOutAcctId("C03117654");
             // 交易阶段操作类型
             request.setStageOperationType("FIRST_STAGE");
             // 前段交易流水号** 当交易阶段操作类型为02时，该字段必填。填写的是交易阶段操作类型为01时交易已完成的交易全局流水号。 &lt;font color&#x3D;&quot;green&quot;&gt;示例值：20250620112533115566896&lt;/font&gt;
             request.setPhaseHfSeqId("");
             // 支付金额
             request.setOrdAmt("20");
+            // 分账对象
+            request.setAcctSplitBunch(get5ff7863bFba14fd185823535ee0a9e52());
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -64,14 +64,14 @@ namespace BasePayDemo
         private static Dictionary<string, object> getExtendInfos() {
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
+            // 出款方账户号
+            extendInfoMap.Add("out_acct_id", "C03117654");
             // 备注
             extendInfoMap.Add("remark", "");
-            // 分账对象
-            extendInfoMap.Add("acct_split_bunch", getD5cc6c3fD3854f9fB3eeF736df9fbbf8());
             return extendInfoMap;
         }
 
-        private static object get3fc17817Caf445dc8f13A2c315f6d1e8() {
+        private static object get875acdbcEff4424dBa4551dffa06d840() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 分账金额
             obj.Add("div_amt", "20.00");
@@ -82,12 +82,12 @@ namespace BasePayDemo
 
             return obj;
         }
-        private static object getD5cc6c3fD3854f9fB3eeF736df9fbbf8() {
+        private static string get5ff7863bFba14fd185823535ee0a9e52() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 分账明细
-            obj.Add("acct_info", get3fc17817Caf445dc8f13A2c315f6d1e8());
+            obj.Add("acct_info", get875acdbcEff4424dBa4551dffa06d840());
 
-            return obj;
+            return JsonConvert.SerializeObject(obj);
         }
     }
 }

@@ -23,6 +23,10 @@ namespace BasePaySdk.Request
          * 渠道商/商户汇付Id
          */
         private string upperHuifuId;
+        /**
+         * 汇付ID
+         */
+        private string huifuId;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_FLEXIBLE_INDV_MODIFY;
@@ -31,10 +35,11 @@ namespace BasePaySdk.Request
         public V2FlexibleIndvModifyRequest() {
         }
 
-        public V2FlexibleIndvModifyRequest(string reqSeqId, string reqDate, string upperHuifuId) {
+        public V2FlexibleIndvModifyRequest(string reqSeqId, string reqDate, string upperHuifuId, string huifuId) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.upperHuifuId = upperHuifuId;
+            this.huifuId = huifuId;
         }
 
         public string getReqSeqId() {
@@ -59,6 +64,14 @@ namespace BasePaySdk.Request
 
         public void setUpperHuifuId(string upperHuifuId) {
             this.upperHuifuId = upperHuifuId;
+        }
+
+        public string getHuifuId() {
+            return huifuId;
+        }
+
+        public void setHuifuId(string huifuId) {
+            this.huifuId = huifuId;
         }
 
 
