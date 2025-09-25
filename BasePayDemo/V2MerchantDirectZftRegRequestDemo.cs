@@ -127,7 +127,9 @@ namespace BasePayDemo
             return extendInfoMap;
         }
 
-        private static object get89b50602766148fd8b78E5b1178b7e6d() {
+
+
+        private static String get89b50602766148fd8b78E5b1178b7e6d() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 卡类型
             obj.Add("card_type", "1");
@@ -152,7 +154,7 @@ namespace BasePayDemo
 
             JArray objList = new JArray();
             objList.Add(JToken.FromObject(obj));
-            return objList;
+            return JsonConvert.SerializeObject(objList);
         }
         private static object get74e88be88f46423bB56343dda05a086f() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
@@ -171,7 +173,7 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return objList;
         }
-        private static object getDa4424ccD76c449aAd0f0a6cf846ae87() {
+        private static String getDa4424ccD76c449aAd0f0a6cf846ae87() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 文件类型
             obj.Add("file_type", "F41");
@@ -182,7 +184,7 @@ namespace BasePayDemo
 
             JArray objList = new JArray();
             objList.Add(JToken.FromObject(obj));
-            return objList;
+            return JsonConvert.SerializeObject(objList);
         }
     }
 }

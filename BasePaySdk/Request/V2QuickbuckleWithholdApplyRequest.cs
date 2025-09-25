@@ -44,11 +44,11 @@ namespace BasePaySdk.Request
          */
         private string cardId;
         /**
-         * 银行卡开户姓名 
+         * 银行卡开户姓名
          */
         private string cardName;
         /**
-         * 银行卡绑定证件类型 
+         * 银行卡绑定证件类型
          */
         private string certType;
         /**
@@ -56,17 +56,9 @@ namespace BasePaySdk.Request
          */
         private string certId;
         /**
-         * 银行卡绑定手机号 
+         * 银行卡绑定手机号
          */
         private string cardMp;
-        /**
-         * CVV2信用卡代扣专用 需要密文传输，需要密文传输，使用汇付RSA公钥加密(加密前64位，加密后最长2048位），参见[参考文档](https://paas.huifu.com/open/doc/guide/#/api_jiami_jiemi)；
-         */
-        private string vipCode;
-        /**
-         * 卡有效期 信用卡代扣专用，格式：MMYY 需要密文传输，使用汇付RSA公钥加密(加密前64位，加密后最长2048位），参见[参考文档](https://paas.huifu.com/open/doc/guide/#/api_jiami_jiemi)；
-         */
-        private string expiration;
         /**
          * 个人证件有效期类型
          */
@@ -75,10 +67,6 @@ namespace BasePaySdk.Request
          * 个人证件有效期起始日
          */
         private string certBeginDate;
-        /**
-         * 个人证件有效期到期日长期有效不填.格式：YYYYMMDD；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：20450112&lt;/font&gt;
-         */
-        private string certEndDate;
         /**
          * 卡的借贷类型
          */
@@ -91,7 +79,7 @@ namespace BasePaySdk.Request
         public V2QuickbuckleWithholdApplyRequest() {
         }
 
-        public V2QuickbuckleWithholdApplyRequest(string reqSeqId, string reqDate, string huifuId, string returnUrl, string outCustId, string orderId, string orderDate, string cardId, string cardName, string certType, string certId, string cardMp, string vipCode, string expiration, string certValidityType, string certBeginDate, string certEndDate, string dcType) {
+        public V2QuickbuckleWithholdApplyRequest(string reqSeqId, string reqDate, string huifuId, string returnUrl, string outCustId, string orderId, string orderDate, string cardId, string cardName, string certType, string certId, string cardMp, string certValidityType, string certBeginDate, string dcType) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.huifuId = huifuId;
@@ -104,11 +92,8 @@ namespace BasePaySdk.Request
             this.certType = certType;
             this.certId = certId;
             this.cardMp = cardMp;
-            this.vipCode = vipCode;
-            this.expiration = expiration;
             this.certValidityType = certValidityType;
             this.certBeginDate = certBeginDate;
-            this.certEndDate = certEndDate;
             this.dcType = dcType;
         }
 
@@ -208,22 +193,6 @@ namespace BasePaySdk.Request
             this.cardMp = cardMp;
         }
 
-        public string getVipCode() {
-            return vipCode;
-        }
-
-        public void setVipCode(string vipCode) {
-            this.vipCode = vipCode;
-        }
-
-        public string getExpiration() {
-            return expiration;
-        }
-
-        public void setExpiration(string expiration) {
-            this.expiration = expiration;
-        }
-
         public string getCertValidityType() {
             return certValidityType;
         }
@@ -238,14 +207,6 @@ namespace BasePaySdk.Request
 
         public void setCertBeginDate(string certBeginDate) {
             this.certBeginDate = certBeginDate;
-        }
-
-        public string getCertEndDate() {
-            return certEndDate;
-        }
-
-        public void setCertEndDate(string certEndDate) {
-            this.certEndDate = certEndDate;
         }
 
         public string getDcType() {

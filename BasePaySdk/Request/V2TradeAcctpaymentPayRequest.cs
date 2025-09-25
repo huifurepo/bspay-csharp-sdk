@@ -43,6 +43,10 @@ namespace BasePaySdk.Request
          * 手续费承担方标识余额支付手续费承担方标识；商户余额支付扣收规则为接口指定承担方时必填！枚举值：&lt;br/&gt;OUT：出款方；&lt;br/&gt;IN：分账接受方。&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：IN&lt;/font&gt;
          */
         private string transFeeTakeFlag;
+        /**
+         * 核验值verify_type不为空时必填。当verify_type&#x3D;SMS时，填写用户收到的短信验证码
+         */
+        private string verifyValue;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_TRADE_ACCTPAYMENT_PAY;
@@ -51,7 +55,7 @@ namespace BasePaySdk.Request
         public V2TradeAcctpaymentPayRequest() {
         }
 
-        public V2TradeAcctpaymentPayRequest(string reqSeqId, string reqDate, string outHuifuId, string ordAmt, string acctSplitBunch, string riskCheckData, string fundType, string transFeeTakeFlag) {
+        public V2TradeAcctpaymentPayRequest(string reqSeqId, string reqDate, string outHuifuId, string ordAmt, string acctSplitBunch, string riskCheckData, string fundType, string transFeeTakeFlag, string verifyValue) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.outHuifuId = outHuifuId;
@@ -60,6 +64,7 @@ namespace BasePaySdk.Request
             this.riskCheckData = riskCheckData;
             this.fundType = fundType;
             this.transFeeTakeFlag = transFeeTakeFlag;
+            this.verifyValue = verifyValue;
         }
 
         public string getReqSeqId() {
@@ -124,6 +129,14 @@ namespace BasePaySdk.Request
 
         public void setTransFeeTakeFlag(string transFeeTakeFlag) {
             this.transFeeTakeFlag = transFeeTakeFlag;
+        }
+
+        public string getVerifyValue() {
+            return verifyValue;
+        }
+
+        public void setVerifyValue(string verifyValue) {
+            this.verifyValue = verifyValue;
         }
 
 

@@ -23,14 +23,6 @@ namespace BasePaySdk.Request
          * 商户号
          */
         private string huifuId;
-        /**
-         * 原请求流水号
-         */
-        private string orgReqSeqId;
-        /**
-         * 原请求日期
-         */
-        private string orgReqDate;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_TRADE_ONLINEPAYMENT_TRANSFER_BANKBLOTTER_QUERY;
@@ -39,12 +31,10 @@ namespace BasePaySdk.Request
         public V2TradeOnlinepaymentTransferBankblotterQueryRequest() {
         }
 
-        public V2TradeOnlinepaymentTransferBankblotterQueryRequest(string reqSeqId, string reqDate, string huifuId, string orgReqSeqId, string orgReqDate) {
+        public V2TradeOnlinepaymentTransferBankblotterQueryRequest(string reqSeqId, string reqDate, string huifuId) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.huifuId = huifuId;
-            this.orgReqSeqId = orgReqSeqId;
-            this.orgReqDate = orgReqDate;
         }
 
         public string getReqSeqId() {
@@ -69,22 +59,6 @@ namespace BasePaySdk.Request
 
         public void setHuifuId(string huifuId) {
             this.huifuId = huifuId;
-        }
-
-        public string getOrgReqSeqId() {
-            return orgReqSeqId;
-        }
-
-        public void setOrgReqSeqId(string orgReqSeqId) {
-            this.orgReqSeqId = orgReqSeqId;
-        }
-
-        public string getOrgReqDate() {
-            return orgReqDate;
-        }
-
-        public void setOrgReqDate(string orgReqDate) {
-            this.orgReqDate = orgReqDate;
         }
 
 

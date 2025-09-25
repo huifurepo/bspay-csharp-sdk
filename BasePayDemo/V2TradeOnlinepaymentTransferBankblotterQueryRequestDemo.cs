@@ -30,10 +30,6 @@ namespace BasePayDemo
             request.setReqDate(DateTime.Now.ToString("yyyyMMdd"));
             // 商户号
             request.setHuifuId("6666000003100615");
-            // 原请求流水号
-            request.setOrgReqSeqId("2021091708126665001");
-            // 原请求日期
-            request.setOrgReqDate("20231215");
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -60,6 +56,10 @@ namespace BasePayDemo
         private static Dictionary<string, object> getExtendInfos() {
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
+            // 原请求流水号
+            extendInfoMap.Add("org_req_seq_id", "2021091708126665001");
+            // 原请求日期
+            extendInfoMap.Add("org_req_date", "20231215");
             // 实际付款方银行卡号
             // extendInfoMap.Add("bank_card_no", "");
             // 实际付款方姓名
@@ -68,8 +68,8 @@ namespace BasePayDemo
             // extendInfoMap.Add("trans_date", "");
             // 交易金额
             // extendInfoMap.Add("trans_amt", "");
-            // 收款账号/打款备注
-            // extendInfoMap.Add("bank_remark", "");
+            // 收款方账号
+            // extendInfoMap.Add("payee_acct_no", "");
             return extendInfoMap;
         }
 

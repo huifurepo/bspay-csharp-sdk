@@ -33,9 +33,9 @@ namespace BasePayDemo
             // 退款金额
             request.setOrdAmt("0.01");
             // 设备信息条件必填，当为银行大额支付时可不填，jsonObject格式
-            request.setTerminalDeviceData(get0cb9901c063146159d7a806331eb313d());
+            request.setTerminalDeviceData(get35d4a53eD6c1411a9ced250654fb32bc());
             // 安全信息条件必填，当为银行大额支付时可不填，jsonObject格式
-            request.setRiskCheckData(getC912c5b3F45e4eb5A7cf3acae7215dc3());
+            request.setRiskCheckData(getF25a2614657744d4Bc59741b0034991d());
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -69,19 +69,19 @@ namespace BasePayDemo
             // 原交易请求流水号
             extendInfoMap.Add("org_req_seq_id", "295700155481522176");
             // 分账对象
-            // extendInfoMap.Add("acct_split_bunch", get18a433263b5a4564Bb6b0413c84ff21d());
+            // extendInfoMap.Add("acct_split_bunch", getB2063bd6B0444da8A946Df04df4862fd());
             // 备注
             // extendInfoMap.Add("remark", "");
             // 异步通知地址
             extendInfoMap.Add("notify_url", "http://www.baidu.com");
             // 补贴支付信息
-            // extendInfoMap.Add("combinedpay_data", getB433aee155d6443eAe81F124df5ee516());
+            // extendInfoMap.Add("combinedpay_data", getF6ac280047d84b54Af3cFc21f6942cf0());
             // 大额转账支付账户信息数据
-            // extendInfoMap.Add("bank_info_data", getB3bf7acb5626425aB0bf32bd5fb389a7());
+            // extendInfoMap.Add("bank_info_data", get289bf626B24d46cdA273Fdaa77310b55());
             return extendInfoMap;
         }
 
-        private static object get6973815f508e4f2392720a95415fbd76() {
+        private static object get1e71bbb43d3d4de7A4a590b7e2ca4d2c() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 商户号
             // obj.Add("huifu_id", "test");
@@ -94,14 +94,14 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return objList;
         }
-        private static string get18a433263b5a4564Bb6b0413c84ff21d() {
+        private static string getB2063bd6B0444da8A946Df04df4862fd() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 分账信息列表
-            // obj.Add("acct_infos", get6973815f508e4f2392720a95415fbd76());
+            // obj.Add("acct_infos", get1e71bbb43d3d4de7A4a590b7e2ca4d2c());
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string get0cb9901c063146159d7a806331eb313d() {
+        private static string get35d4a53eD6c1411a9ced250654fb32bc() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 交易设备ip
             obj.Add("device_ip", "172.31.31.145");
@@ -119,10 +119,12 @@ namespace BasePayDemo
             obj.Add("device_mac", "01");
             // 交易设备wifimac
             obj.Add("device_wifi_mac", "06");
+            // 终端设备号
+            // obj.Add("device_id", "");
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string getC912c5b3F45e4eb5A7cf3acae7215dc3() {
+        private static string getF25a2614657744d4Bc59741b0034991d() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 经度
             // obj.Add("longitude", "test");
@@ -135,7 +137,7 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string getB433aee155d6443eAe81F124df5ee516() {
+        private static string getF6ac280047d84b54Af3cFc21f6942cf0() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 补贴方汇付编号
             // obj.Add("huifu_id", "test");
@@ -150,7 +152,7 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return JsonConvert.SerializeObject(objList);
         }
-        private static string getB3bf7acb5626425aB0bf32bd5fb389a7() {
+        private static string get289bf626B24d46cdA273Fdaa77310b55() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 银行编号
             // obj.Add("bank_code", "");

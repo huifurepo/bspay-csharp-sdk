@@ -35,14 +35,14 @@ namespace BasePayDemo
             // 支付手续费外扣汇付ID支付手续费外扣标记为1时必填；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：6666000109812123&lt;/font&gt;
             request.setOutFeeHuifuid("");
             // 全域资金开户使用的银行卡信息首次开通时必填 jsonObject格式
-            request.setOutOrderAcctCard(get65ad39a08e184fc8Bc23Ea1a883711fc());
+            request.setOutOrderAcctCard(get619ee92176bc40db9c523ec37f050b41());
             // 全域资金开户手续费首次开通时必填 jsonObject格式
-            request.setOutOrderAcctOpenFees(get8d3daaa6E6f54c28Ad53F87bd430c791());
+            request.setOutOrderAcctOpenFees(get498e12a8C5d646ddB76805d40555bb0f());
             // 银行类型switch_state有值时需填写； ht1-华通银行，xw0-XW银行，ss0-苏商银行；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：ht1&lt;/font&gt;
             request.setOutFundsGateId("xw0");
             // 签约人信息switch_state为1时必填 jsonObject格式
-            request.setSignUserInfo(get362f701dB42c484aBb01Eaa7d194583c());
-            // 入账来源开通全域资金时需填写；01:抖音 02:美团 03:快手 04:拼多多 05:小红书 06:淘宝/天猫/飞猪 07:微信视频号/微信小店 08:京东 09:饿了么 11:得物 12:唯品会 13:携程 14:支付宝直连 15:微信直连 16:滴滴加油 17:团油 18:通联 19:易宝 20:百度 多个逗号分隔；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：01,02,05&lt;/font&gt;；
+            request.setSignUserInfo(get9d5c7d21865f4411Ba5cDe1e5c556f67());
+            // 入账来源开通全域资金时需填写；01:抖音 02:美团 03:快手 04:拼多多 05:小红书 06:淘宝/天猫/飞猪 07:微信视频号/微信小店 08:京东 09:饿了么 11:得物 12:唯品会 13:携程 14:支付宝直连 15:微信直连 16:滴滴加油 17:团油 18:通联 19:易宝 20:百度 21:顺丰22:希音 多个逗号分隔；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：01,02,05&lt;/font&gt;；
             request.setAcctSource("01");
             // 抖音合作证明材料入账来源包含01:抖音时必填 文件类型F535；详见[文件类型说明](https://paas.huifu.com/open/doc/api/#/csfl/api_csfl_wjlx)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：57cc7f00-600a-33ab-b614-6221bbf2e530&lt;/font&gt;
             // request.setDyCooperationProvePic("test");
@@ -86,6 +86,10 @@ namespace BasePayDemo
             // request.setBdCooperationProvePic("test");
             // 主店商户号是否店群为是时必填
             // request.setMainStoreHuifuId("test");
+            // 顺丰合作证明材料入账来源包含21:顺丰时必填 文件类型F618；详见[文件类型说明](https://paas.huifu.com/open/doc/api/#/csfl/api_csfl_wjlx)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：57cc7f00-600a-33ab-b614-6221bbf2e530&lt;/font&gt;
+            // request.setSfCooperationProvePic("test");
+            // 希音合作证明材料入账来源包含22:希音时必填 文件类型F619；详见[文件类型说明](https://paas.huifu.com/open/doc/api/#/csfl/api_csfl_wjlx)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：57cc7f00-600a-33ab-b614-6221bbf2e530&lt;/font&gt;
+            // request.setXyCooperationProvePic("test");
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -137,7 +141,7 @@ namespace BasePayDemo
             // 申请单日限额
             extendInfoMap.Add("pay_every_day", "");
             // 全域资金分账规则
-            // extendInfoMap.Add("efp_spb_config", get400217da5ed245abB958Ec0a7308853b());
+            // extendInfoMap.Add("efp_spb_config", getAc78908549554f45A4337714c15a92a6());
             // 客户ip地址
             // extendInfoMap.Add("ip_address", "");
             // 是否线上场景
@@ -153,9 +157,9 @@ namespace BasePayDemo
             // 协议类型
             // extendInfoMap.Add("agreement_type", "");
             // 全域资金取现手续费配置
-            // extendInfoMap.Add("efp_encash_fee_config", get3d0dd20eDaf943588aee8952ae8e76fc());
+            // extendInfoMap.Add("efp_encash_fee_config", getF33df0c389924692B836Ad068dac9842());
             // 全域资金付款手续费配置
-            // extendInfoMap.Add("efp_payment_fee_config", get572f0775D16b4d1391c7A00771773bf3());
+            // extendInfoMap.Add("efp_payment_fee_config", get3fbd16f59f014ca094f062911666d28a());
             // 纸质协议开始日期
             // extendInfoMap.Add("agree_begin_date", "");
             // 纸质协议结束日期
@@ -169,11 +173,11 @@ namespace BasePayDemo
             // 经营信息材料
             // extendInfoMap.Add("management_file", "");
             // 全域资金分账手续费配置
-            // extendInfoMap.Add("efp_spb_fee_config", getC9708ee983254cf4B58eCace3ad55cbc());
+            // extendInfoMap.Add("efp_spb_fee_config", get4617287337ba4c699f77Ce69aa96e9bd());
             return extendInfoMap;
         }
 
-        private static string get65ad39a08e184fc8Bc23Ea1a883711fc() {
+        private static string get619ee92176bc40db9c523ec37f050b41() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 结算账户名
             obj.Add("card_name", "圆务铁白事");
@@ -208,7 +212,7 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string get8d3daaa6E6f54c28Ad53F87bd430c791() {
+        private static string get498e12a8C5d646ddB76805d40555bb0f() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 开户固定手续费(元)
             obj.Add("fee_fix_amt", "0");
@@ -219,7 +223,7 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string get362f701dB42c484aBb01Eaa7d194583c() {
+        private static string get9d5c7d21865f4411Ba5cDe1e5c556f67() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 签约人类型
             obj.Add("type", "LEGAL");
@@ -232,7 +236,7 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string get1551e6802b7945efB4280cd680b410d0() {
+        private static string getB881af6022a64bfaBf9b255477e076b9() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 分账接收方汇付ID
             // obj.Add("huifu_id", "test");
@@ -245,7 +249,7 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return JsonConvert.SerializeObject(objList);
         }
-        private static string get400217da5ed245abB958Ec0a7308853b() {
+        private static string getAc78908549554f45A4337714c15a92a6() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 分账规则来源
             // obj.Add("rule_origin", "test");
@@ -258,11 +262,11 @@ namespace BasePayDemo
             // 全域资金分账手续费外扣账户类型交易手续费外扣标记为1时必填 01-基本户05-充值户 09-营销户；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：01&lt;/font&gt;；
             // obj.Add("out_fee_acct_type", "test");
             // 分账规则明细规则来源为01时必填 jsonArray格式 最多7条
-            // obj.Add("rule_detail", get1551e6802b7945efB4280cd680b410d0());
+            // obj.Add("rule_detail", getB881af6022a64bfaBf9b255477e076b9());
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string get3d0dd20eDaf943588aee8952ae8e76fc() {
+        private static string getF33df0c389924692B836Ad068dac9842() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 全域资金取现手续费百分比
             // obj.Add("fee_rate", "test");
@@ -279,7 +283,7 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string get572f0775D16b4d1391c7A00771773bf3() {
+        private static string get3fbd16f59f014ca094f062911666d28a() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 全域资金付款手续费百分比
             // obj.Add("fee_rate", "test");
@@ -296,7 +300,7 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string getC9708ee983254cf4B58eCace3ad55cbc() {
+        private static string get4617287337ba4c699f77Ce69aa96e9bd() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 全域资金分账配置开关
             // obj.Add("switch_state", "test");

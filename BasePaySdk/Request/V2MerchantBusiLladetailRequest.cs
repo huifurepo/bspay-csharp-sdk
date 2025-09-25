@@ -3,12 +3,12 @@ using System;
 namespace BasePaySdk.Request
 {
     /**
-     * 灵工支付查询
+     * 代运营代扣业务配置查询
      *
      * @author sdk-generator
      * @Description
      */
-    public class V2FlexibleTradeQueryRequest : BaseRequest
+    public class V2MerchantBusiLladetailRequest : BaseRequest
     {
 
         /**
@@ -20,30 +20,20 @@ namespace BasePaySdk.Request
          */
         private string reqDate;
         /**
-         * 原请求流水号
-         */
-        private string orgReqSeqId;
-        /**
-         * 原请求日期
-         */
-        private string orgReqDate;
-        /**
-         * 汇付商户号
+         * 商户汇付id
          */
         private string huifuId;
 
         public override string getFunctionCode() {
-            return FunctionCodeEnum.V2_FLEXIBLE_TRADE_QUERY;
+            return FunctionCodeEnum.V2_MERCHANT_BUSI_LLADETAIL;
         }
 
-        public V2FlexibleTradeQueryRequest() {
+        public V2MerchantBusiLladetailRequest() {
         }
 
-        public V2FlexibleTradeQueryRequest(string reqSeqId, string reqDate, string orgReqSeqId, string orgReqDate, string huifuId) {
+        public V2MerchantBusiLladetailRequest(string reqSeqId, string reqDate, string huifuId) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
-            this.orgReqSeqId = orgReqSeqId;
-            this.orgReqDate = orgReqDate;
             this.huifuId = huifuId;
         }
 
@@ -61,22 +51,6 @@ namespace BasePaySdk.Request
 
         public void setReqDate(string reqDate) {
             this.reqDate = reqDate;
-        }
-
-        public string getOrgReqSeqId() {
-            return orgReqSeqId;
-        }
-
-        public void setOrgReqSeqId(string orgReqSeqId) {
-            this.orgReqSeqId = orgReqSeqId;
-        }
-
-        public string getOrgReqDate() {
-            return orgReqDate;
-        }
-
-        public void setOrgReqDate(string orgReqDate) {
-            this.orgReqDate = orgReqDate;
         }
 
         public string getHuifuId() {

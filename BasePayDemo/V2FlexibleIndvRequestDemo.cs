@@ -31,9 +31,9 @@ namespace BasePayDemo
             // 渠道商/商户汇付Id
             request.setUpperHuifuId("6666000108900391");
             // 基本信息
-            request.setBasicInfo(getC5d70ad2Dabc4349A0cd524ed438f1df());
+            request.setBasicInfo(get629fab27E82346a2860242a3c0b0d61a());
             // 卡信息
-            request.setCardInfo(get71e41c34D4d04865Bc9eEd4922337ec7());
+            request.setCardInfo(get30ec05a8D26c45c39e9aA02b3b1711b6());
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -61,11 +61,11 @@ namespace BasePayDemo
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
             // 取现配置列表
-            extendInfoMap.Add("cash_config", get7a944d27D6f84205B5e52b5fd821eb88());
+            extendInfoMap.Add("cash_config", get2367ebbb376546c292f24ed51433e1fe());
             return extendInfoMap;
         }
 
-        private static string getC5d70ad2Dabc4349A0cd524ed438f1df() {
+        private static string get629fab27E82346a2860242a3c0b0d61a() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 个人姓名
             obj.Add("name", "张三");
@@ -90,7 +90,7 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string get7a944d27D6f84205B5e52b5fd821eb88() {
+        private static string get2367ebbb376546c292f24ed51433e1fe() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 提现手续费（固定/元）fix_amt与fee_rate至少填写一项， 需保留小数点后两位，不收费请填写0.00；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：1.00&lt;/font&gt;注：当cash_type&#x3D;D1时为节假日取现手续费
             obj.Add("fix_amt", "");
@@ -115,7 +115,7 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return JsonConvert.SerializeObject(objList);
         }
-        private static string get71e41c34D4d04865Bc9eEd4922337ec7() {
+        private static string get30ec05a8D26c45c39e9aA02b3b1711b6() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 卡号
             obj.Add("card_no", "6217001210064762890");

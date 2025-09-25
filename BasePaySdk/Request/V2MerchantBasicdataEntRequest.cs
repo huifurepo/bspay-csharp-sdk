@@ -170,7 +170,7 @@ namespace BasePaySdk.Request
         /**
          * 授权委托书**对私非法人、对公非同名结算必填**；通过[图片上传接口](https://paas.huifu.com/open/doc/api/#/shgl/shjj/api_shjj_shtpsc)上传材料；文件类型：F15；开通银行电子账户（中信E管家）需提供F520；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：57cc7f00-600a-33ab-b614-6221bbf2e530&lt;/font&gt;
          */
-        private string authEnturstPic;
+        private string authEntrustPic;
         /**
          * 上级汇付Id如果head_office_flag&#x3D;0，则字段必填，如果head_office_flag&#x3D;1，上级汇付Id不可传&lt;br/&gt;如果headOfficeFlag&#x3D;0，useHeadInfoFlag&#x3D;Y,且head_huifu_id不为空则基本信息部分复用上级的基本信息。&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：6666000123123123&lt;/font&gt;
          */
@@ -199,7 +199,7 @@ namespace BasePaySdk.Request
         public V2MerchantBasicdataEntRequest() {
         }
 
-        public V2MerchantBasicdataEntRequest(string reqSeqId, string reqDate, string upperHuifuId, string regName, string shortName, string receiptName, string entType, string mcc, string busiType, string sceneType, string licensePic, string licenseCode, string licenseValidityType, string licenseBeginDate, string licenseEndDate, string foundDate, string regCapital, string regDistrictId, string regDetail, string districtId, string detailAddr, string legalName, string legalCertType, string legalCertNo, string legalCertValidityType, string legalCertBeginDate, string legalCertEndDate, string legalAddr, string legalCertBackPic, string legalCertFrontPic, string contactMobileNo, string contactEmail, string loginName, string regAcctPic, string openLicenceNo, string cardInfo, string settleCardFrontPic, string settleCertBackPic, string settleCertFrontPic, string authEnturstPic, string headHuifuId, string merIcp, string storeHeaderPic, string storeIndoorPic, string storeCashierDeskPic) {
+        public V2MerchantBasicdataEntRequest(string reqSeqId, string reqDate, string upperHuifuId, string regName, string shortName, string receiptName, string entType, string mcc, string busiType, string sceneType, string licensePic, string licenseCode, string licenseValidityType, string licenseBeginDate, string licenseEndDate, string foundDate, string regCapital, string regDistrictId, string regDetail, string districtId, string detailAddr, string legalName, string legalCertType, string legalCertNo, string legalCertValidityType, string legalCertBeginDate, string legalCertEndDate, string legalAddr, string legalCertBackPic, string legalCertFrontPic, string contactMobileNo, string contactEmail, string loginName, string regAcctPic, string openLicenceNo, string cardInfo, string settleCardFrontPic, string settleCertBackPic, string settleCertFrontPic, string authEntrustPic, string headHuifuId, string merIcp, string storeHeaderPic, string storeIndoorPic, string storeCashierDeskPic) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.upperHuifuId = upperHuifuId;
@@ -239,7 +239,7 @@ namespace BasePaySdk.Request
             this.settleCardFrontPic = settleCardFrontPic;
             this.settleCertBackPic = settleCertBackPic;
             this.settleCertFrontPic = settleCertFrontPic;
-            this.authEnturstPic = authEnturstPic;
+            this.authEntrustPic = authEntrustPic;
             this.headHuifuId = headHuifuId;
             this.merIcp = merIcp;
             this.storeHeaderPic = storeHeaderPic;
@@ -559,12 +559,12 @@ namespace BasePaySdk.Request
             this.settleCertFrontPic = settleCertFrontPic;
         }
 
-        public string getAuthEnturstPic() {
-            return authEnturstPic;
+        public string getAuthEntrustPic() {
+            return authEntrustPic;
         }
 
-        public void setAuthEnturstPic(string authEnturstPic) {
-            this.authEnturstPic = authEnturstPic;
+        public void setAuthEntrustPic(string authEntrustPic) {
+            this.authEntrustPic = authEntrustPic;
         }
 
         public string getHeadHuifuId() {

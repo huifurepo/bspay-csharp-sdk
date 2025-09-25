@@ -71,13 +71,15 @@ namespace BasePayDemo
             // 异步通知地址
             extendInfoMap.Add("notify_url", "https://api.huifu.com");
             // 设备信息域
-            extendInfoMap.Add("trx_device_info", getTrxDeviceInfo());
+            extendInfoMap.Add("trx_device_info", get3cdad4d518854dd2Bf7f01c72ccc95e0());
             // 风控信息
-            extendInfoMap.Add("risk_info", getRiskInfo());
+            extendInfoMap.Add("risk_info", getB0c9212aAf3346629c9aB1f11b8075e2());
+            // 代扣绑卡类型
+            // extendInfoMap.Add("binding_card_type", "");
             return extendInfoMap;
         }
 
-        private static string getTrxDeviceInfo() {
+        private static object get3cdad4d518854dd2Bf7f01c72ccc95e0() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 银行预留手机号
             obj.Add("trx_mobile_num", "13428722321");
@@ -98,9 +100,9 @@ namespace BasePayDemo
             // 交易设备GPS
             obj.Add("trx_device_gps", "gps");
 
-            return JsonConvert.SerializeObject(obj);
+            return obj;
         }
-        private static string getRiskInfo() {
+        private static object getB0c9212aAf3346629c9aB1f11b8075e2() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // IP类型
             obj.Add("ip_type", "04");
@@ -112,8 +114,12 @@ namespace BasePayDemo
             obj.Add("device_type", "");
             // 银行预留手机号
             obj.Add("mobile", "");
+            // 协议编号
+            // obj.Add("agreement_no", "");
+            // 协议地址
+            // obj.Add("agreement_url", "");
 
-            return JsonConvert.SerializeObject(obj);
+            return obj;
         }
     }
 }
