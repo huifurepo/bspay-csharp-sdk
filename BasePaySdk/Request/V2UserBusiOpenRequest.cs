@@ -31,6 +31,10 @@ namespace BasePaySdk.Request
          * 乐接活配置当合作平台为乐接活，必填
          */
         private string ljhData;
+        /**
+         * 汇薪云配置当合作平台为汇薪云，必填
+         */
+        private string hxyData;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_USER_BUSI_OPEN;
@@ -39,12 +43,13 @@ namespace BasePaySdk.Request
         public V2UserBusiOpenRequest() {
         }
 
-        public V2UserBusiOpenRequest(string huifuId, string reqSeqId, string reqDate, string upperHuifuId, string ljhData) {
+        public V2UserBusiOpenRequest(string huifuId, string reqSeqId, string reqDate, string upperHuifuId, string ljhData, string hxyData) {
             this.huifuId = huifuId;
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.upperHuifuId = upperHuifuId;
             this.ljhData = ljhData;
+            this.hxyData = hxyData;
         }
 
         public string getHuifuId() {
@@ -85,6 +90,14 @@ namespace BasePaySdk.Request
 
         public void setLjhData(string ljhData) {
             this.ljhData = ljhData;
+        }
+
+        public string getHxyData() {
+            return hxyData;
+        }
+
+        public void setHxyData(string hxyData) {
+            this.hxyData = hxyData;
         }
 
 

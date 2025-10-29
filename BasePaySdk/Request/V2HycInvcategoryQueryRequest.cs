@@ -23,6 +23,10 @@ namespace BasePaySdk.Request
          * 落地公司机构号
          */
         private string minorAgentId;
+        /**
+         * 商户号lg_platform_type为HXY或空时必填
+         */
+        private string huifuId;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_HYC_INVCATEGORY_QUERY;
@@ -31,10 +35,11 @@ namespace BasePaySdk.Request
         public V2HycInvcategoryQueryRequest() {
         }
 
-        public V2HycInvcategoryQueryRequest(string reqSeqId, string reqDate, string minorAgentId) {
+        public V2HycInvcategoryQueryRequest(string reqSeqId, string reqDate, string minorAgentId, string huifuId) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.minorAgentId = minorAgentId;
+            this.huifuId = huifuId;
         }
 
         public string getReqSeqId() {
@@ -59,6 +64,14 @@ namespace BasePaySdk.Request
 
         public void setMinorAgentId(string minorAgentId) {
             this.minorAgentId = minorAgentId;
+        }
+
+        public string getHuifuId() {
+            return huifuId;
+        }
+
+        public void setHuifuId(string huifuId) {
+            this.huifuId = huifuId;
         }
 
 

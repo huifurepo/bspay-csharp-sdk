@@ -36,7 +36,7 @@ namespace BasePaySdk.Request
          */
         private string riskCheckData;
         /**
-         * 三方支付数据jsonObject；pay_scene为云闪付公众号与云闪付小程序时必填
+         * 三方支付数据jsonObject&lt;br/&gt;pay_scene&#x3D;U_JSAPI或pay_scene&#x3D;U_MINIAPP时，必填
          */
         private string thirdPayData;
 

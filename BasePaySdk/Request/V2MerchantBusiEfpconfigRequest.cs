@@ -40,6 +40,10 @@ namespace BasePaySdk.Request
          */
         private string outOrderAcctOpenFees;
         /**
+         * 业务模式acquiringMode:收单模式 switch_state为1时必填
+         */
+        private string businessModel;
+        /**
          * 银行类型switch_state有值时需填写； ht1-华通银行，xw0-XW银行，ss0-苏商银行；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：ht1&lt;/font&gt;
          */
         private string outFundsGateId;
@@ -151,7 +155,7 @@ namespace BasePaySdk.Request
         public V2MerchantBusiEfpconfigRequest() {
         }
 
-        public V2MerchantBusiEfpconfigRequest(string reqSeqId, string reqDate, string huifuId, string upperHuifuId, string outFeeHuifuid, string outOrderAcctCard, string outOrderAcctOpenFees, string outFundsGateId, string signUserInfo, string acctSource, string dyCooperationProvePic, string mtCooperationProvePic, string ksCooperationProvePic, string pddCooperationProvePic, string xhsCooperationProvePic, string zfbCooperationProvePic, string wxCooperationProvePic, string jdCooperationProvePic, string elmCooperationProvePic, string dwCooperationProvePic, string wphCooperationProvePic, string xcCooperationProvePic, string zfbzlCooperationProvePic, string wxzlCooperationProvePic, string ddjyCooperationProvePic, string tyCooperationProvePic, string tlCooperationProvePic, string ybCooperationProvePic, string efpPaperAgreementFile, string bdCooperationProvePic, string mainStoreHuifuId, string sfCooperationProvePic, string xyCooperationProvePic) {
+        public V2MerchantBusiEfpconfigRequest(string reqSeqId, string reqDate, string huifuId, string upperHuifuId, string outFeeHuifuid, string outOrderAcctCard, string outOrderAcctOpenFees, string businessModel, string outFundsGateId, string signUserInfo, string acctSource, string dyCooperationProvePic, string mtCooperationProvePic, string ksCooperationProvePic, string pddCooperationProvePic, string xhsCooperationProvePic, string zfbCooperationProvePic, string wxCooperationProvePic, string jdCooperationProvePic, string elmCooperationProvePic, string dwCooperationProvePic, string wphCooperationProvePic, string xcCooperationProvePic, string zfbzlCooperationProvePic, string wxzlCooperationProvePic, string ddjyCooperationProvePic, string tyCooperationProvePic, string tlCooperationProvePic, string ybCooperationProvePic, string efpPaperAgreementFile, string bdCooperationProvePic, string mainStoreHuifuId, string sfCooperationProvePic, string xyCooperationProvePic) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.huifuId = huifuId;
@@ -159,6 +163,7 @@ namespace BasePaySdk.Request
             this.outFeeHuifuid = outFeeHuifuid;
             this.outOrderAcctCard = outOrderAcctCard;
             this.outOrderAcctOpenFees = outOrderAcctOpenFees;
+            this.businessModel = businessModel;
             this.outFundsGateId = outFundsGateId;
             this.signUserInfo = signUserInfo;
             this.acctSource = acctSource;
@@ -241,6 +246,14 @@ namespace BasePaySdk.Request
 
         public void setOutOrderAcctOpenFees(string outOrderAcctOpenFees) {
             this.outOrderAcctOpenFees = outOrderAcctOpenFees;
+        }
+
+        public string getBusinessModel() {
+            return businessModel;
+        }
+
+        public void setBusinessModel(string businessModel) {
+            this.businessModel = businessModel;
         }
 
         public string getOutFundsGateId() {

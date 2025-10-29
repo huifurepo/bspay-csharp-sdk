@@ -41,7 +41,7 @@ namespace BasePayDemo
             // 异步通知地址
             request.setNotifyUrl("virgo://http://www.gangcai.com");
             // 分账明细
-            request.setAcctSplitBunch(get2cc87980007348a7A86e461ee467b2db());
+            request.setAcctSplitBunch(getF1feffe72adf427594625abfeb040860());
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -70,10 +70,12 @@ namespace BasePayDemo
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
             // 出款方账户号
             extendInfoMap.Add("acct_id", "C02418374");
+            // 合作平台
+            // extendInfoMap.Add("lg_platform_type", "");
             return extendInfoMap;
         }
 
-        private static string get2cc87980007348a7A86e461ee467b2db() {
+        private static string getF1feffe72adf427594625abfeb040860() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 用户号
             obj.Add("huifu_id", "6666000107979716");

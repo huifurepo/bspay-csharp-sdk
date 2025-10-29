@@ -60,6 +60,8 @@ namespace BasePayDemo
             extendInfoMap.Add("start_date", "20240112");
             // 结束时间
             extendInfoMap.Add("end_date", "20240112");
+            // 合作平台
+            // extendInfoMap.Add("lg_platform_type", "");
             return extendInfoMap;
         }
 

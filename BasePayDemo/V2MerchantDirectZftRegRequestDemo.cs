@@ -65,7 +65,7 @@ namespace BasePayDemo
             // 联系人手机号
             request.setContactMobileNo("13576266246");
             // 商户结算卡信息jsonArray格式。本业务当前只允许传入一张结算卡。与支付宝账号字段二选一必填
-            request.setZftCardInfoList(get89b50602766148fd8b78E5b1178b7e6d());
+            request.setZftCardInfoList(get0086fad238754ed3B04c0ffb7d8ce54e());
             // 商户支付宝账号商户支付宝账号，用作结算账号。与银行卡对象字段二选一必填。&lt;br/&gt;本字段要求支付宝账号的名称与商户名称mch_name同名，且是实名认证过的支付宝账户。&lt;font color&#x3D;&quot;green&quot;&gt;示例值：test@huifu.com&lt;/font&gt;
             request.setAlipayLogonId("13576266246");
             // 商户行业资质类型当商户是特殊行业时必填，具体取值[参见表格](https://mif-pub.alipayobjects.com/QualificationType.xlsx)。&lt;font color&#x3D;&quot;green&quot;&gt;示例值：310&lt;/font&gt;
@@ -79,7 +79,7 @@ namespace BasePayDemo
             // 默认结算类型
             request.setDefaultSettleType("alipayAccount");
             // 文件列表
-            request.setFileList(getDa4424ccD76c449aAd0f0a6cf846ae87());
+            request.setFileList(getA2582375Fa7747589f63B935d5a58216());
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -119,7 +119,7 @@ namespace BasePayDemo
             // 联系人电子邮箱
             extendInfoMap.Add("contact_email", "a066545074@qq.com");
             // 商户站点信息
-            extendInfoMap.Add("zft_site_info_list", get74e88be88f46423bB56343dda05a086f());
+            extendInfoMap.Add("zft_site_info_list", get75d5b1e84abd448b919eF4973ee262a0());
             // 审核结果异步通知地址
             extendInfoMap.Add("async_return_url", "http://192.168.85.157:30031/sspm/testVirgo");
             // 直付通退款不退手续费开关
@@ -127,9 +127,7 @@ namespace BasePayDemo
             return extendInfoMap;
         }
 
-
-
-        private static String get89b50602766148fd8b78E5b1178b7e6d() {
+        private static string get0086fad238754ed3B04c0ffb7d8ce54e() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 卡类型
             obj.Add("card_type", "1");
@@ -156,7 +154,7 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return JsonConvert.SerializeObject(objList);
         }
-        private static object get74e88be88f46423bB56343dda05a086f() {
+        private static string get75d5b1e84abd448b919eF4973ee262a0() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 站点类型
             obj.Add("site_type", "02");
@@ -171,9 +169,9 @@ namespace BasePayDemo
 
             JArray objList = new JArray();
             objList.Add(JToken.FromObject(obj));
-            return objList;
+            return JsonConvert.SerializeObject(objList);
         }
-        private static String getDa4424ccD76c449aAd0f0a6cf846ae87() {
+        private static string getA2582375Fa7747589f63B935d5a58216() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 文件类型
             obj.Add("file_type", "F41");

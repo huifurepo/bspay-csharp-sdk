@@ -33,7 +33,7 @@ namespace BasePayDemo
             // 落地公司机构号
             request.setMinorAgentId("L20231113140106443");
             // 乐接活请求参数jsonObject格式 合作平台为乐接活时必传
-            // request.setLjhData(getDa04d656159b4ec89e2b3b57e7164683());
+            // request.setLjhData(get994c979bC5cb4a098e051ddeb2fdcf26());
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -69,7 +69,7 @@ namespace BasePayDemo
             return extendInfoMap;
         }
 
-        private static string getDa04d656159b4ec89e2b3b57e7164683() {
+        private static string get994c979bC5cb4a098e051ddeb2fdcf26() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 合同模板id合作平台为乐接活时必填 数字格式
             // obj.Add("contract_template_id", "test");

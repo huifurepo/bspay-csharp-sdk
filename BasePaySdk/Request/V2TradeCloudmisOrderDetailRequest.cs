@@ -16,6 +16,10 @@ namespace BasePaySdk.Request
          */
         private string reqId;
         /**
+         * 原MIS请求的交易订单号
+         */
+        private string orgThirdOrderId;
+        /**
          * 原MIS请求商户号
          */
         private string orgHuifuId;
@@ -35,8 +39,9 @@ namespace BasePaySdk.Request
         public V2TradeCloudmisOrderDetailRequest() {
         }
 
-        public V2TradeCloudmisOrderDetailRequest(string reqId, string orgHuifuId, string orgDeviceId, string orgReqDate) {
+        public V2TradeCloudmisOrderDetailRequest(string reqId, string orgThirdOrderId, string orgHuifuId, string orgDeviceId, string orgReqDate) {
             this.reqId = reqId;
+            this.orgThirdOrderId = orgThirdOrderId;
             this.orgHuifuId = orgHuifuId;
             this.orgDeviceId = orgDeviceId;
             this.orgReqDate = orgReqDate;
@@ -48,6 +53,14 @@ namespace BasePaySdk.Request
 
         public void setReqId(string reqId) {
             this.reqId = reqId;
+        }
+
+        public string getOrgThirdOrderId() {
+            return orgThirdOrderId;
+        }
+
+        public void setOrgThirdOrderId(string orgThirdOrderId) {
+            this.orgThirdOrderId = orgThirdOrderId;
         }
 
         public string getOrgHuifuId() {
