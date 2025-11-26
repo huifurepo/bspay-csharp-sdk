@@ -68,10 +68,6 @@ namespace BasePaySdk.Request
          */
         private string certificateType;
         /**
-         * 手机号密文
-         */
-        private string mobileNoCrypt;
-        /**
          * 到账日期类型
          */
         private string intoAcctDateType;
@@ -83,7 +79,7 @@ namespace BasePaySdk.Request
         public V2TradeSettlementSurrogateRequest() {
         }
 
-        public V2TradeSettlementSurrogateRequest(string reqSeqId, string reqDate, string huifuId, string cashAmt, string purposeDesc, string province, string area, string bankCode, string correspondentCode, string bankAccountName, string cardAcctType, string bankCardNoCrypt, string certificateNoCrypt, string certificateType, string mobileNoCrypt, string intoAcctDateType) {
+        public V2TradeSettlementSurrogateRequest(string reqSeqId, string reqDate, string huifuId, string cashAmt, string purposeDesc, string province, string area, string bankCode, string correspondentCode, string bankAccountName, string cardAcctType, string bankCardNoCrypt, string certificateNoCrypt, string certificateType, string intoAcctDateType) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.huifuId = huifuId;
@@ -98,7 +94,6 @@ namespace BasePaySdk.Request
             this.bankCardNoCrypt = bankCardNoCrypt;
             this.certificateNoCrypt = certificateNoCrypt;
             this.certificateType = certificateType;
-            this.mobileNoCrypt = mobileNoCrypt;
             this.intoAcctDateType = intoAcctDateType;
         }
 
@@ -212,14 +207,6 @@ namespace BasePaySdk.Request
 
         public void setCertificateType(string certificateType) {
             this.certificateType = certificateType;
-        }
-
-        public string getMobileNoCrypt() {
-            return mobileNoCrypt;
-        }
-
-        public void setMobileNoCrypt(string mobileNoCrypt) {
-            this.mobileNoCrypt = mobileNoCrypt;
         }
 
         public string getIntoAcctDateType() {

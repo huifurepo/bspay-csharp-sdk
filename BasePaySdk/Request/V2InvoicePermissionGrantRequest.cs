@@ -23,6 +23,10 @@ namespace BasePaySdk.Request
          * 开票方汇付ID
          */
         private string huifuId;
+        /**
+         * 开通类型
+         */
+        private string status;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_INVOICE_PERMISSION_GRANT;
@@ -31,10 +35,11 @@ namespace BasePaySdk.Request
         public V2InvoicePermissionGrantRequest() {
         }
 
-        public V2InvoicePermissionGrantRequest(string reqSeqId, string reqDate, string huifuId) {
+        public V2InvoicePermissionGrantRequest(string reqSeqId, string reqDate, string huifuId, string status) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.huifuId = huifuId;
+            this.status = status;
         }
 
         public string getReqSeqId() {
@@ -59,6 +64,14 @@ namespace BasePaySdk.Request
 
         public void setHuifuId(string huifuId) {
             this.huifuId = huifuId;
+        }
+
+        public string getStatus() {
+            return status;
+        }
+
+        public void setStatus(string status) {
+            this.status = status;
         }
 
 

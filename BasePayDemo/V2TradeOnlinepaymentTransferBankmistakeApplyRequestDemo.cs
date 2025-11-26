@@ -34,9 +34,9 @@ namespace BasePayDemo
             request.setTransAmt("0.01");
             // 订单类型
             request.setOrderType("REFUND");
-            // 原请求流水号order_flag&#x3D;Y时必填；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：2022012514120615009&lt;/font&gt;
+            // 原请求流水号当bank_mode&#x3D;BFJ，order_flag&#x3D;Y时，必填；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：2022012514120615009&lt;/font&gt;
             request.setOrgReqSeqId("202308312345678931");
-            // 原请求日期格式:yyyyMMdd；order_flag&#x3D;Y时必填；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：20220125&lt;/font&gt;
+            // 原请求日期当bank_mode&#x3D;BFJ，order_flag&#x3D;Y时，必填，格式:yyyyMMdd；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：20220125&lt;/font&gt;
             request.setOrgReqDate("20230831");
             // 异步通知地址
             request.setNotifyUrl("http://www.baidu.com");
@@ -68,20 +68,24 @@ namespace BasePayDemo
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
             // 下单标识
             // extendInfoMap.Add("order_flag", "");
+            // 银行模式
+            // extendInfoMap.Add("bank_mode", "");
+            // 原汇款订单号
+            // extendInfoMap.Add("org_remittance_order_id", "");
             // 备注
             extendInfoMap.Add("remark", "大额支付补入账验证");
             // 银行信息数据
-            extendInfoMap.Add("bank_info_data", getB60d3b633db64945Aa3d7e2d7d75114e());
+            extendInfoMap.Add("bank_info_data", getCc3485bd801d49f7A19455ba65bbbee5());
             // 延时标记
             // extendInfoMap.Add("delay_acct_flag", "");
             // 分账对象
-            // extendInfoMap.Add("acct_split_bunch", getF5a7bd570f5b47e58d43Af05a3b46050());
+            // extendInfoMap.Add("acct_split_bunch", get8343a18fF467422b9e9c3cb76615a2bd());
             // 实际打款信息
-            // extendInfoMap.Add("actual_remit_data", getC9fbe6ceA66f4533A4e8716e37ca1292());
+            // extendInfoMap.Add("actual_remit_data", get0e2f635866394677B0d5B3a21c33cd34());
             return extendInfoMap;
         }
 
-        private static string getB60d3b633db64945Aa3d7e2d7d75114e() {
+        private static string getCc3485bd801d49f7A19455ba65bbbee5() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 银行编号
             obj.Add("bank_code", "03080000");
@@ -90,7 +94,7 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static object get7e4a26656c684722897041d65438a95a() {
+        private static object get506c558490c1479fA9af45d48e357290() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 支付金额
             // obj.Add("div_amt", "");
@@ -101,14 +105,14 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return objList;
         }
-        private static string getF5a7bd570f5b47e58d43Af05a3b46050() {
+        private static string get8343a18fF467422b9e9c3cb76615a2bd() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 分账信息列表
-            // obj.Add("acct_infos", get7e4a26656c684722897041d65438a95a());
+            // obj.Add("acct_infos", get506c558490c1479fA9af45d48e357290());
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string getC9fbe6ceA66f4533A4e8716e37ca1292() {
+        private static string get0e2f635866394677B0d5B3a21c33cd34() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 实际打款日期
             // obj.Add("actual_remit_date", "test");

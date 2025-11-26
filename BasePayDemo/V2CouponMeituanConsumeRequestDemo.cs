@@ -33,7 +33,7 @@ namespace BasePayDemo
             // 门店绑定流水号
             request.setBindId("9c2d91f68ba045a998df46ffe395a9ca");
             // 核销券
-            request.setReceiptCodeInfos(get1220ae0e014040c9Af4d128bcbe56d8a());
+            request.setReceiptCodeInfos(get68087d8eDdd149ef940aF4ddd4dffe4c());
             // 登录账号
             request.setAppShopAccount("123");
             // 登录用户名
@@ -73,7 +73,7 @@ namespace BasePayDemo
             return extendInfoMap;
         }
 
-        private static string get1220ae0e014040c9Af4d128bcbe56d8a() {
+        private static string get68087d8eDdd149ef940aF4ddd4dffe4c() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 券码
             obj.Add("receipt_code", "5729740654");

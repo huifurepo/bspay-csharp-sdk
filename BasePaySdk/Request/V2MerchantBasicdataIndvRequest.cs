@@ -80,7 +80,7 @@ namespace BasePaySdk.Request
          */
         private string cardInfo;
         /**
-         * 结算卡正面
+         * 银行卡卡号面
          */
         private string settleCardFrontPic;
         /**

@@ -30,6 +30,8 @@ namespace BasePayDemo
             request.setReqDate(DateTime.Now.ToString("yyyyMMdd"));
             // 开票方汇付ID
             request.setHuifuId("6666000149801800");
+            // 开通类型
+            request.setStatus("Y");
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
