@@ -39,9 +39,9 @@ namespace BasePayDemo
             // 退款金额
             request.setTransAmt("25.00");
             // 设备信息
-            request.setTerminalDeviceData(get401cdbafBf0248b9Bd22Fc29c064ec90());
+            request.setTerminalDeviceData(get8f8248504c3e44a38d548e3e9babc215());
             // 安全信息
-            request.setRiskCheckData(get5f9a6c9a2f274b58B08b898a909edb95());
+            request.setRiskCheckData(get650b403b46084c5fAd0d014ac712ecc4());
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -75,7 +75,7 @@ namespace BasePayDemo
             return extendInfoMap;
         }
 
-        private static string get401cdbafBf0248b9Bd22Fc29c064ec90() {
+        private static string get8f8248504c3e44a38d548e3e9babc215() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 交易设备类型
             obj.Add("device_type", "4");
@@ -84,7 +84,7 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string get5f9a6c9a2f274b58B08b898a909edb95() {
+        private static string get650b403b46084c5fAd0d014ac712ecc4() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 经度
             // obj.Add("longitude", "");

@@ -66,6 +66,8 @@ namespace BasePayDemo
             // extendInfoMap.Add("acct_id", "");
             // 取现渠道
             extendInfoMap.Add("enchashment_channel", "00");
+            // 中信e账通手续费承担方
+            // extendInfoMap.Add("fee_type", "");
             // 备注
             // extendInfoMap.Add("remark", "");
             // 异步通知地址

@@ -41,7 +41,7 @@ namespace BasePayDemo
             // 账单截止日期
             request.setBillEndDate("20990909");
             // 收款人信息
-            request.setPayeeInfo(get0117bed87ef6433bAc7f831d09c77a76());
+            request.setPayeeInfo(get551f166fCcc84fb6Befa2c09afe1a330());
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -71,9 +71,9 @@ namespace BasePayDemo
             // 账单说明
             extendInfoMap.Add("bill_remark", "您本次 SaaS 服务周期为[开始日期]至[结束日期]。费用包括基础服务套餐[X]元，高级功能模块[X]元，总计[X]元。");
             // 汇总信息
-            extendInfoMap.Add("bill_summary_info", get00cfe2af4f494258A34084b55e2d10f9());
+            extendInfoMap.Add("bill_summary_info", get64b854b2A3ed4adcB3c309c2db6991ab());
             // 更多信息
-            extendInfoMap.Add("bill_extend_info", get0d92fec96d1c42aaA519B4fe44b194f4());
+            extendInfoMap.Add("bill_extend_info", get940a51738e814906B871796535f30815());
             // 账单推送方式
             extendInfoMap.Add("push_type", "EMAIL");
             // 抄送邮箱
@@ -87,7 +87,7 @@ namespace BasePayDemo
             return extendInfoMap;
         }
 
-        private static string get00cfe2af4f494258A34084b55e2d10f9() {
+        private static string get64b854b2A3ed4adcB3c309c2db6991ab() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 字段名
             obj.Add("extend_name", "账单金额");
@@ -98,7 +98,7 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return JsonConvert.SerializeObject(objList);
         }
-        private static string get0d92fec96d1c42aaA519B4fe44b194f4() {
+        private static string get940a51738e814906B871796535f30815() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 字段名
             obj.Add("extend_name", "备注");
@@ -109,7 +109,7 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return JsonConvert.SerializeObject(objList);
         }
-        private static string get0117bed87ef6433bAc7f831d09c77a76() {
+        private static string get551f166fCcc84fb6Befa2c09afe1a330() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 收款联系人姓名
             obj.Add("payee_name", "黄云");

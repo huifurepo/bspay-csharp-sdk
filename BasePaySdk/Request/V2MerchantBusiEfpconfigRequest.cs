@@ -52,7 +52,7 @@ namespace BasePaySdk.Request
          */
         private string signUserInfo;
         /**
-         * 入账来源开通全域资金时需填写；01:抖音 02:美团 03:快手 04:拼多多 05:小红书 06:淘宝/天猫/飞猪 07:微信视频号/微信小店 08:京东 09:饿了么 11:得物 12:唯品会 13:携程 14:支付宝直连 15:微信直连 16:滴滴加油 17:团油 18:通联 19:易宝 20:百度 21:顺丰22:希音 多个逗号分隔；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：01,02,05&lt;/font&gt;；
+         * 入账来源开通全域资金时需填写；01:抖音 02:美团 03:快手 04:拼多多 05:小红书 06:淘宝/天猫/飞猪 07:微信视频号/微信小店 08:京东 09:饿了么 11:得物 12:唯品会 13:携程 14:支付宝直连 15:微信直连 16:滴滴加油 17:团油 18:通联 19:易宝 20:百度 21:顺丰22:希音23:高德 多个逗号分隔；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：01,02,05&lt;/font&gt;；
          */
         private string acctSource;
         /**
@@ -147,6 +147,10 @@ namespace BasePaySdk.Request
          * 希音合作证明材料入账来源包含22:希音时必填 文件类型F619；详见[文件类型说明](https://paas.huifu.com/open/doc/api/#/csfl/api_csfl_wjlx)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：57cc7f00-600a-33ab-b614-6221bbf2e530&lt;/font&gt;
          */
         private string xyCooperationProvePic;
+        /**
+         * 高德合作证明材料入账来源包含23:高德时必填 文件类型F615；详见[文件类型说明](https://paas.huifu.com/open/doc/api/#/csfl/api_csfl_wjlx)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：57cc7f00-600a-33ab-b614-6221bbf2e530&lt;/font&gt;
+         */
+        private string gdCooperationProvePic;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_MERCHANT_BUSI_EFPCONFIG;
@@ -155,7 +159,7 @@ namespace BasePaySdk.Request
         public V2MerchantBusiEfpconfigRequest() {
         }
 
-        public V2MerchantBusiEfpconfigRequest(string reqSeqId, string reqDate, string huifuId, string upperHuifuId, string outFeeHuifuid, string outOrderAcctCard, string outOrderAcctOpenFees, string businessModel, string outFundsGateId, string signUserInfo, string acctSource, string dyCooperationProvePic, string mtCooperationProvePic, string ksCooperationProvePic, string pddCooperationProvePic, string xhsCooperationProvePic, string zfbCooperationProvePic, string wxCooperationProvePic, string jdCooperationProvePic, string elmCooperationProvePic, string dwCooperationProvePic, string wphCooperationProvePic, string xcCooperationProvePic, string zfbzlCooperationProvePic, string wxzlCooperationProvePic, string ddjyCooperationProvePic, string tyCooperationProvePic, string tlCooperationProvePic, string ybCooperationProvePic, string efpPaperAgreementFile, string bdCooperationProvePic, string mainStoreHuifuId, string sfCooperationProvePic, string xyCooperationProvePic) {
+        public V2MerchantBusiEfpconfigRequest(string reqSeqId, string reqDate, string huifuId, string upperHuifuId, string outFeeHuifuid, string outOrderAcctCard, string outOrderAcctOpenFees, string businessModel, string outFundsGateId, string signUserInfo, string acctSource, string dyCooperationProvePic, string mtCooperationProvePic, string ksCooperationProvePic, string pddCooperationProvePic, string xhsCooperationProvePic, string zfbCooperationProvePic, string wxCooperationProvePic, string jdCooperationProvePic, string elmCooperationProvePic, string dwCooperationProvePic, string wphCooperationProvePic, string xcCooperationProvePic, string zfbzlCooperationProvePic, string wxzlCooperationProvePic, string ddjyCooperationProvePic, string tyCooperationProvePic, string tlCooperationProvePic, string ybCooperationProvePic, string efpPaperAgreementFile, string bdCooperationProvePic, string mainStoreHuifuId, string sfCooperationProvePic, string xyCooperationProvePic, string gdCooperationProvePic) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.huifuId = huifuId;
@@ -190,6 +194,7 @@ namespace BasePaySdk.Request
             this.mainStoreHuifuId = mainStoreHuifuId;
             this.sfCooperationProvePic = sfCooperationProvePic;
             this.xyCooperationProvePic = xyCooperationProvePic;
+            this.gdCooperationProvePic = gdCooperationProvePic;
         }
 
         public string getReqSeqId() {
@@ -462,6 +467,14 @@ namespace BasePaySdk.Request
 
         public void setXyCooperationProvePic(string xyCooperationProvePic) {
             this.xyCooperationProvePic = xyCooperationProvePic;
+        }
+
+        public string getGdCooperationProvePic() {
+            return gdCooperationProvePic;
+        }
+
+        public void setGdCooperationProvePic(string gdCooperationProvePic) {
+            this.gdCooperationProvePic = gdCooperationProvePic;
         }
 
 

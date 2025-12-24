@@ -9,6 +9,34 @@ namespace BasePaySdk.Request
     public class FunctionCodeEnum
     {
         /**
+         * 账单数据状态变更
+         */
+        public const string V3_BILLPAY_ORDER_CHANGESTAT = "v3.billpay.order.changeStat";
+        /**
+         * 账单退款接口
+         */
+        public const string V3_BILLPAY_ORDER_PAYMENT_REFUND = "v3.billpay.order.payment.refund";
+        /**
+         * 账单数据短信通知
+         */
+        public const string V3_BILLPAY_ORDER_BATCH_SMS = "v3.billpay.order.batch.sms";
+        /**
+         * 查询批量账单数据
+         */
+        public const string V3_BILLPAY_ORDER_BATCH_DETAIL = "v3.billpay.order.batch.detail";
+        /**
+         * 创建批量账单数据
+         */
+        public const string V3_BILLPAY_ORDER_BATCH_ADD = "v3.billpay.order.batch.add";
+        /**
+         * 商户多费率配置
+         */
+        public const string V2_MERCHANT_BUSI_MULTIFEE_CONFIG = "v2.merchant.busi.multiFee.config";
+        /**
+         * 商户多费率配置查询
+         */
+        public const string V2_MERCHANT_BUSI_MULTIFEE_QUERY = "v2.merchant.busi.multiFee.query";
+        /**
          * 提现记录查询
          */
         public const string V2_LLA_DYWITHDRAW_QUERY = "v2.lla.dywithdraw.query";
@@ -213,7 +241,7 @@ namespace BasePaySdk.Request
          */
         public const string V3_TRADE_PAYMENT_SCANPAY_QUERY = "v3.trade.payment.scanpay.query";
         /**
-         * 应用场景
+         * 聚合正扫
          */
         public const string V3_TRADE_PAYMENT_JSPAY = "v3.trade.payment.jspay";
         /**

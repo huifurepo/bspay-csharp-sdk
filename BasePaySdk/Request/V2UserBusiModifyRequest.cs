@@ -20,10 +20,6 @@ namespace BasePaySdk.Request
          */
         private string reqDate;
         /**
-         * 渠道商/商户汇付Id
-         */
-        private string upperHuifuId;
-        /**
          * 汇付ID
          */
         private string huifuId;
@@ -47,10 +43,9 @@ namespace BasePaySdk.Request
         public V2UserBusiModifyRequest() {
         }
 
-        public V2UserBusiModifyRequest(string reqSeqId, string reqDate, string upperHuifuId, string huifuId, string ljhData, string signUserInfo, string hxyData) {
+        public V2UserBusiModifyRequest(string reqSeqId, string reqDate, string huifuId, string ljhData, string signUserInfo, string hxyData) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
-            this.upperHuifuId = upperHuifuId;
             this.huifuId = huifuId;
             this.ljhData = ljhData;
             this.signUserInfo = signUserInfo;
@@ -71,14 +66,6 @@ namespace BasePaySdk.Request
 
         public void setReqDate(string reqDate) {
             this.reqDate = reqDate;
-        }
-
-        public string getUpperHuifuId() {
-            return upperHuifuId;
-        }
-
-        public void setUpperHuifuId(string upperHuifuId) {
-            this.upperHuifuId = upperHuifuId;
         }
 
         public string getHuifuId() {
