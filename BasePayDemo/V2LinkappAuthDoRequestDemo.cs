@@ -70,6 +70,8 @@ namespace BasePayDemo
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
             // 回调地址
             // extendInfoMap.Add("callback_url", "");
+            // 额外业务参数
+            // extendInfoMap.Add("erp_biz_params", "");
             // 
             // extendInfoMap.Add("以下仅RPA授权输入", "");
             // 登录账号名称

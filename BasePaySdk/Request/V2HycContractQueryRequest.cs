@@ -19,6 +19,10 @@ namespace BasePaySdk.Request
          * 请求日期
          */
         private string reqDate;
+        /**
+         * 合同编号
+         */
+        private string contractId;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_HYC_CONTRACT_QUERY;
@@ -27,9 +31,10 @@ namespace BasePaySdk.Request
         public V2HycContractQueryRequest() {
         }
 
-        public V2HycContractQueryRequest(string reqSeqId, string reqDate) {
+        public V2HycContractQueryRequest(string reqSeqId, string reqDate, string contractId) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
+            this.contractId = contractId;
         }
 
         public string getReqSeqId() {
@@ -46,6 +51,14 @@ namespace BasePaySdk.Request
 
         public void setReqDate(string reqDate) {
             this.reqDate = reqDate;
+        }
+
+        public string getContractId() {
+            return contractId;
+        }
+
+        public void setContractId(string contractId) {
+            this.contractId = contractId;
         }
 
 

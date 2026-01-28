@@ -35,11 +35,11 @@ namespace BasePayDemo
             // 原交易请求日期
             request.setOrgReqDate("20240229");
             // 安全信息线上交易退款必填，参见线上退款接口；jsonObject字符串
-            request.setRiskCheckData(get195595a868964f2bB023E9566fcd0297());
+            request.setRiskCheckData(get062a3a29990c4c65Ba27F5e7e44ad959());
             // 设备信息线上交易退款必填，参见线上退款接口；jsonObject字符串
-            request.setTerminalDeviceData(get8d8843c250f94e9b80a253d37ec6f80a());
+            request.setTerminalDeviceData(get45dd2bc3914b4494B9778347817905cb());
             // 大额转账支付账户信息数据jsonObject格式；银行大额转账支付交易退款申请时必填
-            // request.setBankInfoData(getAa3a4591240343e2Bad5D6a0764f06dc());
+            // request.setBankInfoData(getBaef9718F002418eB6cd783789b24044());
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -73,7 +73,7 @@ namespace BasePayDemo
             // 原交易请求流水号
             extendInfoMap.Add("org_req_seq_id", "202207099803123123199941");
             // 分账对象
-            extendInfoMap.Add("acct_split_bunch", get4a68d378Cb6e41dfA9405a589b476160());
+            extendInfoMap.Add("acct_split_bunch", get9fb20b0c028c43e29a9e05180b3fe3d9());
             // 备注
             // extendInfoMap.Add("remark", "");
             // 异步通知地址
@@ -81,7 +81,7 @@ namespace BasePayDemo
             return extendInfoMap;
         }
 
-        private static object get33a52525B1614d3bBc18Ff7d935b2bca() {
+        private static object getD6950095Dd8c4fe194d2Afcb74dfeef2() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 分账金额
             obj.Add("div_amt", "0.12");
@@ -92,14 +92,14 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return objList;
         }
-        private static string get4a68d378Cb6e41dfA9405a589b476160() {
+        private static string get9fb20b0c028c43e29a9e05180b3fe3d9() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 分账明细
-            obj.Add("acct_infos", get33a52525B1614d3bBc18Ff7d935b2bca());
+            obj.Add("acct_infos", getD6950095Dd8c4fe194d2Afcb74dfeef2());
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string get195595a868964f2bB023E9566fcd0297() {
+        private static string get062a3a29990c4c65Ba27F5e7e44ad959() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // ip地址
             // obj.Add("ip_addr", "");
@@ -112,7 +112,7 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string get8d8843c250f94e9b80a253d37ec6f80a() {
+        private static string get45dd2bc3914b4494B9778347817905cb() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 设备类型
             obj.Add("device_type", "4");
@@ -133,7 +133,7 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string getAa3a4591240343e2Bad5D6a0764f06dc() {
+        private static string getBaef9718F002418eB6cd783789b24044() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 省份付款方为对公账户时必填，参见省市地区码；示例值：0013
             // obj.Add("province", "test");
