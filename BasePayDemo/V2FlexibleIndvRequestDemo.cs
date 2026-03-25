@@ -31,9 +31,9 @@ namespace BasePayDemo
             // 渠道商/商户汇付Id
             request.setUpperHuifuId("6666000108900391");
             // 基本信息
-            request.setBasicInfo(get629fab27E82346a2860242a3c0b0d61a());
+            request.setBasicInfo(get2e76dd15D0e042bd9c15Cb157d92ed17());
             // 卡信息
-            request.setCardInfo(get30ec05a8D26c45c39e9aA02b3b1711b6());
+            request.setCardInfo(getC1cc575cA6164b41A6c37fb8e366cda2());
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -61,11 +61,11 @@ namespace BasePayDemo
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
             // 取现配置列表
-            extendInfoMap.Add("cash_config", get2367ebbb376546c292f24ed51433e1fe());
+            extendInfoMap.Add("cash_config", get72c6a66a68b64b7d99ec12d66ea56878());
             return extendInfoMap;
         }
 
-        private static string get629fab27E82346a2860242a3c0b0d61a() {
+        private static string get2e76dd15D0e042bd9c15Cb157d92ed17() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 个人姓名
             obj.Add("name", "张三");
@@ -81,16 +81,12 @@ namespace BasePayDemo
             obj.Add("cert_end_date", "20320101");
             // 电子邮箱
             obj.Add("email", "");
-            // 管理员账号
-            obj.Add("login_name", "LG20250619148194131");
-            // 是否发送短信标识
-            obj.Add("sms_send_flag", "");
             // 拓展方字段
             obj.Add("expand_id", "");
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string get2367ebbb376546c292f24ed51433e1fe() {
+        private static string get72c6a66a68b64b7d99ec12d66ea56878() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 提现手续费（固定/元）fix_amt与fee_rate至少填写一项， 需保留小数点后两位，不收费请填写0.00；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：1.00&lt;/font&gt;注：当cash_type&#x3D;D1时为节假日取现手续费
             obj.Add("fix_amt", "");
@@ -115,7 +111,7 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return JsonConvert.SerializeObject(objList);
         }
-        private static string get30ec05a8D26c45c39e9aA02b3b1711b6() {
+        private static string getC1cc575cA6164b41A6c37fb8e366cda2() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 卡号
             obj.Add("card_no", "6217001210064762890");

@@ -84,11 +84,11 @@ namespace BasePaySdk.Request
          */
         private string legalCertNationality;
         /**
-         * 联系人姓名
+         * 管理员姓名
          */
         private string contactName;
         /**
-         * 联系人手机号
+         * 管理员手机号
          */
         private string contactMobile;
         /**

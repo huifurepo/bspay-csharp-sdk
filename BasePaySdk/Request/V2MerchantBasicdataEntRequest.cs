@@ -132,11 +132,11 @@ namespace BasePaySdk.Request
          */
         private string legalCertFrontPic;
         /**
-         * 联系人手机号
+         * 管理员手机号
          */
         private string contactMobileNo;
         /**
-         * 联系人电子邮箱
+         * 管理员电子邮箱
          */
         private string contactEmail;
         /**

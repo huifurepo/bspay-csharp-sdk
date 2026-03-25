@@ -33,9 +33,9 @@ namespace BasePayDemo
             // 账单项目编号
             request.setProjectNo("BN2025091279190693");
             // 用户资料信息列表
-            // request.setUserDocInfoList(get5c2e7c16296940238d680181de1820b9());
+            // request.setUserDocInfoList(getC2e8906531d04dc8981304f7acdb9361());
             // 账单收费项信息列表
-            // request.setPaymentInfoList(get892c7e04F78848c79b53333c9ca3135a());
+            // request.setPaymentInfoList(getAfd400dc0f48495881a97bc3c0f33fed());
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -67,23 +67,27 @@ namespace BasePayDemo
             return extendInfoMap;
         }
 
-        private static string get5c2e7c16296940238d680181de1820b9() {
+        private static string getC2e8906531d04dc8981304f7acdb9361() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 账单表单字段属性ID
             // obj.Add("key_no", "test");
             // 账单表单字段属性值
             // obj.Add("key_value", "");
 
-            return JsonConvert.SerializeObject(obj);
+            JArray objList = new JArray();
+            objList.Add(JToken.FromObject(obj));
+            return JsonConvert.SerializeObject(objList);
         }
-        private static string get892c7e04F78848c79b53333c9ca3135a() {
+        private static string getAfd400dc0f48495881a97bc3c0f33fed() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 账单表单字段属性ID
             // obj.Add("key_no", "test");
             // 账单表单字段属性值
             // obj.Add("key_value", "");
 
-            return JsonConvert.SerializeObject(obj);
+            JArray objList = new JArray();
+            objList.Add(JToken.FromObject(obj));
+            return JsonConvert.SerializeObject(objList);
         }
     }
 }

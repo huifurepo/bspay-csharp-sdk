@@ -58,6 +58,8 @@ namespace BasePayDemo
         private static Dictionary<string, object> getExtendInfos() {
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
+            // 用户客户号
+            // extendInfoMap.Add("user_huifu_id", "");
             // 银行模式
             // extendInfoMap.Add("bank_mode", "");
             return extendInfoMap;

@@ -8,7 +8,7 @@ using Newtonsoft.Json.Linq;
 namespace BasePayDemo
 {
     /**
-     * 电子发票业务开通 - 示例
+     * 电子发票业务配置 - 示例
      *
      * @author sdk-generator
      * @Description

@@ -35,6 +35,10 @@ namespace BasePaySdk.Request
          * 汇薪云配置当合作平台为汇薪云，必填
          */
         private string hxyData;
+        /**
+         * 签约人信息当电子回单配置开关为开通时必填
+         */
+        private string signUserInfo;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_USER_BUSI_OPEN;
@@ -43,13 +47,14 @@ namespace BasePaySdk.Request
         public V2UserBusiOpenRequest() {
         }
 
-        public V2UserBusiOpenRequest(string huifuId, string reqSeqId, string reqDate, string upperHuifuId, string ljhData, string hxyData) {
+        public V2UserBusiOpenRequest(string huifuId, string reqSeqId, string reqDate, string upperHuifuId, string ljhData, string hxyData, string signUserInfo) {
             this.huifuId = huifuId;
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.upperHuifuId = upperHuifuId;
             this.ljhData = ljhData;
             this.hxyData = hxyData;
+            this.signUserInfo = signUserInfo;
         }
 
         public string getHuifuId() {
@@ -98,6 +103,14 @@ namespace BasePaySdk.Request
 
         public void setHxyData(string hxyData) {
             this.hxyData = hxyData;
+        }
+
+        public string getSignUserInfo() {
+            return signUserInfo;
+        }
+
+        public void setSignUserInfo(string signUserInfo) {
+            this.signUserInfo = signUserInfo;
         }
 
 

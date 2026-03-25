@@ -62,6 +62,8 @@ namespace BasePayDemo
             extendInfoMap.Add("org_req_seq_id", "20240129555522220211711612931");
             // 原交易返回的全局流水号
             // extendInfoMap.Add("org_hf_seq_id", "");
+            // 是否合单交易关单查询
+            // extendInfoMap.Add("merge_flag", "");
             return extendInfoMap;
         }
 

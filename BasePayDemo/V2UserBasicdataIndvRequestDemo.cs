@@ -42,7 +42,7 @@ namespace BasePayDemo
             // request.setCertNationality("test");
             // 手机号
             request.setMobileNo("13764462205");
-            // 地址开通中信E管家必填
+            // 地址开通中信E管家必填；开通电子回单必填
             // request.setAddress("test");
 
             // 设置非必填字段
@@ -81,7 +81,7 @@ namespace BasePayDemo
             // 拓展方字段
             extendInfoMap.Add("expand_id", "");
             // 文件列表
-            extendInfoMap.Add("file_list", getDb2bd6a770dd4fbc80f23305842efb38());
+            extendInfoMap.Add("file_list", get5f0a1885Bba7488a89ad02827ab6eb69());
             // 所属行业
             // extendInfoMap.Add("mcc", "");
             // 省
@@ -93,7 +93,7 @@ namespace BasePayDemo
             return extendInfoMap;
         }
 
-        private static string getDb2bd6a770dd4fbc80f23305842efb38() {
+        private static string get5f0a1885Bba7488a89ad02827ab6eb69() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 文件类型
             obj.Add("file_type", "F04");

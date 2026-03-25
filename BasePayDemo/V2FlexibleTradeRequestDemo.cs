@@ -32,12 +32,12 @@ namespace BasePayDemo
             request.setOutHuifuId("6666000108903745");
             // 交易阶段操作类型
             request.setStageOperationType("FIRST_STAGE");
-            // 前段交易流水号** 当交易阶段操作类型为02时，该字段必填。填写的是交易阶段操作类型为01时交易已完成的交易全局流水号。 &lt;font color&#x3D;&quot;green&quot;&gt;示例值：20250620112533115566896&lt;/font&gt;
+            // 前段交易流水号当交易阶段操作类型为02时，该字段必填。填写的是交易阶段操作类型为01时交易已完成的交易全局流水号。 &lt;font color&#x3D;&quot;green&quot;&gt;示例值：20250620112533115566896&lt;/font&gt;
             request.setPhaseHfSeqId("");
             // 支付金额
             request.setOrdAmt("20");
             // 分账对象
-            request.setAcctSplitBunch(get2cfe14563b14475eBbdfD9392f16df9d());
+            request.setAcctSplitBunch(get811975e3Cdcf4f28B9f8Abe7e9cc66ae());
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -71,7 +71,7 @@ namespace BasePayDemo
             return extendInfoMap;
         }
 
-        private static object get82ee536eE9db4db2A5151412ac55ccc9() {
+        private static object getEd6657d466574b04B3586dc431e5feef() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 分账金额
             obj.Add("div_amt", "20.00");
@@ -82,10 +82,10 @@ namespace BasePayDemo
 
             return obj;
         }
-        private static string get2cfe14563b14475eBbdfD9392f16df9d() {
+        private static string get811975e3Cdcf4f28B9f8Abe7e9cc66ae() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 分账明细
-            obj.Add("acct_info", get82ee536eE9db4db2A5151412ac55ccc9());
+            obj.Add("acct_info", getEd6657d466574b04B3586dc431e5feef());
 
             return JsonConvert.SerializeObject(obj);
         }

@@ -60,9 +60,9 @@ namespace BasePayDemo
             request.setLegalCertEndDate("20300801");
             // 法人国籍法人的证件类型为外国人居留证时，必填，参见《[国籍编码](https://cloudpnrcdn.oss-cn-shanghai.aliyuncs.com/opps/api/prod/download_file/area/%E5%9B%BD%E7%B1%8D.xlsx)》&lt;font color&#x3D;&quot;green&quot;&gt;示例值：CHN&lt;/font&gt;
             // request.setLegalCertNationality("test");
-            // 联系人姓名
+            // 管理员姓名
             request.setContactName("小的");
-            // 联系人手机号
+            // 管理员手机号
             request.setContactMobile("13764462211");
             // 管理员账号如需短信通知则必填；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：Lg20220222013747&lt;/font&gt;
             request.setLoginName("Lg2022022201374721361");
@@ -94,7 +94,7 @@ namespace BasePayDemo
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
             // 经营简称
             extendInfoMap.Add("short_name", "企业商户");
-            // 联系人电子邮箱
+            // 管理员电子邮箱
             extendInfoMap.Add("contact_email", "jeff.peng@huifu.com");
             // 操作员
             extendInfoMap.Add("operator_id", "");
@@ -103,7 +103,7 @@ namespace BasePayDemo
             // 扩展方字段
             extendInfoMap.Add("expand_id", "");
             // 文件列表
-            // extendInfoMap.Add("file_list", getF4bde40271004009B265Ae9d23bf5967());
+            // extendInfoMap.Add("file_list", get46c99a78A2384cbcB68aD9873e8acd6c());
             // 公司类型
             // extendInfoMap.Add("ent_type", "");
             // 所属行业
@@ -111,7 +111,7 @@ namespace BasePayDemo
             return extendInfoMap;
         }
 
-        private static string getF4bde40271004009B265Ae9d23bf5967() {
+        private static string get46c99a78A2384cbcB68aD9873e8acd6c() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 文件类型
             // obj.Add("file_type", "test");

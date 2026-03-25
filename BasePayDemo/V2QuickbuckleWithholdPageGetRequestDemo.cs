@@ -71,15 +71,17 @@ namespace BasePayDemo
             // 异步通知地址
             extendInfoMap.Add("notify_url", "https://api.huifu.com");
             // 设备信息域
-            extendInfoMap.Add("trx_device_info", get3cdad4d518854dd2Bf7f01c72ccc95e0());
+            extendInfoMap.Add("trx_device_info", getDda298ab4e7d44b09aaa74fc71081ab1());
             // 风控信息
-            extendInfoMap.Add("risk_info", getB0c9212aAf3346629c9aB1f11b8075e2());
+            extendInfoMap.Add("risk_info", get15634bc4444549ae9bf8958a4f58e303());
             // 代扣绑卡类型
             // extendInfoMap.Add("binding_card_type", "");
+            // 绑卡方式
+            // extendInfoMap.Add("bind_card_method", "");
             return extendInfoMap;
         }
 
-        private static object get3cdad4d518854dd2Bf7f01c72ccc95e0() {
+        private static object getDda298ab4e7d44b09aaa74fc71081ab1() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 银行预留手机号
             obj.Add("trx_mobile_num", "13428722321");
@@ -102,7 +104,7 @@ namespace BasePayDemo
 
             return obj;
         }
-        private static object getB0c9212aAf3346629c9aB1f11b8075e2() {
+        private static object get15634bc4444549ae9bf8958a4f58e303() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // IP类型
             obj.Add("ip_type", "04");

@@ -76,11 +76,11 @@ namespace BasePayDemo
             extendInfoMap.Add("legal_cert_begin_date", "20121010");
             // 法人证件有效期截止日期
             extendInfoMap.Add("legal_cert_end_date", "20301010");
-            // 联系人姓名
+            // 管理员姓名
             extendInfoMap.Add("contact_name", "花朵");
-            // 联系人电子邮箱
+            // 管理员电子邮箱
             extendInfoMap.Add("contact_email", "chang@huifu.com");
-            // 联系人手机号
+            // 管理员手机号
             extendInfoMap.Add("contact_mobile", "13764462000");
             // 证照有效期类型
             extendInfoMap.Add("license_validity_type", "1");
@@ -97,13 +97,13 @@ namespace BasePayDemo
             // 注册地址(详细信息)
             extendInfoMap.Add("reg_detail", "上海市宜山路");
             // 文件列表
-            extendInfoMap.Add("file_list", get948fc9d07ecd4fbbB95c02d9a605d463());
+            extendInfoMap.Add("file_list", getB5d1ffebC1a9465f89b8041e891a5c3d());
             // 所属行业
             // extendInfoMap.Add("mcc", "");
             return extendInfoMap;
         }
 
-        private static string get948fc9d07ecd4fbbB95c02d9a605d463() {
+        private static string getB5d1ffebC1a9465f89b8041e891a5c3d() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 文件类型
             obj.Add("file_type", "F01");

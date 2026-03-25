@@ -59,15 +59,15 @@ namespace BasePayDemo
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
             // 基本信息
-            // extendInfoMap.Add("basic_info", get85557b1d7f4945348f719444c35fef3e());
+            // extendInfoMap.Add("basic_info", get89ce7b26E1c04e3bBa8bC1d9a102b3d6());
             // 取现配置列表
-            extendInfoMap.Add("cash_config", getFab986af2f5a46c293be27111b433af5());
+            extendInfoMap.Add("cash_config", getDd1521f89e444a5a896fD23093c32397());
             // 卡信息
-            extendInfoMap.Add("card_info", get7e4fcf80B2eb4346Ae2709b1139d8a3f());
+            extendInfoMap.Add("card_info", getD2bf186d56e94b07Bc6e8ba832210a92());
             return extendInfoMap;
         }
 
-        private static string get85557b1d7f4945348f719444c35fef3e() {
+        private static string get89ce7b26E1c04e3bBa8bC1d9a102b3d6() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 个人证件有效期类型
             // obj.Add("cert_validity_type", "");
@@ -80,7 +80,7 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string getFab986af2f5a46c293be27111b433af5() {
+        private static string getDd1521f89e444a5a896fD23093c32397() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 提现手续费（固定/元）fix_amt与fee_rate至少填写一项， 需保留小数点后两位，不收费请填写0.00；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：1.00&lt;/font&gt;注：当cash_type&#x3D;D1时为节假日取现手续费
             obj.Add("fix_amt", "");
@@ -107,7 +107,7 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return JsonConvert.SerializeObject(objList);
         }
-        private static string get7e4fcf80B2eb4346Ae2709b1139d8a3f() {
+        private static string getD2bf186d56e94b07Bc6e8ba832210a92() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 卡号
             obj.Add("card_no", "6228481269040908115");

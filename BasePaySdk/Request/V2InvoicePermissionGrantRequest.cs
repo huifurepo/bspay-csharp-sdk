@@ -3,7 +3,7 @@ using System;
 namespace BasePaySdk.Request
 {
     /**
-     * 电子发票业务开通
+     * 电子发票业务配置
      *
      * @author sdk-generator
      * @Description
