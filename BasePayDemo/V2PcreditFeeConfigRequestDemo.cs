@@ -57,15 +57,15 @@ namespace BasePayDemo
             // 异步通知地址
             extendInfoMap.Add("async_return_url", "http://192.168.85.157:30031/sspm/testVirgo");
             // 花呗分期费率
-            extendInfoMap.Add("hb_fq_fee_list", get05b26244F3754368911e63e76d5d79a8());
+            extendInfoMap.Add("hb_fq_fee_list", get865775a727804856Ad741adce92a4684());
             // 白条分期配置对象
-            // extendInfoMap.Add("jdbt_data", get5ed415516215448cAa71B459248bb501());
+            // extendInfoMap.Add("jdbt_data", getC075c7bdC59c4fddA4c6F2e94f027c3e());
             // 银联聚分期配置对象
-            // extendInfoMap.Add("yljfq_data", get3d393069Ef9f439fA8845a37ee62815b());
+            // extendInfoMap.Add("yljfq_data", get0c1a7c7fC85348999562B33cf515424e());
             return extendInfoMap;
         }
 
-        private static string get05b26244F3754368911e63e76d5d79a8() {
+        private static string get865775a727804856Ad741adce92a4684() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 商户汇付Id
             obj.Add("huifu_id", "6666000003156435");
@@ -104,7 +104,7 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return JsonConvert.SerializeObject(objList);
         }
-        private static object getBf2960d0062d419582e82c814aaee6b9() {
+        private static object getF0d72829Ff5f4749A6c3C2f5093c1414() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 支付场景
             // obj.Add("pay_scene", "test");
@@ -127,7 +127,7 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return objList;
         }
-        private static string get5ed415516215448cAa71B459248bb501() {
+        private static string getC075c7bdC59c4fddA4c6F2e94f027c3e() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 商户汇付Id
             // obj.Add("huifu_id", "test");
@@ -138,7 +138,7 @@ namespace BasePayDemo
             // 挂网协议地址3-挂网协议必填；示例值：https://cloudpnrcdn.oss-cn-shanghai.aliyuncs.com/opps/api/prod/dg_gwxy/PaymentServiceAgreement_xxxx.html
             // obj.Add("agreement_url", "test");
             // 京东白条费率数据
-            // obj.Add("jdbt_fee_data", getBf2960d0062d419582e82c814aaee6b9());
+            // obj.Add("jdbt_fee_data", getF0d72829Ff5f4749A6c3C2f5093c1414());
             // 签约人姓名
             // obj.Add("name", "");
             // 签约人身份证号
@@ -148,7 +148,7 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static object getA022abb7Afe746bb8a807f05ed2d6608() {
+        private static object getC507fa5a1214468194f1Fe6fd88be99c() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 支付场景
             // obj.Add("pay_scene", "test");
@@ -171,7 +171,7 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return objList;
         }
-        private static object getC4eed850Ec61447c977420b8d9e86d56() {
+        private static object getEe28a633804a4e1184fbA80ea67c0887() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 文件id
             // obj.Add("file_id", "test");
@@ -182,7 +182,7 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return objList;
         }
-        private static string get3d393069Ef9f439fA8845a37ee62815b() {
+        private static string get0c1a7c7fC85348999562B33cf515424e() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 商户汇付Id
             // obj.Add("huifu_id", "test");
@@ -191,13 +191,13 @@ namespace BasePayDemo
             // 签约人手机号
             // obj.Add("mobile_no", "test");
             // 银联聚分期费率数据
-            // obj.Add("yljfq_fee_data", getA022abb7Afe746bb8a807f05ed2d6608());
+            // obj.Add("yljfq_fee_data", getC507fa5a1214468194f1Fe6fd88be99c());
             // 签约人姓名
             // obj.Add("name", "");
             // 签约人身份证号
             // obj.Add("cert_no", "");
             // 补充业务信息
-            // obj.Add("file_list", getC4eed850Ec61447c977420b8d9e86d56());
+            // obj.Add("file_list", getEe28a633804a4e1184fbA80ea67c0887());
 
             return JsonConvert.SerializeObject(obj);
         }

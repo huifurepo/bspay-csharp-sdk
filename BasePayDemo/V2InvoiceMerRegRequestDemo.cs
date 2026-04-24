@@ -86,6 +86,10 @@ namespace BasePayDemo
             extendInfoMap.Add("auto_renewal", "Y");
             // 商户入驻结果异步通知地址
             extendInfoMap.Add("callback_url", "http: //service.example.com/to/path");
+            // 开票模式
+            extendInfoMap.Add("issue_mode", "LE_QI_LINK");
+            // 区域代码
+            // extendInfoMap.Add("area_code", "");
             return extendInfoMap;
         }
 

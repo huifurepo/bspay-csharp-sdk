@@ -33,9 +33,9 @@ namespace BasePayDemo
             // 退款金额
             request.setOrdAmt("0.01");
             // 设备信息条件必填，当为银行大额支付时可不填，jsonObject格式
-            request.setTerminalDeviceData(get75ed576a25334009B39c9a32ba35a82c());
+            request.setTerminalDeviceData(get3ba8cd4255da4c76A5a60100bb3040ff());
             // 安全信息条件必填，当为银行大额支付时可不填，jsonObject格式
-            request.setRiskCheckData(getE9afd6ee9b9d4d3792ecD7fece10e129());
+            request.setRiskCheckData(get6a7f1ffdEf724ff0A6765874e1e91420());
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -69,15 +69,15 @@ namespace BasePayDemo
             // 原交易请求流水号
             extendInfoMap.Add("org_req_seq_id", "295700155481522176");
             // 分账对象
-            // extendInfoMap.Add("acct_split_bunch", getAdb4ca3e488f4d15Bce4257e00e08036());
+            // extendInfoMap.Add("acct_split_bunch", get7f63f0d677364d0eB8649895a46917a5());
             // 备注
             // extendInfoMap.Add("remark", "");
             // 异步通知地址
             extendInfoMap.Add("notify_url", "http://www.baidu.com");
             // 补贴支付信息
-            // extendInfoMap.Add("combinedpay_data", get270ca5b037324d64B30165369e52c256());
+            // extendInfoMap.Add("combinedpay_data", get87e4d75491d645cf979c17fe801e6149());
             // 大额转账支付账户信息数据
-            // extendInfoMap.Add("bank_info_data", getF6a68fdf9cbc4bc3Ba31B8362ac62484());
+            // extendInfoMap.Add("bank_info_data", get74759bdbA37549d1B0ee19208bf9bfa9());
             // 是否垫资
             // extendInfoMap.Add("loan_flag", "");
             // 垫资承担者
@@ -87,7 +87,7 @@ namespace BasePayDemo
             return extendInfoMap;
         }
 
-        private static object get089d1506323646b3Be73F47b7c92e50e() {
+        private static object get64dd7d8a7c1a4f868adeF0c135e59ab8() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 商户号
             // obj.Add("huifu_id", "test");
@@ -102,14 +102,14 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return objList;
         }
-        private static string getAdb4ca3e488f4d15Bce4257e00e08036() {
+        private static string get7f63f0d677364d0eB8649895a46917a5() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 分账信息列表
-            // obj.Add("acct_infos", get089d1506323646b3Be73F47b7c92e50e());
+            // obj.Add("acct_infos", get64dd7d8a7c1a4f868adeF0c135e59ab8());
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string get75ed576a25334009B39c9a32ba35a82c() {
+        private static string get3ba8cd4255da4c76A5a60100bb3040ff() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 交易设备ip
             obj.Add("device_ip", "172.31.31.145");
@@ -132,7 +132,7 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string getE9afd6ee9b9d4d3792ecD7fece10e129() {
+        private static string get6a7f1ffdEf724ff0A6765874e1e91420() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 经度
             // obj.Add("longitude", "test");
@@ -145,7 +145,7 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string get270ca5b037324d64B30165369e52c256() {
+        private static string get87e4d75491d645cf979c17fe801e6149() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 补贴方汇付编号
             // obj.Add("huifu_id", "test");
@@ -160,18 +160,12 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return JsonConvert.SerializeObject(objList);
         }
-        private static string getF6a68fdf9cbc4bc3Ba31B8362ac62484() {
+        private static string get74759bdbA37549d1B0ee19208bf9bfa9() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 省份
-            // obj.Add("province", "");
-            // 地区
-            // obj.Add("area", "");
             // 银行编号
-            // obj.Add("bank_code", "");
-            // 联行号
-            // obj.Add("correspondent_code", "");
+            // obj.Add("bank_code", "test");
             // 付款方账户类型
-            // obj.Add("card_acct_type", "");
+            // obj.Add("card_acct_type", "test");
 
             return JsonConvert.SerializeObject(obj);
         }

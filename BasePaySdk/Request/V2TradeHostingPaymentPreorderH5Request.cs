@@ -36,7 +36,7 @@ namespace BasePaySdk.Request
          */
         private string preOrderType;
         /**
-         * 半支付托管扩展参数集合
+         * 统一收银台扩展参数集合
          */
         private string hostingData;
 

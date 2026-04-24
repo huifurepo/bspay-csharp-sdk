@@ -3,7 +3,7 @@ using System;
 namespace BasePaySdk.Request
 {
     /**
-     * 托管交易退款
+     * 统一收银台交易退款
      *
      * @author sdk-generator
      * @Description
