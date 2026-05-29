@@ -13,17 +13,17 @@ namespace BasePayDemo
      * @author sdk-generator
      * @Description
      */
-    public class V2MerchantFapiaoGoodsQueryRequestDemo
+    public class V2InvoiceManageGoodsQuerylistRequestDemo
     {
 
-        public static void V2MerchantFapiaoGoodsQueryRequestDemoTest()
+        public static void V2InvoiceManageGoodsQuerylistRequestDemoTest()
         {
 
             // 1. 数据初始化
             InitMerConfig.init();
 
             // 2.组装请求参数
-            V2MerchantFapiaoGoodsQueryRequest request = new V2MerchantFapiaoGoodsQueryRequest();
+            V2InvoiceManageGoodsQuerylistRequest request = new V2InvoiceManageGoodsQuerylistRequest();
             // 汇付商户号
             request.setHuifuId("6666000149801800");
 

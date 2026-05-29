@@ -8,7 +8,7 @@ namespace BasePaySdk.Request
      * @author sdk-generator
      * @Description
      */
-    public class V2MerchantFapiaoGoodsQueryRequest : BaseRequest
+    public class V2InvoiceManageGoodsQuerylistRequest : BaseRequest
     {
 
         /**
@@ -17,13 +17,13 @@ namespace BasePaySdk.Request
         private string huifuId;
 
         public override string getFunctionCode() {
-            return FunctionCodeEnum.V2_MERCHANT_FAPIAO_GOODS_QUERY;
+            return FunctionCodeEnum.V2_INVOICE_MANAGE_GOODS_QUERYLIST;
         }
 
-        public V2MerchantFapiaoGoodsQueryRequest() {
+        public V2InvoiceManageGoodsQuerylistRequest() {
         }
 
-        public V2MerchantFapiaoGoodsQueryRequest(string huifuId) {
+        public V2InvoiceManageGoodsQuerylistRequest(string huifuId) {
             this.huifuId = huifuId;
         }
 

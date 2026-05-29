@@ -30,12 +30,8 @@ namespace BasePayDemo
             request.setReqDate(DateTime.Now.ToString("yyyyMMdd"));
             // 汇付ID
             request.setHuifuId("6666000104896342");
-            // 乐接活配置当合作平台为乐接活，必填
-            // request.setLjhData(get57de4d6c2ed44eb4Be5b8641ba9c3742());
             // 签约人信息当电子回单配置开关为开通时必填
-            // request.setSignUserInfo(get655039998a084aa0Be82Dca1e8a1cfa1());
-            // 汇薪云配置当合作平台为汇薪云时，该参数必填
-            // request.setHxyData(getA50a6afe9ed74498B87e7922ef2dd009());
+            // request.setSignUserInfo(getDf5aaad20f3d46ad8ffdB2439324784c());
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -63,29 +59,25 @@ namespace BasePayDemo
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
             // 结算信息配置列表
-            extendInfoMap.Add("settle_config_list", get6b2a94f17c14439cAeadF4502a88aa02());
+            extendInfoMap.Add("settle_config_list", get22bfd04a14eb49c7A86fBa1833db7aa4());
             // 结算卡信息
-            extendInfoMap.Add("card_info", getB1b3bed05f9a4d04Ae3f87ffd5abe411());
+            extendInfoMap.Add("card_info", get76a7642cB1a948808a396b33fb13212a());
             // 取现配置列表
-            extendInfoMap.Add("cash_config", get1ac2c82f0a584e13Aa3bA5fa34a62fa9());
+            extendInfoMap.Add("cash_config", getC0e0bd43Cc244bdeAdd76e1f3157fca2());
             // 文件列表
-            extendInfoMap.Add("file_list", get3a1b5bcbD79f4d859545621ad5837955());
+            extendInfoMap.Add("file_list", get4f95b602711840af99ccD51837cfae71());
             // 延迟入账开关
             // extendInfoMap.Add("delay_flag", "");
             // 异步请求地址
             extendInfoMap.Add("async_return_url", "//http://service.example.com/to/path");
             // 斗拱e账户功能配置
-            // extendInfoMap.Add("elec_acct_config", get45855817154048939c1f64e638ed62be());
-            // 灵活用工开关
-            // extendInfoMap.Add("open_tax_flag", "");
-            // 合作平台
-            // extendInfoMap.Add("lg_platform_type", "");
+            // extendInfoMap.Add("elec_acct_config", getC83c745f0e3f49b5A4501f4d98914987());
             // 电子回单配置
-            // extendInfoMap.Add("elec_receipt_config", get753046220c44472eB9c47fad3d4701e1());
+            // extendInfoMap.Add("elec_receipt_config", get6f4d79f0Fae54cf7A4cbD9497685bbf2());
             return extendInfoMap;
         }
 
-        private static string get6b2a94f17c14439cAeadF4502a88aa02() {
+        private static string get22bfd04a14eb49c7A86fBa1833db7aa4() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 开通状态
             obj.Add("settle_status", "1");
@@ -124,7 +116,7 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return JsonConvert.SerializeObject(objList);
         }
-        private static string getB1b3bed05f9a4d04Ae3f87ffd5abe411() {
+        private static string get76a7642cB1a948808a396b33fb13212a() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 卡类型
             obj.Add("card_type", "0");
@@ -155,7 +147,7 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string get1ac2c82f0a584e13Aa3bA5fa34a62fa9() {
+        private static string getC0e0bd43Cc244bdeAdd76e1f3157fca2() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 开通状态
             obj.Add("switch_state", "1");
@@ -182,7 +174,7 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return JsonConvert.SerializeObject(objList);
         }
-        private static string get3a1b5bcbD79f4d859545621ad5837955() {
+        private static string get4f95b602711840af99ccD51837cfae71() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 文件类型
             obj.Add("file_type", "F02");
@@ -195,7 +187,7 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return JsonConvert.SerializeObject(objList);
         }
-        private static object get92f00ce094844f6888f32fdfb398e7da() {
+        private static object get5b36977c459144efA157Cdcc7b02b6a6() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 银行所在省
             // obj.Add("prov_id", "test");
@@ -226,7 +218,7 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return objList;
         }
-        private static string get45855817154048939c1f64e638ed62be() {
+        private static string getC83c745f0e3f49b5A4501f4d98914987() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 电子账户开关
             // obj.Add("switch_state", "test");
@@ -241,7 +233,7 @@ namespace BasePayDemo
             // 电子账户开通状态
             // obj.Add("bank_status", "test");
             // 银行卡信息
-            // obj.Add("elec_card_list", get92f00ce094844f6888f32fdfb398e7da());
+            // obj.Add("elec_card_list", get5b36977c459144efA157Cdcc7b02b6a6());
             // 银行信息
             // obj.Add("bank_message", "");
             // 中信签约短信流水号
@@ -251,21 +243,14 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string get57de4d6c2ed44eb4Be5b8641ba9c3742() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 税源地id当合作平台为乐接活，必填
-            // obj.Add("tax_area_id", "test");
-
-            return JsonConvert.SerializeObject(obj);
-        }
-        private static object get753046220c44472eB9c47fad3d4701e1() {
+        private static object get6f4d79f0Fae54cf7A4cbD9497685bbf2() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 电子回单开关
             // obj.Add("switch_state", "test");
 
             return obj;
         }
-        private static object get655039998a084aa0Be82Dca1e8a1cfa1() {
+        private static object getDf5aaad20f3d46ad8ffdB2439324784c() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 签约人类型
             // obj.Add("type", "test");
@@ -275,13 +260,6 @@ namespace BasePayDemo
             // obj.Add("cert_no", "");
             // 签约人姓名
             // obj.Add("name", "");
-
-            return obj;
-        }
-        private static object getA50a6afe9ed74498B87e7922ef2dd009() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 落地公司机构号当合作平台为汇薪云时，该参数必填。如果仅有一个可不填
-            // obj.Add("minor_agent_id", "test");
 
             return obj;
         }
