@@ -9,6 +9,30 @@ namespace BasePaySdk.Request
     public class FunctionCodeEnum
     {
         /**
+         * 设置默认开票员
+         */
+        public const string V2_INVOICE_CLERK_DEFAULT_MODIFY = "v2.invoice.clerk.default.modify";
+        /**
+         * 开票员删除
+         */
+        public const string V2_INVOICE_CLERK_DELETE = "v2.invoice.clerk.delete";
+        /**
+         * 开票员查询
+         */
+        public const string V2_INVOICE_CLERK_LIST_QUERY = "v2.invoice.clerk.list.query";
+        /**
+         * 开票商品新增
+         */
+        public const string V2_INVOICE_MANAGE_GOODS_ADD = "v2.invoice.manage.goods.add";
+        /**
+         * 开票商品修改
+         */
+        public const string V2_MERCHANT_FAPIAO_GOODS_EDIT = "v2.merchant.fapiao.goods.edit";
+        /**
+         * 开票商品查询
+         */
+        public const string V2_MERCHANT_FAPIAO_GOODS_QUERY = "v2.merchant.fapiao.goods.query";
+        /**
          * 账单计划变更
          */
         public const string V3_BILLPAY_PLAN_MODIFY = "v3.billpay.plan.modify";

@@ -56,14 +56,40 @@ namespace BasePayDemo
         private static Dictionary<string, object> getExtendInfos() {
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
-            // 微信开通数
-            extendInfoMap.Add("wx_open_count", "0");
-            // 支付宝开通数
-            extendInfoMap.Add("ali_open_count", "1");
             // 异步通知地址
             extendInfoMap.Add("async_url", "http://service.example.com/to/path");
+            // 微信开通明细
+            extendInfoMap.Add("wx_open_list", get4ee5a21dCd974031Aaff86bc6a77ad6e());
+            // 支付宝开通明细
+            extendInfoMap.Add("ali_open_list", getAf3f6e6aB58f47f99761E0107d9733be());
             return extendInfoMap;
         }
 
+        private static object get4ee5a21dCd974031Aaff86bc6a77ad6e() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 渠道号
+            obj.Add("pay_channel_id", "10000001");
+            // 线上开通数
+            obj.Add("online_open_count", "1");
+            // 线下开通数
+            obj.Add("offline_open_count", "1");
+
+            JArray objList = new JArray();
+            objList.Add(JToken.FromObject(obj));
+            return objList;
+        }
+        private static object getAf3f6e6aB58f47f99761E0107d9733be() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 渠道号
+            obj.Add("pay_channel_id", "10000001");
+            // 线上开通数
+            obj.Add("online_open_count", "1");
+            // 线下开通数
+            obj.Add("offline_open_count", "1");
+
+            JArray objList = new JArray();
+            objList.Add(JToken.FromObject(obj));
+            return objList;
+        }
     }
 }
