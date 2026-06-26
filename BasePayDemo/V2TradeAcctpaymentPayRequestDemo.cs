@@ -33,9 +33,9 @@ namespace BasePayDemo
             // 支付金额
             request.setOrdAmt("0.01");
             // 分账对象
-            request.setAcctSplitBunch(get9d0bec22F44249219196A84b6c917fe9());
+            request.setAcctSplitBunch(get9c29fa2e73524f6680262d660bfa5335());
             // 安全信息
-            request.setRiskCheckData(get21c1ce39685d47d0Abd2F5d0467e7471());
+            request.setRiskCheckData(getE947651a90b340abA9110bb2ffa7106b());
             // 资金类型资金类型。支付渠道为中信E管家时，资金类型必填（[详见说明](https://paas.huifu.com/open/doc/api/#/yuer/api_zxegjzllx)）
             // request.setFundType("test");
             // 手续费承担方标识余额支付手续费承担方标识；商户余额支付扣收规则为接口指定承担方时必填！枚举值：&lt;br/&gt;OUT：出款方；&lt;br/&gt;IN：分账接受方。&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：IN&lt;/font&gt;
@@ -80,22 +80,12 @@ namespace BasePayDemo
             // extendInfoMap.Add("out_acct_id", "");
             // 支付渠道
             // extendInfoMap.Add("acct_channel", "");
-            // 灵活用工标志
-            // extendInfoMap.Add("hyc_flag", "");
-            // 灵活用工平台
-            // extendInfoMap.Add("lg_platform_type", "");
-            // 落地公司商户号
-            // extendInfoMap.Add("bmember_id", "");
-            // 乐接活请求参数集合
-            // extendInfoMap.Add("ljh_data", get0684ecf9C4b64c0d88de7d9a0f6077a7());
-            // 异步通知地址
-            // extendInfoMap.Add("notify_url", "");
             // 余额支付安全核验方式
             // extendInfoMap.Add("verify_type", "");
             return extendInfoMap;
         }
 
-        private static object get14a36f48897b45ef815dDb697428ce53() {
+        private static object getFae5f7e17de84c098c5dF86a5d97af14() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 分账接收方ID
             obj.Add("huifu_id", "6666000109133323");
@@ -110,10 +100,10 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return objList;
         }
-        private static string get9d0bec22F44249219196A84b6c917fe9() {
+        private static string get9c29fa2e73524f6680262d660bfa5335() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 分账明细
-            obj.Add("acct_infos", get14a36f48897b45ef815dDb697428ce53());
+            obj.Add("acct_infos", getFae5f7e17de84c098c5dF86a5d97af14());
             // 百分比分账标志
             // obj.Add("percentage_flag", "");
             // 是否净值分账
@@ -121,7 +111,7 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string get21c1ce39685d47d0Abd2F5d0467e7471() {
+        private static string getE947651a90b340abA9110bb2ffa7106b() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 转账原因
             obj.Add("transfer_type", "04");
@@ -135,15 +125,6 @@ namespace BasePayDemo
             // obj.Add("base_station", "");
             // IP地址
             // obj.Add("ip_addr", "");
-
-            return JsonConvert.SerializeObject(obj);
-        }
-        private static string get0684ecf9C4b64c0d88de7d9a0f6077a7() {
-            Dictionary<string, object> obj = new Dictionary<string, object>();
-            // 税源地ID
-            // obj.Add("tax_area_id", "");
-            // 任务模板ID
-            // obj.Add("template_id", "");
 
             return JsonConvert.SerializeObject(obj);
         }
