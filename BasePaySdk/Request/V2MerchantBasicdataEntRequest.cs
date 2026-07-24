@@ -148,10 +148,6 @@ namespace BasePaySdk.Request
          */
         private string regAcctPic;
         /**
-         * 基本存款账户编号或核准号条件选填；当use_head_info_flag&#x3D;Y时不填 ；&lt;br/&gt;基本存款账户信息请填写基本存款账户编号；开户许可证请填写核准号。&lt;br/&gt;当注册地址或经营地址为如下地区时必填：江苏省、浙江省、湖南省、湖北省、云南省、贵州省、陕西省、河南省、吉林省、黑龙江省、福建省、海南省、重庆市、青海省、宁夏回族自治区；&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：J2900123456789&lt;/font&gt;
-         */
-        private string openLicenceNo;
-        /**
          * 银行卡信息配置
          */
         private string cardInfo;
@@ -199,7 +195,7 @@ namespace BasePaySdk.Request
         public V2MerchantBasicdataEntRequest() {
         }
 
-        public V2MerchantBasicdataEntRequest(string reqSeqId, string reqDate, string upperHuifuId, string regName, string shortName, string receiptName, string entType, string mcc, string busiType, string sceneType, string licensePic, string licenseCode, string licenseValidityType, string licenseBeginDate, string licenseEndDate, string foundDate, string regCapital, string regDistrictId, string regDetail, string districtId, string detailAddr, string legalName, string legalCertType, string legalCertNo, string legalCertValidityType, string legalCertBeginDate, string legalCertEndDate, string legalAddr, string legalCertBackPic, string legalCertFrontPic, string contactMobileNo, string contactEmail, string loginName, string regAcctPic, string openLicenceNo, string cardInfo, string settleCardFrontPic, string settleCertBackPic, string settleCertFrontPic, string authEntrustPic, string headHuifuId, string merIcp, string storeHeaderPic, string storeIndoorPic, string storeCashierDeskPic) {
+        public V2MerchantBasicdataEntRequest(string reqSeqId, string reqDate, string upperHuifuId, string regName, string shortName, string receiptName, string entType, string mcc, string busiType, string sceneType, string licensePic, string licenseCode, string licenseValidityType, string licenseBeginDate, string licenseEndDate, string foundDate, string regCapital, string regDistrictId, string regDetail, string districtId, string detailAddr, string legalName, string legalCertType, string legalCertNo, string legalCertValidityType, string legalCertBeginDate, string legalCertEndDate, string legalAddr, string legalCertBackPic, string legalCertFrontPic, string contactMobileNo, string contactEmail, string loginName, string regAcctPic, string cardInfo, string settleCardFrontPic, string settleCertBackPic, string settleCertFrontPic, string authEntrustPic, string headHuifuId, string merIcp, string storeHeaderPic, string storeIndoorPic, string storeCashierDeskPic) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.upperHuifuId = upperHuifuId;
@@ -234,7 +230,6 @@ namespace BasePaySdk.Request
             this.contactEmail = contactEmail;
             this.loginName = loginName;
             this.regAcctPic = regAcctPic;
-            this.openLicenceNo = openLicenceNo;
             this.cardInfo = cardInfo;
             this.settleCardFrontPic = settleCardFrontPic;
             this.settleCertBackPic = settleCertBackPic;
@@ -517,14 +512,6 @@ namespace BasePaySdk.Request
 
         public void setRegAcctPic(string regAcctPic) {
             this.regAcctPic = regAcctPic;
-        }
-
-        public string getOpenLicenceNo() {
-            return openLicenceNo;
-        }
-
-        public void setOpenLicenceNo(string openLicenceNo) {
-            this.openLicenceNo = openLicenceNo;
         }
 
         public string getCardInfo() {

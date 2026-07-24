@@ -9,6 +9,18 @@ namespace BasePaySdk.Request
     public class FunctionCodeEnum
     {
         /**
+         * 电子合同申请列表查询
+         */
+        public const string V2_INVOICE_QUERYECMSAPPLYLIST = "v2.invoice.queryEcmsApplyList";
+        /**
+         * 电子合同拒签
+         */
+        public const string V2_INVOICE_REJECTSIGN = "v2.invoice.rejectSign";
+        /**
+         * 电子合同重发
+         */
+        public const string V2_INVOICE_CONTRACTREPEAT = "v2.invoice.contractRepeat";
+        /**
          * 开票商品查询
          */
         public const string V2_INVOICE_MANAGE_GOODS_QUERYLIST = "v2.invoice.manage.goods.queryList";

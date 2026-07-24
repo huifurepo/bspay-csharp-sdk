@@ -92,6 +92,10 @@ namespace BasePayDemo
             // extendInfoMap.Add("time_expire", "");
             // 手续费扣款标志
             // extendInfoMap.Add("fee_flag", "");
+            // 页面跳转地址
+            // extendInfoMap.Add("front_url", "");
+            // 付款卡对公对私标识
+            // extendInfoMap.Add("pay_card_acct_type", "");
             return extendInfoMap;
         }
 

@@ -33,7 +33,7 @@ namespace BasePayDemo
             // *线上业务类型编码*开通快捷、网银、余额支付Pro版、银行大额转账、分账比例&gt;30%、代扣必填；参见[线上业务类型编码及补充材料说明](https://cloudpnrcdn.oss-cn-shanghai.aliyuncs.com/opps/api/prod/download_file/kyc/KYC-%E7%BA%BF%E4%B8%8A%E4%B8%9A%E5%8A%A1%E7%B1%BB%E5%9E%8B%E7%BC%96%E7%A0%81%E5%8F%8A%E8%A1%A5%E5%85%85%E6%9D%90%E6%96%99%E8%AF%B4%E6%98%8E.xlsx)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：H7999AL&lt;/font&gt;
             // request.setOnlineBusiType("test");
             // 签约人jsonObject字符串；agreement_info中选择电子签约时必填；个人商户填本人信息。
-            // request.setSignUserInfo(get86e6c3c3E7ae4237802aA4f69301d1f2());
+            // request.setSignUserInfo(get138ba83701764c68Ae09F61357a11e04());
             // 代扣场景withhold_flag开通需填写 1:权益投流(订阅),2:非权益投流(订阅),3:保险缴纳,4:道路通行费(ETC),5:公共事业(水电煤)缴费,6:物业缴费
             // request.setWithholdPayScene("test");
 
@@ -65,7 +65,7 @@ namespace BasePayDemo
             // 微信支付宝商户简称
             extendInfoMap.Add("short_name", "");
             // *协议信息实体*
-            extendInfoMap.Add("agreement_info", getAe6ff5be9ff5474c97ef7017417560cd());
+            extendInfoMap.Add("agreement_info", getA07ee8d89633493bA0365bf387ffb598());
             // 是否交易手续费外扣
             extendInfoMap.Add("out_fee_flag", "2");
             // 交易手续费外扣汇付ID
@@ -87,23 +87,23 @@ namespace BasePayDemo
             // 商户业务类型
             // extendInfoMap.Add("mer_bus_type", "");
             // 线上费率配置
-            // extendInfoMap.Add("online_fee_conf_list", getB01b04c7Bf2e4cd0B4cb6ea3f191eb94());
+            // extendInfoMap.Add("online_fee_conf_list", getBf37d5b58eff45d0B7b8Ad1268928d44());
             // 支付宝配置对象
-            extendInfoMap.Add("ali_conf_list", get1f130b2a5bbd44c6996c238ea5c37034());
+            extendInfoMap.Add("ali_conf_list", getF9cddc09Cb8a4828878aD9e3868c4261());
             // 微信配置对象
-            extendInfoMap.Add("wx_conf_list", get4c45a878A3f24111A1634e29af51c7ee());
+            extendInfoMap.Add("wx_conf_list", get789450d2D2b6427794bf06b922b1ceda());
             // 银联二维码配置对象
-            extendInfoMap.Add("union_conf_list", get6baa5237D93b45a7A88e06e1faf6d641());
+            extendInfoMap.Add("union_conf_list", getFc4e60343f874816A3e4Ee52f968dac5());
             // 银行卡支付配置信息
-            extendInfoMap.Add("bank_card_conf", get3f46fbd4Ea954d1593aeEe30b3a97f83());
+            extendInfoMap.Add("bank_card_conf", get8eee853e6dfe45e4Ba3999ee4557b2a3());
             // *余额支付配置对象*
-            extendInfoMap.Add("balance_pay_config", getEd8a50af79664c2fBebf126b2f5c3a3f());
+            extendInfoMap.Add("balance_pay_config", get69f866c8E2744ade907b1db546ef8b6d());
             // 补贴支付
-            extendInfoMap.Add("combine_pay_config", get50ab160c7f8746ed9a9eF5b14cc78e68());
+            extendInfoMap.Add("combine_pay_config", getB92e1fc32b8f4bc2Bc9a4f466caa42a3());
             // 线上手续费承担方配置
-            // extendInfoMap.Add("online_pay_fee_conf_list", getF4d9ed19D544400fB2fc99b697a610dc());
+            // extendInfoMap.Add("online_pay_fee_conf_list", get2d7c9f40A31f4e3d86ecD09762ab0029());
             // 全域资金管理配置(华通银行)
-            // extendInfoMap.Add("out_order_funds_config", getCd47adbd37254373866604609a1d1aa1());
+            // extendInfoMap.Add("out_order_funds_config", get2e263df683c1494fB1ab43fd73d044d2());
             // 异步消息接收地址
             extendInfoMap.Add("async_return_url", "http://www.baidu55.com");
             // 业务开通结果异步消息接收地址
@@ -111,15 +111,15 @@ namespace BasePayDemo
             // 交易异步应答地址
             extendInfoMap.Add("recon_resp_addr", "http://192.168.85.157:30031/sspm/testVirgo");
             // *运营媒介*
-            // extendInfoMap.Add("online_media_info_list", getB56e32ff1c2e40ebAa0b052a82badb84());
+            // extendInfoMap.Add("online_media_info_list", getE3225110C82542be93df7ac7b406a657());
             // *补充文件信息*
-            // extendInfoMap.Add("extended_material_list", getCd3e3f86179d45fc9eabDad1e76c85b8());
+            // extendInfoMap.Add("extended_material_list", get57623ba046334a92B76fC45be8d9b76b());
             // 商户开通强制延迟标记
             // extendInfoMap.Add("forced_delay_flag", "");
             // 微信直连配置对象
-            // extendInfoMap.Add("wx_zl_conf", get338671351fe04c7e88e74218a9d76a4c());
+            // extendInfoMap.Add("wx_zl_conf", get7857290a48f344d394c7Ca3717488193());
             // 支付宝直连配置对象
-            // extendInfoMap.Add("ali_zl_conf", get953cf5a81d894a1fA1df31b3cdc76477());
+            // extendInfoMap.Add("ali_zl_conf", getE3668147E3d74a9aB13c195d22c27bf2());
             // 开户费用值(元)
             // extendInfoMap.Add("enter_fee", "");
             // 开户费用类型
@@ -131,27 +131,27 @@ namespace BasePayDemo
             // 是否支持撤销
             // extendInfoMap.Add("support_revoke", "");
             // 分账配置信息
-            // extendInfoMap.Add("split_conf_info", get8fe6fefa138849ce90360e2a0f84212d());
+            // extendInfoMap.Add("split_conf_info", getD177e6bc783f4925B9485178d60c4b39());
             // 银联线上收银台
-            // extendInfoMap.Add("uni_app_payment_config", get354fb82660a04eb5B100Ba8fc40015b7());
+            // extendInfoMap.Add("uni_app_payment_config", get21ac05a677a34b649507859bfb2f7c75());
             // 资金归集开通标记
             // extendInfoMap.Add("fund_collection_flag", "");
             // 代发配置
-            // extendInfoMap.Add("surrogate_config_list", get53f249305e3340a882eeD6c18bf533a8());
+            // extendInfoMap.Add("surrogate_config_list", get99de72d765d64d50B4100307737e216d());
             // 大额支付配置
-            // extendInfoMap.Add("large_amt_pay_config", get65ed9f1d566d47919ab2Ecb021bc2548());
+            // extendInfoMap.Add("large_amt_pay_config", getF73e8fab2041420f8fb64d99d7b3e0f6());
             // 统一收银台开关
             // extendInfoMap.Add("half_pay_host_flag", "");
             // 代发复核配置
-            // extendInfoMap.Add("agent_recheck_config", get6e4a0ce8075948a8B3d9Bf49640d0280());
+            // extendInfoMap.Add("agent_recheck_config", get52e5064a8381443fBf39C6c7677f705b());
             // 商户开通网银充值开关
             // extendInfoMap.Add("online_recharge_flag", "");
             // 是否开通垫资退款
             // extendInfoMap.Add("refund_mend_open_flag", "");
             // 捷行付配置
-            // extendInfoMap.Add("jxf_conf_info", get6d3c362dC24a460eB51f7fa4954f918b());
+            // extendInfoMap.Add("jxf_conf_info", get88cb97428c9c4d5682a1B2a28ad9871d());
             // 合单支付配置信息
-            // extendInfoMap.Add("merge_pay_config_info", get59538f66B1d541af8738178dbed8c545());
+            // extendInfoMap.Add("merge_pay_config_info", get5a4e01ceEb77495d9c42Cbaf1df2ee61());
             // 是否开通账单支付
             // extendInfoMap.Add("bill_payment_flag", "");
             // 交易应答返回推送系统号
@@ -159,7 +159,7 @@ namespace BasePayDemo
             return extendInfoMap;
         }
 
-        private static string getAe6ff5be9ff5474c97ef7017417560cd() {
+        private static string getA07ee8d89633493bA0365bf387ffb598() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // *协议类型*
             obj.Add("agreement_type", "0");
@@ -176,7 +176,7 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string getB01b04c7Bf2e4cd0B4cb6ea3f191eb94() {
+        private static string getBf37d5b58eff45d0B7b8Ad1268928d44() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 业务类型
             // obj.Add("fee_type", "test");
@@ -201,7 +201,7 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return JsonConvert.SerializeObject(objList);
         }
-        private static string get24edf4f84ba84dd082cb349ee730ca0f() {
+        private static string get1e51df7fEc184527A9f77f0793bc9041() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 联系人身份证号码
             // obj.Add("id_card_number", "test");
@@ -212,7 +212,7 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string get549f151aFdf445af87e4E903ce2d8ebd() {
+        private static string get0817df8e6b164e39985f813b579e892d() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 证件持有人类型
             // obj.Add("legal_type", "");
@@ -237,7 +237,7 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string getE3d0a0453d424aab827090c6beaf5b14() {
+        private static string get8901c381E3f549d4Aa2aAddecda7c8cd() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 是否金融机构
             // obj.Add("finance_institution_flag", "");
@@ -250,13 +250,13 @@ namespace BasePayDemo
             // 特殊行业id
             // obj.Add("special_category_id", "");
             // 联系人信息对象
-            // obj.Add("contact_person_info", get24edf4f84ba84dd082cb349ee730ca0f());
+            // obj.Add("contact_person_info", get1e51df7fEc184527A9f77f0793bc9041());
             // 法人身份信息
-            // obj.Add("legal_person_info", get549f151aFdf445af87e4E903ce2d8ebd());
+            // obj.Add("legal_person_info", get0817df8e6b164e39985f813b579e892d());
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string get1f130b2a5bbd44c6996c238ea5c37034() {
+        private static string getF9cddc09Cb8a4828878aD9e3868c4261() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 手续费（%）
             obj.Add("fee_rate", "3.15");
@@ -273,13 +273,13 @@ namespace BasePayDemo
             // 是否需要实名认证
             // obj.Add("is_check_real_name", "");
             // 实名认证信息
-            // obj.Add("al_real_name_info", getE3d0a0453d424aab827090c6beaf5b14());
+            // obj.Add("al_real_name_info", get8901c381E3f549d4Aa2aAddecda7c8cd());
 
             JArray objList = new JArray();
             objList.Add(JToken.FromObject(obj));
             return JsonConvert.SerializeObject(objList);
         }
-        private static object getA6be03a64b3142a5Afd68101de5aa1a6() {
+        private static object get30ee7c434d6d4fab9a1f4d8140e3c8eb() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 联系人姓名联系人类型contact_type&#x3D;SUPER时必填。示例值：张三
             // obj.Add("name", "test");
@@ -308,7 +308,7 @@ namespace BasePayDemo
 
             return obj;
         }
-        private static string get4c45a878A3f24111A1634e29af51c7ee() {
+        private static string get789450d2D2b6427794bf06b922b1ceda() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 开关状态
             // obj.Add("switch_state", "test");
@@ -327,13 +327,13 @@ namespace BasePayDemo
             // 是否需要实名认证
             // obj.Add("is_check_real_name", "");
             // 实名认证信息
-            // obj.Add("wx_real_name_info", getA6be03a64b3142a5Afd68101de5aa1a6());
+            // obj.Add("wx_real_name_info", get30ee7c434d6d4fab9a1f4d8140e3c8eb());
 
             JArray objList = new JArray();
             objList.Add(JToken.FromObject(obj));
             return JsonConvert.SerializeObject(objList);
         }
-        private static string get6baa5237D93b45a7A88e06e1faf6d641() {
+        private static string getFc4e60343f874816A3e4Ee52f968dac5() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 借记卡手续费（%）
             // obj.Add("debit_fee_rate", "test");
@@ -350,7 +350,7 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return JsonConvert.SerializeObject(objList);
         }
-        private static string get3f46fbd4Ea954d1593aeEe30b3a97f83() {
+        private static string get8eee853e6dfe45e4Ba3999ee4557b2a3() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 借记卡手续费（%）
             obj.Add("debit_fee_rate", "3");
@@ -373,7 +373,7 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static object get0765101aFbcb40ce97b7424e2c65f24a() {
+        private static object get5178c62b38d84976Bfc928f283a3f2d9() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // *业务模式说明*请详细说明商户的业务模式，包括不限于（业务参与方、各方的权利及义务关系等）。最大500个汉字，必填&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：商户向企业采购产品，并将其展示在其电商平台上，用户注册后购买其产品，产品主要有家电、服饰、鞋帽等，用户购买产品的资金作为商户所得，商户根据订单情况进行物流配送。&lt;/font&gt;
             // obj.Add("busi_instruction", "test");
@@ -384,12 +384,12 @@ namespace BasePayDemo
 
             return obj;
         }
-        private static string getEd8a50af79664c2fBebf126b2f5c3a3f() {
+        private static string get69f866c8E2744ade907b1db546ef8b6d() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // *业务模式*
             // obj.Add("balance_model", "test");
             // *业务情况说明*
-            // obj.Add("description_info", get0765101aFbcb40ce97b7424e2c65f24a());
+            // obj.Add("description_info", get5178c62b38d84976Bfc928f283a3f2d9());
             // 支付手续费(%)
             obj.Add("fee_rate", "2");
             // 支付固定手续费(元)
@@ -409,7 +409,7 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string get50ab160c7f8746ed9a9eF5b14cc78e68() {
+        private static string getB92e1fc32b8f4bc2Bc9a4f466caa42a3() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 功能开关
             obj.Add("switch_state", "0");
@@ -426,7 +426,7 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string getF4d9ed19D544400fB2fc99b697a610dc() {
+        private static string get2d7c9f40A31f4e3d86ecD09762ab0029() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 业务类型
             // obj.Add("pay_type", "");
@@ -443,7 +443,7 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return JsonConvert.SerializeObject(objList);
         }
-        private static object get095eb47f51f649f09d1fA5df6f3c47cd() {
+        private static object get3458b92819b3490fA9ba87b3f59e6819() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 结算账户名
             // obj.Add("card_name", "test");
@@ -478,18 +478,18 @@ namespace BasePayDemo
 
             return obj;
         }
-        private static object get3244fec6F31144e8A817341fda201014() {
+        private static object getA176ce37F0c046dd9736898fd9adf533() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 开户手续费(元)
             // obj.Add("fee_fix_amt", "test");
-            // 开户手续费外扣时的账户类型01-基本户，05-充值户，09-营销户，不填默认01；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：01&lt;/font&gt;&lt;br/&gt;注：fee_fix_amt：开户手续费大于0时必填
+            // 开户手续费外扣时的账户类型01-基本户，02-现金户，05-充值户，09-营销户，不填默认01；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：01&lt;/font&gt;&lt;br/&gt;注：fee_fix_amt：开户手续费大于0时必填
             // obj.Add("out_fee_acct_type", "test");
             // 开户手续费外扣汇付ID开通手续费外扣业务时必填；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：6666000109812123&lt;/font&gt;&lt;br/&gt;注：fee_fix_amt：开户手续费大于0时必填
             // obj.Add("out_fee_huifuid", "test");
 
             return obj;
         }
-        private static string getCd47adbd37254373866604609a1d1aa1() {
+        private static string get2e263df683c1494fB1ab43fd73d044d2() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 功能开关
             // obj.Add("switch_state", "test");
@@ -508,15 +508,15 @@ namespace BasePayDemo
             // 交易手续费外扣汇付ID
             // obj.Add("out_fee_huifuid", "");
             // 全域资金开户使用的银行卡信息
-            // obj.Add("out_order_acct_card", get095eb47f51f649f09d1fA5df6f3c47cd());
+            // obj.Add("out_order_acct_card", get3458b92819b3490fA9ba87b3f59e6819());
             // 全域资金开户手续费
-            // obj.Add("out_order_acct_open_fees", get3244fec6F31144e8A817341fda201014());
+            // obj.Add("out_order_acct_open_fees", getA176ce37F0c046dd9736898fd9adf533());
             // 全域支付业务模式
             // obj.Add("business_model", "");
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string getB56e32ff1c2e40ebAa0b052a82badb84() {
+        private static string getE3225110C82542be93df7ac7b406a657() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // *运营媒介类型*
             // obj.Add("media_type", "test");
@@ -555,7 +555,7 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return JsonConvert.SerializeObject(objList);
         }
-        private static string getCd3e3f86179d45fc9eabDad1e76c85b8() {
+        private static string get57623ba046334a92B76fC45be8d9b76b() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // *文件id*
             // obj.Add("file_id", "test");
@@ -566,7 +566,7 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return JsonConvert.SerializeObject(objList);
         }
-        private static string get86e6c3c3E7ae4237802aA4f69301d1f2() {
+        private static string get138ba83701764c68Ae09F61357a11e04() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 签约人类型
             // obj.Add("type", "test");
@@ -581,7 +581,7 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static object get06422aa73ce141578f3aAf257fdeef82() {
+        private static object get1385bbcd834548f892ebE7f8dea35a79() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 文件类型
             // obj.Add("file_type", "test");
@@ -590,7 +590,7 @@ namespace BasePayDemo
 
             return obj;
         }
-        private static object get4f2306e121664586Bc06A0e5f9561b02() {
+        private static object getB9b4167cAbc04424Bc4bBc7d726e4239() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 联系人类型
             // obj.Add("contact_type", "test");
@@ -605,7 +605,7 @@ namespace BasePayDemo
             // 联系人电子邮箱
             // obj.Add("contact_email", "test");
             // 联系人资料联系人类型为经办人时必填F28-联系人身份证国徽面   F29-联系人身份证人像面F227-微信业务办理授权函&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：&lt;/font&gt;
-            // obj.Add("contact_file_list", get06422aa73ce141578f3aAf257fdeef82());
+            // obj.Add("contact_file_list", get1385bbcd834548f892ebE7f8dea35a79());
             // 证件有效期类型
             // obj.Add("contact_cert_validity_type", "test");
             // 证件有效期开始日期
@@ -615,7 +615,7 @@ namespace BasePayDemo
 
             return obj;
         }
-        private static object get950ad40e53394bb8A72dAecb95643e9e() {
+        private static object getB94b3406B783465b8b5c79e8240de556() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 文件类型
             // obj.Add("file_type", "test");
@@ -626,7 +626,7 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return objList;
         }
-        private static object getEebdd0039b7b43248398D1911d953dc4() {
+        private static object get417a1656A5ae48be8c93B0e836cb8261() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 登记证书类型
             // obj.Add("cert_type", "test");
@@ -643,13 +643,13 @@ namespace BasePayDemo
             // 证书有效期开始日期
             // obj.Add("cert_begin_date", "test");
             // 文件列表
-            // obj.Add("cert_file_list", get950ad40e53394bb8A72dAecb95643e9e());
+            // obj.Add("cert_file_list", getB94b3406B783465b8b5c79e8240de556());
             // 证书有效期截止日期
             // obj.Add("cert_end_date", "");
 
             return obj;
         }
-        private static object getE90bcaad4b1f40da94ecA45cefa5a60d() {
+        private static object get94d798ca68ed4b11A0808e233e061028() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 文件类型
             // obj.Add("file_type", "test");
@@ -660,7 +660,7 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return objList;
         }
-        private static object getBc471fabFed0455e9b7b70c64e97738c() {
+        private static object getFdbbb6fe4ba545749dffF56099d6d405() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 证件类型
             // obj.Add("ubo_cert_type", "test");
@@ -675,7 +675,7 @@ namespace BasePayDemo
             // 证件有效期开始日期
             // obj.Add("ubo_cert_begin_date", "test");
             // 文件列表
-            // obj.Add("ubo_file_list", getE90bcaad4b1f40da94ecA45cefa5a60d());
+            // obj.Add("ubo_file_list", get94d798ca68ed4b11A0808e233e061028());
             // 证件有效期截止日期
             // obj.Add("ubo_cert_end_date", "");
 
@@ -683,16 +683,16 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return objList;
         }
-        private static object get1b9d26b18ed543e6Ae5d61e18ae75ccc() {
+        private static object getBe9b98be7b5c44ceBe25D605b2498716() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 经营者/法人是否为受益人
             // obj.Add("ubo_type", "test");
             // 受益人信息列表jsonArray格式,当ubo_type为Y时可不填
-            // obj.Add("ubo_info_list", getBc471fabFed0455e9b7b70c64e97738c());
+            // obj.Add("ubo_info_list", getFdbbb6fe4ba545749dffF56099d6d405());
 
             return obj;
         }
-        private static object getB8f6a008Bdf3477b892376d052fefec6() {
+        private static object get3b11fc47Cd2040adAbdb963f0cb87622() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 文件类型
             // obj.Add("file_type", "test");
@@ -701,7 +701,7 @@ namespace BasePayDemo
 
             return obj;
         }
-        private static object get2109b18aE44c4f0495bf29acc57f5ac8() {
+        private static object get264ae213Ad5c407091286f2ebb500c1a() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 经营场景类型
             // obj.Add("sales_scenes_type", "test");
@@ -730,7 +730,7 @@ namespace BasePayDemo
             // 商家企业微信CorpID开通企业微信场景时填入；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：xxxxx&lt;/font&gt;
             // obj.Add("sub_corp_id", "test");
             // 文件列表
-            // obj.Add("sales_scenes_file_list", getB8f6a008Bdf3477b892376d052fefec6());
+            // obj.Add("sales_scenes_file_list", get3b11fc47Cd2040adAbdb963f0cb87622());
             // 文件列表
             // obj.Add("fee_rate_file_list", "");
             // 门店名称
@@ -742,7 +742,7 @@ namespace BasePayDemo
 
             return obj;
         }
-        private static object get05568b2c66724d409d4906d1fb496fad() {
+        private static object getE15dd851Eed947f181b55e7fc5ad0c0c() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 账户类型
             // obj.Add("card_type", "test");
@@ -763,7 +763,7 @@ namespace BasePayDemo
 
             return obj;
         }
-        private static object get6e7f1006863747a7B02130c99e9fc81c() {
+        private static object getFaf74c6c291449d5AebaBd58ebf2ff9f() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 文件类型
             // obj.Add("file_type", "test");
@@ -774,7 +774,7 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return objList;
         }
-        private static object get131faed8497f4bdc90b9Ec2288c33440() {
+        private static object get9982ad0d8a734a03B8fa617e3baa3415() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 申请服务
             // obj.Add("service_code", "test");
@@ -787,34 +787,34 @@ namespace BasePayDemo
             // 操作类型ADD-新增， UPDATE-修改， 默认新增；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：ADD&lt;/font&gt;
             // obj.Add("operate_type", "test");
             // 联系人信息jsonObject字符串,新增时必填
-            // obj.Add("contact_info", get4f2306e121664586Bc06A0e5f9561b02());
+            // obj.Add("contact_info", getB9b4167cAbc04424Bc4bBc7d726e4239());
             // 特殊主体登记证书jsonObject字符串，商户营业执照类型为政府机关/事业单位/其他组织时，传入相应信息。新增时需填入
-            // obj.Add("certificate_info", getEebdd0039b7b43248398D1911d953dc4());
+            // obj.Add("certificate_info", get417a1656A5ae48be8c93B0e836cb8261());
             // 最终受益人信息jsonObject字符串，商户类型为企业时，微信侧必填。（如果基本信息里有的话，可以不传取 huifu_id 对应的信息）。新增时填入
-            // obj.Add("ubo_info", get1b9d26b18ed543e6Ae5d61e18ae75ccc());
+            // obj.Add("ubo_info", getBe9b98be7b5c44ceBe25D605b2498716());
             // 经营场景jsonObject字符串，新增时填入
-            // obj.Add("sales_info", get2109b18aE44c4f0495bf29acc57f5ac8());
+            // obj.Add("sales_info", get264ae213Ad5c407091286f2ebb500c1a());
             // 银行账户信息jsonObject字符串，该字段不填时，取商户在汇付系统录入的结算账号信息。新增或修改时填入，修改时必填
-            // obj.Add("wx_card_info", get05568b2c66724d409d4906d1fb496fad());
+            // obj.Add("wx_card_info", getE15dd851Eed947f181b55e7fc5ad0c0c());
             // 补充说明信息
             // obj.Add("business_addition_msg", "");
             // 补充说明文件列表
-            // obj.Add("addition_file_list", get6e7f1006863747a7B02130c99e9fc81c());
+            // obj.Add("addition_file_list", getFaf74c6c291449d5AebaBd58ebf2ff9f());
 
             JArray objList = new JArray();
             objList.Add(JToken.FromObject(obj));
             return objList;
         }
-        private static string get338671351fe04c7e88e74218a9d76a4c() {
+        private static string get7857290a48f344d394c7Ca3717488193() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 微信子商户号
             // obj.Add("sub_mch_id", "test");
             // 配置集合
-            // obj.Add("wx_zl_pay_conf_list", get131faed8497f4bdc90b9Ec2288c33440());
+            // obj.Add("wx_zl_pay_conf_list", get9982ad0d8a734a03B8fa617e3baa3415());
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static object get6e7c94153d094258B48259b00d54f605() {
+        private static object get555f62342b6447e1A6f780688c773f85() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 文件类型
             // obj.Add("file_type", "test");
@@ -825,7 +825,7 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return objList;
         }
-        private static string get953cf5a81d894a1fA1df31b3cdc76477() {
+        private static string getE3668147E3d74a9aB13c195d22c27bf2() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 申请类型
             // obj.Add("apply_type", "test");
@@ -834,7 +834,7 @@ namespace BasePayDemo
             // 服务费率仅支持渠道商。平台商户调用不支持该字段服务费率（%），0.38~3之间，精确到0.01。&lt;font color&#x3D;&quot;green&quot;&gt;示例值：0.06&lt;/font&gt;
             // obj.Add("fee_rate", "test");
             // 文件列表
-            // obj.Add("file_list", get6e7c94153d094258B48259b00d54f605());
+            // obj.Add("file_list", get555f62342b6447e1A6f780688c773f85());
             // 联系人姓名
             // obj.Add("contact_name", "");
             // 联系人手机号
@@ -854,7 +854,7 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static object get433fcb6618ad48d6B198B33d36175abe() {
+        private static object get61cc7019999e43a69a217803bbca4981() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 分账比例
             // obj.Add("fee_rate", "test");
@@ -865,7 +865,7 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return objList;
         }
-        private static object get8cac720d64ef4baa9558812a8b9cebe5() {
+        private static object getF25f5e081ee34fdfA114Dd592fbbae13() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // *业务模式说明*
             // obj.Add("busi_instruction", "test");
@@ -876,7 +876,7 @@ namespace BasePayDemo
 
             return obj;
         }
-        private static string get8fe6fefa138849ce90360e2a0f84212d() {
+        private static string getD177e6bc783f4925B9485178d60c4b39() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 分账规则来源
             // obj.Add("rule_origin", "test");
@@ -887,7 +887,7 @@ namespace BasePayDemo
             // 分账模式
             // obj.Add("scene", "test");
             // 分账明细
-            // obj.Add("acct_split_bunch_list", get433fcb6618ad48d6B198B33d36175abe());
+            // obj.Add("acct_split_bunch_list", get61cc7019999e43a69a217803bbca4981());
             // 生效类型
             // obj.Add("start_type", "");
             // 交易手续费外扣开关
@@ -901,11 +901,11 @@ namespace BasePayDemo
             // 固定手续费
             // obj.Add("per_amt", "");
             // 业务情况说明
-            // obj.Add("split_ext_info", get8cac720d64ef4baa9558812a8b9cebe5());
+            // obj.Add("split_ext_info", getF25f5e081ee34fdfA114Dd592fbbae13());
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string get354fb82660a04eb5B100Ba8fc40015b7() {
+        private static string get21ac05a677a34b649507859bfb2f7c75() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 借记手续费（%）借记卡费率与贷记卡费率不能同时为空;保留2位小数，最大值100.00，最小值0.00；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：0.02&lt;/font&gt;
             // obj.Add("debit_fee_rate", "test");
@@ -924,7 +924,7 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string get53f249305e3340a882eeD6c18bf533a8() {
+        private static string get99de72d765d64d50B4100307737e216d() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 代发业务类型
             // obj.Add("surrogate_type", "test");
@@ -953,7 +953,7 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return JsonConvert.SerializeObject(objList);
         }
-        private static object getFebdb6a11ce448bdA4b0E92aab522749() {
+        private static object getAfd9bdde9a9645a8825dDc5109dac6f7() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 大额支付业务模式
             // obj.Add("business_model", "test");
@@ -976,10 +976,10 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return objList;
         }
-        private static string get65ed9f1d566d47919ab2Ecb021bc2548() {
+        private static string getF73e8fab2041420f8fb64d99d7b3e0f6() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 大额支付配置列表
-            // obj.Add("large_amt_pay_config_info_list", getFebdb6a11ce448bdA4b0E92aab522749());
+            // obj.Add("large_amt_pay_config_info_list", getAfd9bdde9a9645a8825dDc5109dac6f7());
             // 交易手续费外扣huifuId交易手续费外扣时必填；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：6666000108854952&lt;/font&gt;
             // obj.Add("out_fee_huifu_id", "test");
             // 交易手续费外扣账户号交易手续费外扣时必填；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：F00598602&lt;/font&gt;
@@ -991,7 +991,7 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static object get6e4a0ce8075948a8B3d9Bf49640d0280() {
+        private static object get52e5064a8381443fBf39C6c7677f705b() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 代发复核开关
             // obj.Add("agent_recheck_flag", "");
@@ -1002,7 +1002,7 @@ namespace BasePayDemo
 
             return obj;
         }
-        private static object get78f9dd44Ddce4541906887e518e95059() {
+        private static object get98f79b200b584705Afd889cc4eac18a6() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 操作人姓名
             // obj.Add("user_name", "test");
@@ -1029,30 +1029,30 @@ namespace BasePayDemo
 
             return obj;
         }
-        private static object get6d3c362dC24a460eB51f7fa4954f918b() {
+        private static object get88cb97428c9c4d5682a1B2a28ad9871d() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 账户类型
             // obj.Add("acct_type", "test");
             // 开通状态
             // obj.Add("open_flag", "test");
             // 银行账户信息当账户类型为银行账户时必填
-            // obj.Add("jxf_bank_info", get78f9dd44Ddce4541906887e518e95059());
+            // obj.Add("jxf_bank_info", get98f79b200b584705Afd889cc4eac18a6());
 
             return obj;
         }
-        private static object get13f43b8076894178812aEffcbab01723() {
+        private static object get76bd7fe602d94d079b80Ab431ce2441e() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 合单支付模式
             // obj.Add("merge_pay_mode", "test");
 
             return obj;
         }
-        private static object get59538f66B1d541af8738178dbed8c545() {
+        private static object get5a4e01ceEb77495d9c42Cbaf1df2ee61() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 合单支付开关
             // obj.Add("merge_pay_flag", "test");
             // 合单支付配置合单支付配置 （当合单支付开关为开时必填）
-            // obj.Add("merge_pay_config", get13f43b8076894178812aEffcbab01723());
+            // obj.Add("merge_pay_config", get76bd7fe602d94d079b80Ab431ce2441e());
 
             return obj;
         }

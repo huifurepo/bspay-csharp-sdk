@@ -109,7 +109,7 @@ namespace BasePayDemo
             // 优惠费率承诺函
             extendInfoMap.Add("activity_rate_commit_photo", "42204258-967e-373c-88d2-1afa4c7bb8ef");
             // 商户同名银行账户信息
-            extendInfoMap.Add("bank_account", get3dde7d021f8b47e2Babf09e3b7c013e7());
+            extendInfoMap.Add("bank_account", get71cc56ac4ffd491aA8d8479c14843976());
             // 银行开户证明图片
             extendInfoMap.Add("bank_account_prove_photo", "");
             // 机构银行合作授权函图
@@ -128,10 +128,12 @@ namespace BasePayDemo
             // extendInfoMap.Add("expiration_rate", "");
             // 学校号
             // extendInfoMap.Add("school_id", "");
+            // 活动到期后最低收取手续费（元）
+            // extendInfoMap.Add("low_amt", "");
             return extendInfoMap;
         }
 
-        private static string get3dde7d021f8b47e2Babf09e3b7c013e7() {
+        private static string get71cc56ac4ffd491aA8d8479c14843976() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 账户名
             obj.Add("card_name", "张三");
