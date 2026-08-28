@@ -3,7 +3,7 @@ using System;
 namespace BasePaySdk.Request
 {
     /**
-     * 支付宝直连-申请当面付代签约
+     * 支付宝直连-商户入驻
      *
      * @author sdk-generator
      * @Description
@@ -55,10 +55,6 @@ namespace BasePaySdk.Request
          * 服务费率（%）0.38~3之间，精确到0.01。当签约且授权sign_and_auth&#x3D;Y时，必填。&lt;font color&#x3D;&quot;green&quot;&gt;示例值：0.38&lt;/font&gt;
          */
         private string rate;
-        /**
-         * 文件列表
-         */
-        private string fileList;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_MERCHANT_DIRECT_ALIPAY_FACETOFACESIGN_APPLY;
@@ -67,7 +63,7 @@ namespace BasePaySdk.Request
         public V2MerchantDirectAlipayFacetofacesignApplyRequest() {
         }
 
-        public V2MerchantDirectAlipayFacetofacesignApplyRequest(string reqSeqId, string reqDate, string huifuId, string upperHuifuId, string directCategory, string appId, string contactName, string contactMobileNo, string contactEmail, string account, string rate, string fileList) {
+        public V2MerchantDirectAlipayFacetofacesignApplyRequest(string reqSeqId, string reqDate, string huifuId, string upperHuifuId, string directCategory, string appId, string contactName, string contactMobileNo, string contactEmail, string account, string rate) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.huifuId = huifuId;
@@ -79,7 +75,6 @@ namespace BasePaySdk.Request
             this.contactEmail = contactEmail;
             this.account = account;
             this.rate = rate;
-            this.fileList = fileList;
         }
 
         public string getReqSeqId() {
@@ -168,14 +163,6 @@ namespace BasePaySdk.Request
 
         public void setRate(string rate) {
             this.rate = rate;
-        }
-
-        public string getFileList() {
-            return fileList;
-        }
-
-        public void setFileList(string fileList) {
-            this.fileList = fileList;
         }
 
 

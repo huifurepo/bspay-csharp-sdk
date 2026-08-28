@@ -67,7 +67,7 @@ namespace BasePayDemo
             // 手机号
             extendInfoMap.Add("mobile_no", "15556622000");
             // 文件列表
-            // extendInfoMap.Add("file_list", getC86296f592884b19A7f0B93a9dcb9ebd());
+            // extendInfoMap.Add("file_list", getF93305f7Bad24021Bfab6b92c98e001d());
             // 地址
             // extendInfoMap.Add("address", "");
             // 所属行业
@@ -81,7 +81,7 @@ namespace BasePayDemo
             return extendInfoMap;
         }
 
-        private static string getC86296f592884b19A7f0B93a9dcb9ebd() {
+        private static string getF93305f7Bad24021Bfab6b92c98e001d() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 文件类型
             // obj.Add("file_type", "test");

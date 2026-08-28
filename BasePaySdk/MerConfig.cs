@@ -1,5 +1,6 @@
 ﻿using System;
 
+
 namespace BasePaySdk
 {
     /// <summary>
@@ -23,7 +24,17 @@ namespace BasePaySdk
 
         // 分配的产品号
         public string ProductId;
-        
+
+        //签名类型，默认值RSA，可选SM2、RSA
+        public String SignType;
+
+        //商户私钥，用于商户给交易信息签名
+
+        public String Sm2PrivateKey;
+
+        // 公钥，商户用公钥对汇付返回的信息进行验签
+
+        public String Sm2PublicKey;
 
     }
 

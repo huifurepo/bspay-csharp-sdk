@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 using Newtonsoft.Json;
 using System.Net;
@@ -34,28 +34,50 @@ namespace BasePaySdk
         public static Dictionary<string, Object> requestBasePayWithFuncCode(Dictionary<string, object> postParams, string filePath, string fileParam, string funcCode, string method, MerConfig merConfig)
         {
 
-            if (null == merConfig || merConfig.RsaPrivateKey == null)
+            if (null == merConfig )
             {
-                throw new Exception("privateKey 不能为空");
+                throw new Exception("merConfig 不能为空");
+            }
+
+            // 获取签名类型，默认RSA
+            string signType = merConfig.SignType;
+            if (string.IsNullOrEmpty(signType))
+            {
+                signType = "RSA";
+            }
+
+            // 根据签名类型校验私钥
+            if ("SM2".Equals(signType))
+            {
+                if (string.IsNullOrEmpty(merConfig.Sm2PrivateKey))
+                {
+                    throw new Exception("Sm2PrivateKey 不能为空");
+                }
+            }
+            else
+            {
+                if (string.IsNullOrEmpty(merConfig.RsaPrivateKey))
+                {
+                    throw new Exception("RsaPrivateKey 不能为空");
+                }
             }
 
             string requireUrl = fetchRequestUrl(funcCode);
-
 
             HttpWebRequest request = null;
 
 
             if (method.Equals(GET))
             {
-                request = CreateGetRequest(postParams, requireUrl, merConfig);
+                request = CreateGetRequest(postParams, requireUrl, merConfig, signType);
             }
             else if (null != filePath)
             {
-                request = CreateUploadRequest(postParams, filePath,fileParam, requireUrl, merConfig);
+                request = CreateUploadRequest(postParams, filePath,fileParam, requireUrl, merConfig, signType);
             }
             else
             {
-                request = CreatePostRequest(postParams, requireUrl, merConfig);
+                request = CreatePostRequest(postParams, requireUrl, merConfig, signType);
             }
 
 
@@ -102,7 +124,21 @@ namespace BasePaySdk
                     string strSign = (string) responseSign;
                     if (!string.IsNullOrEmpty(strSign)) 
                     {
-                        if (!RsaUtils.verfySign(rsaPublicKey, strSign, strData))
+                        bool verifyResult;
+                        if ("SM2".Equals(signType))
+                        {
+                            string sm2PublicKey = merConfig.Sm2PublicKey;
+                            if (string.IsNullOrEmpty(sm2PublicKey))
+                            {
+                                throw new Exception("SM2 public key cannot be empty when SignType is SM2");
+                            }
+                            verifyResult = Sm2Utils.verfySign(sm2PublicKey, strSign, strData);
+                        }
+                        else
+                        {
+                            verifyResult = RsaUtils.verfySign(rsaPublicKey, strSign, strData);
+                        }
+                        if (!verifyResult)
                         {
                             throw new Exception("public key veryfy singnature failed");
                         }
@@ -182,7 +218,7 @@ namespace BasePaySdk
 
         //设置get请求参数
         // get post 以及post 上传文件的接口，url地址以及签名方式有差别
-        private static HttpWebRequest CreateGetRequest(Dictionary<string, object> postParams,  string requireUrl, MerConfig merConfig)
+        private static HttpWebRequest CreateGetRequest(Dictionary<string, object> postParams,  string requireUrl, MerConfig merConfig, string signType)
         {
 
             
@@ -192,7 +228,15 @@ namespace BasePaySdk
             //参数中会有中文,签名前需url encode
             json_string = Uri.UnescapeDataString(json_string);
 
-            string signStr = RsaUtils.sign(merConfig.RsaPrivateKey, json_string);
+            string signStr;
+            if ("SM2".Equals(signType))
+            {
+                signStr = Sm2Utils.sign(merConfig.Sm2PrivateKey, json_string);
+            }
+            else
+            {
+                signStr = RsaUtils.sign(merConfig.RsaPrivateKey, json_string);
+            }
 
             requireUrl = requireUrl + "?" + json_params;
             CoreUtils.Log("requireUrl:" + requireUrl);
@@ -207,6 +251,7 @@ namespace BasePaySdk
             header.Set("charset", "UTF-8");
             header.Set("version", "1.0.0");
             header.Set("product_id", merConfig.ProductId);
+            header.Set("sign_type", signType);
 
             request.Method = "get";
             request.ContentType = "text/html;charset=UTF-8";
@@ -216,19 +261,27 @@ namespace BasePaySdk
         }
 
         //设置不带文件的post请求参数
-        private static HttpWebRequest CreatePostRequest(Dictionary<string, object> postParams,  string requireUrl,  MerConfig merConfig)
+        private static HttpWebRequest CreatePostRequest(Dictionary<string, object> postParams,  string requireUrl,  MerConfig merConfig, string signType)
         {
 
             string json_params = JsonConvert.SerializeObject(postParams, Formatting.None);
             JObject jo = (JObject)JsonConvert.DeserializeObject(json_params);
             Dictionary<string, object> body = new Dictionary<string, object>();
             body.Add("sys_id", merConfig.SysId);
-            //body.Add("sign_type", "RSA2");
+            body.Add("sign_type", signType);
             body.Add("data", jo);
             body.Add("product_id",merConfig.ProductId);
 
             String sortedData = JsonUtils.sort4JsonString(json_params);
-            string signStr = RsaUtils.sign(merConfig.RsaPrivateKey, sortedData);
+            string signStr;
+            if ("SM2".Equals(signType))
+            {
+                signStr = Sm2Utils.sign(merConfig.Sm2PrivateKey, sortedData);
+            }
+            else
+            {
+                signStr = RsaUtils.sign(merConfig.RsaPrivateKey, sortedData);
+            }
             body.Add("sign", signStr);
 
             String jsonBody = JsonConvert.SerializeObject(body, Formatting.None);
@@ -248,6 +301,7 @@ namespace BasePaySdk
             header.Set("format", "JSON");
             header.Set("charset", "UTF-8");
             header.Set("version", "1.0.0");
+            header.Set("signType", signType);
            // header.Set("product_id", merConfig.ProductId);
 
             request.Method = "post";
@@ -264,7 +318,7 @@ namespace BasePaySdk
         }
 
         //设置文件上传request
-        private static HttpWebRequest CreateUploadRequest(Dictionary<string, object> postParams, string filePath, string fileParam, string requireUrl, MerConfig merConfig)
+        private static HttpWebRequest CreateUploadRequest(Dictionary<string, object> postParams, string filePath, string fileParam, string requireUrl, MerConfig merConfig, string signType)
         {
 
             HttpWebRequest request = request = (HttpWebRequest)WebRequest.Create(requireUrl);
@@ -272,11 +326,19 @@ namespace BasePaySdk
             currentServicePoint.ConnectionLimit = 1000;
 
             string json_params = JsonConvert.SerializeObject(postParams, Formatting.None);
-            string signStr = RsaUtils.sign(merConfig.RsaPrivateKey, json_params);
+            string signStr;
+            if ("SM2".Equals(signType))
+            {
+                signStr = Sm2Utils.sign(merConfig.Sm2PrivateKey, json_params);
+            }
+            else
+            {
+                signStr = RsaUtils.sign(merConfig.RsaPrivateKey, json_params);
+            }
 
             Dictionary<string, object> body = new Dictionary<string, object>();
             body.Add("sys_id", merConfig.SysId);
-            body.Add("sign_type", "RSA2");
+            body.Add("sign_type", signType);
             body.Add("data", json_params);
             body.Add("sign", signStr);
 
@@ -286,6 +348,7 @@ namespace BasePaySdk
             header.Set("charset", "UTF-8");
             header.Set("version", "1.0.0");
             header.Set("product_id", merConfig.ProductId);
+            header.Set("signType", signType);
 
             request.Method = "post";
             //文件信息

@@ -19,6 +19,9 @@ namespace BasePayDemo
             config.SysId = DemoConstants.DEMO_SYS_ID;
             config.RsaPrivateKey = DemoConstants.RSA_PRIVATE_KEY;
             config.RsaPublicKey = DemoConstants.RSA_PUBLIC_KEY;
+            config.SignType = DemoConstants.DEMO_SIGN_TYPE;
+            config.Sm2PublicKey = DemoConstants.DEMO_SM2_PUBLIC_KEY;
+            config.Sm2PrivateKey = DemoConstants.DEMO_SM2_PRIVATE_KEY;
             BasePay.initWithMerConfig(config);
 
             // 下面示例为多套商户配置的情形

@@ -36,10 +36,6 @@ namespace BasePaySdk.Request
          */
         private string mchId;
         /**
-         * 经营者/法人是否为受益人
-         */
-        private string owner;
-        /**
          * 超级管理员信息
          */
         private string contactInfo;
@@ -47,14 +43,6 @@ namespace BasePaySdk.Request
          * 经营场景类型
          */
         private string salesScenesType;
-        /**
-         * 经营场景
-         */
-        private string salesInfo;
-        /**
-         * 结算信息
-         */
-        private string settlementInfo;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_MERCHANT_DIRECT_WECHAT_SIGN;
@@ -63,18 +51,15 @@ namespace BasePaySdk.Request
         public V2MerchantDirectWechatSignRequest() {
         }
 
-        public V2MerchantDirectWechatSignRequest(string reqSeqId, string reqDate, string huifuId, string upperHuifuId, string appId, string mchId, string owner, string contactInfo, string salesScenesType, string salesInfo, string settlementInfo) {
+        public V2MerchantDirectWechatSignRequest(string reqSeqId, string reqDate, string huifuId, string upperHuifuId, string appId, string mchId, string contactInfo, string salesScenesType) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.huifuId = huifuId;
             this.upperHuifuId = upperHuifuId;
             this.appId = appId;
             this.mchId = mchId;
-            this.owner = owner;
             this.contactInfo = contactInfo;
             this.salesScenesType = salesScenesType;
-            this.salesInfo = salesInfo;
-            this.settlementInfo = settlementInfo;
         }
 
         public string getReqSeqId() {
@@ -125,14 +110,6 @@ namespace BasePaySdk.Request
             this.mchId = mchId;
         }
 
-        public string getOwner() {
-            return owner;
-        }
-
-        public void setOwner(string owner) {
-            this.owner = owner;
-        }
-
         public string getContactInfo() {
             return contactInfo;
         }
@@ -147,22 +124,6 @@ namespace BasePaySdk.Request
 
         public void setSalesScenesType(string salesScenesType) {
             this.salesScenesType = salesScenesType;
-        }
-
-        public string getSalesInfo() {
-            return salesInfo;
-        }
-
-        public void setSalesInfo(string salesInfo) {
-            this.salesInfo = salesInfo;
-        }
-
-        public string getSettlementInfo() {
-            return settlementInfo;
-        }
-
-        public void setSettlementInfo(string settlementInfo) {
-            this.settlementInfo = settlementInfo;
         }
 
 

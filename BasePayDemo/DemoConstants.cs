@@ -27,5 +27,18 @@ namespace BasePayDemo
      */
     public const String RSA_PUBLIC_KEY = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAkMX8p3GyMw3gk6x72h20NOk3L9+Nn9mOVP6+YoBwCe7Zs4QmYrA/etFRZw2TQrSc51wgtCkJi1/x8Wl7maPL1uH2+77JFlPv7H/F4Lr2I2LXgnllg6PtwOSw/qvGYInVVB4kL85VQl0/8ObyxBUdJ43I0z/u8hJb2gwujSudOGizbeqQXAYrwcNy+e+cjodpPy9unpJjBfa4Wz2eVLLvUYYKZKdRn6pZR2cQsMBvL30K4cFlZqlJ9iP2hTG3gaiZJ9JrjTigwki0g9pbTDXiPACfuF1nOeObvLD22zBbgn1kwgfsqoG67z7g84u2jvfUFCzX1JRgd0xfNorTRkS2RQIDAQAB";
     
+    public const String DEMO_SIGN_TYPE = "SM2";
+
+    /**
+     * 服务商私钥，用于调用接口时进行签名
+     */
+    public const String DEMO_SM2_PRIVATE_KEY = "MIGTAgEAMBMGByqGSM49AgEGCCqBHM9VAYItBHkwdwIBAQQgWwviCOu0Ea41UNqqlJdRsFlBpLBuAg7D2r+JvIp9nkugCgYIKoEcz1UBgi2hRANCAATmysRUM25JM9z5gYoszB6e/XXSrDQHxgcabHqLLWez6ql6TXLFMiW8xumIpV1DFsrYvENLQdMkV4pcyp5PnhKF";
+    /**
+     * 汇付公钥，用于对汇付返回报文进行签名验证
+     */
+    public const String DEMO_SM2_PUBLIC_KEY = "MFkwEwYHKoZIzj0CAQYIKoEcz1UBgi0DQgAEggCQxD+Azw5TRCwahgd3kAgpVEwjS2N+j57EmqXyxfUDKUbjZO7aqo/3Qxf6rWQHrAtMPxhtsFcsk0foHDAwEA==";
+
+
+
     }
 }

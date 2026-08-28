@@ -1003,7 +1003,7 @@ namespace BasePaySdk.Request
          */
         public const string V2_TRADE_ACCTPAYMENT_PAY_QUERY = "v2.trade.acctpayment.pay.query";
         /**
-         * 支付宝直连-申请当面付代签约
+         * 支付宝直连-商户入驻
          */
         public const string V2_MERCHANT_DIRECT_ALIPAY_FACETOFACESIGN_APPLY = "v2.merchant.direct.alipay.facetofacesign.apply";
         /**
@@ -1011,7 +1011,7 @@ namespace BasePaySdk.Request
          */
         public const string V2_MERCHANT_DIRECT_ALIPAY_APPAUTHTOKEN_EXCHANGE = "v2.merchant.direct.alipay.appauthtoken.exchange";
         /**
-         * 支付宝直连-查询申请状态
+         * 支付宝直连-查询申请单状态
          */
         public const string V2_MERCHANT_DIRECT_ALIPAY_APPLYORDERSTATUS_QUERY = "v2.merchant.direct.alipay.applyorderstatus.query";
         /**

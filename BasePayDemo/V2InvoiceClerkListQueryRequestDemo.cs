@@ -57,7 +57,7 @@ namespace BasePayDemo
             // 请求日期
             extendInfoMap.Add("req_date", DateTime.Now.ToString("yyyyMMdd"));
             // 登记状态
-            extendInfoMap.Add("clerk_state_list", ["S","F","I","P"]);
+           // extendInfoMap.Add("clerk_state_list", ["S","F","I","P"]);
             return extendInfoMap;
         }
 

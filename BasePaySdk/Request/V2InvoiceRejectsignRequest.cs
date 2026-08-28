@@ -23,6 +23,10 @@ namespace BasePaySdk.Request
          * 汇付商户号
          */
         private string huifuId;
+        /**
+         * 协议编号
+         */
+        private string agreementId;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_INVOICE_REJECTSIGN;
@@ -31,10 +35,11 @@ namespace BasePaySdk.Request
         public V2InvoiceRejectsignRequest() {
         }
 
-        public V2InvoiceRejectsignRequest(string reqDate, string reqSeqId, string huifuId) {
+        public V2InvoiceRejectsignRequest(string reqDate, string reqSeqId, string huifuId, string agreementId) {
             this.reqDate = reqDate;
             this.reqSeqId = reqSeqId;
             this.huifuId = huifuId;
+            this.agreementId = agreementId;
         }
 
         public string getReqDate() {
@@ -59,6 +64,14 @@ namespace BasePaySdk.Request
 
         public void setHuifuId(string huifuId) {
             this.huifuId = huifuId;
+        }
+
+        public string getAgreementId() {
+            return agreementId;
+        }
+
+        public void setAgreementId(string agreementId) {
+            this.agreementId = agreementId;
         }
 
 

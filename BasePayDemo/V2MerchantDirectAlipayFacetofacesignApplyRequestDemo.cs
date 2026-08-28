@@ -8,7 +8,7 @@ using Newtonsoft.Json.Linq;
 namespace BasePayDemo
 {
     /**
-     * 支付宝直连-申请当面付代签约 - 示例
+     * 支付宝直连-商户入驻 - 示例
      *
      * @author sdk-generator
      * @Description
@@ -46,8 +46,6 @@ namespace BasePayDemo
             request.setAccount("288000000345345");
             // 服务费率（%）0.38~3之间，精确到0.01。当签约且授权sign_and_auth&#x3D;Y时，必填。&lt;font color&#x3D;&quot;green&quot;&gt;示例值：0.38&lt;/font&gt;
             request.setRate("0.38");
-            // 文件列表
-            request.setFileList(getFileList());
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -88,10 +86,16 @@ namespace BasePayDemo
             extendInfoMap.Add("license_begin_date", "20200429");
             // 营业执照有效期截止日期
             extendInfoMap.Add("license_end_date", "29200429");
+            // 文件列表
+            extendInfoMap.Add("file_list", getA348ea633b4746ec8340Ba0a9555acf0());
+            // 开通产品
+            // extendInfoMap.Add("product_code", "");
+            // 小程序appid
+            // extendInfoMap.Add("mini_app_id", "");
             return extendInfoMap;
         }
 
-        private static string getFileList() {
+        private static string getA348ea633b4746ec8340Ba0a9555acf0() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 文件类型
             obj.Add("file_type", "F50");

@@ -30,6 +30,8 @@ namespace BasePayDemo
             request.setReqSeqId(DateTime.Now.ToString("yyy-MM-dd HH.mm.ss.fff"));
             // 汇付商户号
             request.setHuifuId("6666000103334211");
+            // 协议编号
+            request.setAgreementId("130516670601443792");
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -56,8 +58,6 @@ namespace BasePayDemo
         private static Dictionary<string, object> getExtendInfos() {
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
-            // 协议编号
-            extendInfoMap.Add("agreement_id", "130516670601443792");
             return extendInfoMap;
         }
 

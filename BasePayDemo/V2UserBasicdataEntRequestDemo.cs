@@ -99,11 +99,11 @@ namespace BasePayDemo
             // 操作员
             extendInfoMap.Add("operator_id", "");
             // 是否发送短信标识
-            extendInfoMap.Add("sms_send_flag", "1");
+            extendInfoMap.Add("sms_send_flag", "Y");
             // 扩展方字段
             extendInfoMap.Add("expand_id", "");
             // 文件列表
-            // extendInfoMap.Add("file_list", get46c99a78A2384cbcB68aD9873e8acd6c());
+            // extendInfoMap.Add("file_list", getEa57237822214ca58bdb2d23030e8a65());
             // 公司类型
             // extendInfoMap.Add("ent_type", "");
             // 所属行业
@@ -111,7 +111,7 @@ namespace BasePayDemo
             return extendInfoMap;
         }
 
-        private static string get46c99a78A2384cbcB68aD9873e8acd6c() {
+        private static string getEa57237822214ca58bdb2d23030e8a65() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 文件类型
             // obj.Add("file_type", "test");

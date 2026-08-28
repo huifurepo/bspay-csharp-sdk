@@ -24,6 +24,10 @@ namespace BasePaySdk.Request
          */
         private string huifuId;
         /**
+         * 协议类型
+         */
+        private string agreementType;
+        /**
          * 当前页
          */
         private string pageNum;
@@ -39,10 +43,11 @@ namespace BasePaySdk.Request
         public V2InvoiceQueryecmsapplylistRequest() {
         }
 
-        public V2InvoiceQueryecmsapplylistRequest(string reqDate, string reqSeqId, string huifuId, string pageNum, string pageSize) {
+        public V2InvoiceQueryecmsapplylistRequest(string reqDate, string reqSeqId, string huifuId, string agreementType, string pageNum, string pageSize) {
             this.reqDate = reqDate;
             this.reqSeqId = reqSeqId;
             this.huifuId = huifuId;
+            this.agreementType = agreementType;
             this.pageNum = pageNum;
             this.pageSize = pageSize;
         }
@@ -69,6 +74,14 @@ namespace BasePaySdk.Request
 
         public void setHuifuId(string huifuId) {
             this.huifuId = huifuId;
+        }
+
+        public string getAgreementType() {
+            return agreementType;
+        }
+
+        public void setAgreementType(string agreementType) {
+            this.agreementType = agreementType;
         }
 
         public string getPageNum() {

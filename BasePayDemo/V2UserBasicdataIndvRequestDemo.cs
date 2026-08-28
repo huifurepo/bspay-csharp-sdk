@@ -77,11 +77,11 @@ namespace BasePayDemo
             // 管理员账号
             extendInfoMap.Add("login_name", "Lg2022022201394910571");
             // 是否发送短信标识
-            extendInfoMap.Add("sms_send_flag", "1");
+            extendInfoMap.Add("sms_send_flag", "Y");
             // 拓展方字段
             extendInfoMap.Add("expand_id", "");
             // 文件列表
-            extendInfoMap.Add("file_list", get5f0a1885Bba7488a89ad02827ab6eb69());
+            extendInfoMap.Add("file_list", get365f3cb2D654499290f67abce7f11fcf());
             // 所属行业
             // extendInfoMap.Add("mcc", "");
             // 省
@@ -93,7 +93,7 @@ namespace BasePayDemo
             return extendInfoMap;
         }
 
-        private static string get5f0a1885Bba7488a89ad02827ab6eb69() {
+        private static string get365f3cb2D654499290f67abce7f11fcf() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 文件类型
             obj.Add("file_type", "F04");

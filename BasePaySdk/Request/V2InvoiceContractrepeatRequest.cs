@@ -23,6 +23,14 @@ namespace BasePaySdk.Request
          * 汇付商户号
          */
         private string huifuId;
+        /**
+         * 协议编号
+         */
+        private string agreementId;
+        /**
+         * 个人邮箱
+         */
+        private string signUserEmail;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_INVOICE_CONTRACTREPEAT;
@@ -31,10 +39,12 @@ namespace BasePaySdk.Request
         public V2InvoiceContractrepeatRequest() {
         }
 
-        public V2InvoiceContractrepeatRequest(string reqSeqId, string reqDate, string huifuId) {
+        public V2InvoiceContractrepeatRequest(string reqSeqId, string reqDate, string huifuId, string agreementId, string signUserEmail) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.huifuId = huifuId;
+            this.agreementId = agreementId;
+            this.signUserEmail = signUserEmail;
         }
 
         public string getReqSeqId() {
@@ -59,6 +69,22 @@ namespace BasePaySdk.Request
 
         public void setHuifuId(string huifuId) {
             this.huifuId = huifuId;
+        }
+
+        public string getAgreementId() {
+            return agreementId;
+        }
+
+        public void setAgreementId(string agreementId) {
+            this.agreementId = agreementId;
+        }
+
+        public string getSignUserEmail() {
+            return signUserEmail;
+        }
+
+        public void setSignUserEmail(string signUserEmail) {
+            this.signUserEmail = signUserEmail;
         }
 
 

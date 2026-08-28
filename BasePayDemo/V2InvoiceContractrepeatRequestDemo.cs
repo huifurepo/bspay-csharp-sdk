@@ -30,6 +30,10 @@ namespace BasePayDemo
             request.setReqDate(DateTime.Now.ToString("yyyyMMdd"));
             // 汇付商户号
             request.setHuifuId("6666000103334211");
+            // 协议编号
+            request.setAgreementId("130516670601443792");
+            // 个人邮箱
+            request.setSignUserEmail("zhangsan@huifu.com");
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -56,10 +60,6 @@ namespace BasePayDemo
         private static Dictionary<string, object> getExtendInfos() {
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
-            // 协议编号
-            extendInfoMap.Add("agreement_id", "130516670601443792");
-            // 个人邮箱
-            extendInfoMap.Add("sign_user_email", "zhangsan@huifu.com");
             return extendInfoMap;
         }
 

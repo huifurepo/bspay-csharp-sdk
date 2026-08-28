@@ -30,6 +30,8 @@ namespace BasePayDemo
             request.setReqSeqId(DateTime.Now.ToString("yyy-MM-dd HH.mm.ss.fff"));
             // 汇付商户号
             request.setHuifuId("6666000103334211");
+            // 协议类型
+            request.setAgreementType("ELECT");
             // 当前页
             request.setPageNum("1");
             // 分页大小
@@ -70,8 +72,6 @@ namespace BasePayDemo
             extendInfoMap.Add("order_id", "2025052118403054");
             // 商户名称
             // extendInfoMap.Add("mer_name", "");
-            // 协议类型
-            extendInfoMap.Add("agreement_type", "ELECT");
             // 产品号
             // extendInfoMap.Add("product_id", "");
             return extendInfoMap;
