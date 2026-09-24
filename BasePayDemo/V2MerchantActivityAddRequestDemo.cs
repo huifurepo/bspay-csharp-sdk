@@ -109,7 +109,7 @@ namespace BasePayDemo
             // 优惠费率承诺函
             extendInfoMap.Add("activity_rate_commit_photo", "42204258-967e-373c-88d2-1afa4c7bb8ef");
             // 商户同名银行账户信息
-            extendInfoMap.Add("bank_account", get71cc56ac4ffd491aA8d8479c14843976());
+            extendInfoMap.Add("bank_account", get30b6402dCa2941d4A419C0e578f90d1d());
             // 银行开户证明图片
             extendInfoMap.Add("bank_account_prove_photo", "");
             // 机构银行合作授权函图
@@ -133,7 +133,7 @@ namespace BasePayDemo
             return extendInfoMap;
         }
 
-        private static string get71cc56ac4ffd491aA8d8479c14843976() {
+        private static string get30b6402dCa2941d4A419C0e578f90d1d() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 账户名
             obj.Add("card_name", "张三");

@@ -44,18 +44,18 @@ namespace BasePayDemo
             request.setOrderAmt("70.00");
             // 冲红原因open_type&#x3D;1时必填01：开票有误02：销货退回03：服务终止04：销售转让
             // request.setRedApplyReason("test");
-            // 冲红申请来源open_type&#x3D;1时必填01：销方02：购方
+            // 冲红申请来源open_type&#x3D;1时必填01：销方02：购方03：第三方
             // request.setRedApplySource("test");
             // 原发票代码openType&#x3D;1时必填；参见[发票右上角](https://paas.huifu.com/open/doc/api/#/fp/api_fp_yanglitu.md)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：144032209110&lt;/font&gt;
             request.setOriIvcCode("90222082");
             // 原发票号码openType&#x3D;1时必填；参见[发票右上角](https://paas.huifu.com/open/doc/api/#/fp/api_fp_yanglitu.md)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：20685767&lt;/font&gt;
             request.setOriIvcNumber("150000020026");
             // 开票商品信息
-            request.setGoodsInfos(get238d9ce57f54438c982c71b0975e320f());
+            request.setGoodsInfos(getC6a36685B0564080A1f00db79747ed42());
             // 不动产销售特殊字段specialFlag为05时，必填；jsonArray格式
-            // request.setEstateSales(get4ca5ce26399544ab942e2f8d2572bcfa());
+            // request.setEstateSales(get825c74feC48446519d3aB46871b242af());
             // 不动产租赁特殊字段specialFlag为16时，必填；jsonArray格式
-            // request.setEstateLease(get8f873e58D87e4b07A467C0f82ffc3b62());
+            // request.setEstateLease(get68aea0a200b84510B95fEbf67bf4e1aa());
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -96,8 +96,6 @@ namespace BasePayDemo
             extendInfoMap.Add("buyer_acct_no", "");
             // 购方企业类型
             extendInfoMap.Add("buyer_ent_type", "");
-            // 收票人手机号
-            extendInfoMap.Add("rec_ivc_phone", "");
             // 收票人邮件
             extendInfoMap.Add("rec_ivc_email", "test@126.com");
             // 备注
@@ -107,17 +105,29 @@ namespace BasePayDemo
             // 红字信息表编号
             extendInfoMap.Add("red_info_number", "");
             // 开票人信息
-            extendInfoMap.Add("payer_info", get67b8016609744dc680744d137112211a());
+            extendInfoMap.Add("payer_info", get5849a9a316d84bf7966d897f8a655ad6());
             // 开票结果异步通知地址
             extendInfoMap.Add("callback_url", "virgo://http://192.168.85.157:30031/sspm/testVirgo");
             // 强制开票标识
             extendInfoMap.Add("buyer_info_confirm", "");
             // 交易订单信息
-            extendInfoMap.Add("order_info", get6831958258194474Bd67Cc04b725652a());
+            extendInfoMap.Add("order_info", getBde9fd3e10a8499dB6e786ba643edb13());
+            // 购方自然人标识
+            // extendInfoMap.Add("buyer_nature_person_type", "");
+            // 购方自然人证件类型
+            // extendInfoMap.Add("buyer_nature_person_card_type", "");
+            // 购方自然人证件号码
+            // extendInfoMap.Add("buyer_nature_person_card_no", "");
+            // 购方自然人国籍代码
+            // extendInfoMap.Add("buyer_nature_person_nation_no", "");
+            // 减按征税类型代码
+            // extendInfoMap.Add("reduced_tax_type", "");
+            // 二手车信息
+            // extendInfoMap.Add("used_car", getB4eb2b8bF10841598176D92e1e6279a9());
             return extendInfoMap;
         }
 
-        private static string get238d9ce57f54438c982c71b0975e320f() {
+        private static string getC6a36685B0564080A1f00db79747ed42() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 发票行性质
             obj.Add("ivc_nature", "0");
@@ -156,7 +166,7 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return JsonConvert.SerializeObject(objList);
         }
-        private static string get67b8016609744dc680744d137112211a() {
+        private static string get5849a9a316d84bf7966d897f8a655ad6() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 收款人
             obj.Add("payee", "收款人");
@@ -167,7 +177,7 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string get4ca5ce26399544ab942e2f8d2572bcfa() {
+        private static string get825c74feC48446519d3aB46871b242af() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 不动产地址
             // obj.Add("addr", "test");
@@ -192,7 +202,7 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return JsonConvert.SerializeObject(objList);
         }
-        private static string get8f873e58D87e4b07A467C0f82ffc3b62() {
+        private static string get68aea0a200b84510B95fEbf67bf4e1aa() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 不动产地址
             // obj.Add("addr", "test");
@@ -213,12 +223,56 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return JsonConvert.SerializeObject(objList);
         }
-        private static object get6831958258194474Bd67Cc04b725652a() {
+        private static object getBde9fd3e10a8499dB6e786ba643edb13() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 交易订单号
             obj.Add("order_id", "002900TOP4A260519173506P786ac13683b000015");
             // 交易订单日期
             obj.Add("order_date", "20260701");
+
+            return obj;
+        }
+        private static object getAb411c71069e4df49eb94d27ccdbb9d6() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 车牌号码
+            // obj.Add("plate_number", "");
+            // 登记证号
+            // obj.Add("register_cert_number", "");
+            // 厂牌型号
+            // obj.Add("factory_plate_model", "");
+            // 车辆类型代码
+            // obj.Add("car_type", "");
+
+            JArray objList = new JArray();
+            objList.Add(JToken.FromObject(obj));
+            return objList;
+        }
+        private static object getB4eb2b8bF10841598176D92e1e6279a9() {
+            Dictionary<string, object> obj = new Dictionary<string, object>();
+            // 二手车销售统一发票正向开票标识
+            // obj.Add("direction_type", "");
+            // 二手车企业性质
+            // obj.Add("ent_prop_type", "");
+            // 二手车销售统一发票号码
+            // obj.Add("unified_sales_inv_number", "");
+            // 卖方自然人标识
+            // obj.Add("car_nature_person_type", "");
+            // 卖方自然人证件类型
+            // obj.Add("car_nature_person_card_type", "");
+            // 卖方自然人证件号码
+            // obj.Add("car_nature_person_card_no", "");
+            // 卖方自然人国籍代码
+            // obj.Add("car_nature_person_nation_no", "");
+            // 卖方单位名称/自然人姓名
+            // obj.Add("car_nature_ent_name", "");
+            // 卖方税号
+            // obj.Add("car_ent_no", "");
+            // 卖方地址/自然人地址
+            // obj.Add("car_nature_ent_address", "");
+            // 卖方电话/自然人电话
+            // obj.Add("car_nature_ent_tell", "");
+            // 车辆费基本信息集合
+            // obj.Add("car_base_list", getAb411c71069e4df49eb94d27ccdbb9d6());
 
             return obj;
         }

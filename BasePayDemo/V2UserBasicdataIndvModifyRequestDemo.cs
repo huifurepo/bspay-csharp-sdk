@@ -57,7 +57,7 @@ namespace BasePayDemo
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = new Dictionary<string, object>();
             // 个人证件有效期类型
-            extendInfoMap.Add("cert_validity_type", "2");
+            extendInfoMap.Add("cert_validity_type", "1");
             // 个人证件有效期开始日期
             extendInfoMap.Add("cert_begin_date", "20200111");
             // 个人证件有效期截止日期
@@ -67,7 +67,7 @@ namespace BasePayDemo
             // 手机号
             extendInfoMap.Add("mobile_no", "15556622000");
             // 文件列表
-            // extendInfoMap.Add("file_list", getF93305f7Bad24021Bfab6b92c98e001d());
+            // extendInfoMap.Add("file_list", getCfff4e1fAf2f41b2Ba99554f5d7c21dd());
             // 地址
             // extendInfoMap.Add("address", "");
             // 所属行业
@@ -81,7 +81,7 @@ namespace BasePayDemo
             return extendInfoMap;
         }
 
-        private static string getF93305f7Bad24021Bfab6b92c98e001d() {
+        private static string getCfff4e1fAf2f41b2Ba99554f5d7c21dd() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 文件类型
             // obj.Add("file_type", "test");

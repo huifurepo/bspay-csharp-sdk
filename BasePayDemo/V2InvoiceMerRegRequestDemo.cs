@@ -80,16 +80,16 @@ namespace BasePayDemo
             extendInfoMap.Add("contact", "王姗");
             // 联系人身份证号
             extendInfoMap.Add("id_card_no", "210123198702122747");
-            // 业务到期年限
-            extendInfoMap.Add("valid_period", "1");
-            // 自动续约
-            extendInfoMap.Add("auto_renewal", "Y");
-            // 商户入驻结果异步通知地址
-            extendInfoMap.Add("callback_url", "http: //service.example.com/to/path");
             // 开票模式
             extendInfoMap.Add("issue_mode", "LE_QI_LINK");
             // 区域代码
             // extendInfoMap.Add("area_code", "");
+            // 协议附件
+            // extendInfoMap.Add("net_url", "");
+            // 签约商户名称
+            // extendInfoMap.Add("mer_name", "");
+            // 生效日期
+            // extendInfoMap.Add("start_date", "");
             return extendInfoMap;
         }
 
