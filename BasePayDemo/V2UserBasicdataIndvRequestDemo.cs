@@ -81,7 +81,7 @@ namespace BasePayDemo
             // 拓展方字段
             extendInfoMap.Add("expand_id", "");
             // 文件列表
-            extendInfoMap.Add("file_list", getE0dde9e7D5a54431Ac1c9947d57b9ead());
+            extendInfoMap.Add("file_list", get76b3e6cfDeae48a68bcc9ca9af1c2feb());
             // 所属行业
             // extendInfoMap.Add("mcc", "");
             // 省
@@ -93,7 +93,7 @@ namespace BasePayDemo
             return extendInfoMap;
         }
 
-        private static string getE0dde9e7D5a54431Ac1c9947d57b9ead() {
+        private static string get76b3e6cfDeae48a68bcc9ca9af1c2feb() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 文件类型
             obj.Add("file_type", "F04");

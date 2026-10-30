@@ -24,10 +24,6 @@ namespace BasePaySdk.Request
          */
         private string huifuId;
         /**
-         * 主体信息
-         */
-        private string authIdentityInfo;
-        /**
          * 联系人信息
          */
         private string contactPersonInfo;
@@ -39,11 +35,10 @@ namespace BasePaySdk.Request
         public V2MerchantBusiAliRealnameApplyRequest() {
         }
 
-        public V2MerchantBusiAliRealnameApplyRequest(string reqSeqId, string reqDate, string huifuId, string authIdentityInfo, string contactPersonInfo) {
+        public V2MerchantBusiAliRealnameApplyRequest(string reqSeqId, string reqDate, string huifuId, string contactPersonInfo) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.huifuId = huifuId;
-            this.authIdentityInfo = authIdentityInfo;
             this.contactPersonInfo = contactPersonInfo;
         }
 
@@ -69,14 +64,6 @@ namespace BasePaySdk.Request
 
         public void setHuifuId(string huifuId) {
             this.huifuId = huifuId;
-        }
-
-        public string getAuthIdentityInfo() {
-            return authIdentityInfo;
-        }
-
-        public void setAuthIdentityInfo(string authIdentityInfo) {
-            this.authIdentityInfo = authIdentityInfo;
         }
 
         public string getContactPersonInfo() {

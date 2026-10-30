@@ -30,10 +30,8 @@ namespace BasePayDemo
             request.setReqDate(DateTime.Now.ToString("yyyyMMdd"));
             // 汇付ID
             request.setHuifuId("6666000105418240");
-            // 主体信息
-            request.setAuthIdentityInfo(getAuthIdentityInfo());
             // 联系人信息
-            request.setContactPersonInfo(getContactPersonInfo());
+            request.setContactPersonInfo(getCad99be040984802A2d78e1a215bccee());
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -64,14 +62,16 @@ namespace BasePayDemo
             extendInfoMap.Add("pay_channel_id", "10000001");
             // 业务开通类型
             extendInfoMap.Add("pay_scene", "1");
+            // 主体信息
+            extendInfoMap.Add("auth_identity_info", getF1cb10c324624018984dF83d6bcf19c3());
             // 法人身份信息
-            extendInfoMap.Add("legal_person_info", getLegalPersonInfo());
+            extendInfoMap.Add("legal_person_info", getF053471c77d24b0eB58d65ff7f75fefe());
             // 受益人信息
-            extendInfoMap.Add("ubo_info", getUboInfo());
+            extendInfoMap.Add("ubo_info", getE539caea7196498aA7fe688411696e67());
             return extendInfoMap;
         }
 
-        private static string getCertificateInfo() {
+        private static string get5a14daf1576a4040A33eEf2779559f62() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 登记证书类型**证照类型为登记证书时(certificate_type&#x3D;REGISTER_CERT)必填**。枚举：&lt;br/&gt;统一社会信用代码证书(CERTIFICATE_TYPE_2389)&lt;br/&gt;慈善组织公开募捐资格证书(CERTIFICATE_TYPE_2397)&lt;br/&gt;社会团体法人登记证书(CERTIFICATE_TYPE_2394)&lt;br/&gt;民办非企业单位登记证书(CERTIFICATE_TYPE_2395)&lt;br/&gt;基金会法人登记证书(CERTIFICATE_TYPE_2396)&lt;br/&gt;农民专业合作社法人营业执照(CERTIFICATE_TYPE_2398)&lt;br/&gt;宗教活动场所登记证(CERTIFICATE_TYPE_2399)&lt;br/&gt;其他证书/批文/证明(CERTIFICATE_TYPE_2400)&lt;br/&gt;&lt;font color&#x3D;&quot;green&quot;&gt;示例值：CERTIFICATE_TYPE_2389&lt;/font&gt;
             obj.Add("cert_type", "CERTIFICATE_TYPE_2389");
@@ -92,7 +92,7 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string getSupportCredentials() {
+        private static string getAb3d2d9110ce4232Bf1bFd4a82f346cb() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 小微经营类型
             obj.Add("micro_biz_type", "MICRO_TYPE_STORE");
@@ -119,7 +119,7 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string getQualificationInfoList() {
+        private static string get2250a07b4aed4b06831326ac1c71421f() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 行业类目id
             obj.Add("mcc_code", "2015050700000000");
@@ -130,7 +130,7 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return JsonConvert.SerializeObject(objList);
         }
-        private static string getAuthIdentityInfo() {
+        private static string getF1cb10c324624018984dF83d6bcf19c3() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 主体类型
             obj.Add("business_type", "2");
@@ -143,17 +143,17 @@ namespace BasePayDemo
             // 证照类型
             obj.Add("certificate_type", "BUSINESS_CERT");
             // 登记证书信息
-            obj.Add("certificate_info", getCertificateInfo());
+            obj.Add("certificate_info", get5a14daf1576a4040A33eEf2779559f62());
             // 单位证明函照片
             obj.Add("company_prove_copy", "71da066c-5d15-3658-a86d-4e85ee67808a");
             // 辅助证明材料信息
-            obj.Add("support_credentials", getSupportCredentials());
+            obj.Add("support_credentials", getAb3d2d9110ce4232Bf1bFd4a82f346cb());
             // 经营许可证
-            obj.Add("qualification_info_list", getQualificationInfoList());
+            obj.Add("qualification_info_list", get2250a07b4aed4b06831326ac1c71421f());
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string getLegalPersonInfo() {
+        private static string getF053471c77d24b0eB58d65ff7f75fefe() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 证件持有人类型
             obj.Add("legal_type", "SUPER");
@@ -178,7 +178,7 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string getContactPersonInfo() {
+        private static string getCad99be040984802A2d78e1a215bccee() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 联系人身份证号码
             obj.Add("id_card_number", "120103198507275017");
@@ -189,7 +189,7 @@ namespace BasePayDemo
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string getUboInfo() {
+        private static string getE539caea7196498aA7fe688411696e67() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 证件姓名
             obj.Add("ubo_id_doc_name", "消化");

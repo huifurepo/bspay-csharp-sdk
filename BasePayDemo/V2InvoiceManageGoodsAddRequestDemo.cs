@@ -82,6 +82,8 @@ namespace BasePayDemo
             extendInfoMap.Add("add_tax_spec_manage", "");
             // 说明
             extendInfoMap.Add("ivc_remark", "ivc_remark");
+            // 加油枪号
+            // extendInfoMap.Add("gun_number", "");
             return extendInfoMap;
         }
 

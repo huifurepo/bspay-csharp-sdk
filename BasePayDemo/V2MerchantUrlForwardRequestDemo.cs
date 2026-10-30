@@ -32,6 +32,8 @@ namespace BasePayDemo
             request.setUpperHuifuId("6666000108290240");
             // 门店号
             request.setStoreId("store128");
+            // 上级汇付Id如果head_office_flag&#x3D;0，则字段必填，如果head_office_flag&#x3D;1，上级汇付Id不可传
+            // request.setHeadHuifuId("test");
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -70,8 +72,6 @@ namespace BasePayDemo
             extendInfoMap.Add("template_id", "155625");
             // 商户身份
             // extendInfoMap.Add("head_office_flag", "");
-            // 上级汇付Id
-            // extendInfoMap.Add("head_huifu_id", "");
             // 使用上级微信、支付宝商户号发起交易
             // extendInfoMap.Add("use_chains_flag", "");
             // 小微经营类型

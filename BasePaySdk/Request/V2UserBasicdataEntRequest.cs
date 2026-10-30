@@ -92,9 +92,13 @@ namespace BasePaySdk.Request
          */
         private string contactMobile;
         /**
-         * 管理员账号如需短信通知则必填；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：Lg20220222013747&lt;/font&gt;
+         * 管理员账号如需短信通知则必填；升级LV3必填&lt;font color&#x3D;&quot;green&quot;&gt;示例值：Lg20220222013747&lt;/font&gt;
          */
         private string loginName;
+        /**
+         * 公司类型
+         */
+        private string entType;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_USER_BASICDATA_ENT;
@@ -103,7 +107,7 @@ namespace BasePaySdk.Request
         public V2UserBasicdataEntRequest() {
         }
 
-        public V2UserBasicdataEntRequest(string reqSeqId, string reqDate, string regName, string licenseCode, string licenseValidityType, string licenseBeginDate, string licenseEndDate, string regProvId, string regAreaId, string regDistrictId, string regDetail, string legalName, string legalCertType, string legalCertNo, string legalCertValidityType, string legalCertBeginDate, string legalCertEndDate, string legalCertNationality, string contactName, string contactMobile, string loginName) {
+        public V2UserBasicdataEntRequest(string reqSeqId, string reqDate, string regName, string licenseCode, string licenseValidityType, string licenseBeginDate, string licenseEndDate, string regProvId, string regAreaId, string regDistrictId, string regDetail, string legalName, string legalCertType, string legalCertNo, string legalCertValidityType, string legalCertBeginDate, string legalCertEndDate, string legalCertNationality, string contactName, string contactMobile, string loginName, string entType) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.regName = regName;
@@ -125,6 +129,7 @@ namespace BasePaySdk.Request
             this.contactName = contactName;
             this.contactMobile = contactMobile;
             this.loginName = loginName;
+            this.entType = entType;
         }
 
         public string getReqSeqId() {
@@ -293,6 +298,14 @@ namespace BasePaySdk.Request
 
         public void setLoginName(string loginName) {
             this.loginName = loginName;
+        }
+
+        public string getEntType() {
+            return entType;
+        }
+
+        public void setEntType(string entType) {
+            this.entType = entType;
         }
 
 

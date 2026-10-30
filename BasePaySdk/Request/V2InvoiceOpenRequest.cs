@@ -28,6 +28,10 @@ namespace BasePaySdk.Request
          */
         private string extMerId;
         /**
+         * 开票方式乐企联用模式下非斗拱交易必填 枚举： TRADE-交易即开票  PAY-支付即开票
+         */
+        private string ivcModeCode;
+        /**
          * 渠道号汇付商户号为空时，必传；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：6666000109812124&lt;/font&gt;
          */
         private string channelId;
@@ -75,6 +79,10 @@ namespace BasePaySdk.Request
          * 不动产租赁特殊字段specialFlag为16时，必填；jsonArray格式
          */
         private string estateLease;
+        /**
+         * 交易订单信息jsonObject格式，订单信息（乐企联用，AT联用模式必填）
+         */
+        private string orderInfo;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_INVOICE_OPEN;
@@ -83,11 +91,12 @@ namespace BasePaySdk.Request
         public V2InvoiceOpenRequest() {
         }
 
-        public V2InvoiceOpenRequest(string reqSeqId, string reqDate, string huifuId, string extMerId, string channelId, string ivcType, string openType, string buyerName, string orderAmt, string redApplyReason, string redApplySource, string oriIvcCode, string oriIvcNumber, string goodsInfos, string estateSales, string estateLease) {
+        public V2InvoiceOpenRequest(string reqSeqId, string reqDate, string huifuId, string extMerId, string ivcModeCode, string channelId, string ivcType, string openType, string buyerName, string orderAmt, string redApplyReason, string redApplySource, string oriIvcCode, string oriIvcNumber, string goodsInfos, string estateSales, string estateLease, string orderInfo) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.huifuId = huifuId;
             this.extMerId = extMerId;
+            this.ivcModeCode = ivcModeCode;
             this.channelId = channelId;
             this.ivcType = ivcType;
             this.openType = openType;
@@ -100,6 +109,7 @@ namespace BasePaySdk.Request
             this.goodsInfos = goodsInfos;
             this.estateSales = estateSales;
             this.estateLease = estateLease;
+            this.orderInfo = orderInfo;
         }
 
         public string getReqSeqId() {
@@ -132,6 +142,14 @@ namespace BasePaySdk.Request
 
         public void setExtMerId(string extMerId) {
             this.extMerId = extMerId;
+        }
+
+        public string getIvcModeCode() {
+            return ivcModeCode;
+        }
+
+        public void setIvcModeCode(string ivcModeCode) {
+            this.ivcModeCode = ivcModeCode;
         }
 
         public string getChannelId() {
@@ -228,6 +246,14 @@ namespace BasePaySdk.Request
 
         public void setEstateLease(string estateLease) {
             this.estateLease = estateLease;
+        }
+
+        public string getOrderInfo() {
+            return orderInfo;
+        }
+
+        public void setOrderInfo(string orderInfo) {
+            this.orderInfo = orderInfo;
         }
 
 

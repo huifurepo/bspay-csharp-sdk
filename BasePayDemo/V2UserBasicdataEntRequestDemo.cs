@@ -64,8 +64,10 @@ namespace BasePayDemo
             request.setContactName("小的");
             // 管理员手机号
             request.setContactMobile("13764462211");
-            // 管理员账号如需短信通知则必填；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：Lg20220222013747&lt;/font&gt;
+            // 管理员账号如需短信通知则必填；升级LV3必填&lt;font color&#x3D;&quot;green&quot;&gt;示例值：Lg20220222013747&lt;/font&gt;
             request.setLoginName("Lg2022022201374721361");
+            // 公司类型
+            // request.setEntType("test");
 
             // 设置非必填字段
             Dictionary<string, object> extendInfoMap = getExtendInfos();
@@ -103,15 +105,13 @@ namespace BasePayDemo
             // 扩展方字段
             extendInfoMap.Add("expand_id", "");
             // 文件列表
-            // extendInfoMap.Add("file_list", get3133b4feD98248caAbf94f93f127425c());
-            // 公司类型
-            // extendInfoMap.Add("ent_type", "");
+            // extendInfoMap.Add("file_list", get6cbfdfc6D1034fddA78eB9e2bba998ed());
             // 所属行业
             // extendInfoMap.Add("mcc", "");
             return extendInfoMap;
         }
 
-        private static string get3133b4feD98248caAbf94f93f127425c() {
+        private static string get6cbfdfc6D1034fddA78eB9e2bba998ed() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 文件类型
             // obj.Add("file_type", "test");

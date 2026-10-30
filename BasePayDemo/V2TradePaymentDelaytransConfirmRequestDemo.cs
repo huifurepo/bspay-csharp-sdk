@@ -67,15 +67,15 @@ namespace BasePayDemo
             // 原交易全局流水号
             extendInfoMap.Add("org_hf_seq_id", "");
             // 分账对象
-            extendInfoMap.Add("acct_split_bunch", get5722171aD80244dc95ab4ae394a1e2d2());
+            extendInfoMap.Add("acct_split_bunch", get52f71d5eE9934c219d6198acd83b0db1());
             // 安全信息
-            extendInfoMap.Add("risk_check_data", getA78f259b9e5c49f1B6fd23e7b81d9ad2());
+            extendInfoMap.Add("risk_check_data", get403380607d624fe386b46dcce488e193());
             // 备注
             extendInfoMap.Add("remark", "remark123");
             return extendInfoMap;
         }
 
-        private static object getA3de8d54A38c4ccf87a059ab89bfcbf8() {
+        private static object get0e8daec3B4834670Aaf510b5dbf30d89() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 分账金额(元)单位元，需保留小数点后两位，最低传入0.01 ，&lt;font color&#x3D;&quot;green&quot;&gt;示例值：1.00&lt;/font&gt; ，percentage_flag非Y时必填；&lt;br/&gt;percentage_flag&#x3D;Y时div_amt不填，div_amt&#x3D;total_div_amt*percentage_div
             obj.Add("div_amt", "0.01");
@@ -90,18 +90,18 @@ namespace BasePayDemo
             objList.Add(JToken.FromObject(obj));
             return objList;
         }
-        private static string get5722171aD80244dc95ab4ae394a1e2d2() {
+        private static string get52f71d5eE9934c219d6198acd83b0db1() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // 分账总金额（元）本次交易确认总额。需保留小数点后两位&lt;br/&gt;percentage_flag&#x3D;Y时必填。该金额与分账百分比用来计算分账金额。&lt;font color&#x3D;&quot;green&quot;&gt;示例值：10.00&lt;/font&gt;；
             // obj.Add("total_div_amt", "test");
             // 百分比分账标志
             // obj.Add("percentage_flag", "");
             // 分账明细
-            obj.Add("acct_infos", getA3de8d54A38c4ccf87a059ab89bfcbf8());
+            obj.Add("acct_infos", get0e8daec3B4834670Aaf510b5dbf30d89());
 
             return JsonConvert.SerializeObject(obj);
         }
-        private static string getA78f259b9e5c49f1B6fd23e7b81d9ad2() {
+        private static string get403380607d624fe386b46dcce488e193() {
             Dictionary<string, object> obj = new Dictionary<string, object>();
             // ip地址
             // obj.Add("ip_addr", "");

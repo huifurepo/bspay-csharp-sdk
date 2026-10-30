@@ -27,6 +27,10 @@ namespace BasePaySdk.Request
          * 门店号
          */
         private string storeId;
+        /**
+         * 上级汇付Id如果head_office_flag&#x3D;0，则字段必填，如果head_office_flag&#x3D;1，上级汇付Id不可传
+         */
+        private string headHuifuId;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_MERCHANT_URL_FORWARD;
@@ -35,11 +39,12 @@ namespace BasePaySdk.Request
         public V2MerchantUrlForwardRequest() {
         }
 
-        public V2MerchantUrlForwardRequest(string reqSeqId, string reqDate, string upperHuifuId, string storeId) {
+        public V2MerchantUrlForwardRequest(string reqSeqId, string reqDate, string upperHuifuId, string storeId, string headHuifuId) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.upperHuifuId = upperHuifuId;
             this.storeId = storeId;
+            this.headHuifuId = headHuifuId;
         }
 
         public string getReqSeqId() {
@@ -72,6 +77,14 @@ namespace BasePaySdk.Request
 
         public void setStoreId(string storeId) {
             this.storeId = storeId;
+        }
+
+        public string getHeadHuifuId() {
+            return headHuifuId;
+        }
+
+        public void setHeadHuifuId(string headHuifuId) {
+            this.headHuifuId = headHuifuId;
         }
 
 

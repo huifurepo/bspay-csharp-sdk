@@ -187,6 +187,14 @@ namespace BasePaySdk.Request
          * 店铺收银台/公司前台照scene_type字段含有线下场景时必填；通过[图片上传接口](https://paas.huifu.com/open/doc/api/#/shgl/shjj/api_shjj_shtpsc)上传材料；文件类型：F105；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：57cc7f00-600a-33ab-b614-6221bbf2e530&lt;/font&gt;&lt;br/&gt;微信/支付宝实名认证个人商户，内景照也使用此字段；
          */
         private string storeCashierDeskPic;
+        /**
+         * 对公卡信息
+         */
+        private string materialCardInfo;
+        /**
+         * 总部客群当head_office_flag为1时，必填；枚举值包含，0 集团客户，1大型商业综合体，2品牌连锁客户；
+         */
+        private string headType;
 
         public override string getFunctionCode() {
             return FunctionCodeEnum.V2_MERCHANT_BASICDATA_ENT;
@@ -195,7 +203,7 @@ namespace BasePaySdk.Request
         public V2MerchantBasicdataEntRequest() {
         }
 
-        public V2MerchantBasicdataEntRequest(string reqSeqId, string reqDate, string upperHuifuId, string regName, string shortName, string receiptName, string entType, string mcc, string busiType, string sceneType, string licensePic, string licenseCode, string licenseValidityType, string licenseBeginDate, string licenseEndDate, string foundDate, string regCapital, string regDistrictId, string regDetail, string districtId, string detailAddr, string legalName, string legalCertType, string legalCertNo, string legalCertValidityType, string legalCertBeginDate, string legalCertEndDate, string legalAddr, string legalCertBackPic, string legalCertFrontPic, string contactMobileNo, string contactEmail, string loginName, string regAcctPic, string cardInfo, string settleCardFrontPic, string settleCertBackPic, string settleCertFrontPic, string authEntrustPic, string headHuifuId, string merIcp, string storeHeaderPic, string storeIndoorPic, string storeCashierDeskPic) {
+        public V2MerchantBasicdataEntRequest(string reqSeqId, string reqDate, string upperHuifuId, string regName, string shortName, string receiptName, string entType, string mcc, string busiType, string sceneType, string licensePic, string licenseCode, string licenseValidityType, string licenseBeginDate, string licenseEndDate, string foundDate, string regCapital, string regDistrictId, string regDetail, string districtId, string detailAddr, string legalName, string legalCertType, string legalCertNo, string legalCertValidityType, string legalCertBeginDate, string legalCertEndDate, string legalAddr, string legalCertBackPic, string legalCertFrontPic, string contactMobileNo, string contactEmail, string loginName, string regAcctPic, string cardInfo, string settleCardFrontPic, string settleCertBackPic, string settleCertFrontPic, string authEntrustPic, string headHuifuId, string merIcp, string storeHeaderPic, string storeIndoorPic, string storeCashierDeskPic, string materialCardInfo, string headType) {
             this.reqSeqId = reqSeqId;
             this.reqDate = reqDate;
             this.upperHuifuId = upperHuifuId;
@@ -240,6 +248,8 @@ namespace BasePaySdk.Request
             this.storeHeaderPic = storeHeaderPic;
             this.storeIndoorPic = storeIndoorPic;
             this.storeCashierDeskPic = storeCashierDeskPic;
+            this.materialCardInfo = materialCardInfo;
+            this.headType = headType;
         }
 
         public string getReqSeqId() {
@@ -592,6 +602,22 @@ namespace BasePaySdk.Request
 
         public void setStoreCashierDeskPic(string storeCashierDeskPic) {
             this.storeCashierDeskPic = storeCashierDeskPic;
+        }
+
+        public string getMaterialCardInfo() {
+            return materialCardInfo;
+        }
+
+        public void setMaterialCardInfo(string materialCardInfo) {
+            this.materialCardInfo = materialCardInfo;
+        }
+
+        public string getHeadType() {
+            return headType;
+        }
+
+        public void setHeadType(string headType) {
+            this.headType = headType;
         }
 
 
